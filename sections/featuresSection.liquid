@@ -1,102 +1,81 @@
 {% schema %}
 {
-  "name": "Features Section",
-  "settings": [
+  "name": "Text and Icon Section",
+  "settings": [],
+  "blocks": [
     {
-      "type": "text",
-      "id": "feature_one_text",
-      "label": "Feature One Text",
-      "default": "FREE SHIPPING"
-    },
-    {
-      "type": "html",
-      "id": "feature_one_icon",
-      "label": "Feature One SVG Icon"
-    },
-    {
-      "type": "text",
-      "id": "feature_two_text",
-      "label": "Feature Two Text",
-      "default": "TRY IT RISK-FREE FOR 90 DAYS"
-    },
-    {
-      "type": "html",
-      "id": "feature_two_icon",
-      "label": "Feature Two SVG Icon"
-    },
-    {
-      "type": "text",
-      "id": "feature_three_text",
-      "label": "Feature Three Text",
-      "default": "FDA CLEARED"
-    },
-    {
-      "type": "html",
-      "id": "feature_three_icon",
-      "label": "Feature Three SVG Icon"
+      "type": "icon_text_item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "feature_text",
+          "label": "Feature Text",
+          "default": "Your feature here"
+        },
+        {
+          "type": "html",
+          "id": "feature_icon",
+          "label": "Feature SVG Icon",
+          "default": "<svg width='50' height='50' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10' stroke='black' stroke-width='2' fill='none'/></svg>"
+        }
+      ]
     }
   ],
   "presets": [
     {
-      "name": "Features Section"
+      "name": "Text and Icon Section",
+      "category": "Custom"
     }
   ]
 }
 {% endschema %}
 
-<div class="features-section">
-  <div class="feature">
-    <div class="feature-icon">{{ section.settings.feature_one_icon }}</div>
-    <h1 class="feature-text">{{ section.settings.feature_one_text }}</h1>
-  </div>
-  <div class="feature">
-    <div class="feature-icon">{{ section.settings.feature_two_icon }}</div>
-    <h1 class="feature-text">{{ section.settings.feature_two_text }}</h1>
-  </div>
-  <div class="feature">
-    <div class="feature-icon">{{ section.settings.feature_three_icon }}</div>
-    <h1 class="feature-text">{{ section.settings.feature_three_text }}</h1>
-  </div>
+<div class="icon-text-section">
+  {% for block in section.blocks %}
+    <div class="icon-text-item" {{ block.shopify_attributes }}>
+      <div class="icon" aria-hidden="true">
+        {{ block.settings.feature_icon }}
+      </div>
+      <div class="text">
+        {{ block.settings.feature_text }}
+      </div>
+    </div>
+  {% endfor %}
 </div>
 
 <style>
-  .features-section {
+  .icon-text-section {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 50px 20px;
-    background-color: #fff0f3;
-    gap: 20px;
+    justify-content: center;
+    gap: 40px;
     flex-wrap: wrap;
-  }
-  .feature {
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding: 20px;
-    border-radius: 10px;
-    cursor: pointer;
+    background-color: transparent;
   }
-  .feature:hover {
-    transform: translateY(-10px);
+
+  .icon-text-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .icon-text-item:hover {
+    transform: translateY(-5px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
-  .feature-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 10px;
+
+  .icon-text-item .icon svg {
+    width: 50px;
+    height: 50px;
+    fill: currentColor;
   }
-  .feature-icon svg {
-    width: 100%;
-    height: 100%;
-  }
-  .feature-text {
-    font-size: 1.1rem;
-    color: #333;
+
+  .icon-text-item .text {
+    margin-top: 10px;
+    font-size: 1rem;
     font-weight: bold;
-  }
-  @media (max-width: 768px) {
-    .features-section {
-      flex-direction: column;
-    }
   }
 </style>
