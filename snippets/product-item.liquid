@@ -23,11 +23,11 @@
 <li class="grid gap-2">
   <a class="group grid gap-2" href="{{ product.url | within: collection }}">
     <figure class="relative">
-      <div class="bg-canvas-subdued overflow-hidden shadow-md" style="border-radius: var(--border-radius);">
+      <div class="bg-white overflow-hidden shadow-lg rounded-xl">
         {%- if product.featured_image -%}
           {{ product.featured_image
             | image_url: width: 500, height: 500
-            | image_tag: class: 'w-full group-hover:scale-105 transition-transform', loading: 'lazy'
+            | image_tag: class: 'w-full group-hover:scale-110 transition-transform duration-300 ease-in-out', loading: 'lazy'
           }}
         {%- else -%}
           {{ 'product-1' | placeholder_svg_tag }}
@@ -35,46 +35,43 @@
       </div>
 
       {%- if sale_badge_enabled and lowest_percentage -%}
-        <span class="badge absolute -right-1 top-2">
+        <span class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
           Save {{ lowest_percentage }}%
         </span>
       {%- endif -%}
     </figure>
 
-    <div class="h3 group-hover:underline">{{ product.title | default: 'Product title' }}</div>
+    <div class="text-lg font-semibold group-hover:underline text-gray-800">{{ product.title | default: 'Product title' }}</div>
   </a>
 
-  <div class="text-sm">
+  <div class="text-sm text-gray-600">
     {%- if product.price_varies -%}From{%- endif %}
     <span>
-      <strong class="price">{{ product.price_min | default: 0 | money }}</strong>
+      <strong class="text-xl text-gray-900">{{ product.price_min | default: 0 | money }}</strong>
       {{- unit_price -}}
     </span>
     {% if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price %}
-      <span class="ml-1">
-        <s class="price">{{ product.selected_or_first_available_variant.compare_at_price | money }}</s>
-        {{- unit_price -}}
+      <span class="ml-2 text-gray-400 line-through">
+        {{ product.selected_or_first_available_variant.compare_at_price | money }}
       </span>
     {% endif %}
   </div>
 
   {%- unless product.has_only_default_variant -%}
-    <nav class="text-xs">
-      <div class="technical text-[x-small]">{{ product.variants.size | default: 'No' }} options</div>
-
-      <div class="flex flex-wrap gap-x-[.5em]">
+    <nav class="text-xs mt-1">
+      <div class="text-gray-500">{{ product.variants.size | default: 'No' }} options</div>
+      <div class="flex flex-wrap gap-1">
         {%- for product_option in product.options_with_values -%}
           {%- for value in product_option.values -%}
             {%- for variant in product.variants -%}
               {%- if variant.title contains value -%}
-                <a class="hashtag hover:text-primary" href="{{ variant.url }}" aria-label="{{ product_option.name }}">
+                <a class="text-blue-600 hover:text-blue-800" href="{{ variant.url }}" aria-label="{{ product_option.name }}">
                   {{- value -}}
                 </a>
                 {% break %}
               {%- endif -%}
             {%- endfor -%}
           {%- endfor -%}
-          {%- unless forloop.last -%}·{%- endunless -%}
         {%- endfor -%}
       </div>
     </nav>
