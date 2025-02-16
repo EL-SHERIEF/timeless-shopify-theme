@@ -27,9 +27,9 @@
       "custom_css": [
         "h1 {color: white; font-size: 3rem; font-weight: 900 !important;}",
         "p {font-weight: 300; color: white;}",
-        ".action {background: white; border-radius: 11px; color: black;}",
-        ".text-center.bg-center.bg-cover {margin: 10px; border-radius: 10px;}",
-        ".relative.flex.flex-col{justify-content:end;}"
+        ".action {background: white; border-radius: 12px; color: black;}",
+        ".text-center.bg-center.bg-cover {margin: 12px; border-radius: 10px;}",
+        ".relative.flex.flex-col {justify-content: end;}"
       ],
       "settings": {
         "color_scheme": "default",
