@@ -11,9 +11,10 @@
   "current": {
     "font_heading": "inter_n4",
     "font_body": "inter_n4",
-    "anim_emoji": "👍",
-    "border_radius": 0,
+    "anim_emoji": "🕕",
+    "border_radius": 8,
     "fully_rounded_buttons": false,
+    "favicon": "shopify://shop_images/FAVI.svg",
     "checkout_input_background_color_mode": "transparent",
     "checkout_sidebar_background_color": "#fff",
     "checkout_accent_color": "#dd1d1d",
