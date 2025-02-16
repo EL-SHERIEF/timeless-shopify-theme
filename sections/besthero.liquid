@@ -84,7 +84,8 @@
     <h1>{{ section.settings.hero_heading }}</h1>
     <p>{{ section.settings.hero_text }}</p>
   </div>
-  <div class="marquee-wrapper">
+</div>
+ <div class="marquee-wrapper">
     <div class="marquee">
       <span>{{ section.settings.marquee_slot_1 }}</span>
       <span>{{ section.settings.marquee_slot_2 }}</span>
@@ -96,8 +97,6 @@
       <span>{{ section.settings.marquee_slot_8 }}</span>
     </div>
   </div>
-</div>
-
 <style>
 .hero-section {
   position: relative;
@@ -115,7 +114,7 @@
   top: 0;
   left: 0;
   width: calc(100% - 24px);
-  height: calc(100% - 30px);
+  height: 100%;
   object-fit: cover;
   z-index: -1;
 }
@@ -127,9 +126,7 @@
   font-size: 1.5rem;
 }
 .marquee-wrapper {
-  display:flex;flex-direction:column;align-items:center;
-  position: absolute;
-  bottom: 0px;
+  display:flex;flex-direction:column;align-items:start;
   width: 100%;
   overflow: hidden;
 }
