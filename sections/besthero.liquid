@@ -19,6 +19,12 @@
       "label": "Hero Text",
       "default": "Limited edition jerseys and accessories now available."
     },
+        {
+      "type": "text",
+      "id": "price",
+      "label": "price",
+      "default": "73$"
+    },
     {
       "type": "text",
       "id": "marquee_slot_1",
@@ -83,6 +89,8 @@
   <div class="hero-content">
     <h1>{{ section.settings.hero_heading }}</h1>
     <p>{{ section.settings.hero_text }}</p>
+        <p>{{ section.settings.price }}</p>
+
   </div>
 </div>
  <div class="marquee-wrapper">
@@ -124,6 +132,9 @@
   margin-bottom: .5rem;
 }
 .hero-content p {
+  font-size: 1rem;
+}
+  .hero-content span {
   font-size: 1rem;
 }
 .marquee-wrapper {
