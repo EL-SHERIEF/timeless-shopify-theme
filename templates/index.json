@@ -29,7 +29,7 @@
         "p {font-weight: 300; color: white;}",
         ".action {background: white; border-radius: 12px; color: black;}",
         ".text-center.bg-center.bg-cover {margin: 12px; border-radius: 10px;}",
-        ".relative.flex.flex-col {justify-content: end;}"
+        ".justify-center {justify-content: end;}"
       ],
       "settings": {
         "color_scheme": "default",
