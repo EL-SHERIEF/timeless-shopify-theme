@@ -9,15 +9,6 @@
  */
 {
   "sections": {
-    "promotional_banners_Jdapkk": {
-      "type": "promotional-banners",
-      "settings": {
-        "image_one": "shopify://shop_images/4_4c5d22bc-ad78-4253-ac79-de12a50085d7.png",
-        "heading_one": "Gift it to your loved ones and get 50% OFF!",
-        "image_two": "shopify://shop_images/image00001_50dfe672-a852-4efb-9b5d-a5d38c678618.webp",
-        "heading_two": "Limited Time Offer: 20% OFF + FREE SHIPPING!"
-      }
-    },
     "heading": {
       "type": "heading",
       "blocks": {
@@ -68,6 +59,15 @@
         "content": "<h2>The EZEAR™ Ear Cleaner</h2>",
         "columns": 3,
         "sale_badge_enabled": true
+      }
+    },
+    "promotional_banners_Jdapkk": {
+      "type": "promotional-banners",
+      "settings": {
+        "video_one": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739735588/WhatsApp_Video_2025-02-16_at_9.12.13_PM_ry56el.mp4",
+        "heading_one": "Gift it to your loved ones and get 50% OFF!",
+        "video_two": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739735588/WhatsApp_Video_2025-02-16_at_9.12.13_PM_ry56el.mp4",
+        "heading_two": "Limited Time Offer: 20% OFF + FREE SHIPPING!"
       }
     },
     "text-and-icon": {
