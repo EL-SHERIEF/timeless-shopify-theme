@@ -25,14 +25,15 @@
         "0b40575d-b6b3-46fa-84b6-10cfa7683275"
       ],
       "custom_css": [
-        "h1 {color: white;}",
-        "p {color: white;}",
+        "h1 {color: white; font-size: 3rem; font-weight: 900 !important;}",
+        "p {font-weight: 300; color: white;}",
         ".action {background: white; border-radius: 11px; color: black;}",
-        ".text-center.bg-center.bg-cover{margin:}"
+        ".text-center.bg-center.bg-cover {margin: 10px; border-radius: 10px;}",
+        ".relative.flex.flex-col{justify-content:end;}"
       ],
       "settings": {
         "color_scheme": "default",
-        "content": "<h1>Ear-Care You Can See</h1><p><strong>This is the ultimate beauty event you don't want to miss! Get a fantastic 46%discount on the Secretreza Redline Laser.</strong></p>",
+        "content": "<h1><strong>Ear-Care You Can See</strong></h1><p><strong>This is the ultimate beauty event you don't want to miss! Get a fantastic 46%discount on the Secretreza Redline Laser.</strong></p>",
         "content_alignment": "left",
         "min_height": 70,
         "image": "shopify://shop_images/4_cba4dba2-5001-4ad6-8dae-5dc997bd9f0d.jpg",
