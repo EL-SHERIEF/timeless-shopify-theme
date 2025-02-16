@@ -28,7 +28,7 @@
         "h1 {color: white; font-size: 3rem; font-weight: 900 !important; text-shadow: 0 0 40px black;}",
         "p {font-weight: 300; text-shadow: 0 0 40px black; color: white;}",
         ".action {background: white; border-radius: 12px; color: black;}",
-        ".text-center.bg-center.bg-cover {margin: 12px;margin-top:0 ; border-radius: 10px;}",
+        ".text-center.bg-center.bg-cover {margin: 12px; margin-top: 0; border-radius: 10px;}",
         ".justify-center {justify-content: end;}"
       ],
       "settings": {
@@ -46,7 +46,7 @@
         "product_K4UNVa": {
           "type": "product",
           "settings": {
-            "product": ""
+            "product": "new-body-bikini-ipl-500-000-flash-depilator-pulses-permanent-laser-epilator-painless-for-women-hair-removal-home-use-devices"
           }
         }
       },
