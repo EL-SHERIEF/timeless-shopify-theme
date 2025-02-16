@@ -6,7 +6,7 @@
       {%- if section.settings.logo -%}
         {{ section.settings.logo
           | image_url: width: 300
-          | image_tag: class: 'max-w-[100px] max-h-[80px] object-contain', loading: 'lazy'
+          | image_tag: class: 'max-w-[100px] max-h-[70px] object-contain m-auto', loading: 'lazy'
           | link_to: routes.root_url
         }}
       {%- else -%}
