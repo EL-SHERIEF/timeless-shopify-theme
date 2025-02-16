@@ -33,7 +33,7 @@
 }
 {% endschema %}
 
-<div class="promo-banners">
+<div class="promo-banners2">
   <div class="promo-banner">
     <video autoplay loop muted playsinline>
       <source src="{{ section.settings.video_one }}" type="video/mp4">
@@ -49,14 +49,14 @@
 </div>
 
 <style>
-  .promo-banners {
+  .promo-banners2 {
     margin: 15px;
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
   }
-  .promo-banner {
+   .promo-banners2 .promo-banner {
     flex: 1 1 calc(50% - 20px);
     position: relative;
     height: 400px;
@@ -65,13 +65,13 @@
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  .promo-banner video {
+   .promo-banners2 .promo-banner video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
   }
-  .promo-banner h2 {
+   .promo-banners2 .promo-banner h2 {
     position: absolute;
     top: 5%;
     left: 5%;
@@ -80,29 +80,21 @@
     z-index: 3;
     font-weight: bold;
   }
-  .promo-banner:hover {
+   .promo-banners2 .promo-banner:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   }
   @media (max-width: 768px) {
-    .promo-banners {
+    .promo-banners2 .promo-banners {
       flex-direction: column;
     }
-    .promo-banner {
+    .promo-banners2 .promo-banner {
       flex: 1 1 100%;
     }
-    .promo-banner h2 {
+    .promo-banners2 .promo-banner h2 {
       font-size: 1.2rem;
       top: 5%;
       left: 5%;
     }
-  }
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
   }
 </style>
