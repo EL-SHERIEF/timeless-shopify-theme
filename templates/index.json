@@ -9,35 +9,20 @@
  */
 {
   "sections": {
-    "heading": {
-      "type": "heading",
-      "blocks": {
-        "0b40575d-b6b3-46fa-84b6-10cfa7683275": {
-          "type": "cta",
-          "settings": {
-            "url": "shopify://collections",
-            "label": "Shop now",
-            "style": "action"
-          }
-        }
-      },
-      "block_order": [
-        "0b40575d-b6b3-46fa-84b6-10cfa7683275"
-      ],
-      "custom_css": [
-        "h1 {color: white; font-size: 3rem; font-weight: 900 !important; text-shadow: 0 0 40px black;}",
-        "p {font-weight: 300; text-shadow: 0 0 40px black; color: white;}",
-        ".action {background: white; border-radius: 12px; color: black;}",
-        ".text-center.bg-center.bg-cover {margin: 12px; margin-top: 0; border-radius: 10px;}",
-        ".justify-center {justify-content: end;}"
-      ],
+    "besthero_exj7tB": {
+      "type": "besthero",
       "settings": {
-        "color_scheme": "default",
-        "content": "<h1><strong>Ear-Care You Can See</strong></h1><p><strong>This is the ultimate beauty event you don't want to miss! Get a fantastic 46%discount on the Secretreza Redline Laser.</strong></p>",
-        "content_alignment": "left",
-        "min_height": 80,
-        "image": "shopify://shop_images/image00001_50dfe672-a852-4efb-9b5d-a5d38c678618.webp",
-        "bg_opacity": 0
+        "background_video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739735588/WhatsApp_Video_2025-02-16_at_9.12.13_PM_ry56el.mp4",
+        "hero_heading": "Ear-Care You Can See",
+        "hero_text": "Limited edition jerseys and accessories now available.",
+        "marquee_slot_1": "LIMITED AMOUNT",
+        "marquee_slot_2": "FREE SHIPPING!!",
+        "marquee_slot_3": "ORDER NOW!!",
+        "marquee_slot_4": "LIMITED AMOUNT",
+        "marquee_slot_5": "FREE SHIPPING!!",
+        "marquee_slot_6": "ORDER NOW!!",
+        "marquee_slot_7": "LIMITED AMOUNT",
+        "marquee_slot_8": "FREE SHIPPING!!"
       }
     },
     "collection-list": {
@@ -151,7 +136,7 @@
     }
   },
   "order": [
-    "heading",
+    "besthero_exj7tB",
     "collection-list",
     "promotional_banners_Jdapkk",
     "text-and-icon",
