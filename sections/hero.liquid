@@ -12,9 +12,13 @@
 <div class="grid md:grid-cols-2 items-center overflow-hidden" style="border-radius: var(--border-radius);">
   <figure
     class="overflow-hidden {{ section.settings.image_position_desktop }} {{ section.settings.image_position_mobile }}"
-    style="border-radius: var(--border-radius);"
+    style="border-radius: var(--border-radius); position: relative;"
   >
-    {%- if section.settings.image -%}
+    {%- if section.settings.video_url != blank -%}
+      <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+        <source src="{{ section.settings.video_url }}" type="video/mp4">
+      </video>
+    {%- elsif section.settings.image -%}
       {{ section.settings.image
         | image_url: width: 1000
         | image_tag: loading: section.settings.image_loading
@@ -63,43 +67,34 @@
       "id": "content_alignment",
       "label": "Content alignment",
       "options": [
-        {
-          "value": "left",
-          "label": "left"
-        },
-        {
-          "value": "center",
-          "label": "center"
-        },
-        {
-          "value": "right",
-          "label": "right"
-        }
+        { "value": "left", "label": "left" },
+        { "value": "center", "label": "center" },
+        { "value": "right", "label": "right" }
       ],
       "default": "left"
     },
     {
       "type": "header",
-      "content": "Image"
+      "content": "Background Media"
     },
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Image"
+      "label": "Fallback Image"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Background Video URL",
+      "info": "Provide a URL to a .mp4 video for the background. The video will autoplay, loop, and be muted."
     },
     {
       "type": "select",
       "id": "image_position_desktop",
       "label": "Desktop position",
       "options": [
-        {
-          "value": "",
-          "label": "left"
-        },
-        {
-          "value": "md:order-1",
-          "label": "right"
-        }
+        { "value": "", "label": "left" },
+        { "value": "md:order-1", "label": "right" }
       ],
       "default": ""
     },
@@ -108,14 +103,8 @@
       "id": "image_position_mobile",
       "label": "Mobile position",
       "options": [
-        {
-          "value": "",
-          "label": "before content"
-        },
-        {
-          "value": "<md:order-1",
-          "label": "after content"
-        }
+        { "value": "", "label": "before content" },
+        { "value": "<md:order-1", "label": "after content" }
       ],
       "default": ""
     },
@@ -124,14 +113,8 @@
       "id": "image_loading",
       "label": "Image loading",
       "options": [
-        {
-          "value": "lazy",
-          "label": "lazy"
-        },
-        {
-          "value": "eager",
-          "label": "eager"
-        }
+        { "value": "lazy", "label": "lazy" },
+        { "value": "eager", "label": "eager" }
       ],
       "default": "lazy"
     }
@@ -156,22 +139,10 @@
           "id": "style",
           "label": "Style",
           "options": [
-            {
-              "value": "action",
-              "label": "Action (primary)"
-            },
-            {
-              "value": "action-secondary",
-              "label": "Action (secondary)"
-            },
-            {
-              "value": "ghost",
-              "label": "Ghost button"
-            },
-            {
-              "value": "hashtag",
-              "label": "Hashtag"
-            }
+            { "value": "action", "label": "Action (primary)" },
+            { "value": "action-secondary", "label": "Action (secondary)" },
+            { "value": "ghost", "label": "Ghost button" },
+            { "value": "hashtag", "label": "Hashtag" }
           ],
           "default": "action"
         }
@@ -179,9 +150,7 @@
     }
   ],
   "disabled_on": {
-    "groups": [
-      "*"
-    ]
+    "groups": ["*"]
   },
   "presets": [
     {
