@@ -29,7 +29,8 @@
         "content": "<h1>Ear-Care You Can See</h1><p>Limited edition EZEAR now available.</p>",
         "content_alignment": "left",
         "min_height": 70,
-        "bg_opacity": 0.2
+        "image": "shopify://shop_images/4_cba4dba2-5001-4ad6-8dae-5dc997bd9f0d.jpg",
+        "bg_opacity": 0
       }
     },
     "collection-list": {

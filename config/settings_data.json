@@ -9,8 +9,8 @@
  */
 {
   "current": {
-    "font_heading": "serif",
-    "font_body": "sans-serif",
+    "font_heading": "inter_n4",
+    "font_body": "inter_n4",
     "anim_emoji": "👍",
     "border_radius": 0,
     "fully_rounded_buttons": false,
