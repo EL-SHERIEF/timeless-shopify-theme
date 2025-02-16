@@ -10,6 +10,11 @@
         {%- else -%}
           {{ 'product-1' | placeholder_svg_tag }}
         {%- endif -%}
+        {%- if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
+          <span class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+            50% OFF
+          </span>
+        {%- endif -%}
       </div>
     </figure>
 
@@ -27,5 +32,5 @@
     {% endif %}
   </div>
 
-  <div class="text-xs text-gray-500">Quantity: {{ product.selected_or_first_available_variant.inventory_quantity | default: 0 }}</div>
+  <div class="text-xs text-gray-500">ONLY {{ product.selected_or_first_available_variant.inventory_quantity | default: 0 }} LEFT</div>
 </li>
