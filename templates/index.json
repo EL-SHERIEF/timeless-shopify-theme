@@ -9,6 +9,15 @@
  */
 {
   "sections": {
+    "promotional_banners_Jdapkk": {
+      "type": "promotional-banners",
+      "settings": {
+        "image_one": "shopify://shop_images/4_4c5d22bc-ad78-4253-ac79-de12a50085d7.png",
+        "heading_one": "Gift it to your loved ones and get 50% OFF!",
+        "image_two": "shopify://shop_images/image00001_50dfe672-a852-4efb-9b5d-a5d38c678618.webp",
+        "heading_two": "Limited Time Offer: 20% OFF + FREE SHIPPING!"
+      }
+    },
     "heading": {
       "type": "heading",
       "blocks": {
@@ -116,6 +125,7 @@
         "color_scheme": "default",
         "content": "<h2>Heading</h2><p>A description goes here.</p>",
         "content_alignment": "left",
+        "video_url": "",
         "image_position_desktop": "",
         "image_position_mobile": "",
         "image_loading": "lazy"
@@ -143,6 +153,7 @@
   "order": [
     "heading",
     "collection-list",
+    "promotional_banners_Jdapkk",
     "text-and-icon",
     "hero",
     "article-list",
