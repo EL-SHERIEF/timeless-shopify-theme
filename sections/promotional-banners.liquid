@@ -1,0 +1,85 @@
+{% schema %}
+{
+  "name": "Promotional Banners",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_one",
+      "label": "First Banner Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_one",
+      "label": "First Banner Heading",
+      "default": "Gift it to your loved ones and get 50% OFF!"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_two",
+      "label": "Second Banner Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_two",
+      "label": "Second Banner Heading",
+      "default": "Limited Time Offer: 20% OFF + FREE SHIPPING!"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promotional Banners"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="promo-banners">
+  <div class="promo-banner">
+    <img src="{{ section.settings.image_one | img_url: 'master' }}" alt="Promotion 1">
+    <h2>{{ section.settings.heading_one }}</h2>
+  </div>
+  <div class="promo-banner">
+    <img src="{{ section.settings.image_two | img_url: 'master' }}" alt="Promotion 2">
+    <h2>{{ section.settings.heading_two }}</h2>
+  </div>
+</div>
+
+<style>
+  .promo-banners {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .promo-banner {
+    flex: 1 1 calc(50% - 20px);
+    position: relative;
+    text-align: center;
+    max-width: 100%;
+  }
+  .promo-banner img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .promo-banner h2 {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .promo-banners {
+      flex-direction: column;
+    }
+    .promo-banner {
+      flex: 1 1 100%;
+    }
+    .promo-banner h2 {
+      font-size: 1.2rem;
+      top: 5%;
+      left: 5%;
+    }
+  }
+</style>
