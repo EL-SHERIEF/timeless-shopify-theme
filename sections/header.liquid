@@ -1,6 +1,6 @@
 <input id="header-menu-opened" type="checkbox" hidden>
 
-<div class="header backdrop-blur-sm text-[var(--ink)] bg-[var(--canvas-opacity)] transition-[background-color,box-shadow] [&:is(:hover,:has([open]))]:bg-[var(--canvas)] <sm:overflow-hidden">
+<div class="header backdrop-blur-sm text-white bg-transparent transition-[background-color,box-shadow] [&:is(:hover,:has([open]))]:bg-[var(--canvas)] <sm:overflow-hidden">
   <div class="header-grid section grid gap-x-4 py-0 sm:pt-4 md:pt-0 <sm:max-h-[100dvh] <sm:overflow-x-hidden <sm:overflow-y-auto">
     <div style="grid-area: menu;" class="flex items-center justify-center gap-4 sticky top-0 z-[1] <sm:py-4 transition-colors">
       {%- if section.settings.logo -%}
@@ -33,7 +33,7 @@
   }
 
   .is-scrolled .header {
-    @apply shadow-lg;
+    @apply shadow-lg bg-[var(--canvas)] text-[var(--ink)];
   }
 
   @screen sm {
@@ -133,77 +133,3 @@
     })
   })()
 </script>
-
-{% schema %}
-{
-  "name": "Header",
-  "tag": "header",
-  "class": "sticky z-10 top-0 transition-all",
-  "settings": [
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Color scheme"
-    },
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Logo"
-    },
-    {
-      "type": "link_list",
-      "id": "menu",
-      "label": "Menu",
-      "default": "main-menu"
-    },
-    {
-      "type": "header",
-      "content": "Cart"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_cart_item_count",
-      "label": "Show cart item count",
-      "info": "Disable to show a dot indicator when the cart has items",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_cart_subtotal",
-      "label": "Show cart subtotal",
-      "default": true
-    }
-  ],
-  "blocks": [
-    {
-      "type": "megamenu",
-      "name": "Mega menu",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "info": "Makes the linklist with the same title a full-width megamenu"
-        }
-      ]
-    },
-    {
-      "type": "featured_link",
-      "name": "Featured link",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "info": "Makes megamenu links with the same title stylized"
-        },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}
