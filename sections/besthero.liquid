@@ -1,6 +1,162 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Hero Section 2",
+  "settings": [
+    {
+      "type": "url",
+      "id": "background_video_url",
+      "label": "Background Video URL"
+    },
+    {
+      "type": "text",
+      "id": "hero_heading",
+      "label": "Hero Heading",
+      "default": "Ear-Care You Can See"
+    },
+    {
+      "type": "text",
+      "id": "hero_text",
+      "label": "Hero Text",
+      "default": "Limited edition jerseys and accessories now available."
+    },
+    {
+      "type": "text",
+      "id": "marquee_slot_1",
+      "label": "Marquee Slot 1",
+      "default": "LIMITED AMOUNT"
+    },
+    {
+      "type": "text",
+      "id": "marquee_slot_2",
+      "label": "Marquee Slot 2",
+      "default": "FREE SHIPPING!!"
+    },
+    {
+      "type": "text",
+      "id": "marquee_slot_3",
+      "label": "Marquee Slot 3",
+      "default": "ORDER NOW!!"
+    },
+    {
+      "type": "text",
+      "id": "marquee_slot_4",
+      "label": "Marquee Slot 4",
+      "default": "LIMITED AMOUNT"
+    },
+    {
+      "type": "text",
+      "id": "marquee_slot_5",
+      "label": "Marquee Slot 5",
+      "default": "FREE SHIPPING!!"
+    },
+    {
+      "type": "text",
+      "id": "marquee_slot_6",
+      "label": "Marquee Slot 6",
+      "default": "ORDER NOW!!"
+    },
+    {
+      "type": "text",
+      "id": "marquee_slot_7",
+      "label": "Marquee Slot 7",
+      "default": "LIMITED AMOUNT"
+    },
+    {
+      "type": "text",
+      "id": "marquee_slot_8",
+      "label": "Marquee Slot 8",
+      "default": "FREE SHIPPING!!"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Section with Video and Marquee"
+    }
+  ]
+}
 {% endschema %}
+
+<div class="hero-section">
+  <video autoplay loop muted playsinline class="hero-background-video">
+    <source src="{{ section.settings.background_video_url }}" type="video/mp4">
+  </video>
+  <div class="hero-content">
+    <h1>{{ section.settings.hero_heading }}</h1>
+    <p>{{ section.settings.hero_text }}</p>
+  </div>
+  <div class="marquee-wrapper">
+    <div class="marquee">
+      <span>{{ section.settings.marquee_slot_1 }}</span>
+      <span>{{ section.settings.marquee_slot_2 }}</span>
+      <span>{{ section.settings.marquee_slot_3 }}</span>
+      <span>{{ section.settings.marquee_slot_4 }}</span>
+      <span>{{ section.settings.marquee_slot_5 }}</span>
+      <span>{{ section.settings.marquee_slot_6 }}</span>
+      <span>{{ section.settings.marquee_slot_7 }}</span>
+      <span>{{ section.settings.marquee_slot_8 }}</span>
+    </div>
+  </div>
+</div>
+
+<style>
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+}
+.hero-background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  font-size: 1.5rem;
+}
+.marquee-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.8);
+}
+.marquee {
+  display: flex;
+  gap: 20px;
+  white-space: nowrap;
+  animation: marquee-scroll 20s linear infinite;
+}
+.marquee span {
+  font-size: 1rem;
+  color: white;
+}
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+</style>
