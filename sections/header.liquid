@@ -27,13 +27,18 @@
 <style type="text/tailwindcss">
   #shopify-section-{{ section.id }} {
     --canvas: {{ section.settings.color_scheme.settings.canvas }};
-    --canvas-opacity: transparent;
-    --canvas-subdued: white;
+    --canvas-opacity: {{ section.settings.color_scheme.settings.canvas }}cc;
+    --canvas-subdued: {{ section.settings.color_scheme.settings.canvas_subdued }};
     --ink: {{ section.settings.color_scheme.settings.ink }};
   }
 
+  .header {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+
   .is-scrolled .header {
-    @apply shadow-lg;
+    @apply bg-[var(--canvas-opacity)] shadow-lg;
   }
 
   @screen sm {
@@ -83,7 +88,6 @@
     }
   }
 </style>
-
 <script defer>
   (function(){
     const header = document.querySelector('#shopify-section-{{ section.id }}')
