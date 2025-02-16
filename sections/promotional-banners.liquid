@@ -3,9 +3,9 @@
   "name": "Promotional Banners",
   "settings": [
     {
-      "type": "image_picker",
-      "id": "image_one",
-      "label": "First Banner Image"
+      "type": "url",
+      "id": "video_one",
+      "label": "First Banner Video URL"
     },
     {
       "type": "text",
@@ -14,9 +14,9 @@
       "default": "Gift it to your loved ones and get 50% OFF!"
     },
     {
-      "type": "image_picker",
-      "id": "image_two",
-      "label": "Second Banner Image"
+      "type": "url",
+      "id": "video_two",
+      "label": "Second Banner Video URL"
     },
     {
       "type": "text",
@@ -35,18 +35,24 @@
 
 <div class="promo-banners">
   <div class="promo-banner">
-    <img src="{{ section.settings.image_one | img_url: 'master' }}" alt="Promotion 1">
+    <video autoplay loop muted playsinline>
+      <source src="{{ section.settings.video_one }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
     <h2>{{ section.settings.heading_one }}</h2>
   </div>
   <div class="promo-banner">
-    <img src="{{ section.settings.image_two | img_url: 'master' }}" alt="Promotion 2">
+    <video autoplay loop muted playsinline>
+      <source src="{{ section.settings.video_two }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
     <h2>{{ section.settings.heading_two }}</h2>
   </div>
 </div>
 
 <style>
   .promo-banners {
-        margin:15px;
+    margin: 15px;
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
@@ -55,13 +61,13 @@
   .promo-banner {
     flex: 1 1 calc(50% - 20px);
     position: relative;
-    height:400px;
+    height: 400px;
     text-align: center;
     overflow: hidden;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  .promo-banner img {
+  .promo-banner video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -73,7 +79,7 @@
     left: 5%;
     color: white;
     font-size: 1.5rem;
-    z-index:3;
+    z-index: 3;
     font-weight: bold;
   }
   .promo-banner:hover {
