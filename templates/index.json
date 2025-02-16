@@ -24,9 +24,15 @@
       "block_order": [
         "0b40575d-b6b3-46fa-84b6-10cfa7683275"
       ],
+      "custom_css": [
+        "h1 {color: white;}",
+        "p {color: white;}",
+        ".action {background: white; border-radius: 11px; color: black;}",
+        ".text-center.bg-center.bg-cover{margin:}"
+      ],
       "settings": {
         "color_scheme": "default",
-        "content": "<h1>Ear-Care You Can See</h1><p>Limited edition EZEAR now available.</p>",
+        "content": "<h1>Ear-Care You Can See</h1><p><strong>This is the ultimate beauty event you don't want to miss! Get a fantastic 46%discount on the Secretreza Redline Laser.</strong></p>",
         "content_alignment": "left",
         "min_height": 70,
         "image": "shopify://shop_images/4_cba4dba2-5001-4ad6-8dae-5dc997bd9f0d.jpg",
@@ -46,6 +52,7 @@
       "block_order": [
         "product_K4UNVa"
       ],
+      "custom_css": [],
       "settings": {
         "color_scheme": "default",
         "content": "<h2>The EZEAR™ Ear Cleaner</h2>",
