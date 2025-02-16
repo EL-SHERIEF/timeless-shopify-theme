@@ -1,0 +1,102 @@
+{% schema %}
+{
+  "name": "Features Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "feature_one_text",
+      "label": "Feature One Text",
+      "default": "FREE SHIPPING"
+    },
+    {
+      "type": "html",
+      "id": "feature_one_icon",
+      "label": "Feature One SVG Icon"
+    },
+    {
+      "type": "text",
+      "id": "feature_two_text",
+      "label": "Feature Two Text",
+      "default": "TRY IT RISK-FREE FOR 90 DAYS"
+    },
+    {
+      "type": "html",
+      "id": "feature_two_icon",
+      "label": "Feature Two SVG Icon"
+    },
+    {
+      "type": "text",
+      "id": "feature_three_text",
+      "label": "Feature Three Text",
+      "default": "FDA CLEARED"
+    },
+    {
+      "type": "html",
+      "id": "feature_three_icon",
+      "label": "Feature Three SVG Icon"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Features Section"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="features-section">
+  <div class="feature">
+    <div class="feature-icon">{{ section.settings.feature_one_icon }}</div>
+    <h1 class="feature-text">{{ section.settings.feature_one_text }}</h1>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">{{ section.settings.feature_two_icon }}</div>
+    <h1 class="feature-text">{{ section.settings.feature_two_text }}</h1>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">{{ section.settings.feature_three_icon }}</div>
+    <h1 class="feature-text">{{ section.settings.feature_three_text }}</h1>
+  </div>
+</div>
+
+<style>
+  .features-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #fff0f3;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .feature {
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+  }
+  .feature-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  .feature-text {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: bold;
+  }
+  @media (max-width: 768px) {
+    .features-section {
+      flex-direction: column;
+    }
+  }
+</style>
