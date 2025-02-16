@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "heading": {
@@ -6,7 +15,7 @@
         "0b40575d-b6b3-46fa-84b6-10cfa7683275": {
           "type": "cta",
           "settings": {
-            "url": "shopify:\/\/collections",
+            "url": "shopify://collections",
             "label": "Shop now",
             "style": "action"
           }
@@ -17,7 +26,7 @@
       ],
       "settings": {
         "color_scheme": "default",
-        "content": "<h1>Heading<\/h1><p>A description goes here.<\/p>",
+        "content": "<h1>Ear-Care You Can See</h1><p>Limited edition EZEAR now available.</p>",
         "content_alignment": "left",
         "min_height": 70,
         "bg_opacity": 0.2
@@ -26,33 +35,19 @@
     "collection-list": {
       "type": "resource-list",
       "blocks": {
-        "template--collection-list-collection-1": {
-          "type": "collection",
+        "product_K4UNVa": {
+          "type": "product",
           "settings": {
-            "collection": ""
-          }
-        },
-        "template--collection-list-collection-2": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "template--collection-list-collection-3": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
+            "product": ""
           }
         }
       },
       "block_order": [
-        "template--collection-list-collection-1",
-        "template--collection-list-collection-2",
-        "template--collection-list-collection-3"
+        "product_K4UNVa"
       ],
       "settings": {
         "color_scheme": "default",
-        "content": "<h2>Featured collections<\/h2>",
+        "content": "<h2>The EZEAR™ Ear Cleaner</h2>",
         "columns": 3,
         "sale_badge_enabled": true
       }
@@ -63,22 +58,19 @@
         "template--20591287501082__text-and-icon-item-1": {
           "type": "item",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/img.icons8.png",
-            "content": "<h3>Heading<\/h3><p>A description goes here.<\/p>"
+            "content": "<h3>Heading</h3><p>A description goes here.</p>"
           }
         },
         "template--20591287501082__text-and-icon-item-2": {
           "type": "item",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/img.icons8-1.png",
-            "content": "<h3>Heading<\/h3><p>A description goes here.<\/p>"
+            "content": "<h3>Heading</h3><p>A description goes here.</p>"
           }
         },
         "template--20591287501082__text-and-icon-item-3": {
           "type": "item",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/img.icons8-2.png",
-            "content": "<h3>Heading<\/h3><p>A description goes here.<\/p>"
+            "content": "<h3>Heading</h3><p>A description goes here.</p>"
           }
         }
       },
@@ -90,7 +82,7 @@
       "settings": {
         "color_scheme": "default",
         "color_items": false,
-        "content": "<h2>Why choose us?<\/h2>",
+        "content": "<h2>Why choose us?</h2>",
         "content_align": "left",
         "columns": 3,
         "icon_height": 60
@@ -102,7 +94,7 @@
         "template--20591287501082__hero-cta-1": {
           "type": "cta",
           "settings": {
-            "url": "shopify:\/\/collections",
+            "url": "shopify://collections",
             "label": "Shop now",
             "style": "action"
           }
@@ -113,7 +105,7 @@
       ],
       "settings": {
         "color_scheme": "default",
-        "content": "<h2>Heading<\/h2><p>A description goes here.<\/p>",
+        "content": "<h2>Heading</h2><p>A description goes here.</p>",
         "content_alignment": "left",
         "image_position_desktop": "",
         "image_position_mobile": "",
@@ -125,7 +117,7 @@
       "settings": {
         "color_scheme": "scheme-6d4c9e72-9abe-4e91-aafe-ae5cffbf63eb",
         "blog": "news",
-        "content": "<h2>Read our blog<\/h2>",
+        "content": "<h2>Read our blog</h2>",
         "grid_item_size": 240,
         "page_size": 4
       }
@@ -134,7 +126,7 @@
       "type": "newsletter-form",
       "settings": {
         "color_scheme": "gray",
-        "content": "<h2>Newsletter<\/h2>",
+        "content": "<h2>Newsletter</h2>",
         "submit_label": "Subscribe"
       }
     }

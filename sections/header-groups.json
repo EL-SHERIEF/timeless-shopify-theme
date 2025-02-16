@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "Header",
   "type": "header",
@@ -9,15 +18,14 @@
           "type": "static",
           "settings": {
             "color_scheme": "dark",
-            "content": "<p>Announcement goes here.<\/p>"
+            "content": "<p>Announcement goes here.</p>"
           }
         }
       },
       "block_order": [
         "850afe85-78d1-4942-a892-37c1cd5df2db"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "header": {
       "type": "header",
@@ -33,8 +41,8 @@
         "d752493f-8893-4048-aab0-ec763a3057d5"
       ],
       "settings": {
-        "color_scheme": "scheme-6d4c9e72-9abe-4e91-aafe-ae5cffbf63eb",
-        "logo": "{{ shop.brand.logo }}",
+        "color_scheme": "default",
+        "logo": "shopify://shop_images/BLACK_VECTOR.svg",
         "menu": "main-menu",
         "show_cart_item_count": false,
         "show_cart_subtotal": true
