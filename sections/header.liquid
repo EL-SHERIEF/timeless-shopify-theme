@@ -5,8 +5,8 @@
     <div style="grid-area: logo;" class="flex items-center gap-4 sticky top-0 z-[1] <sm:py-4 transition-colors">
       {%- if section.settings.logo -%}
         {{ section.settings.logo
-          | image_url: width: 200
-          | image_tag: class: 'max-w-[160px] max-h-[160px] object-contain', loading: 'lazy'
+          | image_url: width: 300
+          | image_tag: class: 'max-w-[100px] max-h-[80px] object-contain', loading: 'lazy'
           | link_to: routes.root_url
         }}
       {%- else -%}
