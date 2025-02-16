@@ -66,67 +66,6 @@
         "heading_two": "Limited Time Offer: 20% OFF + FREE SHIPPING!"
       }
     },
-    "text-and-icon": {
-      "type": "text-and-icon",
-      "blocks": {
-        "template--20591287501082__text-and-icon-item-1": {
-          "type": "item",
-          "settings": {
-            "content": "<h3>Heading</h3><p>A description goes here.</p>"
-          }
-        },
-        "template--20591287501082__text-and-icon-item-2": {
-          "type": "item",
-          "settings": {
-            "content": "<h3>Heading</h3><p>A description goes here.</p>"
-          }
-        },
-        "template--20591287501082__text-and-icon-item-3": {
-          "type": "item",
-          "settings": {
-            "content": "<h3>Heading</h3><p>A description goes here.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "template--20591287501082__text-and-icon-item-1",
-        "template--20591287501082__text-and-icon-item-2",
-        "template--20591287501082__text-and-icon-item-3"
-      ],
-      "settings": {
-        "color_scheme": "default",
-        "color_items": false,
-        "content": "<h2>Why choose us?</h2>",
-        "content_align": "left",
-        "columns": 3,
-        "icon_height": 60
-      }
-    },
-    "hero": {
-      "type": "hero",
-      "blocks": {
-        "template--20591287501082__hero-cta-1": {
-          "type": "cta",
-          "settings": {
-            "url": "shopify://collections",
-            "label": "Shop now",
-            "style": "action"
-          }
-        }
-      },
-      "block_order": [
-        "template--20591287501082__hero-cta-1"
-      ],
-      "settings": {
-        "color_scheme": "default",
-        "content": "<h2>Heading</h2><p>A description goes here.</p>",
-        "content_alignment": "left",
-        "video_url": "",
-        "image_position_desktop": "",
-        "image_position_mobile": "",
-        "image_loading": "lazy"
-      }
-    },
     "article-list": {
       "type": "article-list",
       "settings": {
@@ -151,8 +90,6 @@
     "collection-list",
     "features_section_ygAAJd",
     "promotional_banners_Jdapkk",
-    "text-and-icon",
-    "hero",
     "article-list",
     "newsletter-form"
   ]
