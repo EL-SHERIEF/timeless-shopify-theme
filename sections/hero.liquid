@@ -10,39 +10,26 @@
 -%}
 
 <div class="grid md:grid-cols-2 items-center overflow-hidden" style="border-radius: var(--border-radius);">
-  {% if section.settings.video_url %}
-    <video
-      class="w-full h-auto"
-      style="border-radius: var(--border-radius);"
-      autoplay
-      loop
-      muted
-      playsinline
-    >
-      <source src="{{ section.settings.video_url }}" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  {% else %}
-    <figure
-      class="overflow-hidden {{ section.settings.image_position_desktop }} {{ section.settings.image_position_mobile }}"
-      style="border-radius: var(--border-radius);"
-    >
-      {%- if section.settings.image -%}
-        {{ section.settings.image
-          | image_url: width: 1000
-          | image_tag: loading: section.settings.image_loading
-        }}
-      {%- else -%}
-        {{ 'image' | placeholder_svg_tag }}
-      {%- endif -%}
-    </figure>
-  {% endif %}
+  <figure
+    class="overflow-hidden {{ section.settings.image_position_desktop }} {{ section.settings.image_position_mobile }}"
+    style="border-radius: var(--border-radius);"
+  >
+    {%- if section.settings.image -%}
+      {{ section.settings.image
+        | image_url: width: 1000
+        | image_tag: loading: section.settings.image_loading
+      }}
+    {%- else -%}
+      {{ 'image' | placeholder_svg_tag }}
+    {%- endif -%}
+  </figure>
 
   <div
     class="py-8 px-4 sm:px-8 rte {{ content_class }}"
     style="text-wrap: balance;"
   >
     {{ section.settings.content }}
+    {% render 'cta-list' %}
   </div>
 </div>
 
@@ -76,20 +63,24 @@
       "id": "content_alignment",
       "label": "Content alignment",
       "options": [
-        { "value": "left", "label": "left" },
-        { "value": "center", "label": "center" },
-        { "value": "right", "label": "right" }
+        {
+          "value": "left",
+          "label": "left"
+        },
+        {
+          "value": "center",
+          "label": "center"
+        },
+        {
+          "value": "right",
+          "label": "right"
+        }
       ],
       "default": "left"
     },
     {
       "type": "header",
-      "content": "Media"
-    },
-    {
-      "type": "url",
-      "id": "video_url",
-      "label": "Video URL"
+      "content": "Image"
     },
     {
       "type": "image_picker",
@@ -101,8 +92,14 @@
       "id": "image_position_desktop",
       "label": "Desktop position",
       "options": [
-        { "value": "", "label": "left" },
-        { "value": "md:order-1", "label": "right" }
+        {
+          "value": "",
+          "label": "left"
+        },
+        {
+          "value": "md:order-1",
+          "label": "right"
+        }
       ],
       "default": ""
     },
@@ -111,8 +108,14 @@
       "id": "image_position_mobile",
       "label": "Mobile position",
       "options": [
-        { "value": "", "label": "before content" },
-        { "value": "<md:order-1", "label": "after content" }
+        {
+          "value": "",
+          "label": "before content"
+        },
+        {
+          "value": "<md:order-1",
+          "label": "after content"
+        }
       ],
       "default": ""
     },
@@ -121,15 +124,77 @@
       "id": "image_loading",
       "label": "Image loading",
       "options": [
-        { "value": "lazy", "label": "lazy" },
-        { "value": "eager", "label": "eager" }
+        {
+          "value": "lazy",
+          "label": "lazy"
+        },
+        {
+          "value": "eager",
+          "label": "eager"
+        }
       ],
       "default": "lazy"
     }
   ],
+  "blocks": [
+    {
+      "type": "cta",
+      "name": "Call-to-action",
+      "settings": [
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Style",
+          "options": [
+            {
+              "value": "action",
+              "label": "Action (primary)"
+            },
+            {
+              "value": "action-secondary",
+              "label": "Action (secondary)"
+            },
+            {
+              "value": "ghost",
+              "label": "Ghost button"
+            },
+            {
+              "value": "hashtag",
+              "label": "Hashtag"
+            }
+          ],
+          "default": "action"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": [
+      "*"
+    ]
+  },
   "presets": [
     {
-      "name": "Hero"
+      "name": "Hero",
+      "blocks": [
+        {
+          "type": "cta",
+          "settings": {
+            "label": "Shop now",
+            "style": "action"
+          }
+        }
+      ]
     }
   ]
 }
