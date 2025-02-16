@@ -25,8 +25,8 @@
         "0b40575d-b6b3-46fa-84b6-10cfa7683275"
       ],
       "custom_css": [
-        "h1 {color: white; font-size: 3rem; font-weight: 900 !important;}",
-        "p {font-weight: 300; color: white;}",
+        "h1 {color: white; font-size: 3rem; font-weight: 900 !important; text-shadow:0 0 40px black;}",
+        "p {font-weight: 300; text-shadow:0 0 40px black; color: white;}",
         ".action {background: white; border-radius: 12px; color: black;}",
         ".text-center.bg-center.bg-cover {margin: 12px; border-radius: 10px;}",
         ".justify-center {justify-content: end;}"
