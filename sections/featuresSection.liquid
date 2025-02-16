@@ -1,6 +1,100 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Text and Icon Section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Text and icon"
+    },
+    {
+      "type": "text",
+      "id": "item_one_text",
+      "label": "First Item Text",
+      "default": "Item"
+    },
+    {
+      "type": "html",
+      "id": "item_one_icon",
+      "label": "First Item SVG Icon"
+    },
+    {
+      "type": "text",
+      "id": "item_two_text",
+      "label": "Second Item Text",
+      "default": "Item"
+    },
+    {
+      "type": "html",
+      "id": "item_two_icon",
+      "label": "Second Item SVG Icon"
+    },
+    {
+      "type": "text",
+      "id": "item_three_text",
+      "label": "Third Item Text",
+      "default": "Item"
+    },
+    {
+      "type": "html",
+      "id": "item_three_icon",
+      "label": "Third Item SVG Icon"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text and Icon Section"
+    }
+  ]
+}
 {% endschema %}
+
+<div class="text-icon-section">
+  <div class="text-icon-item">
+    <div class="icon">{{ section.settings.item_one_icon }}</div>
+    <h1>{{ section.settings.item_one_text }}</h1>
+  </div>
+  <div class="text-icon-item">
+    <div class="icon">{{ section.settings.item_two_icon }}</div>
+    <h1>{{ section.settings.item_two_text }}</h1>
+  </div>
+  <div class="text-icon-item">
+    <div class="icon">{{ section.settings.item_three_icon }}</div>
+    <h1>{{ section.settings.item_three_text }}</h1>
+  </div>
+</div>
+
+<style>
+  .text-icon-section {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 0;
+    background-color: transparent;
+  }
+
+  .text-icon-item {
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .text-icon-item .icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 10px;
+  }
+
+  .text-icon-item h1 {
+    font-size: 1.2rem;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+
+  .text-icon-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-icon-item:hover h1 {
+    color: #007BFF;
+  }
+</style>
