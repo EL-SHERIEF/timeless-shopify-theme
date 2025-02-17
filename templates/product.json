@@ -127,12 +127,32 @@
         "time2": "5-8 weeks",
         "time3": "8-12+ weeks"
       }
+    },
+    "faq_list_zJVwkM": {
+      "type": "faq-list",
+      "blocks": {
+        "faq_RFcz3G": {
+          "type": "faq",
+          "settings": {
+            "question": "What does this do section do?",
+            "answer": "<p>This section lists FAQs and corresponding answers in an accordion style.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_RFcz3G"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "content": "<h2>Frequently Asked Questions</h2>"
+      }
     }
   },
   "order": [
     "besthero_3TKt8U",
     "product-form",
     "product-recommendations",
-    "scrollertimeframe_Kibrkm"
+    "scrollertimeframe_Kibrkm",
+    "faq_list_zJVwkM"
   ]
 }
