@@ -1,8 +1,78 @@
+{% schema %}
+{
+  "name": "Comparison Table",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<h2>Why Choose Us?</h2>"
+    },
+    {
+      "type": "richtext",
+      "id": "subcontent",
+      "label": "Subcontent",
+      "default": "<p>Compare our features against the competition.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Feature Name"
+        },
+        {
+          "type": "checkbox",
+          "id": "ours",
+          "label": "We have this feature"
+        },
+        {
+          "type": "checkbox",
+          "id": "competitor",
+          "label": "Competitor has this feature"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": [
+      "*"
+    ]
+  },
+  "presets": [
+    {
+      "name": "Comparison Table",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "name": "Fast Shipping",
+            "ours": true,
+            "competitor": false
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
 <section class="py-24 bg-white">
   <div class="container mx-auto px-6">
     <div class="text-center mb-10">
-      <h2 class="text-3xl font-bold">Why Choose Us?</h2>
-      <p class="mt-4 text-gray-600">Compare our features against the competition.</p>
+      <h2 class="text-3xl font-bold">{{ section.settings.content }}</h2>
+      <p class="mt-4 text-gray-600">{{ section.settings.subcontent }}</p>
     </div>
     
     <div class="overflow-x-auto">
@@ -15,18 +85,18 @@
           </tr>
         </thead>
         <tbody>
-          {% for feature in shop.metafields.comparison_table.features %}
+          {% for block in section.blocks %}
           <tr class="border">
-            <td class="p-4 border font-medium">{{ feature.name }}</td>
+            <td class="p-4 border font-medium">{{ block.settings.name }}</td>
             <td class="p-4 border text-center">
-              {% if feature.ours %}
+              {% if block.settings.ours %}
                 <span class="text-green-600 font-bold">✔ Yes</span>
               {% else %}
                 <span class="text-red-500">✖ No</span>
               {% endif %}
             </td>
             <td class="p-4 border text-center">
-              {% if feature.competitor %}
+              {% if block.settings.competitor %}
                 <span class="text-green-600 font-bold">✔ Yes</span>
               {% else %}
                 <span class="text-red-500">✖ No</span>
@@ -39,3 +109,12 @@
     </div>
   </div>
 </section>
+
+<style type="text/tailwindcss">
+  #shopify-section-{{ section.id }} {
+    --canvas: {{ section.settings.color_scheme.settings.canvas }};
+    --ink: {{ section.settings.color_scheme.settings.ink }};
+    --stroke: {{ section.settings.color_scheme.settings.stroke }};
+    @apply bg-[var(--canvas)] text-[var(--ink)];
+  }
+</style>
