@@ -131,32 +131,56 @@
     "faq_list_zJVwkM": {
       "type": "faq-list",
       "blocks": {
-        "faq_RFcz3G": {
+        "faq_rCgPw8": {
           "type": "faq",
           "settings": {
-            "question": "When will my hair be gone ?",
-            "answer": "<p>Redline is certified to deliver long-term hair removal after 12 uses (6-12 weeks, depending on your treatment plan), but chances are you’ll start to see a serious reduction in hair growth after just 3 or 4</p>"
+            "question": "When will I start seeing results?",
+            "answer": "<p>Most customers notice a reduction of hair growth after just 3-4 uses, then complete results after 12 uses.<br/><br/>This can vary depending on the coarseness of your hair and the area you’re treating, but you’ll notice your hair gradually grow back slower and sparser with each treatment.</p>"
           }
         },
-        "faq_VffqCp": {
+        "faq_B49Bg4": {
           "type": "faq",
           "settings": {
-            "question": "",
-            "answer": ""
+            "question": "Are results permanent?",
+            "answer": "<p>Yes!<br/><br/>Redline leads to a permanent reduction of hair growth. That being said, results vary from person to person</p>"
           }
         },
         "faq_kUNGMk": {
           "type": "faq",
           "settings": {
-            "question": "",
-            "answer": ""
+            "question": "Is this SAFE ?",
+            "answer": "<p>Short answer? Yep! <br/><br/>Laser is a popular, well-researched option for safe and effective long-term hair removal. Secretreza itself is FDA-cleared for safe at-home use. </p>"
+          }
+        },
+        "faq_PaC6YV": {
+          "type": "faq",
+          "settings": {
+            "question": "Does it hurt ?",
+            "answer": "<p>Nope! </p><p>Unlike other types of hair removal, Laserly™  is basically painless – no clenching your teeth, nicking your knee, or ripping anything off.</p>"
+          }
+        },
+        "faq_VffqCp": {
+          "type": "faq",
+          "settings": {
+            "question": "Hair-free, guaranteed",
+            "answer": "<p>We offer 90-day returns and a 5-years warranty on all Redline purchases. So go ahead – try it out, see how it works for you, and if you’re dissatisfied for any reason we’ll refund you in full.</p>"
+          }
+        },
+        "faq_Dp8FGU": {
+          "type": "faq",
+          "settings": {
+            "question": "What if it doesn’t work for me?",
+            "answer": "<p>We’ll give you your money back! (Yes, even if you’ve been using it for weeks.) </p><p>All LASERLY™ handsets come with a 100% satisfaction money-back guarantee for 90 days – if it doesn’t work for you, send it back & we’ll refund you in full.</p>"
           }
         }
       },
       "block_order": [
-        "faq_RFcz3G",
+        "faq_rCgPw8",
+        "faq_B49Bg4",
+        "faq_kUNGMk",
+        "faq_PaC6YV",
         "faq_VffqCp",
-        "faq_kUNGMk"
+        "faq_Dp8FGU"
       ],
       "settings": {
         "color_scheme": "",
