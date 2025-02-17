@@ -13,97 +13,85 @@
       {% for block in section.blocks %}
         {% if block.type == 'testimonial' %}
           <div class="swiper-slide testimonial-slide">
-            <div class="testimonial-content">
-              <div class="testimonial-image">
-                {% if block.settings.image %}
-                  <img 
-                    src="{{ block.settings.image | img_url: 'medium' }}" 
-                    alt="{{ block.settings.name | escape }}">
-                {% endif %}
-              </div>
-              <div class="testimonial-text">
-                {% if block.settings.quote %}
-                  <p class="testimonial-quote">
-                    "{{ block.settings.quote }}"
-                  </p>
-                {% endif %}
-                {% if block.settings.name %}
-                  <span class="testimonial-author">
-                    - {{ block.settings.name }}
-                  </span>
-                {% endif %}
-              </div>
+            <div class="testimonial-image">
+              {% if block.settings.image %}
+                <img 
+                  src="{{ block.settings.image | img_url: 'medium' }}" 
+                  alt="{{ block.settings.name | escape }}"
+                >
+              {% endif %}
             </div>
+            
+            <!-- Example static heading or you can make it dynamic if you want -->
+          <div class="content">
+
+            <h3 class="testimonial-title">#1 BEST PURCHASE!</h3>
+            
+            {% if block.settings.quote %}
+              <p class="testimonial-quote">
+                {{ block.settings.quote }}
+              </p>
+            {% endif %}
+            
+            {% if block.settings.name %}
+              <span class="testimonial-author">
+                {{ block.settings.name }}
+              </span>
+            {% endif %}
+          </div>
           </div>
         {% endif %}
       {% endfor %}
     </div>
-  </div>
 
+    <!-- Pagination (dots) -->
+  </div>
 </section>
 
 <!-- Initialize Swiper -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var swiper = new Swiper('.testimonials-carousel', {
-      effect: 'slide',
+      effect: 'fade',
       loop: true,
       autoplay: {
         delay: {{ section.settings.autoplay_speed | default: 3000 }},
       },
-      speed: 800, // transition speed
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
+      speed: 600, // transition speed
     });
   });
 </script>
 
 <style>
   /* Testimonials Section Wrapper */
-  #testimonials-{{ section.id }}.testimonials-section {
-    padding: 60px 20px;
-    background: #f7f7f7;
+  #testimonials-{{ section.id }}.testimonials-section { /* example light background */
+    padding: 50px 20px;
     text-align: center;
   }
 
   .testimonials-section .heading {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 50px;
-    color: #333;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 40px;
   }
-
+.testimonials-section .content{display:flex;flex-direction:column;justify-content:center;align-items:center;}
   /* Swiper slide wrapper */
   .testimonial-slide {
-    background: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    padding: 30px;
+    background:white;
     display: flex;
+    flex-direction: row;gap:30px;
     align-items: center;
     justify-content: center;
-  }
-
-  .testimonial-content {
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
-    align-items: center;
+    padding: 0 20px;
   }
 
   /* Circular masked image */
   .testimonial-image {
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     overflow: hidden;
+    margin-bottom: 20px;
     position: relative;
   }
 
@@ -114,46 +102,35 @@
     display: block;
   }
 
-  .testimonial-text {
-    max-width: 500px;
+  .testimonial-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
   }
 
   .testimonial-quote {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
-    color: #555;
-    margin-bottom: 15px;
-    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto 15px;
+    color: #444;
   }
 
   .testimonial-author {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 5px;
   }
 
-  /* Pagination (dots) styling */
+  /* Swiper pagination (dots) styling */
   .swiper-pagination-bullet {
-    background: #ccc;
+    background: #ccc !important;
     opacity: 1;
-    transition: background 0.3s ease;
   }
-
   .swiper-pagination-bullet-active {
-    background: #007bff;
+    background: #333 !important;
   }
-
-  /* Navigation arrows */
-  .swiper-button-next, .swiper-button-prev {
-    color: #007bff;
-    font-size: 24px;
-    transition: color 0.3s ease;
-  }
-
-  .swiper-button-next:hover, .swiper-button-prev:hover {
-    color: #0056b3;
-  }
-
 </style>
 
 {% schema %}
@@ -164,7 +141,7 @@
       "type": "text",
       "id": "heading",
       "label": "Section Heading",
-      "default": "Hear From Our Happy Clients!"
+      "default": "Hear From Them!"
     },
     {
       "type": "number",
