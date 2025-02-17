@@ -92,14 +92,22 @@
       <p>{{ section.settings.box_3_content }}</p>
     </div>
   </div>
+
+  <div class="time">
+     <h3>{{ section.settings.time1 }}</h3>
+     <h3>{{ section.settings.time2 }}</h3>
+     <h3>{{ section.settings.time3 }}</h3>
+  </div>
 </section>
 
 <style>
+  .time{
+    display:flex;flex-direction:row;width:100%;justify-content:space-between;align-items:center;
+    padding:0 10px
+  }
 .hair-timeline-section {
-  background-color: #FFF5F7;
   padding: 50px 20px;
   text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 .section-heading {
