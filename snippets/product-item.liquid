@@ -5,7 +5,7 @@
         {%- if product.featured_image -%}
           {{ product.featured_image
             | image_url: width: 500, height: 500
-            | image_tag: class: 'w-full group-hover:scale-110 transition-transform duration-500 ease-out', loading: 'lazy'
+            | image_tag: class: 'w-full group-hover:scale-110 transition-transform duration-500 ease-out bg-[#f9f6fe]', loading: 'lazy'
           }}
         {%- else -%}
           {{ 'product-1' | placeholder_svg_tag }}
