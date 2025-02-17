@@ -134,17 +134,34 @@
         "faq_RFcz3G": {
           "type": "faq",
           "settings": {
-            "question": "What does this do section do?",
-            "answer": "<p>This section lists FAQs and corresponding answers in an accordion style.</p>"
+            "question": "When will my hair be gone ?",
+            "answer": "<p>Redline is certified to deliver long-term hair removal after 12 uses (6-12 weeks, depending on your treatment plan), but chances are you’ll start to see a serious reduction in hair growth after just 3 or 4</p>"
+          }
+        },
+        "faq_VffqCp": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        },
+        "faq_kUNGMk": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
           }
         }
       },
       "block_order": [
-        "faq_RFcz3G"
+        "faq_RFcz3G",
+        "faq_VffqCp",
+        "faq_kUNGMk"
       ],
       "settings": {
         "color_scheme": "",
-        "content": "<h2>Frequently Asked Questions</h2>"
+        "content": "<h2>Frequently Asked Questions</h2>",
+        "subcontent": "<p>no bro</p>"
       }
     }
   },
