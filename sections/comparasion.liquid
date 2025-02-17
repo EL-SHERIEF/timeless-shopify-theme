@@ -1,84 +1,48 @@
-{% schema %}
-{
-  "name": "Comparison Table",
-  "tag": "section",
-  "class": "section",
-  "settings": [
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Color scheme"
-    },
-    {
-      "type": "richtext",
-      "id": "content",
-      "label": "Content",
-      "default": "<h2>Why Choose Us?</h2>"
-    },
-    {
-      "type": "richtext",
-      "id": "subcontent",
-      "label": "Subcontent",
-      "default": "<p>Compare our features against the competition.</p>"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "feature",
-      "name": "Feature",
-      "settings": [
-        { "type": "text", "id": "name", "label": "Feature Name" },
-        { "type": "checkbox", "id": "ours", "label": "We have this feature" },
-        { "type": "checkbox", "id": "competitor_1", "label": "Competitor 1 has this feature" },
-        { "type": "checkbox", "id": "competitor_2", "label": "Competitor 2 has this feature" },
-        { "type": "checkbox", "id": "competitor_3", "label": "Competitor 3 has this feature" },
-        { "type": "richtext", "id": "reason_ours", "label": "Reason (Ours)", "default": "<p>Why we have this feature.</p>" },
-        { "type": "richtext", "id": "reason_competitor_1", "label": "Reason (Competitor 1)", "default": "<p>Competitor 1's reason.</p>" },
-        { "type": "richtext", "id": "reason_competitor_2", "label": "Reason (Competitor 2)", "default": "<p>Competitor 2's reason.</p>" },
-        { "type": "richtext", "id": "reason_competitor_3", "label": "Reason (Competitor 3)", "default": "<p>Competitor 3's reason.</p>" }
-      ]
-    }
-  ]
-}
-{% endschema %}
-
-<section class="py-24 bg-gray-100">
+<section class="py-24 bg-{{ section.settings.color_scheme }}-50">
   <div class="container mx-auto px-6">
-    <div class="text-center mb-10">
-      <h2 class="text-3xl font-bold text-gray-900">{{ section.settings.content }}</h2>
-      <p class="mt-4 text-gray-700">{{ section.settings.subcontent }}</p>
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-{{ section.settings.color_scheme }}-900 mb-4">{{ section.settings.content }}</h2>
+      <p class="text-lg text-{{ section.settings.color_scheme }}-700">{{ section.settings.subcontent }}</p>
     </div>
     
     <div class="w-full">
-      <div class="flex border-b">
+      <!-- Tabs Navigation -->
+      <div class="flex justify-center mb-8">
         {% assign tabs = "ours,competitor_1,competitor_2,competitor_3" | split: "," %}
         {% for tab in tabs %}
-        <button class="tab-button py-3 px-4 text-gray-800 border-b-2 border-transparent focus:border-gray-800" onclick="openTab(event, 'tab-{{ tab }}')">{{ tab | replace: "_", " " | capitalize }}</button>
+          <button
+            class="tab-button py-3 px-6 mx-2 text-lg font-semibold text-{{ section.settings.color_scheme }}-700 hover:text-{{ section.settings.color_scheme }}-900 border-b-2 border-transparent hover:border-{{ section.settings.color_scheme }}-500 transition-all duration-300"
+            onclick="openTab(event, 'tab-{{ tab }}')"
+          >
+            {{ tab | replace: "_", " " | capitalize }}
+          </button>
         {% endfor %}
       </div>
       
+      <!-- Tabs Content -->
       {% for tab in tabs %}
-      <div id="tab-{{ tab }}" class="tab-content p-4 hidden">
-        <table class="w-full bg-white shadow-md rounded-lg overflow-hidden">
-          <thead class="bg-gray-800 text-white">
-            <tr>
-              <th class="py-4 px-6 text-left">Feature</th>
-              <th class="py-4 px-6 text-center">Available</th>
-              <th class="py-4 px-6 text-left">Reason</th>
-            </tr>
-          </thead>
-          <tbody>
+        <div id="tab-{{ tab }}" class="tab-content p-6 bg-white rounded-lg shadow-lg hidden">
+          <div class="space-y-4">
             {% for block in section.blocks %}
-            {% assign reason_key = "reason_" | append: tab %}
-            <tr class="border-b">
-              <td class="py-4 px-6 font-semibold">{{ block.settings.name }}</td>
-              <td class="py-4 px-6 text-center">{% if block.settings[tab] %}<span class="text-green-500 text-2xl">✔</span>{% else %}<span class="text-red-500 text-2xl">✖</span>{% endif %}</td>
-              <td class="py-4 px-6 text-gray-600">{{ block.settings[reason_key] }}</td>
-            </tr>
+              {% assign reason_key = "reason_" | append: tab %}
+              <div class="feature-card p-6 bg-{{ section.settings.color_scheme }}-50 rounded-lg hover:shadow-md transition-shadow duration-300">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-xl font-semibold text-{{ section.settings.color_scheme }}-900">{{ block.settings.name }}</h3>
+                  <div class="flex items-center space-x-4">
+                    <span class="text-{{ section.settings.color_scheme }}-700">
+                      {% if block.settings[tab] %}
+                        <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                      {% else %}
+                        <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                      {% endif %}
+                    </span>
+                  </div>
+                </div>
+                <p class="mt-4 text-{{ section.settings.color_scheme }}-600">{{ block.settings[reason_key] }}</p>
+              </div>
             {% endfor %}
-          </tbody>
-        </table>
-      </div>
+          </div>
+        </div>
       {% endfor %}
     </div>
   </div>
@@ -86,13 +50,28 @@
 
 <script>
   function openTab(event, tabId) {
+    // Hide all tab content
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+    
+    // Remove active state from all buttons
+    document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('border-{{ section.settings.color_scheme }}-500', 'text-{{ section.settings.color_scheme }}-900'));
+    
+    // Show the selected tab content
     document.getElementById(tabId).classList.remove('hidden');
-    document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('border-gray-800'));
-    event.currentTarget.classList.add('border-gray-800');
+    
+    // Add active state to the clicked button
+    event.currentTarget.classList.add('border-{{ section.settings.color_scheme }}-500', 'text-{{ section.settings.color_scheme }}-900');
   }
+
+  // Open the first tab by default
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('.tab-button').click();
+  });
 </script>
 
 <style>
   .hidden { display: none; }
+  .feature-card:hover {
+    transform: translateY(-2px);
+  }
 </style>
