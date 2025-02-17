@@ -21,7 +21,7 @@
           {%- when 'buy-button' -%}
             <div>
               <button
-                class="action w-full {% unless block.settings.full_width %}{% endunless %}"
+                class="action w-full bg-black {% unless block.settings.full_width %}{% endunless %}"
                 type="submit"
                 {% unless product.available or product.selected_or_first_available_variant.availabile %}disabled{% endunless %}
               >
