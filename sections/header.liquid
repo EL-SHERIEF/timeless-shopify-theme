@@ -24,6 +24,14 @@
           <li><a href="#">Contact</a></li>
         </ul>
       </nav>
+      <style>
+        .mobile-menu {
+          display: none;
+        }
+        #mobile-menu-toggle:checked + .mobile-menu {
+          display: block;
+        }
+      </style>
 
       <label for="header-menu-opened" class="with-icon ml-auto sm:hidden" aria-label="Toggle header menu">
         <span class="toggle-open">{% render 'icon' with 'mobile-hamburger' %}</span>
