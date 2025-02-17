@@ -1,11 +1,11 @@
 <li class="grid gap-2">
   <a class="group grid gap-2" href="{{ product.url | within: collection }}">
     <figure class="relative">
-      <div class="bg-white overflow-hidden rounded-2xl">
+      <div class="bg-white overflow-hidden rounded-2xl  bg-[#f9f6fe]">
         {%- if product.featured_image -%}
           {{ product.featured_image
             | image_url: width: 500, height: 500
-            | image_tag: class: 'w-full group-hover:scale-110 transition-transform duration-500 ease-out bg-[#f9f6fe]', loading: 'lazy'
+            | image_tag: class: 'w-full group-hover:scale-110 transition-transform duration-500 ease-out z-2', loading: 'lazy'
           }}
         {%- else -%}
           {{ 'product-1' | placeholder_svg_tag }}
@@ -15,7 +15,7 @@
             50% OFF
           </span>
         {%- endif -%}
-         {{ shop.name | link_to: routes.root_url, class: 'decorname text-xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2' }}
+         {{ shop.name | link_to: routes.root_url, class: 'decorname text-xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-1' }}
         <span class="absolute top-2 left-2 bg-black text-white text-xs font-bold px-2 py-1 rounded-[9px]">
           ONLY {{ product.selected_or_first_available_variant.inventory_quantity | default: 0 }} LEFT
         </span>
