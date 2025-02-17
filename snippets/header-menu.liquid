@@ -9,7 +9,7 @@
       {%- when 1 or 2 -%}
         {%- if megamenus contains link.title -%}
           {% comment %} Megamenu {% endcomment %}
-          <details class="megamenu with-accordion hidden">
+          <details class="megamenu with-accordion">
             <summary class="with-icon w-full sm:h-full items-center py-1 sm:py-3 [&_svg]:rotate-90">
               <span class="grow">{{ link.title }}</span>
               {% render 'icon' with 'chevron-right' %}
