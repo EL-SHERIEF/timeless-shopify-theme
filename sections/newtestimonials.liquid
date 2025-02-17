@@ -1,5 +1,5 @@
 {% comment %}
-  TESTIMONIALS CAROUSEL SECTION WITH INFINITE MARQUEE AND STAR RATING
+  TESTIMONIALS CAROUSEL SECTION
 {% endcomment %}
 
 <section id="testimonials-{{ section.id }}" class="testimonials-section">
@@ -7,103 +7,129 @@
     <h2 class="heading">{{ section.settings.heading }}</h2>
   {% endif %}
 
-  <div class="marquee-container">
-    <div class="marquee">
+  <!-- Swiper container -->
+  <div class="swiper-container testimonials-carousel">
+    <div class="swiper-wrapper">
       {% for block in section.blocks %}
         {% if block.type == 'testimonial' %}
-          <div class="testimonial-slide">
+          <div class="swiper-slide testimonial-slide">
             <div class="testimonial-image">
               {% if block.settings.image %}
                 <img 
                   src="{{ block.settings.image | img_url: 'medium' }}" 
-                  alt="{{ block.settings.name | escape }}">
+                  alt="{{ block.settings.name | escape }}"
+                >
               {% endif %}
             </div>
-            <div class="content">
-              <h3 class="testimonial-title">#1 BEST PURCHASE!</h3>
-              {% if block.settings.quote %}
-                <p class="testimonial-quote">{{ block.settings.quote }}</p>
-              {% endif %}
-              {% if block.settings.name %}
-                <span class="testimonial-author">{{ block.settings.name }}</span>
-              {% endif %}
-              {% if block.settings.stars %}
-                <div class="star-rating">
-                  {% for i in (1..block.settings.stars) %}
-                    &#9733;
-                  {% endfor %}
-                </div>
-              {% endif %}
-            </div>
+            
+            <!-- Example static heading or you can make it dynamic if you want -->
+          <div class="content">
+
+            <h3 class="testimonial-title">#1 BEST PURCHASE!</h3>
+            
+            {% if block.settings.quote %}
+              <p class="testimonial-quote">
+                {{ block.settings.quote }}
+              </p>
+            {% endif %}
+            
+            {% if block.settings.name %}
+              <span class="testimonial-author">
+                {{ block.settings.name }}
+              </span>
+            {% endif %}
+          </div>
           </div>
         {% endif %}
       {% endfor %}
     </div>
+
+    <!-- Pagination (dots) -->
   </div>
 </section>
 
+<!-- Initialize Swiper -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var swiper = new Swiper('.testimonials-carousel', {
+      effect: 'fade',
+      loop: true,
+      autoplay: {
+        delay: {{ section.settings.autoplay_speed | default: 3000 }},
+      },
+      speed: 600, // transition speed
+    });
+  });
+</script>
+
 <style>
-  .testimonials-section {
+  /* Testimonials Section Wrapper */
+  #testimonials-{{ section.id }}.testimonials-section { /* example light background */
     padding: 50px 20px;
     text-align: center;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
   }
-  
-  .marquee-container {
-    width: 100%;
-    overflow: hidden;
+
+  .testimonials-section .heading {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 40px;
   }
-  
-  .marquee {
-    display: flex;
-    gap: 30px;
-    animation: marquee 15s linear infinite;
-  }
-  
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-  }
-  
+.testimonials-section .content{display:flex;flex-direction:column;justify-content:center;align-items:center;}
+  /* Swiper slide wrapper */
   .testimonial-slide {
+    background:white;
     display: flex;
+    flex-direction: row;gap:30px;
     align-items: center;
-    gap: 30px;
-    flex: 0 0 auto;
+    justify-content: center;
+    padding: 0 20px;
   }
-  
+
+  /* Circular masked image */
   .testimonial-image {
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
   }
-  
+
   .testimonial-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
   }
-  
+
   .testimonial-title {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
   }
-  
+
   .testimonial-quote {
     font-size: 16px;
-    color: #555;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 15px;
+    color: #444;
   }
-  
+
   .testimonial-author {
-    font-weight: bold;
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 5px;
   }
-  
-  .star-rating {
-    font-size: 20px;
-    color: gold;
+
+  /* Swiper pagination (dots) styling */
+  .swiper-pagination-bullet {
+    background: #ccc !important;
+    opacity: 1;
+  }
+  .swiper-pagination-bullet-active {
+    background: #333 !important;
   }
 </style>
 
@@ -116,6 +142,12 @@
       "id": "heading",
       "label": "Section Heading",
       "default": "Hear From Them!"
+    },
+    {
+      "type": "number",
+      "id": "autoplay_speed",
+      "label": "Autoplay Speed (ms)",
+      "default": 3000
     }
   ],
   "blocks": [
@@ -137,12 +169,6 @@
           "type": "text",
           "id": "quote",
           "label": "Quote"
-        },
-        {
-          "type": "number",
-          "id": "stars",
-          "label": "Star Rating",
-          "default": 5,
         }
       ]
     }
