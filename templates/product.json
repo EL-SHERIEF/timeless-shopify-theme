@@ -191,17 +191,26 @@
     "comparasion_MdLmCK": {
       "type": "comparasion",
       "blocks": {
-        "card_ETLYt3": {
-          "type": "card",
+        "pricing_card_NyWbXp": {
+          "type": "pricing_card",
           "settings": {
             "title": "Laserly™",
             "features": "Feature 1, Feature 2, Feature 3",
-            "card_image": "shopify://shop_images/secretreza-redline-edition-laser-hair-removal-health-beauty-176.webp"
+            "all_checked": true
+          }
+        },
+        "pricing_card_yxBAKP": {
+          "type": "pricing_card",
+          "settings": {
+            "title": "CLINICAL LASER",
+            "features": "Feature 1, Feature 2, Feature 3",
+            "all_checked": false
           }
         }
       },
       "block_order": [
-        "card_ETLYt3"
+        "pricing_card_NyWbXp",
+        "pricing_card_yxBAKP"
       ],
       "settings": {
         "heading": "Pricing",
