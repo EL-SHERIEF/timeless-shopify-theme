@@ -88,8 +88,8 @@
   function openTab(event, tabId) {
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
     document.getElementById(tabId).classList.remove('hidden');
-    document.querySelectorAll('.tab-button').forEach(button => button.classList.remove(' bg-black text-white'));
-    event.currentTarget.classList.add(' bg-black text-white');
+    document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('bg-black text-white'));
+    event.currentTarget.classList.add('bg-black text-white');
   }
 </script>
 
