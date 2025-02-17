@@ -15,7 +15,7 @@
             50% OFF
           </span>
         {%- endif -%}
-         {{ shop.name | link_to: routes.root_url, class: 'decorname text-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-1' }}
+         {{ shop.name | link_to: routes.root_url, class: 'decorname text-3xl font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-1' }}
         <span class="absolute top-2 left-2 bg-black text-white text-xs font-bold px-2 py-1 rounded-[9px]">
           ONLY {{ product.selected_or_first_available_variant.inventory_quantity | default: 0 }} LEFT
         </span>
