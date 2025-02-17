@@ -53,12 +53,12 @@
       <div class="flex border-b">
         {% assign tabs = "ours,competitor_1,competitor_2,competitor_3" | split: "," %}
         {% for tab in tabs %}
-        <button class="tab-button py-3 px-4 text-gray-800 border-b-2 border-transparent {% if forloop.first %}border-gray-800{% endif %}" onclick="openTab(event, 'tab-{{ tab }}')">{{ tab | replace: "_", " " | capitalize }}</button>
+        <button class="tab-button py-3 px-4 text-gray-800 border-b-2 border-transparent focus:border-gray-800" onclick="openTab(event, 'tab-{{ tab }}')">{{ tab | replace: "_", " " | capitalize }}</button>
         {% endfor %}
       </div>
       
       {% for tab in tabs %}
-      <div id="tab-{{ tab }}" class="tab-content p-4 {% if forloop.first %}{% else %}hidden{% endif %}">
+      <div id="tab-{{ tab }}" class="tab-content p-4 hidden">
         <table class="w-full bg-white shadow-md rounded-lg overflow-hidden">
           <thead class="bg-gray-800 text-white">
             <tr>
