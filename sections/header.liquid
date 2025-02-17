@@ -13,7 +13,7 @@
         {{ shop.name | link_to: routes.root_url, class: 'font-heading' }}
       {%- endif -%}
 
-      <label for="header-menu-opened" class="with-icon ml-auto flex" aria-label="Toggle header menu">
+      <label for="header-menu-opened" class="with-icon ml-auto sm:hidden " aria-label="Toggle header menu">
         <span class="toggle-open">{% render 'icon' with 'mobile-hamburger' %}</span>
         <span class="toggle-close">{% render 'icon' with 'cancel' %}</span>
       </label>
