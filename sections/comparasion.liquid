@@ -12,7 +12,7 @@
       "type": "textarea",
       "id": "description",
       "label": "Description",
-      "default": "Free forever. Upgrade for unlimited tasks, better security, and exclusive features."
+      "default": "Choose the best plan for your needs."
     }
   ],
   "blocks": [
@@ -24,37 +24,18 @@
           "type": "text",
           "id": "title",
           "label": "Title",
-          "default": "Free"
-        },
-        {
-          "type": "number",
-          "id": "monthly_price",
-          "label": "Monthly Price",
-          "default": 0
-        },
-        {
-          "type": "text",
-          "id": "button_text",
-          "label": "Button Text",
-          "default": "Get started for free"
-        },
-        {
-          "type": "checkbox",
-          "id": "popular",
-          "label": "Mark as Popular",
-          "default": false
-        },
-        {
-          "type": "checkbox",
-          "id": "inverse",
-          "label": "Dark Theme",
-          "default": false
+          "default": "Basic Plan"
         },
         {
           "type": "textarea",
           "id": "features",
           "label": "Features (comma separated)",
-          "default": "Up to 5 project members, Unlimited tasks and projects, 2GB storage"
+          "default": "Feature 1, Feature 2, Feature 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Floating Image"
         }
       ]
     }
@@ -69,9 +50,6 @@
         },
         {
           "type": "pricing_card"
-        },
-        {
-          "type": "pricing_card"
         }
       ]
     }
@@ -80,35 +58,20 @@
 {% endschema %}
 
 <section class="py-24 bg-white">
-  <div class="container">
-    <div class="section-heading">
-      <h2 class="section-title">{{ section.settings.heading }}</h2>
-      <p class="section-des mt-5">{{ section.settings.description }}</p>
+  <div class="container mx-auto px-6">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold">{{ section.settings.heading }}</h2>
+      <p class="mt-4 text-gray-600">{{ section.settings.description }}</p>
     </div>
-    <div class="flex flex-col gap-6 items-center mt-10 lg:flex-row lg:items-end lg:justify-center">
+    <div class="grid gap-6 mt-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {% for block in section.blocks %}
         {% assign features = block.settings.features | split: "," %}
-        <div class="p-10 rounded-3xl border border-[#F1F1F1] shadow-lg max-w-xs w-full {% if block.settings.inverse %} bg-black text-white {% endif %}">
-          <div class="flex justify-between">
-            <h3 class="text-lg font-bold {% if block.settings.inverse %} text-white/60 {% else %} text-black/50 {% endif %}">
-              {{ block.settings.title }}
-            </h3>
-            {% if block.settings.popular %}
-              <div class="inline-flex text-sm px-4 py-1.5 rounded-xl border border-white/20 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text font-medium">
-                Popular
-              </div>
-            {% endif %}
-          </div>
-          <div class="flex items-baseline gap-1 mt-[30px]">
-            <span class="text-4xl font-bold tracking-tighter leading-none">${{ block.settings.monthly_price }}</span>
-            <span class="tracking-tight font-bold text-black/50">/month</span>
-          </div>
-          <button class="btn btn-primary w-full mt-[30px] {% if block.settings.inverse %} bg-white text-black {% endif %}">
-            {{ block.settings.button_text }}
-          </button>
-          <ul class="flex flex-col gap-5 mt-8">
+        <div class="relative p-8 rounded-xl backdrop-blur-lg bg-white/30 shadow-lg border border-white/20">
+          <img src="{{ block.settings.card_image | img_url: 'medium' }}" alt="{{ block.settings.title }}" class="absolute -top-6 right-6 w-16 h-16 object-cover rounded-full shadow-md">
+          <h3 class="text-xl font-semibold">{{ block.settings.title }}</h3>
+          <ul class="mt-4 space-y-2 text-gray-700">
             {% for feature in features %}
-              <li class="text-sm flex items-center gap-4">
+              <li class="flex items-center gap-2">
                 ✅ <span>{{ feature | strip }}</span>
               </li>
             {% endfor %}
