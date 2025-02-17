@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="canonical" href="{{ canonical_url }}">
   {%- unless settings.font_heading.system? and settings.font_body.system? -%}
     <link rel="preconnect" href="//fonts.shopifycdn.com" crossorigin>
@@ -41,5 +42,6 @@
       echo content_for_additional_checkout_buttons
     endif
   %}
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>s
 </body>
 </html>
