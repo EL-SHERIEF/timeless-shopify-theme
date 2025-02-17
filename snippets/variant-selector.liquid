@@ -1,6 +1,5 @@
 {%- if product.has_only_default_variant -%}
   <input name="id" value="{{ product.selected_or_first_available_variant.id }}" hidden>
-
 {%- else -%}
   <select name="id" hidden>
     {%- for variant in product.variants -%}
@@ -17,33 +16,45 @@
     {%- endfor -%}
   </select>
 
-  <div class="grid gap-8 p-3 bg-canvas-subdued">
+  <div class="grid gap-6 p-4 bg-white shadow-md rounded-xl">
     {%- for product_option in product.options_with_values -%}
-      <fieldset class="-mt-5 {% unless forloop.last %}pb-3 border-b border-stroke{% endunless %}">
-        <legend class="technical text-xs mb-1">{{ product_option.name }}</legend>
+      <fieldset class="mb-4">
+        <legend class="text-sm font-medium text-gray-700 mb-2">{{ product_option.name }}</legend>
 
-        <div class="flex flex-wrap gap-3">
+        <div class="flex flex-wrap gap-2">
           {%- for value in product_option.values -%}
-            <label class="group">
+            <label class="cursor-pointer">
               <input
-                class="product-options"
+                class="hidden peer"
                 name="option{{ product_option.position }}"
                 value="{{ value }}"
                 type="radio"
                 {% if product_option.selected or forloop.index0 == 0 %}checked{% endif %}
               />
-              <span class="group-hover:underline decoration-dashed decoration-ink-subdued">{{ value }}</span>
+              <span class="block px-4 py-2 rounded-full text-sm border border-gray-300 transition-all peer-checked:bg-blue-500 peer-checked:text-white peer-checked:border-blue-500 hover:bg-blue-50">
+                {{ value }}
+              </span>
             </label>
           {%- endfor -%}
         </div>
       </fieldset>
-
-      {%- unless forloop.last -%}
-        {%- if show_dividers -%}
-          <hr>
-        {%- endif -%}
-      {%- endunless -%}
     {%- endfor -%}
   </div>
-
 {%- endif -%}
+
+<style>
+  fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  label span {
+    transition: all 0.2s ease;
+  }
+
+  label:hover span {
+    background-color: rgba(0, 122, 255, 0.1);
+    border-color: rgba(0, 122, 255, 0.4);
+  }
+</style>
