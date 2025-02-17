@@ -3,6 +3,7 @@
 {%- if section.settings.content -%}
   <header class="mb-8 text-center rte">
     {{ section.settings.content }}
+     {{ section.settings.subcontent }}
   </header>
 {%- endif -%}
 
@@ -46,6 +47,12 @@
       "id": "content",
       "label": "Content",
       "default": "<h2>Frequently Asked Questions</h2>"
+    },
+     {
+      "type": "richtext",
+      "id": "subcontent",
+      "label": "sub Content",
+      "default": "<p>no bro</p>"
     }
   ],
   "blocks": [
