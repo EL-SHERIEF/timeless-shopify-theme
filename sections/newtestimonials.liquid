@@ -13,43 +13,39 @@
       {% for block in section.blocks %}
         {% if block.type == 'testimonial' %}
           <div class="swiper-slide testimonial-slide">
-            <div class="testimonial-card">
-              <div class="testimonial-content">
-                <div class="testimonial-image">
-                  {% if block.settings.image %}
-                    <img 
-                      src="{{ block.settings.image | img_url: 'medium' }}" 
-                      alt="{{ block.settings.name | escape }}"
-                    >
-                  {% endif %}
-                </div>
-                
-                <!-- Example static heading or you can make it dynamic if you want -->
-              <div class="content">
-
-                <h3 class="testimonial-title">#1 BEST PURCHASE!</h3>
-                
-                {% if block.settings.quote %}
-                  <p class="testimonial-quote">
-                    {{ block.settings.quote }}
-                  </p>
-                {% endif %}
-                
-                {% if block.settings.name %}
-                  <span class="testimonial-author">
-                    {{ block.settings.name }}
-                  </span>
-                {% endif %}
-              </div>
-              </div>
-              <div class="star-selector">
-                <span class="star" data-value="1">★</span>
-                <span class="star" data-value="2">★</span>
-                <span class="star" data-value="3">★</span>
-                <span class="star" data-value="4">★</span>
-                <span class="star" data-value="5">★</span>
-              </div>
+            <div class="testimonial-image">
+              {% if block.settings.image %}
+                <img 
+                  src="{{ block.settings.image | img_url: 'medium' }}" 
+                  alt="{{ block.settings.name | escape }}"
+                >
+              {% endif %}
             </div>
+            
+            <!-- Example static heading or you can make it dynamic if you want -->
+          <div class="content">
+
+            <h3 class="testimonial-title">#1 BEST PURCHASE!</h3>
+            
+            {% if block.settings.quote %}
+              <p class="testimonial-quote">
+                {{ block.settings.quote }}
+              </p>
+            {% endif %}
+            
+            {% if block.settings.name %}
+              <span class="testimonial-author">
+                {{ block.settings.name }}
+              </span>
+            {% endif %}
+            
+            <div class="testimonial-stars">
+              {% assign stars = block.settings.rating | plus: 0 %}
+              {% for star in (1..5) %}
+                <span class="star{% if star <= stars %} filled{% endif %}">&#9733;</span>
+              {% endfor %}
+            </div>
+          </div>
           </div>
         {% endif %}
       {% endfor %}
@@ -134,6 +130,19 @@
     margin-top: 5px;
   }
 
+  .testimonial-stars {
+    margin-top: 10px;
+  }
+
+  .testimonial-stars .star {
+    font-size: 16px;
+    color: #ccc;
+  }
+
+  .testimonial-stars .star.filled {
+    color: #ffcc00;
+  }
+
   /* Swiper pagination (dots) styling */
   .swiper-pagination-bullet {
     background: #ccc !important;
@@ -141,28 +150,6 @@
   }
   .swiper-pagination-bullet-active {
     background: #333 !important;
-  }
-
-  .testimonial-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .testimonial-content {
-    margin-bottom: 20px;
-  }
-
-  .star-selector {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .star {
-    font-size: 24px;
-    color: #ccc;
-    cursor: pointer;
   }
 </style>
 
@@ -202,6 +189,11 @@
           "type": "text",
           "id": "quote",
           "label": "Quote"
+        },
+        {
+          "type": "number",
+          "id": "rating",
+          "label": "Rating (1-5)",
         }
       ]
     }
