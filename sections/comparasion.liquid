@@ -53,7 +53,7 @@
       <div class="flex border-b">
         {% assign tabs = "ours,competitor_1,competitor_2,competitor_3" | split: "," %}
         {% for tab in tabs %}
-        <button class="tab-button py-3 px-4 text-gray-800 bg-black/10 focus:border-gray-800" onclick="openTab(event, 'tab-{{ tab }}')">{{ tab | replace: "_", " " | capitalize }}</button>
+        <button class="tab-button py-3 px-4 text-gray-800 bg-black/10 focus:border-gray-800 mx-2 rounded-xl" onclick="openTab(event, 'tab-{{ tab }}')">{{ tab | replace: "_", " " | capitalize }}</button>
         {% endfor %}
       </div>
       
