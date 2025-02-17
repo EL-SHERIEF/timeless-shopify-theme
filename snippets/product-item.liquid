@@ -26,7 +26,7 @@
 
   <div class="text-sm sm:text-sm text-gray-600">
     <span>
-      <strong class="text-xl text-gray-900">{{ product.price_min | default: 0 | money }}</strong>
+      <strong class="text-sm text-gray-900">{{ product.price_min | default: 0 | money }}</strong>
     </span>
     {% if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price %}
       <span class="ml-2 text-gray-400 line-through">
