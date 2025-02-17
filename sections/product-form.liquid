@@ -81,7 +81,7 @@
             </label>
 
           {%- when 'richtext' -%}
-            <div class="rte empty:hidden text-xs {{ block.settings.tailwind }}">{{ block.settings.richtext }}</div>
+            <div class="rte empty:hidden  {{ block.settings.tailwind }}">{{ block.settings.richtext }}</div>
 
           {%- when 'sku' -%}
             {%- assign sku = product.selected_or_first_available_variant.sku -%}
