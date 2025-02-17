@@ -46,7 +46,7 @@
 
           {%- when 'divider' -%}
             {%- if block.settings.label != blank -%}
-              <h2 class="divider technical text-xs my-4">
+              <h2 class="divider technical text-xs mt-4">
                 <span>{{ block.settings.label }}</span>
               </h2>
             {%- else -%}
@@ -124,8 +124,7 @@
     min-width: 0;
     @apply self-start sm:sticky-below-header;
   }
-label:hover span{
-  background-color:transparent!important}
+
   .product-thumbs .swiper-slide {
     @apply relative transition-transform;
   }
