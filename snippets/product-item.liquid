@@ -7,7 +7,7 @@
             | image_url: width: 500, height: 500
             | image_tag: class: 'w-full group-hover:scale-110 transition-transform duration-500 ease-out z-2', loading: 'lazy'
           }}
-                   {{ shop.name | link_to: routes.root_url, class: 'decorname text-3xl font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10' }}
+                   {{ shop.name | link_to: routes.root_url, class: 'decorname text-3xl font-bold absolute top-10 left-1/2 -translate-x-1/2 -z-10' }}
 
         {%- else -%}
           {{ 'product-1' | placeholder_svg_tag }}
