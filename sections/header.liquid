@@ -13,6 +13,18 @@
         {{ shop.name | link_to: routes.root_url, class: 'font-heading' }}
       {%- endif -%}
 
+<img src="path/to/logo.png" alt="Logo" class="logo" />
+      <input id="mobile-menu-toggle" type="checkbox" class="hidden" />
+      <label for="mobile-menu-toggle" class="cursor-pointer lg:hidden">Menu</label>
+      <nav class="mobile-menu hidden lg:block">
+        <ul class="flex flex-col">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
       <label for="header-menu-opened" class="with-icon ml-auto sm:hidden" aria-label="Toggle header menu">
         <span class="toggle-open">{% render 'icon' with 'mobile-hamburger' %}</span>
         <span class="toggle-close">{% render 'icon' with 'cancel' %}</span>
