@@ -191,85 +191,21 @@
     "comparasion_MdLmCK": {
       "type": "comparasion",
       "blocks": {
-        "feature_DWrNXi": {
-          "type": "feature",
+        "card_ETLYt3": {
+          "type": "card",
           "settings": {
-            "name": "Fast Shipping",
-            "ours": true,
-            "competitor": false
-          }
-        },
-        "feature_wDmxJa": {
-          "type": "feature",
-          "settings": {
-            "name": "",
-            "ours": false,
-            "competitor": false
-          }
-        },
-        "feature_7DtBkc": {
-          "type": "feature",
-          "settings": {
-            "name": "",
-            "ours": false,
-            "competitor": false
-          }
-        },
-        "feature_BQ3YQj": {
-          "type": "feature",
-          "settings": {
-            "name": "",
-            "ours": false,
-            "competitor": false
-          }
-        },
-        "feature_Npt7LV": {
-          "type": "feature",
-          "settings": {
-            "name": "",
-            "ours": false,
-            "competitor": false
-          }
-        },
-        "feature_qMmTkN": {
-          "type": "feature",
-          "settings": {
-            "name": "",
-            "ours": false,
-            "competitor": false
-          }
-        },
-        "feature_Deqig8": {
-          "type": "feature",
-          "settings": {
-            "name": "",
-            "ours": false,
-            "competitor": false
-          }
-        },
-        "feature_7N9rDg": {
-          "type": "feature",
-          "settings": {
-            "name": "",
-            "ours": false,
-            "competitor": false
+            "title": "Basic Plan",
+            "features": "Feature 1, Feature 2, Feature 3",
+            "card_image": "shopify://shop_images/secretreza-redline-edition-laser-hair-removal-health-beauty-176.webp"
           }
         }
       },
       "block_order": [
-        "feature_DWrNXi",
-        "feature_wDmxJa",
-        "feature_7DtBkc",
-        "feature_BQ3YQj",
-        "feature_Npt7LV",
-        "feature_qMmTkN",
-        "feature_Deqig8",
-        "feature_7N9rDg"
+        "card_ETLYt3"
       ],
       "settings": {
-        "color_scheme": "",
-        "content": "<h2>Why Choose Us?</h2>",
-        "subcontent": "<p>Compare our features against the competition.</p>"
+        "heading": "Pricing",
+        "description": "Choose the best plan for your needs."
       }
     }
   },
