@@ -196,6 +196,7 @@
           "settings": {
             "title": "Laserly™",
             "features": "Take care of your hair at home\n(Privacy & convenience)\n, Finish the entire treatment process in just 12 uses ( WAY cheaper )\n,Affordable one-time cost\n, Completely pain-free ( Gentle treatments)",
+            "card_image": "shopify://shop_images/secretreza-redline-edition-laser-hair-removal-health-beauty-176__1_-removebg-preview.png",
             "all_checked": true
           }
         },
@@ -204,6 +205,7 @@
           "settings": {
             "title": "Clinical Laser",
             "features": "Bring your hairy self all the way to a clinic\n, Wait 4-6 weeks between each session, \nAvg Cost: 2-3x redline's price per session (and you'll prob need 4-8+)\n,Painful especially on underarms & bikini areas",
+            "card_image": "shopify://shop_images/pngwing.com.png",
             "all_checked": false
           }
         }
