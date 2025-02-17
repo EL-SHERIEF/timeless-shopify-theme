@@ -1,6 +1,6 @@
 {% schema %}
 {
-  "name": "cards",
+  "name": "Pricing Cards",
   "settings": [
     {
       "type": "text",
@@ -17,8 +17,8 @@
   ],
   "blocks": [
     {
-      "type": "card",
-      "name": "Card",
+      "type": "pricing_card",
+      "name": "Pricing Card",
       "settings": [
         {
           "type": "text",
@@ -36,20 +36,26 @@
           "type": "image_picker",
           "id": "card_image",
           "label": "Floating Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "all_checked",
+          "label": "All Features Checked",
+          "default": false
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "cards",
+      "name": "Pricing Cards",
       "category": "Sections",
       "blocks": [
         {
-          "type": "card"
+          "type": "pricing_card"
         },
         {
-          "type": "card"
+          "type": "pricing_card"
         }
       ]
     }
@@ -72,7 +78,7 @@
           <ul class="mt-4 space-y-2 text-gray-700">
             {% for feature in features %}
               <li class="flex items-center gap-2">
-                ✅ <span>{{ feature | strip }}</span>
+                {% if block.settings.all_checked %}✅{% else %}❌{% endif %} <span>{{ feature | strip }}</span>
               </li>
             {% endfor %}
           </ul>
