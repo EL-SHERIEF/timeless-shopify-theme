@@ -84,12 +84,19 @@
 .testimonials-section .content{display:flex;flex-direction:column;justify-content:center;align-items:center;}
   /* Swiper slide wrapper */
   .testimonial-slide {
-    background:white;
+    background: white;
     display: flex;
-    flex-direction: row;gap:30px;
+    flex-direction: row;
+    gap: 30px;
     align-items: center;
     justify-content: center;
     padding: 0 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s; /* Smooth transition */
+  }
+  .testimonial-slide:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
   }
 
   /* Circular masked image */
