@@ -1,215 +1,212 @@
-{% comment %}
-  TESTIMONIALS CAROUSEL SECTION
-{% endcomment %}
+<input id="header-menu-opened" type="checkbox" hidden>
 
-<section id="testimonials-{{ section.id }}" class="testimonials-section">
-  {% if section.settings.heading != blank %}
-    <h2 class="heading">{{ section.settings.heading }}</h2>
-  {% endif %}
+<div class="header text-[var(--ink)] bg-[var(--canvas-opacity)] transition-[background-color,box-shadow] [&:is(:hover,:has([open]))]:bg-[var(--canvas)] <sm:overflow-hidden">
+  <div class="header-grid section grid gap-x-4 py-0 sm:pt-4 md:pt-0 <sm:max-h-[100dvh] <sm:overflow-x-hidden <sm:overflow-y-auto">
+    <div style="grid-area: menu;" class="flex items-center justify-center gap-4 sticky top-0 z-[1] <sm:py-4 transition-colors">
+      {%- if section.settings.logo -%}
+        {{ section.settings.logo
+          | image_url: width: 300
+          | image_tag: class: 'max-w-[80px] w-fit max-h-[60px] object-contain my-3 top-2 fixed left-1/2 transform -translate-x-1/2', loading: 'lazy'
+          | link_to: routes.root_url
+        }}
+      {%- else -%}
+        {{ shop.name | link_to: routes.root_url, class: 'font-heading' }}
+      {%- endif -%}
 
-  <!-- Swiper container -->
-  <div class="swiper-container testimonials-carousel">
-    <div class="swiper-wrapper">
-      {% for block in section.blocks %}
-        {% if block.type == 'testimonial' %}
-          <div class="swiper-slide testimonial-slide">
-            <div class="testimonial-image">
-              {% if block.settings.image %}
-                <img 
-                  src="{{ block.settings.image | img_url: 'medium' }}" 
-                  alt="{{ block.settings.name | escape }}"
-                >
-              {% endif %}
-            </div>
-            
-            <!-- Example static heading or you can make it dynamic if you want -->
-          <div class="content">
-
-            <h3 class="testimonial-title">#1 BEST PURCHASE!</h3>
-            
-            {% if block.settings.quote %}
-              <p class="testimonial-quote">
-                {{ block.settings.quote }}
-              </p>
-            {% endif %}
-            
-            {% if block.settings.name %}
-              <span class="testimonial-author">
-                {{ block.settings.name }}
-              </span>
-            {% endif %}
-            
-            <div class="testimonial-stars">
-              {% assign stars = block.settings.rating | plus: 0 %}
-              {% for star in (1..5) %}
-                <span class="star{% if star <= stars %} filled{% endif %}">&#9733;</span>
-              {% endfor %}
-            </div>
-          </div>
-          </div>
-        {% endif %}
-      {% endfor %}
+      <label for="header-menu-opened" class="with-icon ml-auto sm:hidden" aria-label="Toggle header menu">
+        <span class="toggle-open">{% render 'icon' with 'mobile-hamburger' %}</span>
+        <span class="toggle-close">{% render 'icon' with 'cancel' %}</span>
+      </label>
     </div>
 
-    <!-- Pagination (dots) -->
+    {% render 'header-menu' %}
+    {% render 'header-actions' %}
   </div>
-</section>
+</div>
 
-<!-- Initialize Swiper -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var swiper = new Swiper('.testimonials-carousel', {
-      effect: 'fade',
-      loop: true,
-      autoplay: {
-        delay: {{ section.settings.autoplay_speed | default: 3000 }},
-      },
-      speed: 600, // transition speed
-    });
-  });
-</script>
-
-<style>
-  /* Testimonials Section Wrapper */
-  #testimonials-{{ section.id }}.testimonials-section { /* example light background */
-    padding: 50px 20px;
-    text-align: center;
+<style type="text/tailwindcss">
+  #shopify-section-{{ section.id }} {
+    --canvas: {{ section.settings.color_scheme.settings.canvas }};
+    --canvas-opacity: {{ section.settings.color_scheme.settings.canvas }}cc;
+    --canvas-subdued: {{ section.settings.color_scheme.settings.canvas_subdued }};
+    --ink: {{ section.settings.color_scheme.settings.ink }};
   }
 
-  .testimonials-section .heading {
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 40px;
-  }
-.testimonials-section .content{display:flex;flex-direction:column;justify-content:center;align-items:center;}
-  /* Swiper slide wrapper */
-  .testimonial-slide {
-    background: white;
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    align-items: center;
-    justify-content: center;
-    padding: 0 20px;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: transform 0.3s; /* Smooth transition */
-  }
-  .testimonial-slide:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
+  .header {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
   }
 
-  /* Circular masked image */
-  .testimonial-image {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-bottom: 20px;
-    position: relative;
+  .is-scrolled .header {
+    @apply bg-white shadow-lg;
   }
 
-  .testimonial-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  @screen sm {
+    .megamenu-contents,
+    .dropdown-contents {
+      @apply absolute top-full bg-[var(--canvas)] rounded-b-[var(--border-radius)] shadow-xl;
+    }
   }
 
-  .testimonial-title {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 10px;
+  @screen <sm {
+    #header-menu-opened:checked ~ .header {
+      @apply bg-[var(--canvas)] shadow-xl;
+    }
+
+    #header-menu-opened:checked ~ .header [style*="logo"] {
+      @apply bg-[var(--canvas)];
+    }
+
+    #header-menu-opened:checked ~ .header .toggle-open,
+    #header-menu-opened:not(:checked) ~ .header :is(.toggle-close, [style*="actions"], [style*="menu"]) {
+      display: none;
+    }
+
+    .megamenu-contents,
+    .dropdown-contents {
+      @apply my-1 py-1 pl-3 border-l border-stroke;
+    }
   }
 
-  .testimonial-quote {
-    font-size: 16px;
-    line-height: 1.6;
-    max-width: 600px;
-    margin: 0 auto 15px;
-    color: #444;
+  .header-grid {
+    grid-template-areas: 'logo' 'menu' 'actions';
   }
 
-  .testimonial-author {
-    display: block;
-    font-weight: 700;
-    font-size: 14px;
-    margin-top: 5px;
+  @screen sm {
+    .header-grid {
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        'logo actions'
+        'menu menu';
+    }
   }
 
-  .testimonial-stars {
-    margin-top: 10px;
-  }
-
-  .testimonial-stars .star {
-    font-size: 16px;
-    color: #ccc;
-  }
-
-  .testimonial-stars .star.filled {
-    color: #ffcc00;
-  }
-
-  /* Swiper pagination (dots) styling */
-  .swiper-pagination-bullet {
-    background: #ccc !important;
-    opacity: 1;
-  }
-  .swiper-pagination-bullet-active {
-    background: #333 !important;
+  @screen md {
+    .header-grid {
+      grid-template-columns: auto 1fr auto;
+      grid-template-areas: 'logo menu actions';
+    }
   }
 </style>
+<script defer>
+  (function(){
+    const header = document.querySelector('#shopify-section-{{ section.id }}')
+
+    function setHeaderHeight() {
+      document.documentElement.style.setProperty('--header-height', `${ header.offsetHeight }px`)
+    }
+    setHeaderHeight()
+    document.addEventListener('resize', setHeaderHeight)
+
+    // header menus events
+
+    const headerMenus = header.querySelectorAll('[style*="menu"] details')
+
+    function updateHeaderMenuEvents() {
+      const { matches } = window.matchMedia('(min-width: 640px) and (hover: hover)')
+
+      if (matches) {
+        headerMenus.forEach(menu => {
+          menu.addEventListener('mouseenter', mouseenter)
+          menu.addEventListener('mouseleave', mouseleave)
+        })
+      } else {
+        headerMenus.forEach(menu => {
+          menu.removeEventListener('mouseenter', mouseenter)
+          menu.removeEventListener('mouseleave', mouseleave)
+        })
+      }
+    }
+    updateHeaderMenuEvents()
+
+    function mouseenter() { this.setAttribute('open', '') }
+    function mouseleave() { this.removeAttribute('open') }
+
+    window.addEventListener('resize', updateHeaderMenuEvents)
+
+    window.addEventListener('scroll', e => {
+      const { scrollTop } = e.target.documentElement
+      const announcementHeight = Array.from(document.querySelectorAll('.section-announcement')).reduce((acc, el) => acc + el.offsetHeight, 0)
+      const headerHeight = header.offsetHeight / 2
+
+      if (scrollTop > (announcementHeight + headerHeight)) {
+        header.classList.add('is-scrolled')
+      } else {
+        header.classList.remove('is-scrolled')
+      }
+    })
+  })()
+</script>
 
 {% schema %}
 {
-  "name": "Testimonials Carousel",
+  "name": "Header",
+  "tag": "header",
+  "class": "sticky z-10 top-0 transition-all",
   "settings": [
     {
-      "type": "text",
-      "id": "heading",
-      "label": "Section Heading",
-      "default": "Hear From Them!"
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
     },
     {
-      "type": "number",
-      "id": "autoplay_speed",
-      "label": "Autoplay Speed (ms)",
-      "default": 3000
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "header",
+      "content": "Cart"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cart_item_count",
+      "label": "Show cart item count",
+      "info": "Disable to show a dot indicator when the cart has items",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cart_subtotal",
+      "label": "Show cart subtotal",
+      "default": true
     }
   ],
   "blocks": [
     {
-      "type": "testimonial",
-      "name": "Testimonial",
+      "type": "megamenu",
+      "name": "Mega menu",
       "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "info": "Makes the linklist with the same title a full-width megamenu"
+        }
+      ]
+    },
+    {
+      "type": "featured_link",
+      "name": "Featured link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "info": "Makes megamenu links with the same title stylized"
+        },
         {
           "type": "image_picker",
           "id": "image",
           "label": "Image"
-        },
-        {
-          "type": "text",
-          "id": "name",
-          "label": "Author Name"
-        },
-        {
-          "type": "text",
-          "id": "quote",
-          "label": "Quote"
-        },
-        {
-          "type": "number",
-          "id": "rating",
-          "label": "Rating (1-5)",
         }
       ]
-    }
-  ],
-  "max_blocks": 10,
-  "presets": [
-    {
-      "name": "Testimonials Carousel",
-      "category": "Testimonials"
     }
   ]
 }
