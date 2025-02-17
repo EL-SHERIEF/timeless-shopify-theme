@@ -11,6 +11,7 @@
   "sections": {
     "besthero_exj7tB": {
       "type": "besthero",
+      "disabled": true,
       "settings": {
         "background_video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739735588/WhatsApp_Video_2025-02-16_at_9.12.13_PM_ry56el.mp4",
         "hero_heading": "Smooth Skin, Endless Confidence",
@@ -121,14 +122,6 @@
         "content": "<h2>Hear from our customers</h2>",
         "carousel_loop_enabled": true
       }
-    },
-    "newsletter-form": {
-      "type": "newsletter-form",
-      "settings": {
-        "color_scheme": "gray",
-        "content": "<h2>Newsletter</h2>",
-        "submit_label": "Subscribe"
-      }
     }
   },
   "order": [
@@ -137,7 +130,6 @@
     "features_section_ygAAJd",
     "promotional_banners_Jdapkk",
     "article-list",
-    "testimonial_list_8AaMhz",
-    "newsletter-form"
+    "testimonial_list_8AaMhz"
   ]
 }

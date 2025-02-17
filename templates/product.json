@@ -1,5 +1,30 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "besthero_3TKt8U": {
+      "type": "besthero",
+      "settings": {
+        "background_video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739735588/WhatsApp_Video_2025-02-16_at_9.12.13_PM_ry56el.mp4",
+        "hero_heading": "Smooth Skin, Endless Confidence",
+        "hero_text": "Silky skin made easy! Get Laserly™ now with 36% OFF. Trusted, pain-free, salon-quality at home.",
+        "marquee_slot_1": "LIMITED AMOUNT",
+        "marquee_slot_2": "FREE SHIPPING!!",
+        "marquee_slot_3": "ORDER NOW!!",
+        "marquee_slot_4": "LIMITED AMOUNT",
+        "marquee_slot_5": "FREE SHIPPING!!",
+        "marquee_slot_6": "ORDER NOW!!",
+        "marquee_slot_7": "LIMITED AMOUNT",
+        "marquee_slot_8": "FREE SHIPPING!!"
+      }
+    },
     "product-form": {
       "type": "product-form",
       "blocks": {
@@ -11,13 +36,11 @@
         },
         "dbad3ae8-84d5-48a6-9ab8-8885e1ee2c41": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "07d05eb6-e4ce-4fa1-81d6-3b59e0854401": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "743a2bf4-9909-45f2-9b51-411702650ac1": {
           "type": "variant-selector",
@@ -27,13 +50,13 @@
         },
         "53d588d3-8f9e-4dc5-8de0-e3eca78cd48f": {
           "type": "quantity-selector",
-          "settings": {
-          }
+          "settings": {}
         },
         "54221e7b-8868-4c06-bc77-ea9ea93bea2b": {
           "type": "buy-button",
           "settings": {
             "text": "",
+            "inventory_text": "",
             "full_width": false,
             "show_payment_buttons": false
           }
@@ -76,19 +99,20 @@
         "carousel_zoom_enabled": true,
         "carousel_fade_enabled": true,
         "carousel_autoHeight": true,
-        "carousel_slidesPerView": 8
+        "carousel_slidesPerView": 9
       }
     },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
         "color_scheme": "",
-        "content": "<h2>Product Recommendations<\/h2>",
+        "content": "<h2>Product Recommendations</h2>",
         "intent": "related"
       }
     }
   },
   "order": [
+    "besthero_3TKt8U",
     "product-form",
     "product-recommendations"
   ]
