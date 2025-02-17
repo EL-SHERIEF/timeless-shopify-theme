@@ -2,11 +2,16 @@
 
 {%- if section.settings.content -%}
   <header class="mb-8 text-center rte">
-   <div class="!text-[7rem] font-[800]">
+   <div class="doneh1">
       {{ section.settings.content }}
    </div>
      {{ section.settings.subcontent }}
   </header>
+  <style>
+  .header .doneh1 h2, .header .doneh1 h1, .header .doneh1 h3{
+    font-size:3.5rem;
+  }
+  <tyle>
 {%- endif -%}
 
 <div class="max-w-screen-sm mx-auto">
