@@ -1,6 +1,6 @@
 {% schema %}
 {
-  "name": "Comparison Table",
+  "name": "Comparison Cards",
   "tag": "section",
   "class": "section",
   "settings": [
@@ -41,7 +41,13 @@
           "type": "checkbox",
           "id": "competitor",
           "label": "Competitor has this feature"
-        }
+        },
+       {
+  "type": "text",
+  "id": "reason",
+  "label": "Reason for inclusion/exclusion"
+}
+
       ]
     }
   ],
@@ -52,14 +58,15 @@
   },
   "presets": [
     {
-      "name": "Comparison Table",
+      "name": "Comparison Cards",
       "blocks": [
         {
           "type": "feature",
           "settings": {
             "name": "Fast Shipping",
             "ours": true,
-            "competitor": false
+            "competitor": false,
+            "reason": "We prioritize quick deliveries to enhance customer satisfaction."
           }
         }
       ]
@@ -75,37 +82,29 @@
       <p class="mt-4 text-gray-600">{{ section.settings.subcontent }}</p>
     </div>
     
-    <div class="overflow-x-auto">
-      <table class="w-full border-collapse border border-gray-200 text-left">
-        <thead>
-          <tr class="bg-gray-100 text-gray-700">
-            <th class="p-4 border">Feature</th>
-            <th class="p-4 border">Our Store</th>
-            <th class="p-4 border">Competitor</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for block in section.blocks %}
-          <tr class="border">
-            <td class="p-4 border font-medium">{{ block.settings.name }}</td>
-            <td class="p-4 border text-center">
-              {% if block.settings.ours %}
-                <span class="text-green-600 font-bold">✔ Yes</span>
-              {% else %}
-                <span class="text-red-500">✖ No</span>
-              {% endif %}
-            </td>
-            <td class="p-4 border text-center">
-              {% if block.settings.competitor %}
-                <span class="text-green-600 font-bold">✔ Yes</span>
-              {% else %}
-                <span class="text-red-500">✖ No</span>
-              {% endif %}
-            </td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {% for block in section.blocks %}
+      <div class="p-6 rounded-3xl border border-gray-200 shadow-md bg-white text-center">
+        <h3 class="text-xl font-semibold">{{ block.settings.name }}</h3>
+        <div class="mt-4">
+          <p class="text-lg">
+            {% if block.settings.ours %}
+              <span class="text-green-600 font-bold">✔ Yes</span>
+            {% else %}
+              <span class="text-red-500">✖ No</span>
+            {% endif %} - <strong>Us</strong>
+          </p>
+          <p class="text-lg">
+            {% if block.settings.competitor %}
+              <span class="text-green-600 font-bold">✔ Yes</span>
+            {% else %}
+              <span class="text-red-500">✖ No</span>
+            {% endif %} - <strong>Competitor</strong>
+          </p>
+        </div>
+        <p class="mt-4 text-gray-500">{{ block.settings.reason }}</p>
+      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
