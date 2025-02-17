@@ -21,16 +21,19 @@
 
   </style>
 {%- endif -%}
-
-<div class="max-w-screen-sm mx-auto">
+<div class="max-w-screen-md mx-auto space-y-4">
   {%- for faq in faqs -%}
-    <details class="with-accordion [&:not(:last-child)]:border-b border-stroke">
-      <summary class="w-full font-bold with-icon py-3">
-        <span class="grow">{{ faq.question }}</span>
-        {% render 'icon' with 'chevron-right' %}
+    <details 
+      class="group bg-indigo-900 text-white rounded-lg overflow-hidden transition-all duration-300"
+    >
+      <summary class="w-full flex items-center justify-between p-4 font-semibold cursor-pointer focus:outline-none hover:bg-indigo-800">
+        <span>{{ faq.question }}</span>
+        <span class="transform transition-transform duration-300 group-open:rotate-180">
+          {% render 'icon' with 'chevron-right' %}
+        </span>
       </summary>
 
-      <div class="pb-4 rte anim-fade-b">
+      <div class="p-4 border-t border-indigo-700 text-indigo-200 transition-opacity duration-300 group-open:opacity-100 opacity-0">
         {{ faq.answer }}
       </div>
     </details>
