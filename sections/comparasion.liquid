@@ -74,7 +74,7 @@
       {% for block in section.blocks %}
         {% assign features = block.settings.features | split: "," %}
         <div class="relative p-8 rounded-[16px] backdrop-blur-lg bg-[#f9f6fe]">
-          <img src="{{ block.settings.card_image | img_url: 'medium' }}" alt="{{ block.settings.title }}" class="absolute top-0 right-0 w-16 h-16 object-cover rounded-[16px] shadow-md">
+          <img src="{{ block.settings.card_image | img_url: 'medium' }}" alt="{{ block.settings.title }}" class="absolute top-0 right-0 w-32 h-32 object-cover rounded-[16px] shadow-md">
           <h3 class="text-xl font-semibold">{{ block.settings.title }}</h3>
           <ul class="mt-4 space-y-2 text-gray-700">
             {% for feature in features %}
