@@ -8,140 +8,91 @@
 
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 
-<div class="section-product-form section grid sm:grid-cols-2 items-start gap-y-8 gap-x-12 <md:overflow-hidden">
-  {% render 'product-image-carousel' %}
+<div class="section-product-form grid sm:grid-cols-2 items-start gap-8 md:gap-12 px-6 sm:px-12 lg:px-20 xl:px-32 2xl:px-48">
+  <div class="relative">
+    {% render 'product-image-carousel' %}
+  </div>
 
   <div class="grid gap-6">
     {% form 'product', product, class: 'grid gap-4' %}
-      {%- for block in section.blocks -%}
+      {% for block in section.blocks %}
         {%- case block.type -%}
           {%- when '@app' -%}
             {% render block %}
 
           {%- when 'buy-button' -%}
-            <div>
+            <div class="flex flex-col sm:flex-row gap-4">
               <button
-                class="action w-full {% unless block.settings.full_width %}md:w-auto{% endunless %}"
+                class="w-full sm:w-auto px-6 py-3 text-lg font-semibold text-white bg-black rounded-lg hover:bg-gray-900 transition disabled:opacity-50"
                 type="submit"
-                {% unless product.available or product.selected_or_first_available_variant.availabile %}disabled{% endunless %}
+                {% unless product.available or product.selected_or_first_available_variant.available %}disabled{% endunless %}
               >
                 {{ block.settings.text | default: 'Add to cart' | escape }}
-                {%- if block.settings.inventory_text != blank -%}
-                  {% render 'inventory', text: block.settings.inventory_text %}
-                {%- endif -%}
               </button>
+
+              {%- if block.settings.show_payment_buttons -%}
+                {{ form | payment_button }}
+              {%- endif -%}
             </div>
 
-            {%- if block.settings.show_payment_buttons -%}
-              {{ form | payment_button }}
-            {%- endif -%}
-
-          {%- when 'custom-liquid' -%}
-            <div>{{ block.settings.liquid }}</div>
-
           {%- when 'description' -%}
-            <div class="rte empty:hidden {{ block.settings.tailwind | default: '<md:text-sm' }}">
-              {{- product.description | replace: '<meta charset="utf-8">', '' -}}
+            <div class="text-gray-600 leading-relaxed text-lg">
+              {{ product.description | replace: '<meta charset="utf-8">', '' }}
             </div>
 
           {%- when 'divider' -%}
-            {%- if block.settings.label != blank -%}
-              <h2 class="divider technical text-xs mt-4">
-                <span>{{ block.settings.label }}</span>
-              </h2>
-            {%- else -%}
-              <hr class="my-4" />
-            {%- endif -%}
-
-          {%- when 'gift-card-recipient-form' -%}
-            {%- if product.gift_card? -%}
-              {%- render 'gift-card-recipient-form' -%}
-            {%- endif -%}
+            <div class="border-t border-gray-200 my-6"></div>
 
           {%- when 'inventory' -%}
-            <p
-              class="{{ block.settings.tailwind | default: 'text-sm text-center md:text-left' }}"
-              {% if block.settings.threshold_enabled %}
-                data-inventory-threshold="{{ block.settings.threshold }}"
-                {% if product.selected_or_first_available_variant.inventory_quantity > block.settings.threshold %}hidden{% endif %}
-              {% endif %}
-            >
+            <p class="text-sm text-gray-500">
               {% render 'inventory', text: block.settings.text %}
             </p>
 
           {%- when 'price' -%}
-            {%- render 'price', class: 'text-xl', show_taxes_included: true -%}
-
-            {{ form | payment_terms }}
+            <div class="text-2xl font-semibold text-gray-900">
+              {%- render 'price', show_taxes_included: true -%}
+            </div>
 
           {%- when 'quantity-selector' -%}
-            <label class="justify-self-start">
-              <span class="technical text-xs">Quantity</span>
+            <label class="flex flex-col gap-2">
+              <span class="text-xs text-gray-500 uppercase">Quantity</span>
               {% render 'quantity-selector' %}
             </label>
 
-          {%- when 'richtext' -%}
-            <div class="rte empty:hidden {{ block.settings.tailwind }}">{{ block.settings.richtext }}</div>
-
           {%- when 'sku' -%}
             {%- assign sku = product.selected_or_first_available_variant.sku -%}
-            <p class="text-ink-subdued" data-sku-container {% if sku == blank %}hidden{% endif %}>
-              <small>SKU: <code data-sku>{{ sku }}</code></small>
+            <p class="text-xs text-gray-400" {% if sku == blank %}hidden{% endif %}>
+              SKU: <code class="font-mono text-gray-600">{{ sku }}</code>
             </p>
 
-          {%- when 'tags' -%}
-            {%- if product.tags.size > 0 -%}
-              <div class="flex flex-wrap gap-x-4 text-sm [&_a]:hashtag [&_a]:hover:text-primary {{ block.settings.tailwind }}">
-                {%- for tag in product.tags -%}
-                  {{ tag | link_to_tag: tag }}
-                {%- endfor -%}
-              </div>
-            {%- endif -%}
-
           {%- when 'title' -%}
-            <h1 class="h1">{{ product.title }}</h1>
+            <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ product.title }}</h1>
 
           {%- when 'variant-selector' -%}
-            {% render 'variant-selector', show_dividers: block.settings.show_dividers %}
+            <div class="mt-4">{% render 'variant-selector' %}</div>
 
           {%- when 'vendor' -%}
-            <p class="{{ block.settings.tailwind | default: 'technical text-xs' }}">{{ product.vendor }}</p>
+            <p class="text-xs uppercase tracking-wide text-gray-500">{{ product.vendor }}</p>
 
         {%- endcase -%}
-      {%- endfor -%}
+      {% endfor %}
     {% endform %}
 
-    {%- liquid
-      if section.settings.show_pickup_availability
-        render 'pickup-availability'
-      endif
-    -%}
+    {%- if section.settings.show_pickup_availability -%}
+      {% render 'pickup-availability' %}
+    {%- endif -%}
   </div>
 </div>
 
 <style type="text/tailwindcss">
-  .section-product-form > * {
-    min-width: 0;
-    @apply self-start sm:sticky-below-header;
+  .section-product-form {
+    @apply max-w-7xl mx-auto;
   }
-
   .product-thumbs .swiper-slide {
-    @apply relative transition-transform;
+    @apply relative transition-transform scale-90;
   }
-  .product-thumbs .swiper-slide::after {
-    content: '';
-    pointer-events: none;
-    position: absolute;
-    inset: 0;
-    @apply bg-primary opacity-0 transition-opacity;
-  }
-
-  .product-thumbs .swiper-slide:is(.swiper-slide-thumb-active, :hover)::after {
-    @apply opacity-20;
-  }
-
-  .product-thumbs .swiper-slide:not(:is(.swiper-slide-thumb-active)) {
-    @apply scale-75;
+  .product-thumbs .swiper-slide-thumb-active {
+    @apply scale-100;
   }
 </style>
 
@@ -159,253 +110,62 @@
       "type": "checkbox",
       "id": "show_pickup_availability",
       "label": "Show pickup availability",
-      "default": false,
-      "info": "Enable for stores with local pickup."
-    },
-    {
-      "type": "header",
-      "content": "Carousel",
-      "info": "This theme uses [Swiper](https://swiperjs.com/) for carousels. Refresh the page to see the results."
-    },
-    {
-      "type": "checkbox",
-      "id": "carousel_zoom_enabled",
-      "label": "Enable zoom",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "carousel_fade_enabled",
-      "label": "Enable fade effect",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "carousel_autoHeight",
-      "label": "Auto height",
-      "default": true
-    },
-    {
-      "type": "range",
-      "id": "carousel_slidesPerView",
-      "min": 4,
-      "max": 12,
-      "label": "Slides per view",
-      "default": 8
+      "default": false
     }
   ],
   "blocks": [
     {
-      "type": "@app"
-    },
-    {
-      "name": "*Buy button",
       "type": "buy-button",
+      "name": "Buy Button",
       "settings": [
         {
           "type": "text",
           "id": "text",
-          "label": "Text"
-        },
-        {
-          "type": "text",
-          "id": "inventory_text",
-          "label": "Inventory text",
-          "info": "\"#\" will be replaced with the actual inventory quantity. Leave blank to hide."
-        },
-        {
-          "type": "checkbox",
-          "id": "full_width",
-          "label": "Full width",
-          "default": false,
-          "info": "On tablet and desktop viewports"
+          "label": "Button Text",
+          "default": "Add to cart"
         },
         {
           "type": "checkbox",
           "id": "show_payment_buttons",
           "label": "Show Shopify payment buttons",
           "default": false
-        },
-        {
-          "type": "header",
-          "content": "* Required block",
-          "info": "Needs to be included for the product form to work"
         }
       ]
     },
     {
-      "name": "Custom liquid",
-      "type": "custom-liquid",
-      "settings": [
-        {
-          "type": "liquid",
-          "id": "liquid",
-          "label": "Liquid"
-        }
-      ]
-    },
-    {
-      "name": "Description",
       "type": "description",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "liquid",
-          "id": "tailwind",
-          "label": "Tailwind classes",
-          "info": "Default: \"<md:text-sm\""
-        }
-      ]
+      "name": "Description",
+      "limit": 1
     },
     {
-      "name": "Divider",
-      "type": "divider",
-      "settings": [
-        {
-          "type": "text",
-          "id": "label",
-          "label": "Label"
-        }
-      ]
-    },
-    {
-      "name": "Gift card recipient form",
-      "type": "gift-card-recipient-form",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "header",
-          "content": "Required block",
-          "info": "Needs to be included for gift card products"
-        }
-      ]
-    },
-    {
-      "name": "Inventory",
-      "type": "inventory",
-      "settings": [
-        {
-          "type": "text",
-          "id": "text",
-          "label": "Text",
-          "info": "\"#\" will be replaced with the actual inventory quantity",
-          "default": "Only # left in stock!"
-        },
-        {
-          "type": "checkbox",
-          "id": "threshold_enabled",
-          "label": "Enable threshold",
-          "default": true,
-          "info": "Only show when inventory is below the threshold"
-        },
-        {
-          "type": "number",
-          "id": "threshold",
-          "label": "Threshold",
-          "default": 10
-        },
-        {
-          "type": "liquid",
-          "id": "tailwind",
-          "label": "Tailwind classes",
-          "info": "Default: \"text-sm text-center md:text-left\""
-        }
-      ]
-    },
-    {
-      "name": "Price",
       "type": "price",
-      "limit": 1,
-      "settings": [
-
-      ]
+      "name": "Price",
+      "limit": 1
     },
     {
-      "name": "*Quantity selector",
       "type": "quantity-selector",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "header",
-          "content": "* Required block",
-          "info": "Needs to be included for the product form to work"
-        }
-      ]
+      "name": "Quantity Selector",
+      "limit": 1
     },
     {
-      "name": "Richtext",
-      "type": "richtext",
-      "settings": [
-        {
-          "type": "richtext",
-          "id": "richtext",
-          "label": "Richtext"
-        },
-        {
-          "type": "liquid",
-          "id": "tailwind",
-          "label": "Tailwind classes"
-        }
-      ]
-    },
-    {
-      "name": "SKU",
       "type": "sku",
-      "limit": 1,
-      "settings": [
-
-      ]
+      "name": "SKU",
+      "limit": 1
     },
     {
-      "name": "Tags",
-      "type": "tags",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "liquid",
-          "id": "tailwind",
-          "label": "Tailwind classes"
-        }
-      ]
-    },
-    {
-      "name": "Title",
       "type": "title",
-      "limit": 1,
-      "settings": [
-
-      ]
+      "name": "Title",
+      "limit": 1
     },
     {
-      "name": "*Variant selector",
       "type": "variant-selector",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "checkbox",
-          "id": "show_dividers",
-          "label": "Show dividers",
-          "default": false
-        },
-        {
-          "type": "header",
-          "content": "* Required block",
-          "info": "Needs to be included for the product form to work"
-        }
-      ]
+      "name": "Variant Selector",
+      "limit": 1
     },
     {
-      "name": "Vendor",
       "type": "vendor",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "liquid",
-          "id": "tailwind",
-          "label": "Tailwind classes",
-          "info": "Default: \"technical text-xs\""
-        }
-      ]
+      "name": "Vendor",
+      "limit": 1
     }
   ]
 }
