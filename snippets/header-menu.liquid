@@ -3,7 +3,7 @@
   assign featured_links = section.blocks | where: 'type', 'featured_link' | map: 'settings'
 -%}
 
-<nav class="flex <sm:flex-col md:justify-center gap-x-8 md:overflow-x-auto" style="grid-area: logo;">
+<nav class="flex <sm:flex-col md:justify-center gap-x-8 md:overflow-x-auto">
   {%- for link in section.settings.menu.links -%}
     {%- case link.levels -%}
       {%- when 1 or 2 -%}
