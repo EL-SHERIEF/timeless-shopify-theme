@@ -63,7 +63,7 @@
           <thead class="bg-gray-800 text-white">
             <tr>
               <th class="py-4 px-6 text-left">Feature</th>
-              <th class="py-4 px-6 text-center">Available</th>
+              <th class="py-4 px-2 text-center">Available</th>
               <th class="py-4 px-6 text-left">Reason</th>
             </tr>
           </thead>
@@ -72,7 +72,7 @@
             {% assign reason_key = "reason_" | append: tab %}
             <tr class="border-b">
               <td class="py-4 px-6 font-semibold">{{ block.settings.name }}</td>
-              <td class="py-4 px-6 text-center">{% if block.settings[tab] %}<span class="text-green-500 text-2xl">✔</span>{% else %}<span class="text-red-500 text-2xl">✖</span>{% endif %}</td>
+              <td class="py-4 px-2 text-center">{% if block.settings[tab] %}<span class="text-green-500 text-2xl">✔</span>{% else %}<span class="text-red-500 text-2xl">✖</span>{% endif %}</td>
               <td class="py-4 px-6 text-gray-600">{{ block.settings[reason_key] }}</td>
             </tr>
             {% endfor %}
