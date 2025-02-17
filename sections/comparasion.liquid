@@ -42,12 +42,12 @@
           "id": "competitor",
           "label": "Competitor has this feature"
         },
-       {
-  "type": "text",
-  "id": "reason",
-  "label": "Reason for inclusion/exclusion"
-}
-
+        {
+          "type": "richtext",
+          "id": "reason",
+          "label": "Reason for inclusion/exclusion",
+          "default": "<p>Explain why this feature is included or missing.</p>"
+        }
       ]
     }
   ],
@@ -66,7 +66,7 @@
             "name": "Fast Shipping",
             "ours": true,
             "competitor": false,
-            "reason": "We prioritize quick deliveries to enhance customer satisfaction."
+            "reason": "<p>We prioritize quick deliveries to enhance customer satisfaction.</p>"
           }
         }
       ]
@@ -75,34 +75,36 @@
 }
 {% endschema %}
 
-<section class="py-24 bg-white">
+<section class="py-24 bg-pink-100">
   <div class="container mx-auto px-6">
     <div class="text-center mb-10">
-      <h2 class="text-3xl font-bold">{{ section.settings.content }}</h2>
-      <p class="mt-4 text-gray-600">{{ section.settings.subcontent }}</p>
+      <h2 class="text-3xl font-bold text-pink-700">{{ section.settings.content }}</h2>
+      <p class="mt-4 text-pink-600">{{ section.settings.subcontent }}</p>
     </div>
     
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
       {% for block in section.blocks %}
-      <div class="p-6 rounded-3xl border border-gray-200 shadow-md bg-white text-center">
-        <h3 class="text-xl font-semibold">{{ block.settings.name }}</h3>
-        <div class="mt-4">
-          <p class="text-lg">
-            {% if block.settings.ours %}
-              <span class="text-green-600 font-bold">✔ Yes</span>
-            {% else %}
-              <span class="text-red-500">✖ No</span>
-            {% endif %} - <strong>Us</strong>
-          </p>
-          <p class="text-lg">
-            {% if block.settings.competitor %}
-              <span class="text-green-600 font-bold">✔ Yes</span>
-            {% else %}
-              <span class="text-red-500">✖ No</span>
-            {% endif %} - <strong>Competitor</strong>
-          </p>
+      <div class="flex items-center p-6 rounded-3xl border border-gray-200 shadow-md bg-white">
+        <div class="flex-1 text-center">
+          <h3 class="text-xl font-semibold text-pink-700">{{ block.settings.name }}</h3>
+          <p class="mt-4 text-gray-500">{{ block.settings.reason }}</p>
         </div>
-        <p class="mt-4 text-gray-500">{{ block.settings.reason }}</p>
+        <div class="w-24 h-24 flex items-center justify-center rounded-full" 
+             style="background-color: {% if block.settings.ours %} #FEE2E2 {% else %} #E5E7EB {% endif %}">
+          {% if block.settings.ours %}
+            <span class="text-green-600 text-4xl font-bold">✔</span>
+          {% else %}
+            <span class="text-red-500 text-4xl font-bold">✖</span>
+          {% endif %}
+        </div>
+        <div class="w-24 h-24 flex items-center justify-center rounded-full" 
+             style="background-color: {% if block.settings.competitor %} #FEE2E2 {% else %} #E5E7EB {% endif %}">
+          {% if block.settings.competitor %}
+            <span class="text-green-600 text-4xl font-bold">✔</span>
+          {% else %}
+            <span class="text-red-500 text-4xl font-bold">✖</span>
+          {% endif %}
+        </div>
       </div>
       {% endfor %}
     </div>
