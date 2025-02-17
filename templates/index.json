@@ -77,51 +77,6 @@
         "page_size": 4
       }
     },
-    "testimonial_list_8AaMhz": {
-      "type": "testimonial-list",
-      "blocks": {
-        "testimonial_EixwAA": {
-          "type": "testimonial",
-          "settings": {
-            "show_rating": true,
-            "rating": 5,
-            "quote": "<p>Testimonial quote goes here.</p>",
-            "author": "John Smith",
-            "author_title": "CEO of Company"
-          }
-        },
-        "testimonial_4jpXGw": {
-          "type": "testimonial",
-          "settings": {
-            "show_rating": true,
-            "rating": 5,
-            "quote": "<p>Testimonial quote goes here.</p>",
-            "author": "John Smith",
-            "author_title": "CEO of Company"
-          }
-        },
-        "testimonial_z84MHN": {
-          "type": "testimonial",
-          "settings": {
-            "show_rating": true,
-            "rating": 5,
-            "quote": "<p>Testimonial quote goes here.</p>",
-            "author": "John Smith",
-            "author_title": "CEO of Company"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_EixwAA",
-        "testimonial_4jpXGw",
-        "testimonial_z84MHN"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "content": "<h2>Hear from our customers</h2>",
-        "carousel_loop_enabled": true
-      }
-    },
     "newtestimonials_geJYcT": {
       "type": "newtestimonials",
       "blocks": {
@@ -158,7 +113,6 @@
     "features_section_ygAAJd",
     "promotional_banners_Jdapkk",
     "article-list",
-    "testimonial_list_8AaMhz",
     "newtestimonials_geJYcT"
   ]
 }
