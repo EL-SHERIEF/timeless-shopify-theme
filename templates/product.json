@@ -109,11 +109,24 @@
         "content": "<h2>Product Recommendations</h2>",
         "intent": "related"
       }
+    },
+    "scrollertimeframe_Kibrkm": {
+      "type": "scrollertimeframe",
+      "settings": {
+        "section_heading": "How long till my hair’s gone?",
+        "box_1_heading": "2-4 Weeks",
+        "box_1_content": "You’ll be surprised at just how fast your hair growth starts to slow — you’ll likely notice a change after your first or second session.",
+        "box_2_heading": "5-8 Weeks",
+        "box_2_content": "After a month of treatments, you'll start to notice patches of thinner, slower hair growth.",
+        "box_3_heading": "8-12+ Weeks",
+        "box_3_content": "By this point, you'll see significantly less hair and enjoy smoother skin with minimal regrowth."
+      }
     }
   },
   "order": [
     "besthero_3TKt8U",
     "product-form",
-    "product-recommendations"
+    "product-recommendations",
+    "scrollertimeframe_Kibrkm"
   ]
 }
