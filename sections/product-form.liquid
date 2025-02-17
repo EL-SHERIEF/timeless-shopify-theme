@@ -105,7 +105,7 @@
             {% render 'variant-selector', show_dividers: block.settings.show_dividers %}
 
           {%- when 'vendor' -%}
-            <p class="{{ block.settings.tailwind | default: 'technical text-[10px] font-[400]  px-3 py-2 rounded-full bg-[rgb(237, 228, 252)] w-fit' }}">{{ product.vendor }}</p>
+            <p class="{{ block.settings.tailwind | default: 'technical text-[10px] font-[400]  px-3 py-2 rounded-full bg-[#ede4fc] w-fit' }}">{{ product.vendor }}</p>
 
         {%- endcase -%}
       {%- endfor -%}
