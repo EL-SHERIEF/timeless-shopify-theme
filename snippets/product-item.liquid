@@ -1,7 +1,7 @@
 <li class="grid gap-2">
   <a class="group grid gap-2" href="{{ product.url | within: collection }}">
     <figure class="relative">
-      <div class="bg-white overflow-hidden shadow-lg rounded-xl">
+      <div class="bg-white overflow-hidden rounded-xl">
         {%- if product.featured_image -%}
           {{ product.featured_image
             | image_url: width: 500, height: 500
