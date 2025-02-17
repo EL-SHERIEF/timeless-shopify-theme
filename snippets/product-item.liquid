@@ -11,7 +11,7 @@
           {{ 'product-1' | placeholder_svg_tag }}
         {%- endif -%}
         {%- if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
-          <span class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-[8px]">
+          <span class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-[9px]">
             50% OFF
           </span>
         {%- endif -%}
