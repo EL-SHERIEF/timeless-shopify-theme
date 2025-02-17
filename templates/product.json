@@ -122,7 +122,10 @@
         "box_2_image": "shopify://shop_images/BEFORE_3.webp",
         "box_3_heading": "8-12+ weeks",
         "box_3_content": "During this stage, your legs will be silky smooth and virtually hair-free. Most people have little to no hair growth left by the time they reach 12 weeks of treatment.",
-        "box_3_image": "shopify://shop_images/BEFORE_1.webp"
+        "box_3_image": "shopify://shop_images/BEFORE_1.webp",
+        "time1": "2-4 weeks",
+        "time2": "5-8 weeks",
+        "time3": "8-12+ weeks"
       }
     }
   },
