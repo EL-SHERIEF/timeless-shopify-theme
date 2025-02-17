@@ -1,5 +1,6 @@
-<div class="section flex <md:flex-col gap-y-4 gap-x-12 items-start">
-  <div class="grid gap-4 <md:mx-auto">
+<div class="section flex flex-wrap gap-y-8 gap-x-16 items-start justify-between py-12 px-6 bg-[var(--canvas)] text-[var(--ink)]">
+  <!-- Logo Section -->
+  <div class="flex flex-col items-start gap-6">
     <div class="max-w-[160px]">
       {%- if section.settings.logo -%}
         {{ section.settings.logo
@@ -8,21 +9,30 @@
           | link_to: routes.root_url
         }}
       {%- else -%}
-        {{ shop.name | link_to: routes.root_url, class: 'font-heading' }}
+        {{ shop.name | link_to: routes.root_url, class: 'font-heading text-lg font-bold' }}
       {%- endif -%}
     </div>
 
-    <nav class="flex flex-wrap items-center justify-center gap-x-4 [&_svg]:h-[1.5em]">
+    <!-- Social Links -->
+    <nav class="flex gap-4">
       {%- for social in shop.brand.metafields.social_links -%}
-        <a href="{{ social.last }}" aria-label="{{ social.first }}">
+        <a href="{{ social.last }}" aria-label="{{ social.first }}" class="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-all">
           {%- render 'icon' with social.first -%}
         </a>
       {%- endfor -%}
     </nav>
   </div>
 
-  {% render 'footer-menu' %}
-  {% render 'newsletter-form', id: section.id, class: '<sm:w-full grid grid-cols-[1fr,auto] gap-2 items-end' %}
+  <!-- Footer Menu -->
+  <div class="grid gap-4">
+    {% render 'footer-menu' %}
+  </div>
+
+  <!-- Newsletter Subscription -->
+  <div class="w-full max-w-sm">
+    <h4 class="text-lg font-semibold mb-2">Subscribe to our newsletter</h4>
+    {% render 'newsletter-form', id: section.id, class: 'grid grid-cols-[1fr,auto] gap-2 items-center' %}
+  </div>
 </div>
 
 <style type="text/tailwindcss">
@@ -30,37 +40,21 @@
     --canvas: {{ section.settings.color_scheme.settings.canvas }};
     --ink: {{ section.settings.color_scheme.settings.ink }};
     --stroke: {{ section.settings.color_scheme.settings.stroke }};
+
     @apply bg-[var(--canvas)] text-[var(--ink)];
   }
-</style>
 
-{% schema %}
-{
-  "name": "Footer",
-  "tag": "footer",
-  "settings": [
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Color scheme"
-    },
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Logo"
-    },
-    {
-      "type": "link_list",
-      "id": "menu",
-      "label": "Menu",
-      "info": "At least one level of nesting for each top-level link recommended.",
-      "default": "footer"
-    },
-    {
-      "type": "header",
-      "content": "Social links",
-      "info": "Add social links from Settings > Brand > Social links. More info found [here](https://help.shopify.com/en/manual/promoting-marketing/managing-brand-assets#social-media-links)."
-    }
-  ]
-}
-{% endschema %}
+  /* General Styling */
+  .section a {
+    @apply text-sm font-medium text-gray-700 hover:text-black transition-colors;
+  }
+
+  /* Newsletter Form Styling */
+  .newsletter-form input {
+    @apply border border-gray-300 rounded-lg p-2 w-full;
+  }
+
+  .newsletter-form button {
+    @apply bg-black text-white rounded-lg p-2 hover:bg-gray-900;
+  }
+</style>
