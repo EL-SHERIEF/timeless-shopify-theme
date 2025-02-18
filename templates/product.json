@@ -238,9 +238,9 @@
           "settings": {
             "show_rating": true,
             "rating": 5,
-            "quote": "<p>Testimonial quote goes here.</p><p>Testimonial quote goes here.</p><p>Testimonial quote goes here.</p>",
-            "author": "John Smith",
-            "author_title": "CEO of Company",
+            "quote": "<p>Life-changing! Laserly is so easy to use, and I noticed smoother skin in just weeks. It’s safe and perfect for at-home treatments!</p>",
+            "author": "Jessica T.",
+            "author_title": "Verified",
             "author_image": "shopify://shop_images/images.jpg"
           }
         },
@@ -249,10 +249,10 @@
           "settings": {
             "show_rating": true,
             "rating": 5,
-            "quote": "",
-            "author": "John Smith",
-            "author_title": "CEO of Company",
-            "author_image": "shopify://shop_images/4_cba4dba2-5001-4ad6-8dae-5dc997bd9f0d.jpg"
+            "quote": "<p>I’m thrilled with the results! No more appointments—Laserly gives me salon-quality smoothness at home, and it’s super gentle on my skin.</p>",
+            "author": "Amanda L.",
+            "author_title": "Verified",
+            "author_image": "shopify://shop_images/image00001_665eb2ae-1750-4e97-bd9b-9595b8e5bfcb.webp"
           }
         }
       },
