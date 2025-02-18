@@ -136,15 +136,32 @@
     "features_section_a7Kadz": {
       "type": "featuresSection",
       "blocks": {
+        "item_Y49nVd": {
+          "type": "item",
+          "settings": {
+            "item_title": "Feature Title",
+            "item_subtitle": "Feature description"
+          }
+        },
+        "item_LBYaGK": {
+          "type": "item",
+          "settings": {
+            "item_title": "Feature Title",
+            "item_subtitle": "Feature description"
+          }
+        },
         "item_8xTjWa": {
           "type": "item",
           "settings": {
-            "item_text": "Item",
-            "item_icon": "💥"
+            "item_image": "shopify://shop_images/Animation_-_1739917316672.gif",
+            "item_title": "Feature Title",
+            "item_subtitle": "Feature description"
           }
         }
       },
       "block_order": [
+        "item_Y49nVd",
+        "item_LBYaGK",
         "item_8xTjWa"
       ],
       "settings": {}
