@@ -218,6 +218,54 @@
         "heading": "Why Laserly™",
         "description": "Experience safer, convenient, salon-level results at home with Laserly™!"
       }
+    },
+    "testimonial_list_MX6mMb": {
+      "type": "testimonial-list",
+      "blocks": {
+        "testimonial_7EbxXM": {
+          "type": "testimonial",
+          "settings": {
+            "show_rating": true,
+            "rating": 5,
+            "quote": "<p>Testimonial quote goes here.</p><p>Testimonial quote goes here.</p><p>Testimonial quote goes here.</p>",
+            "author": "John Smith",
+            "author_title": "CEO of Company",
+            "author_image": "shopify://shop_images/WhatsApp_Image_2025-02-18_at_5.17.02_PM.png"
+          }
+        },
+        "testimonial_eFUmJb": {
+          "type": "testimonial",
+          "settings": {
+            "show_rating": true,
+            "rating": 5,
+            "quote": "<p>Testimonial quote goes here.</p><p>Testimonial quote goes here.</p><p>Testimonial quote goes here.</p>",
+            "author": "John Smith",
+            "author_title": "CEO of Company",
+            "author_image": "shopify://shop_images/images.jpg"
+          }
+        },
+        "testimonial_xJgWiF": {
+          "type": "testimonial",
+          "settings": {
+            "show_rating": true,
+            "rating": 5,
+            "quote": "",
+            "author": "John Smith",
+            "author_title": "CEO of Company",
+            "author_image": "shopify://shop_images/4_cba4dba2-5001-4ad6-8dae-5dc997bd9f0d.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_7EbxXM",
+        "testimonial_eFUmJb",
+        "testimonial_xJgWiF"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "content": "<h2>Hear from our customers</h2>",
+        "carousel_loop_enabled": true
+      }
     }
   },
   "order": [
@@ -226,6 +274,7 @@
     "product-recommendations",
     "scrollertimeframe_Kibrkm",
     "faq_list_zJVwkM",
-    "comparasion_MdLmCK"
+    "comparasion_MdLmCK",
+    "testimonial_list_MX6mMb"
   ]
 }
