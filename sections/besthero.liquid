@@ -143,6 +143,7 @@
   color: white;
 }
 .hero-background-video {
+  bg-black
   border-radius:10px; margin:14px;margin-top:0;
   position: absolute;
   top: 0;
@@ -151,13 +152,18 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
+      animation: fadeinright 1s ease-in-out;
+
 }
 .hero-content h1 {
   font-size: 3rem;font-weight:900;
   margin-bottom: .5rem;
+    animation: fadeinright 1s ease-in-out;
 }
 .hero-content p {
   font-size: 1rem;
+      animation: fadeinright 1s ease-in-out;
+
 }
   
 .marquee-wrapper {
@@ -177,7 +183,7 @@
   font-size: .75rem;
   color: black;text-transform: uppercase;font-weight:900;
 }
-  @keyframes fadein {
+  @keyframes fadeinright {
   from {
     transform: translateX(0%);opacity:0%;
   }
