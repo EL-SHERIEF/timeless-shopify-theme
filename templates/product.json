@@ -227,9 +227,9 @@
           "settings": {
             "show_rating": true,
             "rating": 5,
-            "quote": "<p>Testimonial quote goes here.</p><p>Testimonial quote goes here.</p><p>Testimonial quote goes here.</p>",
-            "author": "John Smith",
-            "author_title": "CEO of Company",
+            "quote": "<p>Better than clinical laser! Fast, safe, and super effective with no irritation. I’m seeing amazing results at home—highly recommend!</p>",
+            "author": "Sarah M.",
+            "author_title": "Verified",
             "author_image": "shopify://shop_images/WhatsApp_Image_2025-02-18_at_5.17.02_PM.png"
           }
         },
@@ -263,7 +263,7 @@
       ],
       "settings": {
         "color_scheme": "",
-        "content": "<h2>Hear from our customers</h2>",
+        "content": "<h2>Hear from our customers!</h2>",
         "carousel_loop_enabled": true
       }
     }
