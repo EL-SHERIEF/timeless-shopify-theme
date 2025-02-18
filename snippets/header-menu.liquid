@@ -24,7 +24,7 @@
                         <div class="mb-1">{{ child_link.title | link_to: child_link.url, class: 'technical text-xs' }}</div>
                         <ul>
                           {%- for grandchild_link in child_link.links -%}
-                            <li>{{ grandchild_link.title | link_to: grandchild_link.url, class: 'hover' }}</li>
+                            <li>{{ grandchild_link.title | link_to: grandchild_link.url, class: 'hover:underline' }}</li>
                           {%- endfor -%}
                         </ul>
                       </li>
@@ -52,7 +52,7 @@
 
                         {%- else -%}
                           {% comment %} Megamenu > basic link {% endcomment %}
-                          <li>{{ child_link.title | link_to: child_link.url, class: 'hover:underline' }}</li>
+                          <li>{{ child_link.title | link_to: child_link.url, class: '' }}</li>
 
                         {%- endif -%}
                       {%- endfor -%}
