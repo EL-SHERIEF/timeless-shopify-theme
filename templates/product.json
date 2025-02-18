@@ -184,8 +184,8 @@
       ],
       "settings": {
         "color_scheme": "",
-        "content": "<h2>Frequently Asked Questions</h2>",
-        "subcontent": "<p>no bro</p>"
+        "content": "<h2>FAQ</h2>",
+        "subcontent": "<p>Discover how our laser device delivers safe, salon-smooth results at home!</p>"
       }
     },
     "comparasion_MdLmCK": {
@@ -215,8 +215,8 @@
         "pricing_card_yxBAKP"
       ],
       "settings": {
-        "heading": "Pricing",
-        "description": "Choose the best plan for your needs."
+        "heading": "Why Laserly™",
+        "description": "Experience safer, convenient, salon-level results at home with Laserly!"
       }
     }
   },
