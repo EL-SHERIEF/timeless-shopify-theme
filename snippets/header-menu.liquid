@@ -52,7 +52,7 @@
 
                         {%- else -%}
                           {% comment %} Megamenu > basic link {% endcomment %}
-                          <li>{{ child_link.title | link_to: child_link.url, class: 'hover:scale-[1.1] ' }}</li>
+                          <li>{{ child_link.title | link_to: child_link.url, class: 'hover:underline' }}</li>
 
                         {%- endif -%}
                       {%- endfor -%}
