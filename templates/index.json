@@ -81,12 +81,20 @@
     "newtestimonials_geJYcT": {
       "type": "newtestimonials",
       "blocks": {
+        "testimonial_mwexQG": {
+          "type": "testimonial",
+          "settings": {
+            "name": "",
+            "quote": ""
+          }
+        },
         "testimonial_GQFAhV": {
           "type": "testimonial",
           "settings": {
             "image": "shopify://shop_images/images.jpg",
             "name": "Juila.A",
-            "quote": "Better than clinical laser! Fast, safe, and super effective with no irritation. I’m seeing amazing results at home—highly recommend"
+            "quote": "Better than clinical laser! Fast, safe, and super effective with no irritation. I’m seeing amazing results at home—highly recommend",
+            "rating": 5
           }
         },
         "testimonial_bnbGTg": {
@@ -94,11 +102,13 @@
           "settings": {
             "image": "shopify://shop_images/WhatsApp_Image_2025-02-18_at_5.17.02_PM.png",
             "name": "Emily R.",
-            "quote": "Super easy to use! I was nervous at first, but the instructions were simple, and it’s so quick to operate. No complicated setup—just effective hair removal in the comfort of my home!"
+            "quote": "Super easy to use! I was nervous at first, but the instructions were simple, and it’s so quick to operate. No complicated setup—just effective hair removal in the comfort of my home!",
+            "rating": 5
           }
         }
       },
       "block_order": [
+        "testimonial_mwexQG",
         "testimonial_GQFAhV",
         "testimonial_bnbGTg"
       ],
