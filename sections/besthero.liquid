@@ -129,6 +129,29 @@
       <span>{{ section.settings.marquee_slot_8 }}</span>
     </div>
   </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const { motion, useMotionValue, useTransform } = window['framer-motion'];
+
+    // Create a scroll motion value
+    const scrollY = useMotionValue(0);
+
+    // Update scrollY value when scrolling
+    window.addEventListener("scroll", () => {
+      scrollY.set(window.scrollY || window.pageYOffset);
+    });
+
+    // Apply a parallax effect (move the video by a fraction of the scroll)
+    const parallaxEffect = useTransform(scrollY, [0, 500], [0, -100]); // Adjust the range if needed
+
+    // Find the video element
+    const videoElement = document.querySelector('.hero-background-video');
+
+    // Apply the parallax effect to the video element
+    motion(videoElement).style.transform = parallaxEffect.get(); // Dynamically update position
+  });
+</script>
+
 <style>
 .hero-section {
   position: relative;
