@@ -1,189 +1,159 @@
 {% schema %}
 {
-  "name": "Testimonials",
-  "settings": [],
+  "name": "Image Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Header",
+      "default": "Start designing your dream project."
+    },
+    {
+      "type": "text",
+      "id": "subheader",
+      "label": "Subheader",
+      "default": "Create beautiful designs for websites, apps, and more, directly in your browser."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta",
+      "label": "Show CTA",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link",
+      "default": "/",
+      "info": "Only visible if 'Show CTA' is enabled."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "Start for Free",
+      "info": "Only visible if 'Show CTA' is enabled."
+    }
+  ],
   "blocks": [
     {
-      "type": "testimonial",
-      "name": "Testimonial",
+      "type": "image",
+      "name": "Image",
       "settings": [
         {
           "type": "image_picker",
-          "id": "imagerow",
-          "label": "Customer Image"
-        },
-        {
-          "type": "text",
-          "id": "customer_name",
-          "label": "Customer Name",
-          "default": "John Doe"
-        },
-        {
-          "type": "text",
-          "id": "customer_position",
-          "label": "Customer Position",
-          "default": "CEO, Company"
-        },
-        {
-          "type": "textarea",
-          "id": "testimonial_text",
-          "label": "Testimonial Text",
-          "default": "This is an amazing product! I absolutely love it."
-        },
-        {
-          "type": "range",
-          "id": "star_rating",
-          "label": "Star Rating",
-          "min": 1,
-          "max": 5,
-          "step": 1,
-          "default": 5
+          "id": "image",
+          "label": "Select Image"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Testimonials",
-      "category": "Custom",
-      "blocks": [
-        {
-          "type": "testimonial"
-        },
-        {
-          "type": "testimonial"
-        }
-      ]
+      "name": "Image Grid"
     }
   ]
 }
 {% endschema %}
 
-<div class="testimonial-section">
-  <div class="swiper testimonial-swiper">
-    <div class="swiper-wrapper">
-      {% for block in section.blocks %}
-      <div class="swiper-slide">
-        <div class="testimonial-card">
-          <div class="testimonial-header">
-            {% if block.settings.imagerow %}
-            <img src="{{ block.settings.imagerow | img_url: '600x600' }}" alt="{{ block.settings.customer_name }}" class="customer-image">
-            {% endif %}
-            <div class="customer-info">
-              <h3>{{ block.settings.customer_name }}</h3>
-              <p>{{ block.settings.customer_position }}</p>
-            </div>
-          </div>
-          <p class="testimonial-text">"{{ block.settings.testimonial_text }}"</p>
-          <div class="star-rating">
-            {% for i in (1..block.settings.star_rating) %}
-              <svg class="star-icon" height="16" width="16" viewBox="0 0 47.94 47.94" fill="#FFD700">
-                <path d="M26.285,2.486l5.407,10.956c0.376,0.762,1.103,1.29,1.944,1.412l12.091,1.757c2.118,0.308,2.963,2.91,1.431,4.403l-8.749,8.528c-0.608,0.593-0.886,1.448-0.742,2.285l2.065,12.042c0.362,2.109-1.852,3.717-3.746,2.722l-10.814-5.685c-0.752-0.395-1.651-0.395-2.403,0l-10.814,5.685c-1.894,0.996-4.108-0.613-3.746-2.722l2.065-12.042c0.144-0.837-0.134-1.692-0.742-2.285l-8.749-8.528c-1.532-1.494-0.687-4.096,1.431-4.403l12.091-1.757c0.841-0.122,1.568-0.65,1.944-1.412l5.407-10.956C22.602,0.567,25.338,0.567,26.285,2.486z"></path>
-              </svg>
-            {% endfor %}
-          </div>
+<div class="image-grid-section">
+  <!-- Header & CTA -->
+  <div class="image-grid-header">
+    <h1>{{ section.settings.header }}</h1>
+    <p>{{ section.settings.subheader }}</p>
+
+    {% if section.settings.show_cta %}
+      <a href="{{ section.settings.cta_link }}" class="cta-button">
+        {{ section.settings.cta_text }} <span>→</span>
+      </a>
+    {% endif %}
+  </div>
+
+  <!-- Image Grid -->
+  <div class="image-grid">
+    {% for block in section.blocks %}
+      {% if block.settings.image %}
+        <div class="image-item">
+          <img src="{{ block.settings.image | img_url: 'large' }}" alt="Image">
         </div>
-      </div>
-      {% endfor %}
-    </div>
-    <div class="swiper-pagination"></div>
+      {% endif %}
+    {% endfor %}
   </div>
 </div>
 
 <style>
-.testimonial-section {
-  padding: 50px 0;
+.image-grid-section {
+  text-align: center;
+  background: linear-gradient(149.482deg, rgb(52, 133, 253) 0%, rgb(187, 246, 255) 100%);
+  padding: 40px 20px;
+  border-radius: 16px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.image-grid-header {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-}
-.testimonial-swiper {
-  padding:40px 0;
-  width: 80%;
-}
-.testimonial-card {
-  padding: 20px;
-  border-radius: 10px;
   max-width: 600px;
-  margin: auto;
-     align-content: flex-start;
-    align-items: flex-start;
-    display: flex;
-    flex: none;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 32px;
-    height: min-content;
-    justify-content: flex-start;
-    max-width: 625px;
-    overflow: visible;
-    padding: 0;
-    position: relative;
-    width: 100%;
+  margin: 40px auto;
 }
-.testimonial-header {
-align-content: center;
-    align-items: center;
-    display: flex;
-    flex: none;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 16px;
-    height: min-content;
-    justify-content: flex-start;
-    overflow: visible;
-    padding: 0;
-    position: relative;
-    width: 100%;
 
+.image-grid-header h1 {
+  font-size: 2.8rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  font-weight: 900;
+  color: #fff;
 }
-.customer-image {
-  width: 59px;
-  height: 59px;
-  border-radius: 50%;
-}
-.customer-info h3 {
-  margin: 0;
-  font-size: 18px;
-  font-weight:900;
-}
-.customer-info p {
-  margin: 0;
-  font-size: 18px;
-  color: #111111;
-    font-weight:900;
 
+.image-grid-header p {
+  font-size: 1.2rem;
+  color: #f8f8f8;
+  margin-bottom: 20px;
 }
-.testimonial-text {
-  font-size: 28px;
-  color: #1111111;
-  font-weight:900;
-  line-height: 1.4;
-}
-.star-rating {
+
+.cta-button {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 13px 24px;
+  background-color: #fff;
+  color: #333;
+  font-weight: bold;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
-.star-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 3px;
+
+.cta-button:hover {
+  background-color: #f0f0f0;
+  gap: 25px;
+}
+
+/* Image Grid */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 </style>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  var swiper = new Swiper(".testimonial-swiper", {
-    slidesPerView: "auto",
-      spaceBetween: 0,
-      loop: true,
-      speed: 3000,
-      autoplay: {
-        delay: 0,
-        disableOnInteraction: false,
-      },
-      freeMode: {
-        enabled: true,
-        momentum: false,
-      }
-  });
-});
-</script>
