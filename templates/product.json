@@ -285,6 +285,41 @@
         "cta_link": "/",
         "cta_text": "Start for Free"
       }
+    },
+    "3twins_KMmjwr": {
+      "type": "3twins",
+      "blocks": {
+        "image_JNp7K6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/S820ce0f5bc694bee83d98898acb4d457z.webp"
+          }
+        },
+        "image_hpEaYh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/image00001_665eb2ae-1750-4e97-bd9b-9595b8e5bfcb.webp"
+          }
+        },
+        "image_yD777r": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/4_4c5d22bc-ad78-4253-ac79-de12a50085d7.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_JNp7K6",
+        "image_hpEaYh",
+        "image_yD777r"
+      ],
+      "settings": {
+        "header": "Start designing your dream project.",
+        "subheader": "Create beautiful designs for websites, apps, and more, directly in your browser.",
+        "show_cta": false,
+        "cta_link": "/",
+        "cta_text": "Start for Free"
+      }
     }
   },
   "order": [
@@ -295,6 +330,7 @@
     "faq_list_zJVwkM",
     "comparasion_MdLmCK",
     "features_section_xcgJND",
-    "swiper_WaAkR6"
+    "swiper_WaAkR6",
+    "3twins_KMmjwr"
   ]
 }
