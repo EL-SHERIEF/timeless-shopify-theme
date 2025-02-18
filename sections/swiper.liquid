@@ -1,7 +1,32 @@
 {% schema %}
 {
   "name": "Video Slider",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Header",
+      "default": "Start designing your dream project."
+    },
+    {
+      "type": "text",
+      "id": "subheader",
+      "label": "Subheader",
+      "default": "Create beautiful designs for websites, apps, and more, directly in your browser."
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link",
+      "default": "/"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "Start for Free"
+    }
+  ],
   "blocks": [
     {
       "type": "video",
@@ -24,37 +49,88 @@
 }
 {% endschema %}
 
-<div class="video-slider">
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      {% for block in section.blocks %}
-        <div class="swiper-slide">
-          <video autoplay muted loop playsinline>
-            <source src="{{ block.settings.video_url }}" type="video/mp4">
-          </video>
-        </div>
-      {% endfor %}
+<div class="video-slider-section">
+  <!-- Header & CTA -->
+  <div class="video-slider-header">
+    <h1>{{ section.settings.header }}</h1>
+    <p>{{ section.settings.subheader }}</p>
+    <a href="{{ section.settings.cta_link }}" class="cta-button">
+      {{ section.settings.cta_text }} →
+    </a>
+  </div>
+
+  <!-- Swiper Slider -->
+  <div class="video-slider">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide">
+            <video autoplay muted loop playsinline>
+              <source src="{{ block.settings.video_url }}" type="video/mp4">
+            </video>
+          </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
 </div>
 
 <style>
-.video-slider {
-  width: 100%;
-  overflow: hidden;
-  padding: 20px;
+.video-slider-section {
+  text-align: center;
+  background: linear-gradient(149.482deg, rgb(52, 133, 253) 0%, rgb(187, 246, 255) 100%);
+  padding: 40px 20px;
   border-radius: 16px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
 }
 
+.video-slider-header {
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.video-slider-header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.video-slider-header p {
+  font-size: 1.1rem;
+  color: #f8f8f8;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #fff;
+  color: #333;
+  font-weight: bold;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Swiper Styles */
 .swiper {
   width: 100%;
   overflow: hidden;
-  border-radius: 10px;
+}
+
+.swiper-wrapper {
+  display: flex;
+  transition-timing-function: linear !important;
 }
 
 .swiper-slide {
   width: 320px;
-  height: 500px;
+  height: 180px;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -71,14 +147,17 @@
   document.addEventListener("DOMContentLoaded", function () {
     new Swiper(".mySwiper", {
       slidesPerView: "auto",
-      spaceBetween: 15,
+      spaceBetween: 0,
       loop: true,
-      speed: 3000,
+      speed: 5000,
       autoplay: {
         delay: 0,
         disableOnInteraction: false,
       },
-      freeMode: true
+      freeMode: {
+        enabled: true,
+        momentum: false,
+      }
     });
   });
 </script>
