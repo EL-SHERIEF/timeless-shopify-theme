@@ -193,3 +193,20 @@
   }
 }
 </style>
+<script>
+  // Ensure the script runs after the page is loaded
+  document.addEventListener("DOMContentLoaded", function () {
+    const { motion } = window['framer-motion'];
+
+    // Apply parallax effect to the video
+    const videoElement = document.querySelector('.hero-background-video');
+
+    // Detect scroll and animate
+    window.addEventListener('scroll', function () {
+      const scrollY = window.scrollY || window.pageYOffset;
+      // Add a parallax effect by translating the video based on the scroll
+      videoElement.style.transform = `translateY(${scrollY * 0.3}px)`;
+    });
+  });
+</script>
+
