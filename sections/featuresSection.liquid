@@ -1,45 +1,26 @@
 {% schema %}
 {
   "name": "Text and Icon Section",
-  "settings": [
+  "blocks": [
     {
-      "type": "header",
-      "content": "Text and icon"
-    },
-    {
-      "type": "text",
-      "id": "item_one_text",
-      "label": "First Item Text",
-      "default": "Item"
-    },
-    {
-      "type": "html",
-      "id": "item_one_icon",
-      "label": "First Item SVG Icon"
-    },
-    {
-      "type": "text",
-      "id": "item_two_text",
-      "label": "Second Item Text",
-      "default": "Item"
-    },
-    {
-      "type": "html",
-      "id": "item_two_icon",
-      "label": "Second Item SVG Icon"
-    },
-    {
-      "type": "text",
-      "id": "item_three_text",
-      "label": "Third Item Text",
-      "default": "Item"
-    },
-    {
-      "type": "html",
-      "id": "item_three_icon",
-      "label": "Third Item SVG Icon"
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "item_text",
+          "label": "Item Text",
+          "default": "Item"
+        },
+        {
+          "type": "html",
+          "id": "item_icon",
+          "label": "Item SVG Icon"
+        }
+      ]
     }
   ],
+  "max_blocks": 10,
   "presets": [
     {
       "name": "Text and Icon Section"
@@ -49,52 +30,90 @@
 {% endschema %}
 
 <div class="text-icon-section">
-  <div class="text-icon-item">
-    <div class="icon">{{ section.settings.item_one_icon }}</div>
-    <h1>{{ section.settings.item_one_text }}</h1>
-  </div>
-  <div class="text-icon-item">
-    <div class="icon">{{ section.settings.item_two_icon }}</div>
-    <h1>{{ section.settings.item_two_text }}</h1>
-  </div>
-  <div class="text-icon-item">
-    <div class="icon">{{ section.settings.item_three_icon }}</div>
-    <h1>{{ section.settings.item_three_text }}</h1>
-  </div>
+  {% for block in section.blocks %}
+    <div class="text-icon-item">
+      <div class="icon">{{ block.settings.item_icon }}</div>
+      <h1>{{ block.settings.item_text }}</h1>
+    </div>
+  {% endfor %}
 </div>
 
 <style>
+  :root {
+    --gradient-bg: linear-gradient(149.482deg, rgb(52, 133, 253) 0%, rgb(187, 246, 255) 100%);
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --transition-duration: 0.3s;
+  }
+
   .text-icon-section {
     display: flex;
-    justify-content: space-between;
-    width:calc(100% - 24px);margin:0 auto;
-    gap:18px;
-    padding: 8px 0;
-    background-color: transparent;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 1200px;
   }
 
-  .text-icon-item {padding:20px 0;
-    flex:1;background-color:black;border-radius:12px;
+  .text-icon-item {
+    position: relative;
+    flex: 1 1 calc(33.333% - 1.5rem);
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 20px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                       color: white;
-
+    color: var(--text-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+    overflow: hidden;
   }
 
-  .text-icon-item .icon {
-    width: 30px;
-    height: 30px;
-    margin: 0 auto 10px;
-  }
-
-  .text-icon-item h1 {
-    font-size: .8rem;
-    font-weight:900;
-    transition: color 0.3s ease;
+  /* Gradient overlay (subtle) */
+  .text-icon-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-bg);
+    opacity: 0.1;
+    z-index: 0;
+    border-radius: 16px;
   }
 
   .text-icon-item:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
   }
 
+  .text-icon-item .icon {
+    position: relative;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--gradient-bg);
+    border-radius: 50%;
+    padding: 10px;
+  }
+
+  .text-icon-item h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .text-icon-item {
+      flex: 1 1 100%;
+    }
+  }
 </style>
