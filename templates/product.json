@@ -110,24 +110,6 @@
         "intent": "related"
       }
     },
-    "scrollertimeframe_Kibrkm": {
-      "type": "scrollertimeframe",
-      "settings": {
-        "section_heading": "How long till my hair’s gone?",
-        "box_1_heading": "2-4 weeks",
-        "box_1_content": "You’ll be surprised at just how fast your hair growth starts to slow – you’ll likely notice a change after your first or second session.",
-        "box_1_image": "shopify://shop_images/BEFORE_2.webp",
-        "box_2_heading": "5-8 Weeks",
-        "box_2_content": "After a month of consistent weekly or biweekly treatments, you’ll notice a significant reduction in hair growth.",
-        "box_2_image": "shopify://shop_images/BEFORE_3.webp",
-        "box_3_heading": "8-12+ weeks",
-        "box_3_content": "During this stage, your legs will be silky smooth and virtually hair-free. Most people have little to no hair growth left by the time they reach 12 weeks of treatment.",
-        "box_3_image": "shopify://shop_images/BEFORE_1.webp",
-        "time1": "2-4 weeks",
-        "time2": "5-8 weeks",
-        "time3": "8-12+ weeks"
-      }
-    },
     "faq_list_zJVwkM": {
       "type": "faq-list",
       "blocks": {
@@ -320,17 +302,23 @@
         "cta_link": "/",
         "cta_text": "Start for Free"
       }
+    },
+    "supercharged_c4EgEg": {
+      "type": "supercharged",
+      "settings": {
+        "background_image": "shopify://shop_images/4.png"
+      }
     }
   },
   "order": [
     "besthero_3TKt8U",
     "product-form",
     "product-recommendations",
-    "scrollertimeframe_Kibrkm",
     "faq_list_zJVwkM",
     "comparasion_MdLmCK",
     "features_section_xcgJND",
     "swiper_WaAkR6",
-    "3twins_KMmjwr"
+    "3twins_KMmjwr",
+    "supercharged_c4EgEg"
   ]
 }
