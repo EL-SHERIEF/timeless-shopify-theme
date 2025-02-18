@@ -159,7 +159,7 @@
 
   <div class="team-arsenal-image-container">
     {% if section.settings.large_image %}
-      <img src="{{ section.settings.large_image | file_url }}" class="team-arsenal-image" alt="Team Arsenal Image">
+<img src="{{ section.settings.large_image | asset_url }}" class="team-arsenal-image" alt="Team Arsenal Image">
     {% endif %}
 
     {% for block in section.blocks %}
