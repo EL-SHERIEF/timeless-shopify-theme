@@ -81,7 +81,7 @@
 
       {%- when 0 -%}
         {% comment %} Basic top-level link {% endcomment %}
-        {{ link.title | link_to: link.url, class: 'block my-auto px-2 py-3 sm:py-3 hover:opacity-50 duration-300 ease-in-out' }}
+        {{ link.title | link_to: link.url, class: 'block my-auto px-2 py-3 text-sm sm:py-3 hover:opacity-50 duration-150 ease-in-out' }}
 
     {%- endcase -%}
   {%- endfor -%}
