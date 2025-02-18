@@ -142,6 +142,7 @@
   color: white;
 }
 .hero-background-video {
+  border-radius:10px; margin:14px;margin-top:0;
   position: absolute;
   top: 0;
   left: 0;
@@ -192,20 +193,4 @@
   }
 }
 </style>
-<script>
-  // Ensure the script runs after the page is loaded
-  document.addEventListener("DOMContentLoaded", function () {
-    const { motion } = window['framer-motion'];
-
-    // Apply parallax effect to the video
-    const videoElement = document.querySelector('.hero-background-video');
-
-    // Detect scroll and animate
-    window.addEventListener('scroll', function () {
-      const scrollY = window.scrollY || window.pageYOffset;
-      // Add a parallax effect by translating the video based on the scroll
-      videoElement.style.transform = `translateY(${scrollY * 4}px)`;
-    });
-  });
-</script>
 
