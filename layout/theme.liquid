@@ -50,6 +50,16 @@
       echo content_for_additional_checkout_buttons
     endif
   %}
+  <script>
+  const lenis = new Lenis({
+  autoRaf: true,
+});
+
+// Listen for the scroll event and log the event data
+lenis.on('scroll', (e) => {
+  console.log(e);
+});
+  </script
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </body>
 </html>
