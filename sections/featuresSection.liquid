@@ -1,126 +1,116 @@
 {% schema %}
 {
-  "name": "Text and Icon Section",
+  "name": "Text and Image Section",
   "blocks": [
     {
       "type": "item",
       "name": "Item",
       "settings": [
         {
-          "type": "text",
-          "id": "item_text",
-          "label": "Item Text",
-          "default": "Item"
-        },
-        {
-          "type": "html",
-          "id": "item_icon",
-          "label": "Item SVG Icon"
-        },
-        {
           "type": "image_picker",
-          "id": "background_image",
-          "label": "Background Image"
+          "id": "item_image",
+          "label": "Item Image or GIF"
+        },
+        {
+          "type": "text",
+          "id": "item_title",
+          "label": "Title",
+          "default": "Feature Title"
+        },
+        {
+          "type": "text",
+          "id": "item_subtitle",
+          "label": "Subtitle",
+          "default": "Feature description"
         }
       ]
     }
   ],
-  "max_blocks": 10,
+  "max_blocks": 4,
   "presets": [
     {
-      "name": "Text and Icon Section"
+      "name": "Text and Image Section"
     }
   ]
 }
 {% endschema %}
 
-<div class="text-icon-section">
+<div class="text-image-section">
   {% for block in section.blocks %}
-    <div class="text-icon-item" {% if block.settings.background_image != blank %}style="background-image: url({{ block.settings.background_image | img_url: 'master' }});" {% endif %}>
-      <div class="icon">{{ block.settings.item_icon }}</div>
-      <h1>{{ block.settings.item_text }}</h1>
+    <div class="text-image-item">
+      {% if block.settings.item_image != blank %}
+        <img src="{{ block.settings.item_image | img_url: 'medium' }}" alt="Feature Image" class="feature-image">
+      {% endif %}
+      <div class="text-content">
+        <h2>{{ block.settings.item_title }}</h2>
+        <p>{{ block.settings.item_subtitle }}</p>
+      </div>
     </div>
   {% endfor %}
 </div>
 
 <style>
-  :root {
-    --gradient-bg: linear-gradient(149.482deg, rgb(52, 133, 253) 0%, rgb(187, 246, 255) 100%);
-    --card-bg: #ffffff;
-    --text-color: #333;
-    --transition-duration: 0.3s;
-  }
-
-  .text-icon-section {
+  .text-image-section {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem;
-    padding: 1rem;
-    margin: 0 auto;
-    max-width: 1200px;
-  }
-
-  .text-icon-item {
-    position: relative;
-    flex: 1 1 calc(33.333% - 1.5rem);
-    background-color: var(--card-bg);
-    background-size: cover;
-    background-position: center;
-    border-radius: 16px;
+    gap: 20px;
     padding: 20px;
-    text-align: center;
-    color: var(--text-color);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
-    overflow: hidden;
+    flex-wrap: wrap;
   }
 
-  /* Gradient overlay for a modern look */
-  .text-icon-item::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--gradient-bg);
-    opacity: 0.1;
-    z-index: 0;
-    border-radius: 16px;
-  }
-
-  .text-icon-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-  }
-
-  .text-icon-item .icon {
-    position: relative;
-    z-index: 1;
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 15px;
-    display: flex;
-    justify-content: center;
+  .text-image-item {
+    place-content: center;
     align-items: center;
-    background: var(--gradient-bg);
-    border-radius: 50%;
-    padding: 10px;
+    place-self: start;
+    border-radius: 24px;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: row;
+    gap: 12px;
+    height: auto;
+    padding: 20px 16px;
+    position: relative;
+    width: 100%;
+    border: 1px solid #eaecf0;
   }
 
-  .text-icon-item h1 {
+  .feature-image {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .text-content {
+    place-content: center;
+    align-items: center;
+    display: flex;
+    flex: 1 0 0px;
+    flex-flow: column;
+    gap: 2px;
+    height: min-content;
+    padding: 0px;
     position: relative;
-    z-index: 1;
-    font-size: 1rem;
+    width: 1px;
+  }
+
+  .text-content h2 {
+    font-size: 16px;
+    color: #111111;
     font-weight: 600;
     margin: 0;
   }
 
-  /* Responsive adjustments */
+  .text-content p {
+    font-size: 14px;
+    color: #5f6980;
+    margin: 5px 0 0;
+  }
+
   @media (max-width: 768px) {
-    .text-icon-item {
-      flex: 1 1 100%;
+    .text-image-item {
+      flex-direction: column;
+      text-align: center;
     }
   }
 </style>
