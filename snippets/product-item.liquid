@@ -13,11 +13,11 @@
           {{ 'product-1' | placeholder_svg_tag }}
         {%- endif -%}
         {%- if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
-          <span class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-[9px]">
+          <span class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-[6px]">
             50% OFF
           </span>
         {%- endif -%}
-        <span class="absolute top-2 left-2 bg-black text-white text-xs font-bold px-2 py-1 rounded-[9px]">
+        <span class="absolute top-2 left-2 bg-black text-white text-xs font-bold px-2 py-1 rounded-[6px]">
           ONLY {{ product.selected_or_first_available_variant.inventory_quantity | default: 0 }} LEFT
         </span>
       </div>
