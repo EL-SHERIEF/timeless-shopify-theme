@@ -167,7 +167,7 @@
         <div class="floating-box">
           <div class="floating-box-title">
             {% if block.settings.floating_image %}
-              <img src="{{ block.settings.floating_image | file_url }}" alt="Floating Box Image">
+              <img src="{{ block.settings.floating_image | img_url: 'small' }}" alt="Floating Box Image">
             {% endif %}
             <span>{{ block.settings.floating_title }}</span>
           </div>

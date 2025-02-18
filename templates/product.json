@@ -274,19 +274,22 @@
         "image_JNp7K6": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/S820ce0f5bc694bee83d98898acb4d457z.webp"
+            "image": "shopify://shop_images/S820ce0f5bc694bee83d98898acb4d457z.webp",
+            "image_text": "Default caption"
           }
         },
         "image_hpEaYh": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/image00001_665eb2ae-1750-4e97-bd9b-9595b8e5bfcb.webp"
+            "image": "shopify://shop_images/image00001_665eb2ae-1750-4e97-bd9b-9595b8e5bfcb.webp",
+            "image_text": "Default caption"
           }
         },
         "image_yD777r": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/4_4c5d22bc-ad78-4253-ac79-de12a50085d7.png"
+            "image": "shopify://shop_images/4_4c5d22bc-ad78-4253-ac79-de12a50085d7.png",
+            "image_text": "Default caption"
           }
         }
       },
@@ -305,8 +308,46 @@
     },
     "supercharged_c4EgEg": {
       "type": "supercharged",
+      "blocks": {
+        "floating_box_pLxVxK": {
+          "type": "floating_box",
+          "settings": {
+            "floating_title": "Stewart J.",
+            "floating_content": "This is awesome! Great job! Will mark this as done @Dina.",
+            "floating_image": "shopify://shop_images/WhatsApp_Image_2025-02-18_at_5.17.02_PM.jpg"
+          }
+        },
+        "feature_V9DXWr": {
+          "type": "feature",
+          "settings": {
+            "feature_title": "Feature Title",
+            "feature_subtitle": "Feature description goes here."
+          }
+        },
+        "feature_MVnNxX": {
+          "type": "feature",
+          "settings": {
+            "feature_title": "Feature Title",
+            "feature_subtitle": "Feature description goes here."
+          }
+        },
+        "feature_g6BWmf": {
+          "type": "feature",
+          "settings": {
+            "feature_title": "Feature Title",
+            "feature_subtitle": "Feature description goes here."
+          }
+        }
+      },
+      "block_order": [
+        "floating_box_pLxVxK",
+        "feature_V9DXWr",
+        "feature_MVnNxX",
+        "feature_g6BWmf"
+      ],
       "settings": {
-        "background_image": "shopify://shop_images/4.png"
+        "heading": "Supercharge your team arsenal",
+        "large_image": "shopify://shop_images/images.jpg"
       }
     }
   },
