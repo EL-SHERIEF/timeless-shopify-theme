@@ -24,7 +24,7 @@
                         <div class="mb-1">{{ child_link.title | link_to: child_link.url, class: 'technical text-xs' }}</div>
                         <ul>
                           {%- for grandchild_link in child_link.links -%}
-                            <li>{{ grandchild_link.title | link_to: grandchild_link.url, class: 'hover:underline' }}</li>
+                            <li>{{ grandchild_link.title | link_to: grandchild_link.url, class: 'hover:scale-[1.1] hover:transform-x-2' }}</li>
                           {%- endfor -%}
                         </ul>
                       </li>
@@ -52,7 +52,7 @@
 
                         {%- else -%}
                           {% comment %} Megamenu > basic link {% endcomment %}
-                          <li>{{ child_link.title | link_to: child_link.url, class: 'hover:underline' }}</li>
+                          <li>{{ child_link.title | link_to: child_link.url, class: 'hover:scale-[1.1] hover:transform-x-2' }}</li>
 
                         {%- endif -%}
                       {%- endfor -%}
@@ -72,7 +72,7 @@
             </summary>
             <ul class="dropdown-contents -left-4 w-max sm:p-4 sm:pt-1 anim-fade-b">
               {%- for child_link in link.links -%}
-                <li>{{ child_link.title | link_to: child_link.url, class: 'hover:underline' }}</li>
+                <li>{{ child_link.title | link_to: child_link.url, class: 'hover:scale-[1.1] hover:transform-x-2' }}</li>
               {%- endfor -%}
             </ul>
           </details>
@@ -81,7 +81,7 @@
 
       {%- when 0 -%}
         {% comment %} Basic top-level link {% endcomment %}
-        {{ link.title | link_to: link.url, class: 'block my-auto py-1 sm:py-3 hover:underline' }}
+        {{ link.title | link_to: link.url, class: 'block my-auto py-1 sm:py-3 hover:scale-[1.1] hover:transform-x-2' }}
 
     {%- endcase -%}
   {%- endfor -%}
