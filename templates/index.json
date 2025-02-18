@@ -117,6 +117,65 @@
         "content": "<h2>Hear from our customers</h2>",
         "carousel_loop_enabled": true
       }
+    },
+    "features_section_a7Kadz": {
+      "type": "featuresSection",
+      "blocks": {
+        "item_8xTjWa": {
+          "type": "item",
+          "settings": {
+            "item_text": "Item",
+            "item_icon": "💥"
+          }
+        }
+      },
+      "block_order": [
+        "item_8xTjWa"
+      ],
+      "settings": {}
+    },
+    "swiper_jLLmtx": {
+      "type": "swiper",
+      "blocks": {
+        "video_9NM9bz": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739892285/ssstik.io___silkskinco__1739892178161_y4sku0.mp4"
+          }
+        },
+        "video_AWtkie": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739892285/ssstik.io___silkskinco__1739892178161_y4sku0.mp4"
+          }
+        },
+        "video_K9bNKU": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739892285/ssstik.io___silkskinco__1739892178161_y4sku0.mp4"
+          }
+        },
+        "video_wGe4Qf": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739892285/ssstik.io___silkskinco__1739892178161_y4sku0.mp4"
+          }
+        },
+        "video_QpEr9V": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739892285/ssstik.io___silkskinco__1739892178161_y4sku0.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "video_9NM9bz",
+        "video_AWtkie",
+        "video_K9bNKU",
+        "video_wGe4Qf",
+        "video_QpEr9V"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -125,6 +184,8 @@
     "features_section_ygAAJd",
     "promotional_banners_Jdapkk",
     "article-list",
-    "testimonial_list_gbzM46"
+    "testimonial_list_gbzM46",
+    "features_section_a7Kadz",
+    "swiper_jLLmtx"
   ]
 }
