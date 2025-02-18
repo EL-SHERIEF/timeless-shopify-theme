@@ -80,9 +80,10 @@
           "settings": {
             "show_rating": true,
             "rating": 5,
-            "quote": "<p>Testimonial quote goes here.</p>",
-            "author": "John Smith",
-            "author_title": "CEO of Company"
+            "quote": "<p>Laserly’ products are top-notch! The precision and quality are unmatched. I’ve seen a noticeable improvement in my results since switching. Highly recommend!</p>",
+            "author": "Emma L.",
+            "author_title": "Verified",
+            "author_image": "shopify://shop_images/4.png"
           }
         },
         "testimonial_wkG3Mg": {
@@ -116,46 +117,6 @@
         "content": "<h2>Hear from our customers</h2>",
         "carousel_loop_enabled": true
       }
-    },
-    "features_section_a6E4Ma": {
-      "type": "featuresSection",
-      "blocks": {
-        "item_DVGyfX": {
-          "type": "item",
-          "settings": {
-            "item_text": "Item",
-            "item_icon": ""
-          }
-        },
-        "item_KjXwET": {
-          "type": "item",
-          "settings": {
-            "item_text": "Item",
-            "item_icon": ""
-          }
-        },
-        "item_pBGEwD": {
-          "type": "item",
-          "settings": {
-            "item_text": "Item",
-            "item_icon": ""
-          }
-        },
-        "item_pxwrgf": {
-          "type": "item",
-          "settings": {
-            "item_text": "FREE RETURNS",
-            "item_icon": "💥"
-          }
-        }
-      },
-      "block_order": [
-        "item_DVGyfX",
-        "item_KjXwET",
-        "item_pBGEwD",
-        "item_pxwrgf"
-      ],
-      "settings": {}
     }
   },
   "order": [
@@ -164,7 +125,6 @@
     "features_section_ygAAJd",
     "promotional_banners_Jdapkk",
     "article-list",
-    "testimonial_list_gbzM46",
-    "features_section_a6E4Ma"
+    "testimonial_list_gbzM46"
   ]
 }
