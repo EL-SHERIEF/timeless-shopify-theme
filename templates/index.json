@@ -42,6 +42,7 @@
       "settings": {
         "color_scheme": "default",
         "content": "<p>The Laserly SmoothPro</p>",
+        "subcontent": "<p>Featured collections</p>",
         "columns": 3,
         "sale_badge_enabled": true
       }
@@ -83,17 +84,17 @@
         "testimonial_GQFAhV": {
           "type": "testimonial",
           "settings": {
-            "image": "shopify://shop_images/image00001_665eb2ae-1750-4e97-bd9b-9595b8e5bfcb.webp",
-            "name": "abdo",
-            "quote": "very well"
+            "image": "shopify://shop_images/images.jpg",
+            "name": "Juila.A",
+            "quote": "Better than clinical laser! Fast, safe, and super effective with no irritation. I’m seeing amazing results at home—highly recommend"
           }
         },
         "testimonial_bnbGTg": {
           "type": "testimonial",
           "settings": {
-            "image": "shopify://shop_images/secretreza-redline-edition-laser-hair-removal-health-beauty-176.webp",
-            "name": "abo abdo",
-            "quote": "what are you doing here son"
+            "image": "shopify://shop_images/WhatsApp_Image_2025-02-18_at_5.17.02_PM.png",
+            "name": "Emily R.",
+            "quote": "Super easy to use! I was nervous at first, but the instructions were simple, and it’s so quick to operate. No complicated setup—just effective hair removal in the comfort of my home!"
           }
         }
       },
