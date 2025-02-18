@@ -2,51 +2,50 @@
 
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 
-<div class="section">
+<div class="section py-10 bg-gray-100">
   {%- if section.settings.content -%}
-    <header class="mb-8 text-center rte">
+    <header class="mb-8 text-center text-2xl font-semibold">
       {{ section.settings.content }}
     </header>
   {%- endif -%}
 
   <div class="swiper text-center">
-    <div class="swiper-wrapper !items-center">
+    <div class="swiper-wrapper items-center">
       {%- for testimonial in testimonials -%}
         <article
-          class="swiper-slide p-4 {% if section.blocks.size > 1 %}max-w-lg{% endif %}"
-          style="border-radius: var(--border-radius);"
+          class="swiper-slide max-w-lg mx-auto p-6 bg-white shadow-lg rounded-xl relative text-left"
         >
-          <span class="absolute top-2 left-4 fill-ink opacity-10 text-4xl">{% render 'icon' with 'quote' %}</span>
+          <span class="absolute top-2 left-4 text-gray-300 text-5xl">&#8220;</span>
 
-          <blockquote class="relative" style="text-wrap: balance;">
+          <blockquote class="relative">
             {%- if testimonial.show_rating -%}
-              <div>
+              <div class="flex gap-1 mb-3">
                 {%- for star in (1..5) -%}
-                  <span class="text-amber-400 {% if forloop.index > testimonial.rating %}text-opacity-30{% endif %}">★</span>
+                  <svg height="20" width="20" viewBox="0 0 47.94 47.94" fill="{%- if forloop.index <= testimonial.rating -%}#FFC107{%- else -%}#E0E0E0{%- endif -%}">
+                    <path d="M26.285,2.486l5.407,10.956c0.376,0.762,1.103,1.29,1.944,1.412l12.091,1.757c2.118,0.308,2.963,2.91,1.431,4.403
+                      l-8.749,8.528c-0.608,0.593-0.886,1.448-0.742,2.285l2.065,12.042c0.362,2.109-1.852,3.717-3.746,2.722l-10.814-5.685
+                      c-0.752-0.395-1.651-0.395-2.403,0l-10.814,5.685c-1.894,0.996-4.108-0.613-3.746-2.722l2.065-12.042
+                      c0.144-0.837-0.134-1.692-0.742-2.285l-8.749-8.528c-1.532-1.494-0.687-4.096,1.431-4.403l12.091-1.757
+                      c0.841-0.122,1.568-0.65,1.944-1.412l5.407-10.956C22.602,0.567,25.338,0.567,26.285,2.486z"/>
+                  </svg>
                 {%- endfor -%}
               </div>
             {%- endif -%}
 
-            <div class="my-4 text-lg rte">{{ testimonial.quote }}</div>
+            <p class="my-4 text-lg text-gray-800">{{ testimonial.quote }}</p>
 
             {%- if testimonial.author -%}
-              <footer class="
-                grid items-center max-w-max mx-auto text-sm
-                {% if testimonial.author_image %}grid-cols-[auto,1fr] gap-4{% endif %}
-              ">
+              <footer class="flex items-center gap-4 mt-4">
                 {%- if testimonial.author_image -%}
                   <figure>
-                    {{ testimonial.author_image
-                      | image_url: width: 100, height: 100
-                      | image_tag: class: 'w-auto max-h-[40px] bg-white rounded-full', loading: 'lazy'
-                    }}
+                    {{ testimonial.author_image | image_url: width: 50, height: 50 | image_tag: class: 'w-12 h-12 rounded-full shadow-md', loading: 'lazy' }}
                   </figure>
                 {%- endif -%}
 
-                <cite class="grid not-italic">
-                  <strong>{{ testimonial.author }}</strong>
-                  {{ testimonial.author_title }}
-                </cite>
+                <div class="text-sm">
+                  <strong class="block text-gray-900">{{ testimonial.author }}</strong>
+                  <span class="text-gray-500">{{ testimonial.author_title }}</span>
+                </div>
               </footer>
             {%- endif -%}
           </blockquote>
@@ -56,138 +55,15 @@
   </div>
 </div>
 
-<style type="text/tailwindcss">
-  #shopify-section-{{ section.id }} .swiper-slide {
-    --canvas: {{ section.settings.color_scheme.settings.canvas }};
-    --ink: {{ section.settings.color_scheme.settings.ink }};
-    @apply bg-[var(--canvas)] text-[var(--ink)];
-  }
-</style>
-
 <script type="module">
-  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.mjs'
-
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.mjs';
   (function(){
-    const swiper = new Swiper('#shopify-section-{{ section.id }} .swiper', {
+    new Swiper('.swiper', {
       slidesPerView: 'auto',
-      spaceBetween: 16,
+      spaceBetween: 20,
       centeredSlides: true,
       autoHeight: true,
-      loop: {{ section.settings.carousel_loop_enabled }},
-    })
+      loop: {{ section.settings.carousel_loop_enabled }}
+    });
   })()
 </script>
-
-{% schema %}
-{
-  "name": "Testimonial list",
-  "tag": "section",
-  "settings": [
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Color scheme"
-    },
-    {
-      "type": "richtext",
-      "id": "content",
-      "label": "Content",
-      "default": "<h2>Hear from our customers</h2>"
-    },
-    {
-      "type": "header",
-      "content": "Carousel",
-      "info": "This theme uses [Swiper](https://swiperjs.com/) for carousels. Refresh the page to see the results."
-    },
-    {
-      "type": "checkbox",
-      "id": "carousel_loop_enabled",
-      "label": "Enable looping",
-      "default": true
-    }
-  ],
-  "blocks": [
-    {
-      "type": "testimonial",
-      "name": "Testimonial",
-      "settings": [
-        {
-          "type": "checkbox",
-          "id": "show_rating",
-          "label": "Show rating",
-          "default": true
-        },
-        {
-          "type": "range",
-          "id": "rating",
-          "label": "Rating",
-          "min": 1,
-          "max": 5,
-          "unit": "★",
-          "default": 5
-        },
-        {
-          "type": "richtext",
-          "id": "quote",
-          "label": "Quote",
-          "default": "<p>Testimonial quote goes here.</p>"
-        },
-        {
-          "type": "header",
-          "content": "Author"
-        },
-        {
-          "type": "text",
-          "id": "author",
-          "label": "Name",
-          "default": "John Smith"
-        },
-        {
-          "type": "text",
-          "id": "author_title",
-          "label": "Title",
-          "default": "CEO of Company"
-        },
-        {
-          "type": "image_picker",
-          "id": "author_image",
-          "label": "Image"
-        }
-      ]
-    }
-  ],
-  "disabled_on": {
-    "groups": [
-      "*"
-    ]
-  },
-  "presets": [
-    {
-      "name": "Testimonial list",
-      "blocks": [
-        {
-          "type": "testimonial",
-          "settings": {
-            "quote": "<p>Testimonial quote goes here.</p>",
-            "author": "John Smith"
-          }
-        },
-        {
-          "type": "testimonial",
-          "settings": {
-            "quote": "<p>Testimonial quote goes here.</p>",
-            "author": "John Smith"
-          }
-        },
-        {
-          "type": "testimonial",
-          "settings": {
-            "quote": "<p>Testimonial quote goes here.</p>",
-            "author": "John Smith"
-          }
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}
