@@ -175,7 +175,12 @@
         "video_wGe4Qf",
         "video_QpEr9V"
       ],
-      "settings": {}
+      "settings": {
+        "header": "Send us a testimonial and get 20% Money Back",
+        "subheader": "Easy and brief you can make it trust me, get your 20% extra discount immediately after purchase",
+        "cta_link": "/",
+        "cta_text": "Buy Now"
+      }
     }
   },
   "order": [
