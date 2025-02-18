@@ -219,52 +219,71 @@
         "description": "Experience safer, convenient, salon-level results at home with Laserly™!"
       }
     },
-    "testimonial_list_MX6mMb": {
-      "type": "testimonial-list",
+    "features_section_xcgJND": {
+      "type": "featuresSection",
       "blocks": {
-        "testimonial_7EbxXM": {
-          "type": "testimonial",
+        "item_PQMkXy": {
+          "type": "item",
           "settings": {
-            "show_rating": true,
-            "rating": 5,
-            "quote": "<p>Better than clinical laser! Fast, safe, and super effective with no irritation. I’m seeing amazing results at home—highly recommend!</p>",
-            "author": "Sarah M.",
-            "author_title": "Verified",
-            "author_image": "shopify://shop_images/WhatsApp_Image_2025-02-18_at_5.17.02_PM.png"
+            "item_title": "Feature Title",
+            "item_subtitle": "Feature description"
           }
         },
-        "testimonial_eFUmJb": {
-          "type": "testimonial",
+        "item_3MP7f8": {
+          "type": "item",
           "settings": {
-            "show_rating": true,
-            "rating": 5,
-            "quote": "<p>Life-changing! Laserly is so easy to use, and I noticed smoother skin in just weeks. It’s safe and perfect for at-home treatments!</p>",
-            "author": "Jessica T.",
-            "author_title": "Verified",
-            "author_image": "shopify://shop_images/images.jpg"
+            "item_title": "Feature Title",
+            "item_subtitle": "Feature description"
           }
         },
-        "testimonial_xJgWiF": {
-          "type": "testimonial",
+        "item_4YTnKU": {
+          "type": "item",
           "settings": {
-            "show_rating": true,
-            "rating": 5,
-            "quote": "<p>I’m thrilled with the results! No more appointments—Laserly gives me salon-quality smoothness at home, and it’s super gentle on my skin.</p>",
-            "author": "Amanda L.",
-            "author_title": "Verified",
-            "author_image": "shopify://shop_images/image00001_665eb2ae-1750-4e97-bd9b-9595b8e5bfcb.webp"
+            "item_title": "Feature Title",
+            "item_subtitle": "Feature description"
+          }
+        },
+        "item_RRyMrX": {
+          "type": "item",
+          "settings": {
+            "item_title": "Feature Title",
+            "item_subtitle": "Feature description"
           }
         }
       },
       "block_order": [
-        "testimonial_7EbxXM",
-        "testimonial_eFUmJb",
-        "testimonial_xJgWiF"
+        "item_PQMkXy",
+        "item_3MP7f8",
+        "item_4YTnKU",
+        "item_RRyMrX"
+      ],
+      "settings": {}
+    },
+    "swiper_WaAkR6": {
+      "type": "swiper",
+      "blocks": {
+        "video_QLAmmN": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://example.com/video.mp4"
+          }
+        },
+        "video_JBMpGT": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://example.com/video.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "video_QLAmmN",
+        "video_JBMpGT"
       ],
       "settings": {
-        "color_scheme": "",
-        "content": "<h2>Hear from our customers!</h2>",
-        "carousel_loop_enabled": true
+        "header": "Start designing your dream project.",
+        "subheader": "Create beautiful designs for websites, apps, and more, directly in your browser.",
+        "cta_link": "/",
+        "cta_text": "Start for Free"
       }
     }
   },
@@ -275,6 +294,7 @@
     "scrollertimeframe_Kibrkm",
     "faq_list_zJVwkM",
     "comparasion_MdLmCK",
-    "testimonial_list_MX6mMb"
+    "features_section_xcgJND",
+    "swiper_WaAkR6"
   ]
 }
