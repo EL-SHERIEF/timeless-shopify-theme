@@ -16,6 +16,11 @@
           "type": "html",
           "id": "item_icon",
           "label": "Item SVG Icon"
+        },
+        {
+          "type": "image_picker",
+          "id": "background_image",
+          "label": "Background Image"
         }
       ]
     }
@@ -31,7 +36,7 @@
 
 <div class="text-icon-section">
   {% for block in section.blocks %}
-    <div class="text-icon-item">
+    <div class="text-icon-item" {% if block.settings.background_image != blank %}style="background-image: url({{ block.settings.background_image | img_url: 'master' }});" {% endif %}>
       <div class="icon">{{ block.settings.item_icon }}</div>
       <h1>{{ block.settings.item_text }}</h1>
     </div>
@@ -59,7 +64,9 @@
   .text-icon-item {
     position: relative;
     flex: 1 1 calc(33.333% - 1.5rem);
-    background: var(--card-bg);
+    background-color: var(--card-bg);
+    background-size: cover;
+    background-position: center;
     border-radius: 16px;
     padding: 20px;
     text-align: center;
@@ -69,7 +76,7 @@
     overflow: hidden;
   }
 
-  /* Gradient overlay (subtle) */
+  /* Gradient overlay for a modern look */
   .text-icon-item::before {
     content: "";
     position: absolute;
@@ -77,19 +84,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--gradient-bg);
-    opacity: 0.1;
-    z-index: 0;
-    border-radius: 12px;
-  }
-    /* Gradient overlay (subtle) */
-  .text-icon-item::after {
-    content: "";
-    position: absolute;
-    top: -5%;
-    left: -5%;
-    width: 110%;
-    height: 110%;
     background: var(--gradient-bg);
     opacity: 0.1;
     z-index: 0;
