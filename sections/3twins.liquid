@@ -156,12 +156,12 @@
 .image-item:nth-child(1)::after {
   content: '';
   position: absolute;
-  top: -5px;
-  left: -5px;
-  width: calc(100% + 10px);
-  height: calc(100% + 10px);
+  top: -10px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
   background: linear-gradient(95deg, #3485FD 0%, #FEBBFF 100%);
-  border-radius: 24px; /* To match the rounded corners of the image */
+  border-radius: 25px; /* To match the rounded corners of the image */
   display: block; /* Ensure the pseudo-element takes up the full space */
   z-index: -1; /* Make sure it is placed above the image if needed */
   pointer-events: none; /* Prevent it from blocking any interactions */
