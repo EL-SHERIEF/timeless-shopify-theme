@@ -72,17 +72,13 @@
         "page_size": 4
       }
     },
-    "testimonial_list_gbzM46": {
-      "type": "testimonial-list",
-      "disabled": true,
-      "settings": {}
-    },
     "testimonials_nHb7Pk": {
       "type": "testimonials",
       "blocks": {
         "testimonial_Dd4McF": {
           "type": "testimonial",
           "settings": {
+            "customer_image": "shopify://shop_images/images.jpg",
             "customer_name": "John Doe",
             "customer_position": "CEO, Company",
             "testimonial_text": "This is an amazing product! I absolutely love it.",
@@ -92,6 +88,7 @@
         "testimonial_wVPHWJ": {
           "type": "testimonial",
           "settings": {
+            "customer_image": "shopify://shop_images/WhatsApp_Image_2025-02-18_at_5.17.02_PM.png",
             "customer_name": "John Doe",
             "customer_position": "CEO, Company",
             "testimonial_text": "This is an amazing product! I absolutely love it.",
@@ -101,6 +98,7 @@
         "testimonial_e6FmDk": {
           "type": "testimonial",
           "settings": {
+            "customer_image": "shopify://shop_images/4_cba4dba2-5001-4ad6-8dae-5dc997bd9f0d.jpg",
             "customer_name": "John Doe",
             "customer_position": "CEO, Company",
             "testimonial_text": "This is an amazing product! I absolutely love it.",
@@ -206,7 +204,6 @@
     "features_section_ygAAJd",
     "promotional_banners_Jdapkk",
     "article-list",
-    "testimonial_list_gbzM46",
     "testimonials_nHb7Pk",
     "features_section_a7Kadz",
     "swiper_jLLmtx"
