@@ -1,80 +1,11 @@
-{% schema %}
-{
-  "name": "Hero Section 2",
-  "settings": [
-    {
-      "type": "url",
-      "id": "background_video_url",
-      "label": "Background Video URL"
-    },
-    {
-      "type": "text",
-      "id": "hero_heading",
-      "label": "Hero Heading",
-      "default": "Ear-Care You Can See"
-    },
-    {
-      "type": "text",
-      "id": "hero_text",
-      "label": "Hero Text",
-      "default": "Limited edition jerseys and accessories now available."
-    },
-    {
-      "type": "text",
-      "id": "marquee_slot_1",
-      "label": "Marquee Slot 1",
-      "default": "LIMITED AMOUNT"
-    },
-    {
-      "type": "text",
-      "id": "marquee_slot_2",
-      "label": "Marquee Slot 2",
-      "default": "FREE SHIPPING!!"
-    },
-    {
-      "type": "text",
-      "id": "marquee_slot_3",
-      "label": "Marquee Slot 3",
-      "default": "ORDER NOW!!"
-    },
-    {
-      "type": "text",
-      "id": "marquee_slot_4",
-      "label": "Marquee Slot 4",
-      "default": "LIMITED AMOUNT"
-    },
-    {
-      "type": "text",
-      "id": "marquee_slot_5",
-      "label": "Marquee Slot 5",
-      "default": "FREE SHIPPING!!"
-    },
-    {
-      "type": "text",
-      "id": "marquee_slot_6",
-      "label": "Marquee Slot 6",
-      "default": "ORDER NOW!!"
-    },
-    {
-      "type": "text",
-      "id": "marquee_slot_7",
-      "label": "Marquee Slot 7",
-      "default": "LIMITED AMOUNT"
-    },
-    {
-      "type": "text",
-      "id": "marquee_slot_8",
-      "label": "Marquee Slot 8",
-      "default": "FREE SHIPPING!!"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Hero Section with Video and Marquee"
-    }
-  ]
-}
-{% endschema %}
+<script>
+  // Ensure animations trigger when the section is visible
+  document.addEventListener("DOMContentLoaded", function () {
+    const heroContent = document.querySelector(".hero-content");
+    heroContent.style.opacity = "1";
+    heroContent.style.transform = "translateY(0)";
+  });
+</script>
 
 <div class="hero-section">
   <video autoplay loop muted playsinline class="hero-background-video">
@@ -85,8 +16,8 @@
     <p>{{ section.settings.hero_text }}</p>
   </div>
 </div>
- <div class="marquee-wrapper">
-    <div class="marquee">
+<div class="marquee-wrapper">
+   <div class="marquee">
       <span>{{ section.settings.marquee_slot_1 }}</span>
       <span>{{ section.settings.marquee_slot_2 }}</span>
       <span>{{ section.settings.marquee_slot_3 }}</span>
@@ -128,8 +59,8 @@
       <span>{{ section.settings.marquee_slot_7 }}</span>
       <span>{{ section.settings.marquee_slot_8 }}</span>
     </div>
-  </div>
-  
+</div>
+
 <style>
 .hero-section {
   position: relative;
@@ -141,9 +72,13 @@
   justify-content: start;
   text-align: start;
   color: white;
+  overflow: hidden;
 }
+
 .hero-background-video {
-  border-radius:10px; margin:14px;margin-top:0;
+  border-radius: 10px;
+  margin: 14px;
+  margin-top: 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -151,32 +86,66 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
+  animation: zoom-in 10s ease-in-out infinite alternate;
 }
+
+@keyframes zoom-in {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.hero-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-out;
+}
+
 .hero-content h1 {
-  font-size: 3rem;font-weight:900;
-  margin-bottom: .5rem;
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
 }
+
 .hero-content p {
   font-size: 1rem;
 }
-  
+
 .marquee-wrapper {
-  padding:10px 0;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   overflow: hidden;
 }
+
 .marquee {
   display: flex;
-  align-items:center;justify-content:center;
+  align-items: center;
+  justify-content: center;
   gap: 10vw;
   white-space: nowrap;
   animation: marquee-scroll 28s linear infinite;
 }
+
 .marquee span {
-  font-size: .75rem;
-  color: black;text-transform: uppercase;font-weight:900;
+  font-size: 0.75rem;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 900;
+  animation: fade-in 1s ease-in-out;
 }
+
+.marquee span:hover {
+  color: #ff6347; /* Adds a hover effect for modern styling */
+  font-size: 0.9rem;
+}
+
 @keyframes marquee-scroll {
   from {
     transform: translateX(0%);
@@ -185,6 +154,7 @@
     transform: translateX(-50%);
   }
 }
+
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 2rem;
@@ -193,5 +163,13 @@
     font-size: 1rem;
   }
 }
-</style>
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+</style>
