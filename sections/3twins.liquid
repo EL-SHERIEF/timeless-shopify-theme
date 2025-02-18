@@ -1,3 +1,65 @@
+{
+  "name": "Image Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Header",
+      "default": "Start designing your dream project."
+    },
+    {
+      "type": "text",
+      "id": "subheader",
+      "label": "Subheader",
+      "default": "Create beautiful designs for websites, apps, and more, directly in your browser."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta",
+      "label": "Show CTA",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link",
+      "default": "/",
+      "info": "Only visible if 'Show CTA' is enabled."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "Start for Free",
+      "info": "Only visible if 'Show CTA' is enabled."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Select Image"
+        },
+        {
+          "type": "text",
+          "id": "image_text",
+          "label": "Image Text",
+          "default": "Default caption"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Grid"
+    }
+  ]
+}
+
 <div class="image-grid-section">
   <!-- Header & CTA -->
   <div class="image-grid-header">
