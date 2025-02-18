@@ -148,8 +148,18 @@
   height: 100%; object-fit:cover;
   border-radius: 12px;
   border: solid 1px #eaecf0;
+  position:relative;
 }
 
+  .image-item::nth-child(1) ::after {
+content:'';
+    position:absolute;
+    top:-5px;
+    left:-5px;
+    width:calc(100% + 10px);
+    height:calc(100% + 10px);
+  
+  }
 /* Responsive */
 @media (max-width: 768px) {
   .image-grid {
