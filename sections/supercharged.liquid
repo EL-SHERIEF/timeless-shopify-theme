@@ -1,6 +1,60 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Supercharge Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "feature_icon",
+          "label": "Feature Icon"
+        },
+        {
+          "type": "text",
+          "id": "feature_header",
+          "label": "Feature Header",
+          "default": "Feature Title"
+        },
+        {
+          "type": "textarea",
+          "id": "feature_text",
+          "label": "Feature Text",
+          "default": "Feature description here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Supercharge Section",
+      "category": "Custom Sections"
+    }
+  ]
+}
 {% endschema %}
+
+<section class="relative w-full">
+  <div class="relative w-full">
+    <img src="{{ section.settings.background_image | asset_url }}" alt="Background Image" class="w-full h-auto object-cover" />
+    <div class="absolute top-10 left-10 md:top-5 md:left-5 sm:top-2 sm:left-2 p-5 md:p-3 sm:p-2 bg-black/50 rounded-lg max-w-full text-white">
+      {% for block in section.blocks %}
+        <div class="flex flex-col md:flex-row md:items-center mb-6">
+          <img src="{{ block.settings.feature_icon | asset_url }}" alt="Feature Icon" class="w-12 h-12 md:w-10 md:h-10 sm:w-8 sm:h-8 mr-4 md:mr-3 rounded-full" />
+          <div class="text-lg sm:text-base md:text-xl">
+            <h3 class="font-bold mb-2">{{ block.settings.feature_header }}</h3>
+            <p class="text-sm md:text-base">{{ block.settings.feature_text }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
