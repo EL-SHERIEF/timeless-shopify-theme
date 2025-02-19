@@ -15,6 +15,7 @@
       "type": "footer",
       "settings": {
         "color_scheme": "",
+        "logo": "shopify://shop_images/Group_348.png",
         "menu": "footer"
       }
     },
