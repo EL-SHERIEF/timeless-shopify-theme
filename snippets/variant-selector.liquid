@@ -21,7 +21,7 @@
       <fieldset class="mb-4">
         <legend class="text-sm font-medium text-white mb-2">{{ product_option.name }}</legend>
 
-        <!-- Added transition classes for smooth color change -->
+        <!-- Parent container with transition classes -->
         <div class="flex flex-wrap gap-2 fest transition-colors duration-300">
           {%- for value in product_option.values -%}
             <label class="cursor-pointer">
@@ -68,16 +68,15 @@
     // For each container with class "fest"
     const festContainers = document.querySelectorAll('.fest');
     festContainers.forEach(container => {
-      // Update the container's background based on the checked radio value
       function updateContainerBackground() {
         const checkedInput = container.querySelector('input[type="radio"]:checked');
         if (checkedInput) {
           let value = checkedInput.value;
-          // Convert the value to a Tailwind-friendly class (e.g., "Red" becomes "red")
+          // Convert value to a Tailwind-friendly format (e.g. "Red" becomes "red")
           value = value.toLowerCase().trim().replace(/\s+/g, '-');
           const newBgClass = `bg-${value}-500`;
           
-          // Remove any existing Tailwind background class from the container
+          // Remove any existing Tailwind background classes from the container
           container.classList.forEach(cls => {
             if (/^bg-\S+/.test(cls)) {
               container.classList.remove(cls);
@@ -85,16 +84,29 @@
           });
           // Add the new background class
           container.classList.add(newBgClass);
+          
+          // Remove border classes from all label spans in the container
+          container.querySelectorAll('label span').forEach(span => {
+            span.classList.remove('border', 'border-black');
+          });
+          
+          // If the selected value is "white", add a black border on the selected label's span
+          if (value === 'white') {
+            const selectedSpan = checkedInput.closest('label').querySelector('span');
+            if (selectedSpan) {
+              selectedSpan.classList.add('border', 'border-black');
+            }
+          }
         }
       }
       
-      // Listen for changes on all radio inputs within the container
+      // Add change event listeners to all radio inputs within the container
       const radios = container.querySelectorAll('input[type="radio"]');
       radios.forEach(radio => {
         radio.addEventListener('change', updateContainerBackground);
       });
       
-      // Set the initial background on page load
+      // Initialize the background on page load
       updateContainerBackground();
     });
   });
