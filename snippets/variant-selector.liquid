@@ -21,7 +21,7 @@
       <fieldset class="mb-4">
         <legend class="text-sm font-medium text-white mb-2">{{ product_option.name }}</legend>
 
-        <div class="flex flex-wrap gap-2 fest bg-{{ product_option.values | handleize }}-500">
+        <div class="flex flex-wrap gap-2 fest bg-{{ value | handleize }}-500">
           {%- for value in product_option.values -%}
             <label class="cursor-pointer">
               <input
