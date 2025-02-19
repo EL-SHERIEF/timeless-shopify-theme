@@ -3,15 +3,15 @@
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       <!-- Logo Section -->
       <div>
-        {%- if section.settings.logo -%}
-          {{ section.settings.logo
-            | image_url: width: 300
-            | image_tag: class: 'max-h-10 object-contain', loading: 'lazy'
-            | link_to: routes.root_url
-          }}
-        {%- else -%}
-          <a href="{{ routes.root_url }}" class="text-xl font-semibold text-gray-900"> {{ shop.name }} </a>
-        {%- endif -%}
+         {%- if section.settings.logo -%}
+        {{ section.settings.logo
+          | image_url: width: 300
+          | image_tag: class: 'max-h-[160px] object-contain', alt: 'Footer logo', loading: 'lazy'
+          | link_to: routes.root_url
+        }}
+      {%- else -%}
+        {{ shop.name | link_to: routes.root_url, class: 'font-heading' }}
+      {%- endif -%}
       </div>
 
       <!-- Footer Menu -->
