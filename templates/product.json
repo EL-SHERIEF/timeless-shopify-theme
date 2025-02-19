@@ -201,59 +201,19 @@
         "description": "Experience safer, convenient, salon-level results at home with Laserly™!"
       }
     },
-    "features_section_xcgJND": {
-      "type": "featuresSection",
-      "blocks": {
-        "item_PQMkXy": {
-          "type": "item",
-          "settings": {
-            "item_title": "Feature Title",
-            "item_subtitle": "Feature description"
-          }
-        },
-        "item_3MP7f8": {
-          "type": "item",
-          "settings": {
-            "item_title": "Feature Title",
-            "item_subtitle": "Feature description"
-          }
-        },
-        "item_4YTnKU": {
-          "type": "item",
-          "settings": {
-            "item_title": "Feature Title",
-            "item_subtitle": "Feature description"
-          }
-        },
-        "item_RRyMrX": {
-          "type": "item",
-          "settings": {
-            "item_title": "Feature Title",
-            "item_subtitle": "Feature description"
-          }
-        }
-      },
-      "block_order": [
-        "item_PQMkXy",
-        "item_3MP7f8",
-        "item_4YTnKU",
-        "item_RRyMrX"
-      ],
-      "settings": {}
-    },
     "swiper_WaAkR6": {
       "type": "swiper",
       "blocks": {
         "video_QLAmmN": {
           "type": "video",
           "settings": {
-            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739892285/ssstik.io___silkskinco__1739892178161_y4sku0.mp4"
+            "video_url": "https://example.com/video.mp4"
           }
         },
         "video_JBMpGT": {
           "type": "video",
           "settings": {
-            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739927265/ssstik.io__trenday.al_1739892383267_1_o3cxdi.mp4"
+            "video_url": "https://example.com/video.mp4"
           }
         }
       },
@@ -305,6 +265,46 @@
         "cta_link": "/",
         "cta_text": "Start for Free"
       }
+    },
+    "features_section_xcgJND": {
+      "type": "featuresSection",
+      "blocks": {
+        "item_PQMkXy": {
+          "type": "item",
+          "settings": {
+            "item_title": "Feature Title",
+            "item_subtitle": "Feature description"
+          }
+        },
+        "item_3MP7f8": {
+          "type": "item",
+          "settings": {
+            "item_title": "Feature Title",
+            "item_subtitle": "Feature description"
+          }
+        },
+        "item_4YTnKU": {
+          "type": "item",
+          "settings": {
+            "item_title": "Feature Title",
+            "item_subtitle": "Feature description"
+          }
+        },
+        "item_RRyMrX": {
+          "type": "item",
+          "settings": {
+            "item_title": "Feature Title",
+            "item_subtitle": "Feature description"
+          }
+        }
+      },
+      "block_order": [
+        "item_PQMkXy",
+        "item_3MP7f8",
+        "item_4YTnKU",
+        "item_RRyMrX"
+      ],
+      "settings": {}
     },
     "supercharged_c4EgEg": {
       "type": "supercharged",
@@ -369,9 +369,9 @@
     "product-recommendations",
     "faq_list_zJVwkM",
     "comparasion_MdLmCK",
-    "features_section_xcgJND",
     "swiper_WaAkR6",
     "3twins_KMmjwr",
+    "features_section_xcgJND",
     "supercharged_c4EgEg"
   ]
 }
