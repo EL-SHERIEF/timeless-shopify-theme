@@ -21,22 +21,24 @@
       <fieldset class="mb-4">
         <legend class="text-sm font-medium text-white mb-2">{{ product_option.name }}</legend>
 
-        <div class="flex flex-wrap gap-2 fest">
-          {%- for value in product_option.values -%}
-            <label class="cursor-pointer">
-              <input
-                class="hidden peer"
-                name="option{{ product_option.position }}"
-                value="{{ value }}"
-                type="radio"
-                {% if product_option.selected or forloop.index0 == 0 %}checked{% endif %}
-              />
-              <span class="block px-4 py-2 rounded-[400px] text-sm  bg-black text-white transition-all peer-checked:bg-white peer-checked:text-black hover:bg-white/20">
-                {{ value }}
-              </span>
-            </label>
-          {%- endfor -%}
-        </div>
+   {% assign selected_value = product_option.values | first %}
+<div class="flex flex-wrap gap-2 fest bg-{{ selected_value | handleize }}-500">
+  {%- for value in product_option.values -%}
+    <label class="cursor-pointer">
+      <input
+        class="hidden peer"
+        name="option{{ product_option.position }}"
+        value="{{ value }}"
+        type="radio"
+        {% if product_option.selected or forloop.index0 == 0 %}checked{% endif %}
+      />
+      <span class="block px-4 py-2 rounded-[400px] text-sm text-white transition-all peer-checked:bg-white peer-checked:text-black hover:bg-white/20">
+        {{ value }}
+      </span>
+    </label>
+  {%- endfor -%}
+</div>
+
       </fieldset>
     {%- endfor -%}
   </div>
