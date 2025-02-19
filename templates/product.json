@@ -300,9 +300,9 @@
           "type": "testimonial",
           "settings": {
             "customer_image": "shopify://shop_images/4.png",
-            "customer_name": "John Doe",
-            "customer_position": "CEO, Company",
-            "testimonial_text": "This is an amazing product! I absolutely love it.",
+            "customer_name": "Amanda L.",
+            "customer_position": "",
+            "testimonial_text": "I’m thrilled with the results! No more appointments—Laserly gives me salon-quality smoothness at home, and it’s super gentle on my skin.",
             "star_rating": 5
           }
         }
