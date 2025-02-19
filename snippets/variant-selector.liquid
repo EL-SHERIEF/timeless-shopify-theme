@@ -44,8 +44,8 @@
 {%- endif -%}
 
 <style>
-  .fest{
-    /* The background will be set dynamically via JavaScript */
+  .fest {
+    /* Background will be updated dynamically via JS */
     width: fit-content;
     padding: 5px;
     border-radius: 400px;
@@ -77,7 +77,7 @@
           value = value.toLowerCase().trim().replace(/\s+/g, '-');
           const newBgClass = `bg-${value}-500`;
           
-          // Remove any existing Tailwind background class from the container
+          // Remove any existing Tailwind background classes from the container
           container.classList.forEach(cls => {
             if (/^bg-\S+/.test(cls)) {
               container.classList.remove(cls);
@@ -85,6 +85,13 @@
           });
           // Add the new background class
           container.classList.add(newBgClass);
+          
+          // If the selected value is white, add a black border; otherwise remove it.
+          if (value === 'white') {
+            container.classList.add('border', 'border-black');
+          } else {
+            container.classList.remove('border', 'border-black');
+          }
         }
       }
       
