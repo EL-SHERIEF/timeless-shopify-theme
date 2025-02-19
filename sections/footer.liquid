@@ -4,7 +4,7 @@
       {%- if section.settings.logo -%}
         {{ section.settings.logo
           | image_url: width: 300
-          | image_tag: class: 'max-h-[160px] object-contain', loading: 'lazy'
+          | image_tag: class: 'max-h-[160px] object-contain', alt: 'Footer logo', loading: 'lazy'
           | link_to: routes.root_url
         }}
       {%- else -%}
@@ -27,9 +27,6 @@
 
 <style type="text/tailwindcss">
   #shopify-section-{{ section.id }} {
-    --canvas: {{ section.settings.color_scheme.settings.canvas }};
-    --ink: {{ section.settings.color_scheme.settings.ink }};
-    --stroke: {{ section.settings.color_scheme.settings.stroke }};
     @apply bg-[var(--canvas)] text-[var(--ink)];
   }
 </style>
@@ -53,13 +50,11 @@
       "type": "link_list",
       "id": "menu",
       "label": "Menu",
-      "info": "At least one level of nesting for each top-level link recommended.",
       "default": "footer"
     },
     {
       "type": "header",
-      "content": "Social links",
-      "info": "Add social links from Settings > Brand > Social links. More info found [here](https://help.shopify.com/en/manual/promoting-marketing/managing-brand-assets#social-media-links)."
+      "content": "Social links"
     }
   ]
 }
