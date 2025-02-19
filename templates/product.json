@@ -170,37 +170,6 @@
         "subcontent": "<p>Discover how our laser device delivers safe, salon-smooth results at home!</p>"
       }
     },
-    "comparasion_MdLmCK": {
-      "type": "comparasion",
-      "blocks": {
-        "pricing_card_NyWbXp": {
-          "type": "pricing_card",
-          "settings": {
-            "title": "Laserly™",
-            "features": "Take care of your hair at home\n(Privacy & convenience)\n, Finish the entire treatment process in just 12 uses ( WAY cheaper )\n,Affordable one-time cost\n, Completely pain-free ( Gentle treatments)",
-            "card_image": "shopify://shop_images/secretreza-redline-edition-laser-hair-removal-health-beauty-176__1_-removebg-preview.png",
-            "all_checked": true
-          }
-        },
-        "pricing_card_yxBAKP": {
-          "type": "pricing_card",
-          "settings": {
-            "title": "Clinical Laser",
-            "features": "Bring your hairy self all the way to a clinic\n, Wait 4-6 weeks between each session, \nAvg Cost: 2-3x redline's price per session (and you'll prob need 4-8+)\n,Painful especially on underarms & bikini areas",
-            "card_image": "shopify://shop_images/pngwing.com.png",
-            "all_checked": false
-          }
-        }
-      },
-      "block_order": [
-        "pricing_card_NyWbXp",
-        "pricing_card_yxBAKP"
-      ],
-      "settings": {
-        "heading": "Why Laserly™",
-        "description": "Experience safer, convenient, salon-level results at home with Laserly™!"
-      }
-    },
     "features_section_xcgJND": {
       "type": "featuresSection",
       "blocks": {
@@ -307,6 +276,7 @@
       ],
       "settings": {
         "header": "Start designing your dream project.",
+        "tag": "small tag",
         "subheader": "Create beautiful designs for websites, apps, and more, directly in your browser.",
         "show_cta": false,
         "cta_link": "/",
@@ -375,7 +345,6 @@
     "product-form",
     "product-recommendations",
     "faq_list_zJVwkM",
-    "comparasion_MdLmCK",
     "features_section_xcgJND",
     "swiper_WaAkR6",
     "3twins_KMmjwr",
