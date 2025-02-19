@@ -73,17 +73,16 @@
 
 <style>
 .team-arsenal-section {
-  /* White background to match the screenshot */
   background-color: #fff;
   padding: 60px 20px;
-  max-width:1300px;
-  margin:80px auto;
+  max-width: 1300px;
+  margin: 80px auto;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 }
 
-/* Left column containing heading + feature blocks */
+/* Left column: heading + feature blocks */
 .team-arsenal-text {
   width: 50%;
   padding-right: 40px;
@@ -91,20 +90,28 @@
 
 .team-arsenal-text h2 {
   font-size: 54px;
-  line-height:1.1;letter-spacing:-1.5px;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
   font-weight: 800 !important;
-  color:#111111;
+  color: #111111;
   margin-bottom: 50px;
 }
 
 /* Each feature (heading + paragraph) */
 .team-arsenal-text .feature {
   margin-bottom: 40px;
-  display:flex;flex-direction:row;justify-content:start;align-items:center
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
-.team-arsenal-text .feature .content{
-    display:flex;flex-direction:column;justify-content:start;align-items:start
+.team-arsenal-text .feature .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
+
 /* Optional feature icon */
 .feature-icon {
   width: 40px;
@@ -117,14 +124,14 @@
 /* Feature title */
 .team-arsenal-text h4 {
   font-size: 20px;
-  line-height:1.2;
+  line-height: 1.2;
   font-weight: 600;
-    color: #111111;
+  color: #111111;
   margin-bottom: 0.5rem;
-  margin-top: 0; 
+  margin-top: 0;
 }
 
-/* Feature subtitle (paragraph) */
+/* Feature subtitle */
 .team-arsenal-text p {
   font-size: 18px;
   color: #5f6980;
@@ -132,16 +139,18 @@
   margin: 0;
 }
 
-/* Right column containing the large image + floating box */
+/* Right column: large image + floating box */
 .team-arsenal-image-container {
   position: relative;
-  height:550px;
-  width:40%;
+  height: 550px;
+  width: 40%;
 }
 
 .team-arsenal-image-container img {
-  width: 100%;border-radius:26px;
-  height:100%; object-fit:cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 26px;
   display: block;
 }
 
@@ -151,8 +160,8 @@
   top: 8%;
   right: -4%;
   background-color: #00000050;
-  backdrop-filter:blur(20px);
-  border:solid 1px #ffffff10;
+  backdrop-filter: blur(20px);
+  border: solid 1px #ffffff10;
   color: #fff;
   padding: 1rem;
   border-radius: 10px;
@@ -182,6 +191,33 @@
   margin-top: 0.5rem;
   line-height: 1.4em;
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .team-arsenal-section {
+    flex-direction: column;
+    padding: 40px 20px;
+    margin: 40px auto;
+  }
+  .team-arsenal-text {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+  .team-arsenal-image-container {
+    width: 100%;
+    height: auto;
+    /* Optionally, set a max-height or maintain a ratio */
+  }
+  .team-arsenal-image-container img {
+    border-radius: 16px;
+  }
+  .floating-box {
+    top: 5%;
+    right: 5%;
+    width: 200px;
+  }
+}
 </style>
 
 <section class="team-arsenal-section">
@@ -198,10 +234,10 @@
               alt="Feature Icon"
             >
           {% endif %}
-        <div class="content">
+          <div class="content">
             <h4>{{ block.settings.feature_title }}</h4>
-          <p>{{ block.settings.feature_subtitle }}</p>
-        </div>
+            <p>{{ block.settings.feature_subtitle }}</p>
+          </div>
         </div>
       {% endif %}
     {% endfor %}
