@@ -26,7 +26,9 @@
                 {% unless product.available or product.selected_or_first_available_variant.availabile %}disabled{% endunless %}
               >
                 {{ block.settings.text | default: 'Add to cart' | escape }}
-              
+                {%- if block.settings.inventory_text != blank -%}
+                  {% render 'inventory', text: block.settings.inventory_text %}
+                {%- endif -%}
               </button>
             </div>
 
@@ -56,16 +58,7 @@
               {%- render 'gift-card-recipient-form' -%}
             {%- endif -%}
 
-          {%- when 'inventory' -%}
-            <p
-              class="{{ block.settings.tailwind | default: 'text-sm text-center md:text-left' }}"
-              {% if block.settings.threshold_enabled %}
-                data-inventory-threshold="{{ block.settings.threshold }}"
-                {% if product.selected_or_first_available_variant.inventory_quantity > block.settings.threshold %}hidden{% endif %}
-              {% endif %}
-            >
-              {% render 'inventory', text: block.settings.text %}
-            </p>
+           
 
           {%- when 'price' -%}
             {%- render 'price', class: 'text-md', show_taxes_included: true -%}
