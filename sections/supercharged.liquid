@@ -73,16 +73,18 @@
 
 <style>
 .team-arsenal-section {
-  padding: 4rem 2rem;
-  background-color: #f8f9fb;
+  /* White background to match the screenshot */
+  background-color: #fff;
+  padding: 60px 20px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: flex-start;
+  justify-content: space-between;
 }
 
+/* Left column containing heading + feature blocks */
 .team-arsenal-text {
   width: 50%;
+  padding-right: 40px;
 }
 
 .team-arsenal-text h2 {
@@ -91,93 +93,115 @@
   margin-bottom: 1.5rem;
 }
 
+/* Each feature (heading + paragraph) */
 .team-arsenal-text .feature {
   margin-bottom: 2rem;
-  display: flex;
-  align-items: flex-start;
 }
 
+/* Optional feature icon (if used) */
+.feature-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 1rem;
+  vertical-align: middle;
+  object-fit: contain;
+}
+
+/* Feature title */
 .team-arsenal-text h4 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  margin-top: 0; /* Remove default margin if needed */
 }
 
+/* Feature subtitle (paragraph) */
 .team-arsenal-text p {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #555;
+  line-height: 1.4em;
+  margin: 0;
 }
 
-.feature-icon {
-  width: 40px;
-  height: 40px;
-  margin-right: 1rem;
-}
-
+/* Right column containing the large image + floating box */
 .team-arsenal-image-container {
   position: relative;
-  width: 45%;
+  width: 50%;
 }
 
-.team-arsenal-image {
+/* Large image styling:
+   - No border-radius or box-shadow to match the flat style in the screenshot
+*/
+.team-arsenal-image-container img {
   width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: block;
 }
 
+/* Floating box near top-right of the image */
 .floating-box {
   position: absolute;
-  top: 20%;
-  left: 50%;
+  top: 8%;
+  right: 8%;
   background-color: #000;
   color: #fff;
   padding: 1rem;
   border-radius: 10px;
-  width: 250px;
+  width: 220px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Floating box image (avatar) */
 .floating-box img {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   margin-right: 0.5rem;
   vertical-align: middle;
+  object-fit: cover;
 }
 
 .floating-box-title {
   font-weight: bold;
   display: flex;
   align-items: center;
+  font-size: 0.95rem;
 }
 
 .floating-box-content {
   font-size: 0.9rem;
   margin-top: 0.5rem;
+  line-height: 1.4em;
 }
 </style>
 
 <section class="team-arsenal-section">
+  <!-- Left Column: Heading + Feature Blocks -->
   <div class="team-arsenal-text">
     <h2>{{ section.settings.heading }}</h2>
     {% for block in section.blocks %}
       {% if block.type == "feature" %}
         <div class="feature">
           {% if block.settings.feature_icon %}
-            <img src="{{ block.settings.feature_icon | img_url: 'small' }}" class="feature-icon" alt="Feature Icon">
+            <img 
+              src="{{ block.settings.feature_icon | img_url: 'small' }}" 
+              class="feature-icon" 
+              alt="Feature Icon"
+            >
           {% endif %}
-          <div>
-            <h4>{{ block.settings.feature_title }}</h4>
-            <p>{{ block.settings.feature_subtitle }}</p>
-          </div>
+          <h4>{{ block.settings.feature_title }}</h4>
+          <p>{{ block.settings.feature_subtitle }}</p>
         </div>
       {% endif %}
     {% endfor %}
   </div>
 
+  <!-- Right Column: Large Image + Floating Box -->
   <div class="team-arsenal-image-container">
     {% if section.settings.large_image %}
-      <img src="{{ section.settings.large_image | img_url: 'large' }}" alt="Image">
+      <img 
+        src="{{ section.settings.large_image | img_url: 'large' }}" 
+        alt="Section Image"
+      >
     {% endif %}
 
     {% for block in section.blocks %}
@@ -185,7 +209,10 @@
         <div class="floating-box">
           <div class="floating-box-title">
             {% if block.settings.floating_image %}
-              <img src="{{ block.settings.floating_image | img_url: 'small' }}" alt="Floating Box Image">
+              <img 
+                src="{{ block.settings.floating_image | img_url: 'small' }}" 
+                alt="Floating Box Avatar"
+              >
             {% endif %}
             <span>{{ block.settings.floating_title }}</span>
           </div>
