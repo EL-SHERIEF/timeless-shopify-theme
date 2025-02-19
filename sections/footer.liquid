@@ -22,7 +22,7 @@
             <ul class="space-y-1 text-gray-600">
               {%- for child_link in link.links -%}
                 <li>
-                  <a href="{{ child_link.url }}" class="hover:text-gray-900">{{ child_link.title }}</a>
+                  <a href="{{ child_link.url }}" class="hover:text-gray-900">{{ link.title }}</a>
                 </li>
               {%- endfor -%}
             </ul>
