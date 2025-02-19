@@ -18,7 +18,7 @@
         {%- endif -%}
         {%- if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
           <span class="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-           {{ variant.price | divided_by: 100 | json }}
+            {{ product.price_min | default: 0 | money }} OFF
           </span>
         {%- endif -%}
         <span class="absolute top-3 left-3 bg-black text-white text-xs font-bold px-2 py-1 rounded-full">
