@@ -182,7 +182,7 @@
   .image-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 20px; /* gap remains unchanged */
     margin-top: 30px;
   }
   
@@ -215,7 +215,7 @@
   }
   
   /* Responsive breakpoints */
-  /* For viewports between 769px and 1024px: two-column grid & slightly reduced typography */
+  /* For viewports between 769px and 1024px: two-column grid & reduced typography */
   @media (max-width: 1024px) and (min-width: 769px) {
     .image-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -228,15 +228,15 @@
     }
   }
   
-  /* For viewports 768px and below: one-column grid & compressed vertical spacing */
+  /* For viewports 768px and below: one-column grid & compressed vertical spacing, but gap remains the same */
   @media (max-width: 768px) {
     .image-grid-section {
       padding: 20px 10px;
       margin: 20px auto;
     }
     .image-grid-header {
-      margin: 20px auto;
-      padding-top: 10px;
+      margin: 10px auto;
+      padding-top: 5px;
     }
     .image-grid-header h1 {
       font-size: 2rem;
@@ -252,7 +252,7 @@
     }
     .image-grid {
       grid-template-columns: 1fr;
-      gap: 10px;
+      /* Gap remains 20px */
     }
   }
   
