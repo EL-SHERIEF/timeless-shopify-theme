@@ -140,7 +140,7 @@
 .hero-section {
   position: relative;
   width: 100%;
-  padding: 60px;
+  padding: 40px;
   height: 70vh;
   display: flex;
   align-items: end;
@@ -148,6 +148,13 @@
   text-align: start;
   color: white;
 }
+@media (max-width: 768px) {
+ .hero-section {
+  padding:30px;
+  height: 50vh;
+}
+}
+  
   .placeholder{
     z-index:-2;
       border-radius:10px; margin:14px;margin-top:0;
@@ -159,6 +166,7 @@
   height: 100%;
   object-fit: cover;
   }
+  
 .hero-background-video {
   border-radius:10px; margin:14px;margin-top:0;
   position: absolute;
