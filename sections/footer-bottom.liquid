@@ -13,7 +13,7 @@
   {%- if shop.enabled_payment_types.size > 0 -%}
     <ul class="flex flex-wrap gap-2">
       {%- for type in shop.enabled_payment_types -%}
-        <li>{{ type | payment_type_svg_tag }}</li>
+        <li>{{ type | payment_type_svg_tag: alt: 'Payment option: ' | append: type }}</li>
       {%- endfor -%}
     </ul>
   {%- endif -%}
@@ -25,9 +25,6 @@
 
 <style type="text/tailwindcss">
   #shopify-section-{{ section.id }} {
-    --canvas: {{ section.settings.color_scheme.settings.canvas }};
-    --ink: {{ section.settings.color_scheme.settings.ink }};
-    --stroke: {{ section.settings.color_scheme.settings.stroke }};
     @apply bg-[var(--canvas)] text-[var(--ink)];
   }
 </style>
@@ -46,8 +43,7 @@
       "type": "checkbox",
       "id": "show_follow_on_shop",
       "label": "Show Follow on Shop",
-      "default": false,
-      "info": "Documentation found [here](https://help.shopify.com/en/manual/online-store/themes/customizing-themes/follow-on-shop)"
+      "default": false
     }
   ]
 }
