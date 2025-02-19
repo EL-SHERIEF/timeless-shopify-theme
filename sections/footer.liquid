@@ -1,5 +1,5 @@
-<div class="section flex flex-col md:flex-row gap-y-4 gap-x-12 items-start bg-[#f9f6fe] rounded-xl">
-  <div class="grid gap-4 mx-auto md:mx-0">
+<div class="section flex <md:flex-col gap-y-4 gap-x-12 items-start bg-[#f9f6fe] rounded-xl">
+  <div class="grid gap-4 <md:mx-auto">
     <div class="max-w-[160px]">
       {%- if section.settings.logo -%}
         {{ section.settings.logo
@@ -22,7 +22,7 @@
   </div>
 
   {% render 'footer-menu' %}
-  {% render 'newsletter-form', id: section.id, class: 'w-full sm:grid sm:grid-cols-[1fr,auto] sm:gap-2 sm:items-end' %}
+  {% render 'newsletter-form', id: section.id, class: '<sm:w-full grid grid-cols-[1fr,auto] gap-2 items-end' %}
 </div>
 
 <style type="text/tailwindcss">
@@ -33,3 +33,34 @@
     @apply bg-[var(--canvas)] text-[var(--ink)];
   }
 </style>
+
+{% schema %}
+{
+  "name": "Footer",
+  "tag": "footer",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "info": "At least one level of nesting for each top-level link recommended.",
+      "default": "footer"
+    },
+    {
+      "type": "header",
+      "content": "Social links",
+      "info": "Add social links from Settings > Brand > Social links. More info found [here](https://help.shopify.com/en/manual/promoting-marketing/managing-brand-assets#social-media-links)."
+    }
+  ]
+}
+{% endschema %}
