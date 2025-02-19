@@ -22,7 +22,7 @@
           </span>
         {%- endif -%}
         <span class="absolute top-2 left-2 bg-black text-white text-xs font-bold px-2 py-1 rounded-full">
-          ONLY {{ product.selected_or_first_available_variant.inventory_quantity | default: 0 }} LEFT
+          ONLY {{ product.selected_or_first_available_variant.inventory_quantity }} LEFT
         </span>
       </div>
     </figure>
