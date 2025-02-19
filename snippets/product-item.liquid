@@ -2,37 +2,43 @@
   <a class="group grid gap-2" href="{{ product.url | within: collection }}">
     <figure class="relative">
       <style>
-        .bgchangable{
-          background:linear-gradient(149.482deg, #3485fd50 0%, #bbf6ff 100%);
+        .bgchangable {
+          background: linear-gradient(149.482deg, #3485fd50 0%, #bbf6ff 100%);
         }
-        </style>
+      </style>
       <div class="overflow-hidden rounded-[20px] bgchangable">
         {%- if product.featured_image -%}
           {{ product.featured_image
             | image_url: width: 500, height: 500
             | image_tag: class: 'w-full group-hover:scale-110 transition-transform duration-500 ease-out', loading: 'lazy'
           }}
-
         {%- else -%}
           {{ 'product-1' | placeholder_svg_tag }}
         {%- endif -%}
+
         {%- if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
           <span class="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-            {{ product.price_min | default: 0 | money }} OFF
+            {%- assign discount = product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price -%}
+            {{ discount | money }} OFF
           </span>
         {%- endif -%}
+
         <span class="absolute top-3 left-3 bg-black text-white text-xs font-bold px-2 py-1 rounded-full">
-          ONLY {{ first_available_variant.inventory_quantity }} LEFT
+          ONLY {{ product.selected_or_first_available_variant.inventory_quantity }} LEFT
         </span>
       </div>
     </figure>
 
-    <div class="text-lg sm:text-md font-semibold text-gray-800 mt-3">{{ product.title | default: 'Product title' }}</div>
+    <div class="text-lg sm:text-md font-semibold text-gray-800 mt-3">
+      {{ product.title | default: 'Product title' }}
+    </div>
   </a>
 
   <div class="text-sm sm:text-sm text-gray-600">
     <span>
-      <strong class="text-sm font-bold text-gray-900">{{ product.price_min | default: 0 | money }}</strong>
+      <strong class="text-sm font-bold text-gray-900">
+        {{ product.price_min | default: 0 | money }}
+      </strong>
     </span>
     {% if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price %}
       <span class="ml-2 text-gray-400 line-through">
