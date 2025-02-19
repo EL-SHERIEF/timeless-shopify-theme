@@ -290,9 +290,9 @@
           "type": "testimonial",
           "settings": {
             "customer_image": "shopify://shop_images/images.jpg",
-            "customer_name": "Life-changing! Laserly is so easy to use, and I noticed smoother skin in just weeks. It’s safe and perfect for at-home treatments!",
+            "customer_name": "Jessica T.",
             "customer_position": "",
-            "testimonial_text": "Jessica T.",
+            "testimonial_text": "Life-changing! Laserly is so easy to use, and I noticed smoother skin in just weeks. It’s safe and perfect for at-home treatments!",
             "star_rating": 5
           }
         },
