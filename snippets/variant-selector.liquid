@@ -21,7 +21,7 @@
       <fieldset class="mb-4">
         <legend class="text-sm font-medium text-white mb-2">{{ product_option.name }}</legend>
 
-        <!-- Add transition classes for smooth color change -->
+        <!-- Added transition classes for smooth color change -->
         <div class="flex flex-wrap gap-2 fest transition-colors duration-300">
           {%- for value in product_option.values -%}
             <label class="cursor-pointer">
@@ -32,7 +32,7 @@
                 type="radio"
                 {% if product_option.selected or forloop.index0 == 0 %}checked{% endif %}
               />
-              <span class="block px-4 py-2 rounded-[400px] text-sm text-white transition-all peer-checked:bg-white peer-checked:text-black hover:bg-white/20">
+              <span class="block px-4 py-2 rounded-[400px] text-sm text-black transition-all peer-checked:bg-white hover:bg-white/20">
                 {{ value }}
               </span>
             </label>
@@ -65,14 +65,14 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    // For each container with class "fest"
+    // Loop over each container with class "fest"
     const festContainers = document.querySelectorAll('.fest');
     festContainers.forEach(container => {
       function updateContainerBackground() {
         const checkedInput = container.querySelector('input[type="radio"]:checked');
         if (checkedInput) {
           let value = checkedInput.value;
-          // Convert the value to a Tailwind-friendly class (e.g., "Red" becomes "red")
+          // Convert value to a Tailwind-friendly class (e.g., "Red" becomes "red")
           value = value.toLowerCase().trim().replace(/\s+/g, '-');
           const newBgClass = `bg-${value}-500`;
           
@@ -85,20 +85,18 @@
           // Add the new background class
           container.classList.add(newBgClass);
           
-          // If the selected value is white, add a black border to container and update all labels
+          // If the value is "white", add a border to the container; otherwise remove it.
           if (value === 'white') {
             container.classList.add('border', 'border-black');
-            container.querySelectorAll('label span').forEach(span => {
-              span.classList.remove('text-white');
-              span.classList.add('text-black');
-            });
           } else {
             container.classList.remove('border', 'border-black');
-            container.querySelectorAll('label span').forEach(span => {
-              span.classList.remove('text-black', 'border', 'border-black');
-              span.classList.add('text-white');
-            });
           }
+          
+          // Make sure all label spans have text-black
+          container.querySelectorAll('label span').forEach(span => {
+            span.classList.remove('text-white');
+            span.classList.add('text-black');
+          });
         }
       }
       
