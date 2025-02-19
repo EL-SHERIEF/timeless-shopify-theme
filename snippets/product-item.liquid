@@ -17,9 +17,12 @@
         {%- endif -%}
 
         {%- if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
+          {% assign compare = product.selected_or_first_available_variant.compare_at_price %}
+          {% assign price = product.selected_or_first_available_variant.price %}
+          {% assign discount = compare | minus: price %}
+          {% assign discount_percent = discount | times: 100 | divided_by: compare %}
           <span class="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-            {%- assign discount = product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price -%}
-            {{ discount | money }} OFF
+            {{ discount_percent | round: 0 }}% OFF
           </span>
         {%- endif -%}
 
