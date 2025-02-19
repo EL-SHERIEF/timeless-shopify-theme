@@ -8,6 +8,12 @@
       "label": "Header",
       "default": "Start designing your dream project."
     },
+     {
+      "type": "text",
+      "id": "tag",
+      "label": "small tag",
+      "default": "small tag"
+    },
     {
       "type": "text",
       "id": "subheader",
@@ -66,6 +72,7 @@
 <div class="image-grid-section">
   <!-- Header & CTA -->
   <div class="image-grid-header">
+        <span class="tag">{{ section.settings.tag }}</span>
     <h1>{{ section.settings.header }}</h1>
     <p>{{ section.settings.subheader }}</p>
 
@@ -90,6 +97,11 @@
 </div>
 
 <style>
+  .tag{
+    color:#111111;
+    font-size:16px;
+    text-align:center;
+  }
   .image-caption {
   position:absolute;top:20px; left: 50%;
     transform: translate(-50%, 0);
