@@ -21,7 +21,7 @@
       <fieldset class="mb-4">
         <legend class="text-sm font-medium text-gray-700 mb-2">{{ product_option.name }}</legend>
 
-        <div class="flex flex-wrap gap-2">
+        <div class="flex flex-wrap gap-2 fest">
           {%- for value in product_option.values -%}
             <label class="cursor-pointer">
               <input
@@ -43,7 +43,10 @@
 {%- endif -%}
 
 <style>
-  fieldset {background:red;
+  .fest{
+    background:red;
+  }
+  fieldset {
     border: none;
     margin: 0;
     padding: 0;
