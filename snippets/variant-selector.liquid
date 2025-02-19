@@ -21,24 +21,23 @@
       <fieldset class="mb-4">
         <legend class="text-sm font-medium text-white mb-2">{{ product_option.name }}</legend>
 
-   {% assign selected_value = product_option.values | first %}
-<div class="flex flex-wrap gap-2 fest bg-{{ selected_value | handleize }}-500">
-  {%- for value in product_option.values -%}
-    <label class="cursor-pointer">
-      <input
-        class="hidden peer"
-        name="option{{ product_option.position }}"
-        value="{{ value }}"
-        type="radio"
-        {% if product_option.selected or forloop.index0 == 0 %}checked{% endif %}
-      />
-      <span class="block px-4 py-2 rounded-[400px] text-sm text-white transition-all peer-checked:bg-white peer-checked:text-black hover:bg-white/20">
-        {{ value }}
-      </span>
-    </label>
-  {%- endfor -%}
-</div>
-
+        <!-- Added transition classes for smooth color change -->
+        <div class="flex flex-wrap gap-2 fest transition-colors duration-300">
+          {%- for value in product_option.values -%}
+            <label class="cursor-pointer">
+              <input
+                class="hidden peer"
+                name="option{{ product_option.position }}"
+                value="{{ value }}"
+                type="radio"
+                {% if product_option.selected or forloop.index0 == 0 %}checked{% endif %}
+              />
+              <span class="block px-4 py-2 rounded-[400px] text-sm text-white transition-all peer-checked:bg-white peer-checked:text-black hover:bg-white/20">
+                {{ value }}
+              </span>
+            </label>
+          {%- endfor -%}
+        </div>
       </fieldset>
     {%- endfor -%}
   </div>
@@ -46,20 +45,57 @@
 
 <style>
   .fest{
-   width:fit-content;
-    padding:5px;border-radius:400px;
+    /* The background will be set dynamically via JavaScript */
+    width: fit-content;
+    padding: 5px;
+    border-radius: 400px;
   }
   fieldset {
     border: none;
     margin: 0;
     padding: 0;
   }
-
   label span {
     transition: all 0.2s ease;
   }
-
   label:hover span {
     border-color: black;
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // For each container with class "fest"
+    const festContainers = document.querySelectorAll('.fest');
+    festContainers.forEach(container => {
+      // Update the container's background based on the checked radio value
+      function updateContainerBackground() {
+        const checkedInput = container.querySelector('input[type="radio"]:checked');
+        if (checkedInput) {
+          let value = checkedInput.value;
+          // Convert the value to a Tailwind-friendly class (e.g., "Red" becomes "red")
+          value = value.toLowerCase().trim().replace(/\s+/g, '-');
+          const newBgClass = `bg-${value}-500`;
+          
+          // Remove any existing Tailwind background class from the container
+          container.classList.forEach(cls => {
+            if (/^bg-\S+/.test(cls)) {
+              container.classList.remove(cls);
+            }
+          });
+          // Add the new background class
+          container.classList.add(newBgClass);
+        }
+      }
+      
+      // Listen for changes on all radio inputs within the container
+      const radios = container.querySelectorAll('input[type="radio"]');
+      radios.forEach(radio => {
+        radio.addEventListener('change', updateContainerBackground);
+      });
+      
+      // Set the initial background on page load
+      updateContainerBackground();
+    });
+  });
+</script>
