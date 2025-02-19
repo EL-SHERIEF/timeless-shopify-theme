@@ -317,30 +317,42 @@
             "floating_image": "shopify://shop_images/WhatsApp_Image_2025-02-18_at_5.17.02_PM.jpg"
           }
         },
+        "feature_Qhchme": {
+          "type": "feature",
+          "settings": {
+            "feature_title": "Privacy was always an option, stay private",
+            "feature_subtitle": "Feature description goes here.",
+            "feature_icon": "shopify://shop_images/incognito-svgrepo-com.svg"
+          }
+        },
         "feature_V9DXWr": {
           "type": "feature",
           "settings": {
-            "feature_title": "Feature Title",
-            "feature_subtitle": "Feature description goes here."
+            "feature_title": "Calculate it yourself, Its much cheaper",
+            "feature_subtitle": "Feature description goes here.",
+            "feature_icon": "shopify://shop_images/cost-round-svgrepo-com.svg"
           }
         },
         "feature_MVnNxX": {
           "type": "feature",
           "settings": {
-            "feature_title": "Feature Title",
-            "feature_subtitle": "Feature description goes here."
+            "feature_title": "No OUCH OUCH, Its completely painless",
+            "feature_subtitle": "Feature description goes here.",
+            "feature_icon": "shopify://shop_images/happy-svgrepo-com.svg"
           }
         },
         "feature_g6BWmf": {
           "type": "feature",
           "settings": {
-            "feature_title": "Feature Title",
-            "feature_subtitle": "Feature description goes here."
+            "feature_title": "You can use it in 12 different  ways, do a backflip",
+            "feature_subtitle": "Feature description goes here.",
+            "feature_icon": "shopify://shop_images/arrow-two-way-left-right-svgrepo-com.svg"
           }
         }
       },
       "block_order": [
         "floating_box_pLxVxK",
+        "feature_Qhchme",
         "feature_V9DXWr",
         "feature_MVnNxX",
         "feature_g6BWmf"
