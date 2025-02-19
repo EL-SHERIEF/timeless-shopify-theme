@@ -110,6 +110,40 @@
         "intent": "related"
       }
     },
+    "swiper_WaAkR6": {
+      "type": "swiper",
+      "blocks": {
+        "video_QLAmmN": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739892285/ssstik.io___silkskinco__1739892178161_y4sku0.mp4"
+          }
+        },
+        "video_mXiiUA": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739927627/ssstik.io__loffta__1739927614026_p7bmjl.mp4"
+          }
+        },
+        "video_JBMpGT": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739927265/ssstik.io__trenday.al_1739892383267_1_o3cxdi.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "video_QLAmmN",
+        "video_mXiiUA",
+        "video_JBMpGT"
+      ],
+      "settings": {
+        "header": "Start designing your dream project.",
+        "subheader": "Create beautiful designs for websites, apps, and more, directly in your browser.",
+        "cta_link": "/",
+        "cta_text": "Start for Free"
+      }
+    },
     "faq_list_zJVwkM": {
       "type": "faq-list",
       "blocks": {
@@ -210,40 +244,6 @@
       ],
       "settings": {}
     },
-    "swiper_WaAkR6": {
-      "type": "swiper",
-      "blocks": {
-        "video_QLAmmN": {
-          "type": "video",
-          "settings": {
-            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739892285/ssstik.io___silkskinco__1739892178161_y4sku0.mp4"
-          }
-        },
-        "video_mXiiUA": {
-          "type": "video",
-          "settings": {
-            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739927627/ssstik.io__loffta__1739927614026_p7bmjl.mp4"
-          }
-        },
-        "video_JBMpGT": {
-          "type": "video",
-          "settings": {
-            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739927265/ssstik.io__trenday.al_1739892383267_1_o3cxdi.mp4"
-          }
-        }
-      },
-      "block_order": [
-        "video_QLAmmN",
-        "video_mXiiUA",
-        "video_JBMpGT"
-      ],
-      "settings": {
-        "header": "Start designing your dream project.",
-        "subheader": "Create beautiful designs for websites, apps, and more, directly in your browser.",
-        "cta_link": "/",
-        "cta_text": "Start for Free"
-      }
-    },
     "3twins_KMmjwr": {
       "type": "3twins",
       "blocks": {
@@ -343,10 +343,10 @@
   "order": [
     "besthero_3TKt8U",
     "product-form",
-    "product-recommendations",
-    "faq_list_zJVwkM",
     "features_section_xcgJND",
+    "product-recommendations",
     "swiper_WaAkR6",
+    "faq_list_zJVwkM",
     "3twins_KMmjwr",
     "supercharged_c4EgEg"
   ]
