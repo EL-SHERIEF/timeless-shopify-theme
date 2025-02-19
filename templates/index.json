@@ -97,6 +97,7 @@
         "testimonial_eVNwh7": {
           "type": "testimonial",
           "settings": {
+            "customer_image": "shopify://shop_images/469097324_1615291046091457_110682489689646525_n.jpg",
             "customer_name": "John Doe",
             "customer_position": "CEO, Company",
             "testimonial_text": "This is an amazing product! I absolutely love it.",
