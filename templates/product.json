@@ -110,7 +110,7 @@
           "settings": {
             "item_image": "shopify://shop_images/friendship-day.gif",
             "item_title": "90-Day Guarantee",
-            "item_subtitle": ""
+            "item_subtitle": "Peace of Mind for 3 Months!"
           }
         },
         "item_3MP7f8": {
@@ -118,23 +118,23 @@
           "settings": {
             "item_image": "shopify://shop_images/Animation_-_1739918393852.gif",
             "item_title": "Free Shipping",
-            "item_subtitle": ""
+            "item_subtitle": "Fast, Free, and Hassle-Free!"
           }
         },
         "item_4YTnKU": {
           "type": "item",
           "settings": {
             "item_image": "shopify://shop_images/Animation_-_1739918721366.gif",
-            "item_title": "Premium",
-            "item_subtitle": ""
+            "item_title": "Elite",
+            "item_subtitle": "Crafted for Those Who Demand the Best"
           }
         },
         "item_RRyMrX": {
           "type": "item",
           "settings": {
             "item_image": "shopify://shop_images/Animation_-_1739918140596_1.gif",
-            "item_title": "Best Market Price",
-            "item_subtitle": ""
+            "item_title": "Matchless",
+            "item_subtitle": "Prices You Won’t Find Anywhere Else"
           }
         }
       },
@@ -254,21 +254,21 @@
         "image_JNp7K6": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Group_349.png",
+            "image": "shopify://shop_images/S820ce0f5bc694bee83d98898acb4d457z.webp",
             "image_text": "Default caption"
           }
         },
         "image_hpEaYh": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Group_350.png",
+            "image": "shopify://shop_images/image00001_665eb2ae-1750-4e97-bd9b-9595b8e5bfcb.webp",
             "image_text": "Default caption"
           }
         },
         "image_yD777r": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Group_351.png",
+            "image": "shopify://shop_images/4_4c5d22bc-ad78-4253-ac79-de12a50085d7.png",
             "image_text": "Default caption"
           }
         }
