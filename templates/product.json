@@ -118,15 +118,15 @@
           "settings": {
             "item_image": "shopify://shop_images/Animation_-_1739918393852.gif",
             "item_title": "Free Shipping",
-            "item_subtitle": ""
+            "item_subtitle": "Fast, Free, and Hassle-Free!"
           }
         },
         "item_4YTnKU": {
           "type": "item",
           "settings": {
             "item_image": "shopify://shop_images/Animation_-_1739918721366.gif",
-            "item_title": "Premium",
-            "item_subtitle": ""
+            "item_title": "Elite",
+            "item_subtitle": "Crafted for Those Who Demand the Best"
           }
         },
         "item_RRyMrX": {
@@ -134,7 +134,7 @@
           "settings": {
             "item_image": "shopify://shop_images/Animation_-_1739918140596_1.gif",
             "item_title": "Best Market Price",
-            "item_subtitle": ""
+            "item_subtitle": "Prices You Won’t Find Anywhere Else"
           }
         }
       },
