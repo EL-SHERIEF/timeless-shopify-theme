@@ -175,17 +175,32 @@ align-content: center;
 document.addEventListener("DOMContentLoaded", function() {
   var swiper = new Swiper(".testimonial-swiper", {
     slidesPerView: "auto",
-      spaceBetween: 0,
-      loop: true,
-      speed: 3000,
-      autoplay: {
-        delay: 0,
-        disableOnInteraction: false,
+    spaceBetween: 30, // Added spacing for a more modern, airy look
+    loop: true,
+    speed: 5000, // Increased speed for an ultra-smooth continuous scroll
+    autoplay: {
+      delay: 0, // No delay for continuous movement
+      disableOnInteraction: false,
+    },
+    freeMode: {
+      enabled: true,
+      momentum: false, // Disable momentum to keep the movement uniform
+    },
+    simulateTouch: false, // Prevents accidental user interruption for a seamless flow
+    breakpoints: {       // Responsive adjustments for various screen sizes
+      768: {
+        spaceBetween: 40,
       },
-      freeMode: {
-        enabled: true,
-        momentum: false,
+      1024: {
+        spaceBetween: 50,
       }
+    }
+    // Uncomment the following block if you'd like a fade effect on slide change
+    // effect: 'fade',
+    // fadeEffect: {
+    //   crossFade: true
+    // },
   });
 });
 </script>
+
