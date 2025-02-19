@@ -26,9 +26,7 @@
                 {% unless product.available or product.selected_or_first_available_variant.availabile %}disabled{% endunless %}
               >
                 {{ block.settings.text | default: 'Add to cart' | escape }}
-                {%- if block.settings.inventory_text != blank -%}
-                  {% render 'inventory', text: block.settings.inventory_text %}
-                {%- endif -%}
+              
               </button>
             </div>
 
