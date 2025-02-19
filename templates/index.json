@@ -121,6 +121,7 @@
         "testimonial_eVNwh7",
         "testimonial_4PeFMx"
       ],
+      "disabled": true,
       "settings": {}
     },
     "features_section_a7Kadz": {
@@ -165,6 +166,7 @@
         "item_LBYaGK",
         "item_8xTjWa"
       ],
+      "disabled": true,
       "settings": {}
     },
     "swiper_jLLmtx": {
@@ -175,38 +177,10 @@
           "settings": {
             "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739892285/ssstik.io___silkskinco__1739892178161_y4sku0.mp4"
           }
-        },
-        "video_AWtkie": {
-          "type": "video",
-          "settings": {
-            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739892285/ssstik.io___silkskinco__1739892178161_y4sku0.mp4"
-          }
-        },
-        "video_K9bNKU": {
-          "type": "video",
-          "settings": {
-            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739892285/ssstik.io___silkskinco__1739892178161_y4sku0.mp4"
-          }
-        },
-        "video_wGe4Qf": {
-          "type": "video",
-          "settings": {
-            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739892285/ssstik.io___silkskinco__1739892178161_y4sku0.mp4"
-          }
-        },
-        "video_QpEr9V": {
-          "type": "video",
-          "settings": {
-            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739892285/ssstik.io___silkskinco__1739892178161_y4sku0.mp4"
-          }
         }
       },
       "block_order": [
-        "video_9NM9bz",
-        "video_AWtkie",
-        "video_K9bNKU",
-        "video_wGe4Qf",
-        "video_QpEr9V"
+        "video_9NM9bz"
       ],
       "settings": {
         "header": "Send us a testimonial and get 20% Money Back",
