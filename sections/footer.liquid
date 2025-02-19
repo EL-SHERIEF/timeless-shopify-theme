@@ -29,3 +29,38 @@
     </div>
   </div>
 </div>
+
+<style type="text/tailwindcss">
+  #shopify-section-{{ section.id }} {
+    @apply bg-[var(--canvas)] text-[var(--ink)];
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Footer",
+  "tag": "footer",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "footer"
+    },
+    {
+      "type": "header",
+      "content": "Social links"
+    }
+  ]
+}
+{% endschema %}
