@@ -61,17 +61,6 @@
         "heading_two": "Salon Results at Home!"
       }
     },
-    "article-list": {
-      "type": "article-list",
-      "disabled": true,
-      "settings": {
-        "color_scheme": "scheme-6d4c9e72-9abe-4e91-aafe-ae5cffbf63eb",
-        "blog": "news",
-        "content": "<h2>Read our blog</h2>",
-        "grid_item_size": 240,
-        "page_size": 4
-      }
-    },
     "testimonials_nHb7Pk": {
       "type": "testimonials",
       "blocks": {
@@ -139,6 +128,7 @@
         "item_NWGcDr": {
           "type": "item",
           "settings": {
+            "item_image": "shopify://shop_images/friendship-day.gif",
             "item_title": "Feature Title",
             "item_subtitle": "Feature description"
           }
@@ -230,7 +220,6 @@
     "collection-list",
     "features_section_ygAAJd",
     "promotional_banners_Jdapkk",
-    "article-list",
     "testimonials_nHb7Pk",
     "features_section_a7Kadz",
     "swiper_jLLmtx"
