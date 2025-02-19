@@ -8,7 +8,7 @@
       "label": "Header",
       "default": "Start designing your dream project."
     },
-     {
+    {
       "type": "text",
       "id": "tag",
       "label": "small tag",
@@ -66,13 +66,12 @@
     }
   ]
 }
-
 {% endschema %}
 
 <div class="image-grid-section">
   <!-- Header & CTA -->
   <div class="image-grid-header">
-        <span class="tag">{{ section.settings.tag }}</span>
+    <span class="tag">{{ section.settings.tag }}</span>
     <h1>{{ section.settings.header }}</h1>
     <p>{{ section.settings.subheader }}</p>
 
@@ -97,129 +96,162 @@
 </div>
 
 <style>
-  .tag{
-    color:#111111;
-    font-size:16px;
-    text-align:center;
-    font-weight:800;
-    margin:7px 0;
+  /* Tag styling */
+  .tag {
+    color: #111111;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 800;
+    margin: 7px 0;
   }
-  .image-caption {
-  position:absolute;top:20px; left: 50%;
+  
+  /* Caption overlay (if intended as an overlay) */
+  .image-item .image-caption {
+    position: absolute;
+    top: 20px;
+    left: 50%;
     transform: translate(-50%, 0);
-    border-radius:500px;
-  font-size: 14px !important;background-color:white;
-  color: #111111;
-  text-align: center;
-  font-weight: 900!important;
+    border-radius: 500px;
+    font-size: 14px;
+    background-color: white;
+    color: #111111;
+    text-align: center;
+    font-weight: 900;
     padding: 4px 14px;
-    border:solid 1px rgba(34, 34, 34, 0);
-}
-.image-grid-section {
-  max-width:1300px;
-  text-align: center;
-  padding: 40px 20px;
-  margin:40px auto;
-  border-radius: 16px;
-}
-
-.image-grid-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 600px;
-  margin: 40px auto;
-  padding-top: 20px;
-}
-
-.image-grid-header h1 {
-  font-size: 2.8rem;
-  line-height: 1.1;
-  margin-bottom: 20px;
-  font-weight: 900;
-  color: #111111;
-}
-
-.image-grid-header p {
-  font-size: 1.2rem;
-  color: #111111;
-  margin-bottom: 20px;
-}
-
-.cta-button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  width: fit-content;
-  padding: 13px 24px;
-  background-color: #fff;
-  color: #333;
-  font-weight: bold;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #f0f0f0;
-  gap: 25px;
-}
-
-/* Image Grid */
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 30px;
-  max-height:420px;
-}
-
-.image-item {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.image-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 24px;
- /* border: solid 1px #eaecf0; */ 
-}
-
-.image-caption {
-  margin-top: 10px;
-  font-size: 1rem;
-  color: #333;
-  text-align: center;
-  font-weight: 500;
-}
-
-.image-item:nth-child(1)::after {
-  content: '';
-  position: absolute;
-  top: -8px;
-  left: -8px;
-  width: calc(100% + 16px);
-  height: calc(100% + 16px);
-  background: #111111;
-  border-radius: 28px;
-  display: block;
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .image-grid {
-    grid-template-columns: repeat(1, 1fr);
+    border: solid 1px rgba(34, 34, 34, 0);
   }
-}
+  
+  /* Container for the section */
+  .image-grid-section {
+    max-width: 1300px;
+    width: 100%;
+    text-align: center;
+    padding: 40px 20px;
+    margin: 40px auto;
+    border-radius: 16px;
+  }
+  
+  /* Header & CTA container */
+  .image-grid-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    margin: 40px auto;
+    padding-top: 20px;
+  }
+  
+  .image-grid-header h1 {
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 900;
+    color: #111111;
+  }
+  
+  .image-grid-header p {
+    font-size: 1.2rem;
+    color: #111111;
+    margin-bottom: 20px;
+  }
+  
+  .cta-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    padding: 13px 24px;
+    background-color: #fff;
+    color: #333;
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #f0f0f0;
+    gap: 25px;
+  }
+  
+  /* Image Grid */
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+    /* Remove fixed max-height so grid expands naturally */
+  }
+  
+  .image-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .image-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 24px;
+  }
+  
+  /* Optional: if you want a decorative effect on the first image */
+  .image-item:nth-child(1)::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    background: #111111;
+    border-radius: 28px;
+    display: block;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  /* Responsive breakpoints */
+  /* For viewports between 769px and 1024px, use two columns */
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .image-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .image-grid-header h1 {
+      font-size: 2.4rem;
+    }
+    .image-grid-header p {
+      font-size: 1.1rem;
+    }
+  }
+  
+  /* For viewports 768px and below, use one column and adjust header/CTA sizes */
+  @media (max-width: 768px) {
+    .image-grid {
+      grid-template-columns: 1fr;
+    }
+    .image-grid-header h1 {
+      font-size: 2rem;
+    }
+    .image-grid-header p {
+      font-size: 1rem;
+    }
+    .cta-button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Optionally, use clamp() for fluid typography (example) */
+  .image-grid-header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+  }
+  .image-grid-header p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+  }
 </style>
-
