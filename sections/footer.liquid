@@ -3,19 +3,32 @@
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       <!-- Logo Section -->
       <div>
-         {%- if section.settings.logo -%}
-        {{ section.settings.logo
-          | image_url: width: 300
-          | image_tag: class: 'max-h-[160px] object-contain', alt: 'Footer logo', loading: 'lazy'
-          | link_to: routes.root_url
-        }}
-      {%- else -%}
-        {{ shop.name | link_to: routes.root_url, class: 'font-heading' }}
-      {%- endif -%}
+        {%- if section.settings.logo -%}
+          {{ section.settings.logo
+            | image_url: width: 300
+            | image_tag: class: 'max-h-10 object-contain', loading: 'lazy'
+            | link_to: routes.root_url
+          }}
+        {%- else -%}
+          <a href="{{ routes.root_url }}" class="text-xl font-semibold text-gray-900"> {{ shop.name }} </a>
+        {%- endif -%}
       </div>
 
-      <!-- Footer Menu -->
-      {% render 'footer-menu' %}
+      <!-- Footer Menu (Now using Grid) -->
+      <div class="grid grid-cols-3 gap-8">
+        {%- for link in section.settings.menu.links -%}
+          <div>
+            <h4 class="text-gray-900 font-semibold mb-3">{{ link.title }}</h4>
+            <ul class="space-y-1 text-gray-600">
+              {%- for child_link in link.links -%}
+                <li>
+                  <a href="{{ child_link.url }}" class="hover:text-gray-900">{{ child_link.title }}</a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endfor -%}
+      </div>
 
       <!-- Social Links -->
       <div>
