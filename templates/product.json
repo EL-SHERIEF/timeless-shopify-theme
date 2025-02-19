@@ -283,6 +283,36 @@
         "large_image": "shopify://shop_images/AdobeStock_244455994-1024x683.jpg"
       }
     },
+    "testimonials_UAVNTx": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_NDeC8r": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/images.jpg",
+            "customer_name": "Life-changing! Laserly is so easy to use, and I noticed smoother skin in just weeks. It’s safe and perfect for at-home treatments!",
+            "customer_position": "",
+            "testimonial_text": "Jessica T.",
+            "star_rating": 5
+          }
+        },
+        "testimonial_Ap9Ukb": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/4.png",
+            "customer_name": "John Doe",
+            "customer_position": "CEO, Company",
+            "testimonial_text": "This is an amazing product! I absolutely love it.",
+            "star_rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_NDeC8r",
+        "testimonial_Ap9Ukb"
+      ],
+      "settings": {}
+    },
     "faq_list_zJVwkM": {
       "type": "faq-list",
       "blocks": {
@@ -342,34 +372,6 @@
         "content": "<h2>FAQ</h2>",
         "subcontent": "<p>Discover how our laser device delivers safe, salon-smooth results at home!</p>"
       }
-    },
-    "testimonials_UAVNTx": {
-      "type": "testimonials",
-      "blocks": {
-        "testimonial_NDeC8r": {
-          "type": "testimonial",
-          "settings": {
-            "customer_name": "John Doe",
-            "customer_position": "CEO, Company",
-            "testimonial_text": "This is an amazing product! I absolutely love it.",
-            "star_rating": 5
-          }
-        },
-        "testimonial_Ap9Ukb": {
-          "type": "testimonial",
-          "settings": {
-            "customer_name": "John Doe",
-            "customer_position": "CEO, Company",
-            "testimonial_text": "This is an amazing product! I absolutely love it.",
-            "star_rating": 5
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_NDeC8r",
-        "testimonial_Ap9Ukb"
-      ],
-      "settings": {}
     }
   },
   "order": [
