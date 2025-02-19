@@ -6,13 +6,13 @@
           <div class="font-semibold text-sm mb-2">{{ link.title }}</div>
           <ul class="space-y-1 text-gray-500">
             {%- for child_link in link.links -%}
-              <li>{{ child_link.title | link_to: child_link.url, class: 'hover:underline' }}</li>
+              <li>{{ child_link.title | link_to: child_link.url, class: 'hover:text-black' }}</li>
             {%- endfor -%}
           </ul>
         </div>
 
       {%- when 0 -%}
-        <div>{{ link.title | link_to: link.url, class: 'hover:underline text-gray-500' }}</div>
+        <div>{{ link.title | link_to: link.url, class: 'hover:text-black text-gray-500' }}</div>
 
     {%- endcase -%}
   {%- endfor -%}
