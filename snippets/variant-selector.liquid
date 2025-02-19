@@ -45,7 +45,7 @@
 
 <style>
   .fest {
-    /* Background will be updated dynamically via JS */
+    /* The background will be updated dynamically via JS */
     width: fit-content;
     padding: 5px;
     border-radius: 400px;
@@ -65,7 +65,6 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    // For each container with class "fest"
     const festContainers = document.querySelectorAll('.fest');
     festContainers.forEach(container => {
       function updateContainer() {
@@ -82,45 +81,46 @@
               container.classList.remove(cls);
             }
           });
-          // Add the new background class
+          // Add the new background class to the container
           container.classList.add(newBgClass);
           
-          // If selected value is white, add border to parent; otherwise remove it.
+          // If the selected value is "white", add a border to the container; otherwise, remove it.
           if (value === 'white') {
             container.classList.add('border', 'border-black');
           } else {
             container.classList.remove('border', 'border-black');
           }
           
-          // Update all label spans: if the label's radio is checked, set text to pure black;
-          // if not, set text to black with 80% opacity.
+          // Update each label's span styling:
           container.querySelectorAll('label').forEach(label => {
             const radio = label.querySelector('input[type="radio"]');
             const span = label.querySelector('span');
             if (radio.checked) {
+              // For the selected label:
               span.classList.add('text-black');
               span.classList.remove('text-black/80');
-              // If white is selected, add border on the selected child
               if (value === 'white') {
+                // If white is selected, add a border on the selected child and leave its background unchanged
                 span.classList.add('border', 'border-black');
+                span.classList.remove('bg-white');
               } else {
+                // For any other selection, remove any border and force its background to white
                 span.classList.remove('border', 'border-black');
+                span.classList.add('bg-white');
               }
             } else {
+              // For unselected labels, set text color to 80% black and remove any background or border classes.
               span.classList.add('text-black/80');
-              span.classList.remove('text-black');
-              span.classList.remove('border', 'border-black');
+              span.classList.remove('text-black', 'bg-white', 'border', 'border-black');
             }
           });
         }
       }
       
-      // Listen for changes on all radio inputs within the container
       const radios = container.querySelectorAll('input[type="radio"]');
       radios.forEach(radio => {
         radio.addEventListener('change', updateContainer);
       });
-      
       // Initialize on page load
       updateContainer();
     });
