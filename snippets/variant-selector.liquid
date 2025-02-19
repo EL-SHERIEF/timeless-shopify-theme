@@ -51,7 +51,7 @@
     border-radius: 400px;
   }
   fieldset {
-    border: none;
+    outline: none;
     margin: 0;
     padding: 0;
   }
@@ -84,11 +84,11 @@
           // Add the new background class to the container
           container.classList.add(newBgClass);
           
-          // If the selected value is "white", add a border to the container; otherwise, remove it.
+          // If the selected value is "white", add a outline to the container; otherwise, remove it.
           if (value === 'white') {
-            container.classList.add('border', 'border-black');
+            container.classList.add('outline', 'outline-black');
           } else {
-            container.classList.remove('border', 'border-black');
+            container.classList.remove('outline', 'outline-black');
           }
           
           // Update each label's span styling:
@@ -100,16 +100,16 @@
               span.classList.add('text-black');
               span.classList.remove('text-black/80');
               if (value === 'white') {
-                // If white is selected, add a border on the selected child and leave its background unchanged
+                // If white is selected, add a outline on the selected child and leave its background unchanged
                 span.classList.add('outline', 'outline-black');
                 span.classList.remove('bg-white');
               } else {
-                // For any other selection, remove any border and force its background to white
+                // For any other selection, remove any outline and force its background to white
                 span.classList.remove('outline', 'outline-black');
                 span.classList.add('bg-white');
               }
             } else {
-              // For unselected labels, set text color to 80% black and remove any background or border classes.
+              // For unselected labels, set text color to 80% black and remove any background or outline classes.
               span.classList.add('text-black/80');
               span.classList.remove('text-black', 'bg-white', 'outline', 'outline-black');
             }
