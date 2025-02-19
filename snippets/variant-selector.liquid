@@ -21,7 +21,7 @@
       <fieldset class="mb-4">
         <legend class="text-sm font-medium text-white mb-2">{{ product_option.name }}</legend>
 
-        <!-- Added transition classes for smooth color change -->
+        <!-- Add transition classes for smooth color change -->
         <div class="flex flex-wrap gap-2 fest transition-colors duration-300">
           {%- for value in product_option.values -%}
             <label class="cursor-pointer">
@@ -68,7 +68,6 @@
     // For each container with class "fest"
     const festContainers = document.querySelectorAll('.fest');
     festContainers.forEach(container => {
-      // Update the container's background based on the checked radio value
       function updateContainerBackground() {
         const checkedInput = container.querySelector('input[type="radio"]:checked');
         if (checkedInput) {
@@ -86,11 +85,19 @@
           // Add the new background class
           container.classList.add(newBgClass);
           
-          // If the selected value is white, add a black border; otherwise remove it.
+          // If the selected value is white, add a black border to container and update all labels
           if (value === 'white') {
             container.classList.add('border', 'border-black');
+            container.querySelectorAll('label span').forEach(span => {
+              span.classList.remove('text-white');
+              span.classList.add('text-black', 'border', 'border-black');
+            });
           } else {
             container.classList.remove('border', 'border-black');
+            container.querySelectorAll('label span').forEach(span => {
+              span.classList.remove('text-black', 'border', 'border-black');
+              span.classList.add('text-white');
+            });
           }
         }
       }
