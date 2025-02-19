@@ -6,14 +6,12 @@
           <div class="technical text-xs mb-1">{{ link.title }}</div>
           <ul>
             {%- for child_link in link.links -%}
-              <li>{{ child_link.title | link_to: child_link.url, class: 'hover:underline' }}</li>
+              <li>{{ child_link.title | link_to: child_link.url, class: 'hover:underline', title: child_link.title }}</li>
             {%- endfor -%}
           </ul>
         </div>
-
       {%- when 0 -%}
-        <div>{{ link.title | link_to: link.url, class: 'hover:underline' }}</div>
-
+        <div>{{ link.title | link_to: link.url, class: 'hover:underline', title: link.title }}</div>
     {%- endcase -%}
   {%- endfor -%}
 </nav>
