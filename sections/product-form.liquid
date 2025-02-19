@@ -23,7 +23,7 @@
               <button
                 class="action w-full bg-black text-white font-bold {% unless block.settings.full_width %}{% endunless %}"
                 type="submit"
-                {% unless product.available or product.selected_or_first_available_variant.availabile %}disabled{% endunless %}
+{% unless product.available or product.selected_or_first_available_variant.available %}disabled{% endunless %}
               >
                 {{ block.settings.text | default: 'Add to cart' | escape }}
                 {%- if block.settings.inventory_text != blank -%}
