@@ -101,17 +101,17 @@
               span.classList.remove('text-black/80');
               if (value === 'white') {
                 // If white is selected, add a border on the selected child and leave its background unchanged
-                span.classList.add('border', 'border-black');
+                span.classList.add('outline', 'outline-black');
                 span.classList.remove('bg-white');
               } else {
                 // For any other selection, remove any border and force its background to white
-                span.classList.remove('border', 'border-black');
+                span.classList.remove('outline', 'outline-black');
                 span.classList.add('bg-white');
               }
             } else {
               // For unselected labels, set text color to 80% black and remove any background or border classes.
               span.classList.add('text-black/80');
-              span.classList.remove('text-black', 'bg-white', 'border', 'border-black');
+              span.classList.remove('text-black', 'bg-white', 'outline', 'outline-black');
             }
           });
         }
