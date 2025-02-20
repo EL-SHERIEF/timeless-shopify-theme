@@ -28,7 +28,7 @@
                 name="option{{ product_option.position }}"
                 value="{{ value }}"
                 type="radio"
-                {% if product.selected_or_first_available_variant.options[forloop.index0] == value or forloop.first %}checked{% endif %}
+                {%- if product.selected_or_first_available_variant.options[forloop.index0] == value or forloop.first -%}checked{%- endif -%}
               />
               <span class="block px-4 py-2 rounded-[400px] text-sm transition-all hover:bg-white/20 peer-checked:hover:bg-white">
                 {{ value }}
@@ -62,23 +62,31 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    // This function finds the selected radio values and updates the hidden select element accordingly.
+    // Updates the hidden select element to match the currently checked radio options.
     function updateVariant() {
-      const option1 = document.querySelector('input[name="option1"]:checked')?.value || "";
-      const option2 = document.querySelector('input[name="option2"]:checked')?.value || "";
-      const option3 = document.querySelector('input[name="option3"]:checked')?.value || "";
-
+      const radio1 = document.querySelector('input[name="option1"]:checked');
+      const radio2 = document.querySelector('input[name="option2"]:checked');
+      const radio3 = document.querySelector('input[name="option3"]:checked');
+      const option1 = radio1 ? radio1.value : "";
+      const option2 = radio2 ? radio2.value : "";
+      const option3 = radio3 ? radio3.value : "";
+      
+      // Normalize values for comparison
+      const norm1 = option1.toLowerCase().trim();
+      const norm2 = option2.toLowerCase().trim();
+      const norm3 = option3.toLowerCase().trim();
+      
       const select = document.querySelector('select[name="id"]');
       if (select) {
         Array.from(select.options).forEach(option => {
           let match = true;
-          if (option.dataset.option1 && option.dataset.option1 !== option1) {
+          if (option.dataset.option1 && option.dataset.option1.toLowerCase().trim() !== norm1) {
             match = false;
           }
-          if (option.dataset.option2 && option.dataset.option2 !== option2) {
+          if (option.dataset.option2 && option.dataset.option2.toLowerCase().trim() !== norm2) {
             match = false;
           }
-          if (option.dataset.option3 && option.dataset.option3 !== option3) {
+          if (option.dataset.option3 && option.dataset.option3.toLowerCase().trim() !== norm3) {
             match = false;
           }
           if (match) {
@@ -87,37 +95,39 @@
         });
       }
     }
-
-    // Update visual styling and then update the variant selection.
+    
+    // Visual updates for the radio buttons remain the same.
     const festContainers = document.querySelectorAll('.fest');
     festContainers.forEach(container => {
       function updateContainer() {
         const checkedInput = container.querySelector('input[type="radio"]:checked');
         if (checkedInput) {
-          let value = checkedInput.value.toLowerCase().trim().replace(/\s+/g, '-');
-          const newBgClass = `bg-${value}-500`;
-
-          // Remove any existing bg- classes
+          let value = checkedInput.value;
+          // Convert the value to a Tailwind-friendly format.
+          let normalizedValue = value.toLowerCase().trim().replace(/\s+/g, '-');
+          const newBgClass = `bg-${normalizedValue}-500`;
+          
+          // Remove existing background classes.
           container.classList.forEach(cls => {
             if (/^bg-\S+/.test(cls)) {
               container.classList.remove(cls);
             }
           });
           container.classList.add(newBgClass);
-
-          if (value === 'white') {
+          
+          if (normalizedValue === 'white') {
             container.classList.add('outline', 'outline-black');
           } else {
             container.classList.remove('outline', 'outline-black');
           }
-
+          
           container.querySelectorAll('label').forEach(label => {
             const radio = label.querySelector('input[type="radio"]');
             const span = label.querySelector('span');
             if (radio.checked) {
               span.classList.add('text-black');
               span.classList.remove('text-black/80');
-              if (value === 'white') {
+              if (normalizedValue === 'white') {
                 span.classList.add('outline', 'outline-black');
                 span.classList.remove('bg-white');
               } else {
@@ -130,19 +140,19 @@
             }
           });
         }
-        // After updating visuals, update the hidden select.
+        // Update the hidden select each time a radio change occurs.
         updateVariant();
       }
-
+      
       const radios = container.querySelectorAll('input[type="radio"]');
       radios.forEach(radio => {
         radio.addEventListener('change', updateContainer);
       });
-      // Initialize each container on page load
+      // Ensure that the container (and hidden select) is correctly updated on page load.
       updateContainer();
     });
-
-    // Also update the variant on initial page load in case no change event occurs.
+    
+    // Extra call to updateVariant on load in case no radio change event occurs.
     updateVariant();
   });
 </script>
