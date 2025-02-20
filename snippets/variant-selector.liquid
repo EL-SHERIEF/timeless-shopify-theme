@@ -1,39 +1,41 @@
 {%- if product.has_only_default_variant -%}
   <input name="id" value="{{ product.selected_or_first_available_variant.id }}" hidden>
 {%- else -%}
-  <!-- Remove default selected variant from the hidden select -->
   <select name="id" hidden>
     {%- for variant in product.variants -%}
       <option
         value="{{ variant.id }}"
-        data-options="{{ variant.options | join: '|' }}"
+        {% if variant == product.selected_or_first_available_variant %}selected{% endif %}
+        {% if variant.option1 %}data-option1="{{ variant.option1 }}"{% endif %}
+        {% if variant.option2 %}data-option2="{{ variant.option2 }}"{% endif %}
+        {% if variant.option3 %}data-option3="{{ variant.option3 }}"{% endif %}
+        {% if variant.inventory_quantity %}data-inventory="{{ variant.inventory_quantity }}"{% endif %}
       >
         {{ variant | json }}
       </option>
     {%- endfor -%}
   </select>
 
-  <!-- Render the radio buttons WITHOUT auto-checking any option -->
   <div class="grid gap-6 py-4 bg-white rounded-[400px]">
     {%- for product_option in product.options_with_values -%}
       <fieldset class="mb-4">
         <legend class="text-sm font-medium text-white mb-2">{{ product_option.name }}</legend>
 
-        <!-- Container with a data attribute for the option index -->
-        <div class="flex flex-wrap gap-2 fest transition-colors duration-300" data-option-index="{{ product_option.position }}">
+        <!-- Parent container with transition classes -->
+        <div class="flex flex-wrap gap-2 fest transition-colors duration-300">
           {%- for value in product_option.values -%}
-            <label class="cursor-pointer">
-              <input
-                class="hidden peer option-input"
-                name="option{{ product_option.position }}"
-                value="{{ value }}"
-                type="radio"
-                <!-- Removed the default check (i.e. no checked attribute by default) -->
-              />
-              <span class="block px-4 py-2 rounded-[400px] text-sm transition-all hover:bg-white/20">
-                {{ value }}
-              </span>
-            </label>
+           <label class="cursor-pointer">
+  <input
+    class="hidden peer"
+    name="option{{ product_option.position }}"
+    value="{{ value }}"
+    type="radio"
+    {% if product_option.selected or forloop.index0 == 0 %}checked{% endif %}
+  />
+  <span class="block px-4 py-2 rounded-[400px] text-sm transition-all hover:bg-white/20 peer-checked:hover:bg-white">
+    {{ value }}
+  </span>
+</label>
           {%- endfor -%}
         </div>
       </fieldset>
@@ -63,51 +65,77 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
+    // When a radio option is changed, update the hidden select
+    const optionInputs = document.querySelectorAll('.option-input');
+    optionInputs.forEach(input => {
+      input.addEventListener('change', updateVariantSelection);
+    });
+
+    function updateVariantSelection() {
+      // Gather the selected values for each option group.
+      const selectedOptions = [];
+      const optionGroups = document.querySelectorAll('[data-option-index]');
+      optionGroups.forEach(group => {
+        const checked = group.querySelector('input[type="radio"]:checked');
+        selectedOptions.push(checked ? checked.value : null);
+      });
+      
+      // Find the variant that exactly matches the selected options.
+      const selectElement = document.querySelector('select[name="id"]');
+      let matchingVariantId = null;
+      Array.from(selectElement.options).forEach(option => {
+        const variantOptions = option.getAttribute('data-options').split('|');
+        const isMatch = variantOptions.every((val, index) => {
+          return selectedOptions[index] === val;
+        });
+        if(isMatch) {
+          matchingVariantId = option.value;
+        }
+      });
+      
+      // Update the hidden select value
+      if(matchingVariantId) {
+        selectElement.value = matchingVariantId;
+      }
+    }
+
+    // (Optional) Update container background styles as before.
     const festContainers = document.querySelectorAll('.fest');
     festContainers.forEach(container => {
       function updateContainer() {
         const checkedInput = container.querySelector('input[type="radio"]:checked');
         if (checkedInput) {
           let value = checkedInput.value;
-          // Convert value to Tailwind-friendly format (e.g., "Red" becomes "red")
           value = value.toLowerCase().trim().replace(/\s+/g, '-');
           const newBgClass = `bg-${value}-500`;
           
-          // Remove any existing bg- classes from the container
           container.classList.forEach(cls => {
             if (/^bg-\S+/.test(cls)) {
               container.classList.remove(cls);
             }
           });
-          // Add the new background class to the container
           container.classList.add(newBgClass);
           
-          // If the selected value is "white", add a outline to the container; otherwise, remove it.
           if (value === 'white') {
             container.classList.add('outline', 'outline-black');
           } else {
             container.classList.remove('outline', 'outline-black');
           }
           
-          // Update each label's span styling:
           container.querySelectorAll('label').forEach(label => {
             const radio = label.querySelector('input[type="radio"]');
             const span = label.querySelector('span');
             if (radio.checked) {
-              // For the selected label:
               span.classList.add('text-black');
               span.classList.remove('text-black/80');
               if (value === 'white') {
-                // If white is selected, add a outline on the selected child and leave its background unchanged
                 span.classList.add('outline', 'outline-black');
                 span.classList.remove('bg-white');
               } else {
-                // For any other selection, remove any outline and force its background to white
                 span.classList.remove('outline', 'outline-black');
                 span.classList.add('bg-white');
               }
             } else {
-              // For unselected labels, set text color to 80% black and remove any background or outline classes.
               span.classList.add('text-black/80');
               span.classList.remove('text-black', 'bg-white', 'outline', 'outline-black');
             }
@@ -119,8 +147,8 @@
       radios.forEach(radio => {
         radio.addEventListener('change', updateContainer);
       });
-      // Initialize on page load
       updateContainer();
     });
   });
 </script>
+
