@@ -53,8 +53,8 @@
   document.getElementById("wa-send").addEventListener("click", function() {
     const phoneNumber = "{{ section.settings.waphonenumber }}";
     const message = document.getElementById("wa-message").value.trim();
-    if (message) {
+
       const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    }
+
   });
 </script>
