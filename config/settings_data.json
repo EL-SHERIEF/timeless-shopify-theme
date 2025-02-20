@@ -22,8 +22,8 @@
     "content_for_index": [],
     "blocks": {
       "18423266570658624584": {
-        "type": "shopify://apps/best-currency-converter/blocks/doubly/267afa86-a419-4d5b-a61b-556038e7294d",
-        "disabled": false,
+        "type": "shopify://apps/beast-currency-converter/blocks/doubly/267afa86-a419-4d5b-a61b-556038e7294d",
+        "disabled": true,
         "settings": {}
       }
     },
