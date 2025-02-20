@@ -9,11 +9,11 @@
  */
 {
   "current": {
-    "font_heading": "abril_fatface_n4",
+    "font_heading": "inter_n4",
     "font_body": "inter_n4",
     "anim_emoji": "🕕",
     "border_radius": 8,
-    "fully_rounded_buttons": false,
+    "fully_rounded_buttons": true,
     "favicon": "shopify://shop_images/FAVI.svg",
     "checkout_input_background_color_mode": "transparent",
     "checkout_sidebar_background_color": "#fff",
