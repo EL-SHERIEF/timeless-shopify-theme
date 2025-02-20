@@ -18,12 +18,12 @@
           {%- when '@app' -%}
             {% render block %}
 
-          {%- when 'buy-button' -%}
+         {%- when 'buy-button' -%}
             <div>
               <button
-                class="action w-full bg-black text-white font-bold {% unless block.settings.full_width %}{% endunless %}"
+                class="action w-full {% unless block.settings.full_width %}md:w-auto{% endunless %}"
                 type="submit"
-                {% unless product.available or product.selected_or_first_available_variant.available %}disabled{% endunless %}
+                {% unless product.available or product.selected_or_first_available_variant.availabile %}disabled{% endunless %}
               >
                 {{ block.settings.text | default: 'Add to cart' | escape }}
                 {%- if block.settings.inventory_text != blank -%}
@@ -38,7 +38,7 @@
 
           {%- when 'custom-liquid' -%}
             <div>{{ block.settings.liquid }}</div>
-
+          
           {%- when 'description' -%}
             <div class="rte empty:hidden {{ block.settings.tailwind | default: '<md:text-sm' }}">
               {{- product.description | replace: '<meta charset="utf-8">', '' -}}
