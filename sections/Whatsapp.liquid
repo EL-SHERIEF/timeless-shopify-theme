@@ -77,14 +77,14 @@
 </div>
 
 <script>
-  document.querySelector('.rounded-full').addEventListener('mouseenter', function() {
-    document.querySelector('#whatsapp-input-container').classList.remove('hidden');
-  });
-
-  document.querySelector('#whatsapp-send-button').addEventListener('click', function() {
-    const message = encodeURIComponent(document.querySelector('#whatsapp-message-input').value);
-    const phoneNumber = '{{ section.settings.whatsapp_phone_number }}';
-    const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.location.href = whatsappLink;
-  });
+  (function(){
+    var waMessage = document.getElementById('wa-message');
+    var waSend = document.getElementById('wa-send');
+    waMessage.addEventListener('input', function(){
+      var encodedMessage = encodeURIComponent(waMessage.value);
+      // Using JSON filter to output the link as a valid string
+      var baseLink = {{ settings.wa_link | json }};
+      waSend.href = baseLink + "?text=" + encodedMessage;
+    });
+  })();
 </script>
