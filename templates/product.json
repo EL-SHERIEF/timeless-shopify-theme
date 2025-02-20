@@ -56,9 +56,9 @@
           "type": "buy-button",
           "settings": {
             "text": "",
-            "inventory_text": "",
-            "full_width": false,
-            "show_payment_buttons": false
+            "inventory_text": "(Only 10 left)",
+            "full_width": true,
+            "show_payment_buttons": true
           }
         },
         "0442fcb3-bb2b-4c7c-854f-063c431018ce": {
