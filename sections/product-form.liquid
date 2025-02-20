@@ -23,7 +23,7 @@
               <button
                 class="action w-full bg-black text-white font-bold {% unless block.settings.full_width %}{% endunless %}"
                 type="submit"
-{% unless product.available or product.selected_or_first_available_variant.available %}disabled{% endunless %}
+                {% unless p.available %}disabled{% endunless %}
               >
                 {{ block.settings.text | default: 'Add to cart' | escape }}
                 {%- if block.settings.inventory_text != blank -%}
@@ -58,11 +58,8 @@
               {%- render 'gift-card-recipient-form' -%}
             {%- endif -%}
 
-           
-
           {%- when 'price' -%}
             {%- render 'price', class: 'text-md', show_taxes_included: true -%}
-
             {{ form | payment_terms }}
 
           {%- when 'quantity-selector' -%}
@@ -115,9 +112,9 @@
     min-width: 0;
     @apply self-start sm:sticky-below-header;
   }
-.section-product-form .rte{
-  font-size:14px!important;
-}
+  .section-product-form .rte{
+    font-size:14px!important;
+  }
   .product-thumbs .swiper-slide {
     @apply relative transition-transform;
   }
@@ -128,14 +125,12 @@
     inset: 0;
     @apply bg-primary opacity-0 transition-opacity;
   }
-
   .product-thumbs .swiper-slide:is(.swiper-slide-thumb-active, :hover)::after {
     @apply opacity-20;
   }
   .grid.gap-4 .h1{
-  font-size:25px;font-weight:800;
+    font-size:25px;font-weight:800;
   }
-
   .product-thumbs .swiper-slide:not(:is(.swiper-slide-thumb-active)) {
     @apply scale-75;
   }
@@ -312,9 +307,7 @@
       "name": "Price",
       "type": "price",
       "limit": 1,
-      "settings": [
-
-      ]
+      "settings": []
     },
     {
       "name": "*Quantity selector",
@@ -348,9 +341,7 @@
       "name": "SKU",
       "type": "sku",
       "limit": 1,
-      "settings": [
-
-      ]
+      "settings": []
     },
     {
       "name": "Tags",
@@ -368,9 +359,7 @@
       "name": "Title",
       "type": "title",
       "limit": 1,
-      "settings": [
-
-      ]
+      "settings": []
     },
     {
       "name": "*Variant selector",
