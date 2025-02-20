@@ -11,6 +11,7 @@
   "sections": {
     "whatsapp_TNKXMV": {
       "type": "Whatsapp",
+      "disabled": true,
       "settings": {
         "waphonenumber": "201064256907",
         "input_placeholder": "ارسل رسالة"
