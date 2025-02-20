@@ -1,3 +1,59 @@
+<!-- wa-btn.liquid -->
+<div class="fixed right-2 sm:right-4 bottom-4 flex items-center z-10" id="wa-btn-wrapper">
+  <!-- WhatsApp Icon -->
+  <div 
+    class="rounded-full p-4 text-black flex items-center justify-center" 
+    style="background-color: {{ section.settings.icon_bg_color }}"
+    onmouseover="showInput()" 
+    onmouseout="hideInput()"
+  >
+    <img src="{{ section.settings.whatsapp_icon }}" alt="WhatsApp Icon" class="w-8 h-8">
+  </div>
+
+  <!-- Message Input and Send Button -->
+  <div 
+    id="wa-input-wrapper"
+    class="hidden flex items-center gap-3 transition-opacity duration-150 ps-4"
+  >
+    <textarea 
+      id="wa-message-input"
+      class="bg-gray-800 text-white placeholder-gray-400 p-[10px] overflow-hidden resize-none max-h-[45px] rounded-xl outline-none ring-8 ring-gray-700 w-64"
+      placeholder="{{ section.settings.placeholder_text }}"
+    ></textarea>
+
+    <a 
+      id="wa-send-btn"
+      class="rounded-2xl p-[17px] flex items-center justify-center"
+      href="#"
+      style="background-color: {{ section.settings.send_btn_bg_color }}; color: {{ section.settings.send_btn_icon_color }};"
+    >
+      <img src="{{ section.settings.send_icon }}" alt="Send Icon" class="w-7 h-7">
+    </a>
+  </div>
+</div>
+
+<!-- Dynamic Behavior -->
+<script>
+  function showInput() {
+    document.getElementById("wa-input-wrapper").classList.remove("hidden");
+  }
+
+  function hideInput() {
+    const input = document.getElementById("wa-message-input").value;
+    if (!input) {
+      document.getElementById("wa-input-wrapper").classList.add("hidden");
+    }
+  }
+
+  document.getElementById("wa-message-input").addEventListener("input", function() {
+    const phoneNumber = "{{ section.settings.phone_number }}";
+    const message = encodeURIComponent(this.value);
+    const waLink = `https://wa.me/${phoneNumber}?text=${message}`;
+    document.getElementById("wa-send-btn").setAttribute("href", waLink);
+  });
+</script>
+
+<!-- Schema Definition -->
 {% schema %}
 {
   "name": "WhatsApp Button",
@@ -6,88 +62,42 @@
       "type": "text",
       "id": "phone_number",
       "label": "WhatsApp Phone Number",
-      "default": "+1234567890"
+      "default": "1234567890"
     },
     {
       "type": "text",
       "id": "placeholder_text",
       "label": "Placeholder Text",
-      "default": "Type your message here..."
+      "default": "Type a message"
     },
     {
       "type": "color",
-      "id": "button_bg_color",
-      "label": "Button Background Color",
+      "id": "icon_bg_color",
+      "label": "Icon Background Color",
       "default": "#00FF1E"
     },
     {
       "type": "image_picker",
-      "id": "whatsapp_image",
+      "id": "whatsapp_icon",
       "label": "WhatsApp Icon"
     },
     {
       "type": "image_picker",
-      "id": "send_image",
+      "id": "send_icon",
       "label": "Send Icon"
+    },
+    {
+      "type": "color",
+      "id": "send_btn_bg_color",
+      "label": "Send Button Background Color",
+      "default": "#202C33"
+    },
+    {
+      "type": "color",
+      "id": "send_btn_icon_color",
+      "label": "Send Button Icon Color",
+      "default": "#FFFFFF"
     }
   ]
 }
 {% endschema %}
-
-<div class="fixed right-2 sm:right-4 bottom-4 flex items-center z-10">
-  <!-- WhatsApp Icon -->
-  <div
-    class="rounded-full p-4 text-black flex items-center justify-center cursor-pointer"
-    style="background-color: {{ settings.button_bg_color }};"
-    id="whatsapp-button"
-  >
-    {% if settings.whatsapp_image %}
-      <img src="{{ settings.whatsapp_image | file_url }}" alt="WhatsApp Icon" class="w-10 h-10"/>
-    {% else %}
-      <svg width="30" height="30" viewBox="0 0 473 490" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M107.872 151.014..." fill="#0F0F0F"/>
-        <path d="M236.498 473.339..." fill="#0F0F0F"/>
-      </svg>
-    {% endif %}
-  </div>
-
-  <!-- Input and Send Button -->
-  <div class="flex items-center gap-3 hidden" id="message-input-container">
-    <textarea
-      id="message-input"
-      class="bg-[#2A3942] text-white placeholder-[#7E8F98] p-[10px] sm:px-[20px] px-[10px] overflow-hidden resize-none max-h-[45px] rounded-xl outline-none ring-8 ring-[#202C33] text-right w-64"
-      placeholder="{{ settings.placeholder_text }}"
-    ></textarea>
-    <a
-      id="send-message-link"
-      class="rounded-2xl bg-[#202C33] p-[17px] flex items-center justify-center hover:bg-[#2A3942]"
-    >
-      {% if settings.send_image %}
-        <img src="{{ settings.send_image | file_url }}" alt="Send Icon" class="w-7 h-7"/>
-      {% else %}
-        <svg width="28" height="28" viewBox="0 0 254 234" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M133.256 117.036..." fill="#7C8B95"/>
-        </svg>
-      {% endif %}
-    </a>
-  </div>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const whatsappButton = document.getElementById("whatsapp-button");
-    const messageInputContainer = document.getElementById("message-input-container");
-    const messageInput = document.getElementById("message-input");
-    const sendMessageLink = document.getElementById("send-message-link");
-
-    whatsappButton.addEventListener("click", function() {
-      messageInputContainer.classList.remove("hidden");
-    });
-
-    messageInput.addEventListener("input", function() {
-      const phoneNumber = "{{ settings.phone_number }}";
-      const message = encodeURIComponent(messageInput.value);
-      sendMessageLink.setAttribute("href", `https://wa.me/${phoneNumber}?text=${message}`);
-    });
-  });
-</script>
