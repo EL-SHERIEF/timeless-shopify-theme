@@ -1,41 +1,39 @@
 {%- if product.has_only_default_variant -%}
   <input name="id" value="{{ product.selected_or_first_available_variant.id }}" hidden>
 {%- else -%}
+  <!-- Remove default selected variant from the hidden select -->
   <select name="id" hidden>
     {%- for variant in product.variants -%}
       <option
         value="{{ variant.id }}"
-        {% if variant == product.selected_or_first_available_variant %}selected{% endif %}
-        {% if variant.option1 %}data-option1="{{ variant.option1 }}"{% endif %}
-        {% if variant.option2 %}data-option2="{{ variant.option2 }}"{% endif %}
-        {% if variant.option3 %}data-option3="{{ variant.option3 }}"{% endif %}
-        {% if variant.inventory_quantity %}data-inventory="{{ variant.inventory_quantity }}"{% endif %}
+        data-options="{{ variant.options | join: '|' }}"
       >
         {{ variant | json }}
       </option>
     {%- endfor -%}
   </select>
 
+  <!-- Render the radio buttons WITHOUT auto-checking any option -->
   <div class="grid gap-6 py-4 bg-white rounded-[400px]">
     {%- for product_option in product.options_with_values -%}
       <fieldset class="mb-4">
         <legend class="text-sm font-medium text-white mb-2">{{ product_option.name }}</legend>
 
-        <!-- Parent container with transition classes -->
-        <div class="flex flex-wrap gap-2 fest transition-colors duration-300">
+        <!-- Container with a data attribute for the option index -->
+        <div class="flex flex-wrap gap-2 fest transition-colors duration-300" data-option-index="{{ product_option.position }}">
           {%- for value in product_option.values -%}
-           <label class="cursor-pointer">
-  <input
-    class="hidden peer"
-    name="option{{ product_option.position }}"
-    value="{{ value }}"
-    type="radio"
-    {% if product_option.selected or forloop.index0 == 0 %}checked{% endif %}
-  />
-  <span class="block px-4 py-2 rounded-[400px] text-sm transition-all hover:bg-white/20 peer-checked:hover:bg-white">
-    {{ value }}
-  </span>
-</label>
+            <label class="cursor-pointer">
+              <input
+                class="hidden peer option-input"
+                name="option{{ product_option.position }}"
+                value="{{ value }}"
+                type="radio"
+                <!-- Removed the default check (i.e. no checked attribute by default) -->
+              />
+              <span class="block px-4 py-2 rounded-[400px] text-sm transition-all hover:bg-white/20">
+                {{ value }}
+              </span>
+            </label>
           {%- endfor -%}
         </div>
       </fieldset>
