@@ -9,6 +9,13 @@
  */
 {
   "sections": {
+    "whatsapp_TNKXMV": {
+      "type": "Whatsapp",
+      "settings": {
+        "waphonenumber": "201064256907",
+        "input_placeholder": "ارسل رسالة"
+      }
+    },
     "besthero_3TKt8U": {
       "type": "besthero",
       "settings": {
@@ -375,6 +382,7 @@
     }
   },
   "order": [
+    "whatsapp_TNKXMV",
     "besthero_3TKt8U",
     "product-form",
     "features_section_xcgJND",
