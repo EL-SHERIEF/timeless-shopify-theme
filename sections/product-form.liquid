@@ -13,6 +13,9 @@
 
   <div class="grid gap-6">
     {% form 'product', product, class: 'grid gap-4' %}
+      {#–– Ensure the variant ID is always submitted ––#}
+      <input type="hidden" name="id" value="{{ p.id }}" id="ProductVariantId" />
+
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when '@app' -%}
@@ -31,7 +34,6 @@
                 {%- endif -%}
               </button>
             </div>
-
             {%- if block.settings.show_payment_buttons -%}
               {{ form | payment_button }}
             {%- endif -%}
@@ -72,7 +74,7 @@
             <div class="rte empty:hidden  {{ block.settings.tailwind }}">{{ block.settings.richtext }}</div>
 
           {%- when 'sku' -%}
-            {%- assign sku = product.selected_or_first_available_variant.sku -%}
+            {%- assign sku = p.sku -%}
             <p class="text-ink-subdued" data-sku-container {% if sku == blank %}hidden{% endif %}>
               <small>SKU: <code data-sku>{{ sku }}</code></small>
             </p>
@@ -93,7 +95,9 @@
             {% render 'variant-selector', show_dividers: block.settings.show_dividers %}
 
           {%- when 'vendor' -%}
-            <p class="{{ block.settings.tailwind | default: 'technical text-[10px] font-[400]  px-3 py-2 rounded-full border border-black/50 text-black w-fit' }}">{{ product.vendor }}</p>
+            <p class="{{ block.settings.tailwind | default: 'technical text-[10px] font-[400] px-3 py-2 rounded-full border border-black/50 text-black w-fit' }}">
+              {{ product.vendor }}
+            </p>
 
         {%- endcase -%}
       {%- endfor -%}
@@ -112,7 +116,7 @@
     min-width: 0;
     @apply self-start sm:sticky-below-header;
   }
-  .section-product-form .rte{
+  .section-product-form .rte {
     font-size:14px!important;
   }
   .product-thumbs .swiper-slide {
@@ -128,8 +132,9 @@
   .product-thumbs .swiper-slide:is(.swiper-slide-thumb-active, :hover)::after {
     @apply opacity-20;
   }
-  .grid.gap-4 .h1{
-    font-size:25px;font-weight:800;
+  .grid.gap-4 .h1 {
+    font-size:25px;
+    font-weight:800;
   }
   .product-thumbs .swiper-slide:not(:is(.swiper-slide-thumb-active)) {
     @apply scale-75;
