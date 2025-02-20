@@ -50,14 +50,7 @@
     },
     "whatsapp_e46qyK": {
       "type": "Whatsapp",
-      "settings": {
-        "whatsapp_phone_number": "+1234567890",
-        "input_placeholder": "ارسل رسالة",
-        "button_bg_color": "#00FF1E",
-        "input_bg_color": "#2A3942",
-        "input_text_color": "#FFFFFF",
-        "input_placeholder_color": "#7E8F98"
-      }
+      "settings": {}
     }
   },
   "order": [
