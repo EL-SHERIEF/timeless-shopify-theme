@@ -1,0 +1,83 @@
+{% schema %}
+{
+  "name": "NewSection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "whatsapp_phone_number",
+      "label": "WhatsApp Phone Number",
+      "default": "+1234567890"
+    },
+    {
+      "type": "text",
+      "id": "input_placeholder",
+      "label": "Input Placeholder Text",
+      "default": "ارسل رسالة"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button Background Color",
+      "default": "#00FF1E"
+    },
+    {
+      "type": "color",
+      "id": "input_bg_color",
+      "label": "Input Background Color",
+      "default": "#2A3942"
+    },
+    {
+      "type": "color",
+      "id": "input_text_color",
+      "label": "Input Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "input_placeholder_color",
+      "label": "Placeholder Text Color",
+      "default": "#7E8F98"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="fixed right-2 sm:right-4 bottom-4 flex items-center z-10">
+  <div 
+    class="rounded-full p-4 flex items-center justify-center"
+    style="background-color: {{ section.settings.button_bg_color }};">
+    <svg width="30" height="30" viewBox="0 0 473 490" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M107.872 151.014C110.328 131.587 135.565 105.182 155.594 108.112L155.562 108.08C175.054 111.786 190.484 145.349 199.185 160.441C205.349 171.391 201.346 182.485 195.596 187.167C187.839 193.422 175.709 202.052 178.254 210.717C182.779 226.122 236.498 279.865 262.919 295.143C272.92 300.926 280.172 285.674 286.365 277.86C290.864 271.849 301.963 268.257 312.883 274.19C329.192 283.692 344.556 294.735 358.763 307.167C365.859 313.1 367.524 321.868 362.608 331.136C353.948 347.459 328.902 368.984 310.721 364.609C278.967 356.971 150.547 307.167 109.298 162.878C106.978 156.052 107.562 153.471 107.872 151.014Z" fill="#0F0F0F"/>
+    </svg>
+  </div>
+
+  <div class="flex items-center gap-3 ps-4 hidden" id="whatsapp-input-container">
+    <textarea 
+      class="p-[10px] sm:px-[20px] px-[10px] overflow-hidden resize-none max-h-[45px] rounded-xl outline-none text-right w-64 transition-all duration-500"
+      style="background-color: {{ section.settings.input_bg_color }}; color: {{ section.settings.input_text_color }};"
+      placeholder="{{ section.settings.input_placeholder }}"
+      id="whatsapp-message-input"></textarea>
+
+    <a 
+      class="rounded-2xl p-[17px] flex items-center justify-center"
+      style="background-color: {{ section.settings.input_bg_color }};"
+      id="whatsapp-send-button">
+      <svg width="28" height="28" viewBox="0 0 254 234" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M133.256 117.036H219.381ZM221.822 128.314L236.051 170.774C243.844 194.028 247.741 205.655 244.945 212.815C242.516 219.034 237.301 223.747 230.865 225.543C223.454 227.608 212.261 222.576 189.874 212.514L46.354 147.997C24.5026 138.174 13.5769 133.264 10.2007 126.441C7.26643 120.513 7.26643 113.557 10.2007 107.63C13.5769 100.808 24.5026 95.8966 46.354 86.0738L190.121 21.4471C212.441 11.4142 223.6 6.3976 231.004 8.45552C237.433 10.2427 242.649 14.9443 245.085 21.1509C247.891 28.2977 244.036 39.8998 236.326 63.1041L221.794 106.84C220.47 110.826 219.808 112.819 219.547 114.856C219.315 116.665 219.317 118.496 219.554 120.304C219.82 122.341 220.488 124.331 221.822 128.314Z" fill="#7C8B95"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<script>
+  document.querySelector('.rounded-full').addEventListener('mouseenter', function() {
+    document.querySelector('#whatsapp-input-container').classList.remove('hidden');
+  });
+
+  document.querySelector('#whatsapp-send-button').addEventListener('click', function() {
+    const message = encodeURIComponent(document.querySelector('#whatsapp-message-input').value);
+    const phoneNumber = '{{ section.settings.whatsapp_phone_number }}';
+    const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.location.href = whatsappLink;
+  });
+</script>
