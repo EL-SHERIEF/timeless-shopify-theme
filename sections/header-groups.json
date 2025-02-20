@@ -50,10 +50,7 @@
     },
     "whatsapp_button_mQkCHp": {
       "type": "WhatsappButton",
-      "settings": {
-        "wa_link": "https://wa.me/1234567890",
-        "whatsapp_placeholder": "Send a message"
-      }
+      "settings": {}
     }
   },
   "order": [
