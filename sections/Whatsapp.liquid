@@ -53,7 +53,6 @@
     const message = document.getElementById("wa-message").value.trim();
     if (message) {
       const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-      window.open(waUrl, "_blank");
     }
   });
 </script>
