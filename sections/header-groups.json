@@ -48,14 +48,21 @@
         "show_cart_subtotal": true
       }
     },
-    "whatsapp_button_C6ReiX": {
-      "type": "WhatsappButton",
-      "settings": {}
+    "whatsapp_e46qyK": {
+      "type": "Whatsapp",
+      "settings": {
+        "whatsapp_phone_number": "+1234567890",
+        "input_placeholder": "ارسل رسالة",
+        "button_bg_color": "#00FF1E",
+        "input_bg_color": "#2A3942",
+        "input_text_color": "#FFFFFF",
+        "input_placeholder_color": "#7E8F98"
+      }
     }
   },
   "order": [
     "announcement",
     "header",
-    "whatsapp_button_C6ReiX"
+    "whatsapp_e46qyK"
   ]
 }
