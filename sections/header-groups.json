@@ -47,10 +47,15 @@
         "show_cart_item_count": false,
         "show_cart_subtotal": true
       }
+    },
+    "whatsapp_button_C6ReiX": {
+      "type": "WhatsappButton",
+      "settings": {}
     }
   },
   "order": [
     "announcement",
-    "header"
+    "header",
+    "whatsapp_button_C6ReiX"
   ]
 }

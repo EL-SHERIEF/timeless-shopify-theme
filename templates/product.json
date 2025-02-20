@@ -9,13 +9,6 @@
  */
 {
   "sections": {
-    "whatsapp_button_nRVRdL": {
-      "type": "WhatsappButton",
-      "settings": {
-        "wa_link": "https://wa.me/1234567890",
-        "whatsapp_placeholder": "Send a message"
-      }
-    },
     "besthero_3TKt8U": {
       "type": "besthero",
       "settings": {
@@ -382,7 +375,6 @@
     }
   },
   "order": [
-    "whatsapp_button_nRVRdL",
     "besthero_3TKt8U",
     "product-form",
     "features_section_xcgJND",
