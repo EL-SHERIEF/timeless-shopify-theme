@@ -20,22 +20,20 @@
     {%- for product_option in product.options_with_values -%}
       <fieldset class="mb-4">
         <legend class="text-sm font-medium text-white mb-2">{{ product_option.name }}</legend>
-
-        <!-- Parent container with transition classes -->
         <div class="flex flex-wrap gap-2 fest transition-colors duration-300">
           {%- for value in product_option.values -%}
            <label class="cursor-pointer">
-  <input
-    class="hidden peer"
-    name="option{{ product_option.position }}"
-    value="{{ value }}"
-    type="radio"
-    {% if product_option.selected or forloop.index0 == 0 %}checked{% endif %}
-  />
-  <span class="block px-4 py-2 rounded-[400px] text-sm transition-all hover:bg-white/20 peer-checked:hover:bg-white">
-    {{ value }}
-  </span>
-</label>
+              <input
+                class="hidden peer"
+                name="option{{ product_option.position }}"
+                value="{{ value }}"
+                type="radio"
+                {% if product.selected_or_first_available_variant.options[forloop.index0] == value or forloop.first %}checked{% endif %}
+              />
+              <span class="block px-4 py-2 rounded-[400px] text-sm transition-all hover:bg-white/20 peer-checked:hover:bg-white">
+                {{ value }}
+              </span>
+           </label>
           {%- endfor -%}
         </div>
       </fieldset>
@@ -45,7 +43,6 @@
 
 <style>
   .fest {
-    /* The background will be updated dynamically via JS */
     width: fit-content;
     padding: 5px;
     border-radius: 400px;
@@ -65,64 +62,87 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
+    // This function finds the selected radio values and updates the hidden select element accordingly.
+    function updateVariant() {
+      const option1 = document.querySelector('input[name="option1"]:checked')?.value || "";
+      const option2 = document.querySelector('input[name="option2"]:checked')?.value || "";
+      const option3 = document.querySelector('input[name="option3"]:checked')?.value || "";
+
+      const select = document.querySelector('select[name="id"]');
+      if (select) {
+        Array.from(select.options).forEach(option => {
+          let match = true;
+          if (option.dataset.option1 && option.dataset.option1 !== option1) {
+            match = false;
+          }
+          if (option.dataset.option2 && option.dataset.option2 !== option2) {
+            match = false;
+          }
+          if (option.dataset.option3 && option.dataset.option3 !== option3) {
+            match = false;
+          }
+          if (match) {
+            option.selected = true;
+          }
+        });
+      }
+    }
+
+    // Update visual styling and then update the variant selection.
     const festContainers = document.querySelectorAll('.fest');
     festContainers.forEach(container => {
       function updateContainer() {
         const checkedInput = container.querySelector('input[type="radio"]:checked');
         if (checkedInput) {
-          let value = checkedInput.value;
-          // Convert value to Tailwind-friendly format (e.g., "Red" becomes "red")
-          value = value.toLowerCase().trim().replace(/\s+/g, '-');
+          let value = checkedInput.value.toLowerCase().trim().replace(/\s+/g, '-');
           const newBgClass = `bg-${value}-500`;
-          
-          // Remove any existing bg- classes from the container
+
+          // Remove any existing bg- classes
           container.classList.forEach(cls => {
             if (/^bg-\S+/.test(cls)) {
               container.classList.remove(cls);
             }
           });
-          // Add the new background class to the container
           container.classList.add(newBgClass);
-          
-          // If the selected value is "white", add a outline to the container; otherwise, remove it.
+
           if (value === 'white') {
             container.classList.add('outline', 'outline-black');
           } else {
             container.classList.remove('outline', 'outline-black');
           }
-          
-          // Update each label's span styling:
+
           container.querySelectorAll('label').forEach(label => {
             const radio = label.querySelector('input[type="radio"]');
             const span = label.querySelector('span');
             if (radio.checked) {
-              // For the selected label:
               span.classList.add('text-black');
               span.classList.remove('text-black/80');
               if (value === 'white') {
-                // If white is selected, add a outline on the selected child and leave its background unchanged
                 span.classList.add('outline', 'outline-black');
                 span.classList.remove('bg-white');
               } else {
-                // For any other selection, remove any outline and force its background to white
                 span.classList.remove('outline', 'outline-black');
                 span.classList.add('bg-white');
               }
             } else {
-              // For unselected labels, set text color to 80% black and remove any background or outline classes.
               span.classList.add('text-black/80');
               span.classList.remove('text-black', 'bg-white', 'outline', 'outline-black');
             }
           });
         }
+        // After updating visuals, update the hidden select.
+        updateVariant();
       }
-      
+
       const radios = container.querySelectorAll('input[type="radio"]');
       radios.forEach(radio => {
         radio.addEventListener('change', updateContainer);
       });
-      // Initialize on page load
+      // Initialize each container on page load
       updateContainer();
     });
+
+    // Also update the variant on initial page load in case no change event occurs.
+    updateVariant();
   });
 </script>
