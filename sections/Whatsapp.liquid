@@ -58,7 +58,7 @@
     waMessage.addEventListener('input', function(){
       var encodedMessage = encodeURIComponent(waMessage.value);
       // Using JSON filter to output the link as a valid string
-      var baseLink = "https://wa.me/" + {{ settings.walink }};
+var baseLink = "https://wa.me/{{ section.settings.walink }}";
       waSend.href = baseLink + "?text=" + encodedMessage;
     });
   })();
