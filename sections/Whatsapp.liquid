@@ -52,13 +52,14 @@
 </div>
 
 <script>
-(function(){
-  var waMessage = document.getElementById('wa-message');
-  var waSend = document.getElementById('wa-send');
-  waMessage.addEventListener('input', function(){
-    var encodedMessage = encodeURIComponent(waMessage.value);
-    var baseLink = "https://api.whatsapp.com/send?phone={{ section.settings.walink }}";
-    waSend.href = baseLink + "&text=" + encodedMessage;
-  });
-})();
+  (function(){
+    var waMessage = document.getElementById('wa-message');
+    var waSend = document.getElementById('wa-send');
+    waMessage.addEventListener('input', function(){
+      var encodedMessage = encodeURIComponent(waMessage.value);
+      // Using JSON filter to output the link as a valid string
+      var baseLink = "https://wa.me/"{{ settings.walink }};
+      waSend.href = baseLink + "?text=" + encodedMessage;
+    });
+  })();
 </script>
