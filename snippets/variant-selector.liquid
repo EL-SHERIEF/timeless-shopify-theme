@@ -1,5 +1,6 @@
 {%- if product.has_only_default_variant -%}
   <input name="id" value="{{ product.selected_or_first_available_variant.id }}" hidden>
+
 {%- else -%}
   <select name="id" hidden>
     {%- for variant in product.variants -%}
@@ -16,141 +17,33 @@
     {%- endfor -%}
   </select>
 
-  <div class="grid gap-6 py-4 bg-white rounded-[400px]">
+  <div class="grid gap-8 p-3 bg-canvas-subdued">
     {%- for product_option in product.options_with_values -%}
-      <fieldset class="mb-4">
-        <legend class="text-sm font-medium text-white mb-2">{{ product_option.name }}</legend>
+      <fieldset class="-mt-5 {% unless forloop.last %}pb-3 border-b border-stroke{% endunless %}">
+        <legend class="technical text-xs mb-1">{{ product_option.name }}</legend>
 
-        <!-- Parent container with transition classes -->
-        <div class="flex flex-wrap gap-2 fest transition-colors duration-300">
+        <div class="flex flex-wrap gap-3">
           {%- for value in product_option.values -%}
-           <label class="cursor-pointer">
-  <input
-    class="hidden peer"
-    name="option{{ product_option.position }}"
-    value="{{ value }}"
-    type="radio"
-    {% if product_option.selected or forloop.index0 == 0 %}checked{% endif %}
-  />
-  <span class="block px-4 py-2 rounded-[400px] text-sm transition-all hover:bg-white/20 peer-checked:hover:bg-white">
-    {{ value }}
-  </span>
-</label>
+            <label class="group">
+              <input
+                class="product-options"
+                name="option{{ product_option.position }}"
+                value="{{ value }}"
+                type="radio"
+                {% if product_option.selected or forloop.index0 == 0 %}checked{% endif %}
+              />
+              <span class="group-hover:underline decoration-dashed decoration-ink-subdued">{{ value }}</span>
+            </label>
           {%- endfor -%}
         </div>
       </fieldset>
+
+      {%- unless forloop.last -%}
+        {%- if show_dividers -%}
+          <hr>
+        {%- endif -%}
+      {%- endunless -%}
     {%- endfor -%}
   </div>
+
 {%- endif -%}
-
-<style>
-  .fest {
-    /* The background will be updated dynamically via JS */
-    width: fit-content;
-    padding: 5px;
-    border-radius: 400px;
-  }
-  fieldset {
-    outline: none;
-    margin: 0;
-    padding: 0;
-  }
-  label span {
-    transition: all 0.2s ease;
-  }
-  label:hover span {
-    border-color: black;
-  }
-</style>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // For each container, if no radio is checked, check the first one
-  const festContainers = document.querySelectorAll('.fest');
-  festContainers.forEach(container => {
-    let checkedInput = container.querySelector('input[type="radio"]:checked');
-    if (!checkedInput) {
-      // No radio is checked, so select the first one
-      const firstRadio = container.querySelector('input[type="radio"]');
-      if (firstRadio) {
-        firstRadio.checked = true;
-        // Dispatch a change event so any update functions run
-        firstRadio.dispatchEvent(new Event('change'));
-      }
-    }
-    // Bind change event for all radios within the container
-    const radios = container.querySelectorAll('input[type="radio"]');
-    radios.forEach(radio => {
-      radio.addEventListener('change', function() {
-        updateContainer(container);
-      });
-    });
-    // Call updateContainer to ensure UI and hidden select sync
-    updateContainer(container);
-  });
-  
-  // Also update the hidden select once more after a slight delay
-  setTimeout(updateVariant, 100);
-  
-  // Function to update the hidden select based on the current selections
-  function updateVariant() {
-    const option1 = document.querySelector('input[name="option1"]:checked')?.value || "";
-    const option2 = document.querySelector('input[name="option2"]:checked')?.value || "";
-    const option3 = document.querySelector('input[name="option3"]:checked')?.value || "";
-
-    const select = document.querySelector('select[name="id"]');
-    if (select) {
-      Array.from(select.options).forEach(option => {
-        let match = true;
-        if (option.dataset.option1 && option.dataset.option1 !== option1) match = false;
-        if (option.dataset.option2 && option.dataset.option2 !== option2) match = false;
-        if (option.dataset.option3 && option.dataset.option3 !== option3) match = false;
-        if (match) {
-          option.selected = true;
-        }
-      });
-    }
-  }
-
-  // Update visual styling and then update the hidden select for a container
-  function updateContainer(container) {
-    const checkedInput = container.querySelector('input[type="radio"]:checked');
-    if (checkedInput) {
-      let value = checkedInput.value.toLowerCase().trim().replace(/\s+/g, '-');
-      const newBgClass = `bg-${value}-500`;
-      
-      container.classList.forEach(cls => {
-        if (/^bg-\S+/.test(cls)) container.classList.remove(cls);
-      });
-      container.classList.add(newBgClass);
-      
-      if (value === 'white') {
-        container.classList.add('outline', 'outline-black');
-      } else {
-        container.classList.remove('outline', 'outline-black');
-      }
-      
-      container.querySelectorAll('label').forEach(label => {
-        const radio = label.querySelector('input[type="radio"]');
-        const span = label.querySelector('span');
-        if (radio.checked) {
-          span.classList.add('text-black');
-          span.classList.remove('text-black/80');
-          if (value === 'white') {
-            span.classList.add('outline', 'outline-black');
-            span.classList.remove('bg-white');
-          } else {
-            span.classList.remove('outline', 'outline-black');
-            span.classList.add('bg-white');
-          }
-        } else {
-          span.classList.add('text-black/80');
-          span.classList.remove('text-black', 'bg-white', 'outline', 'outline-black');
-        }
-      });
-    }
-    updateVariant();
-  }
-});
-
-</script>
