@@ -50,7 +50,10 @@
     },
     "whatsapp_e46qyK": {
       "type": "Whatsapp",
-      "settings": {}
+      "settings": {
+        "waphonenumber": "201064256907",
+        "input_placeholder": "ارسل رسالة"
+      }
     }
   },
   "order": [
