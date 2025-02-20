@@ -21,7 +21,7 @@
           {%- when 'buy-button' -%}
             <div>
               <button
-                class="action w-full bg-black text-white font-bold {% unless block.settings.full_width %}{% endunless %}"
+                class="action w-full {% unless block.settings.full_width %}md:w-auto{% endunless %}"
                 type="submit"
                 {% unless product.available or product.selected_or_first_available_variant.availabile %}disabled{% endunless %}
               >
@@ -46,7 +46,7 @@
 
           {%- when 'divider' -%}
             {%- if block.settings.label != blank -%}
-              <h2 class="divider technical text-xs my-4">
+              <h2 class="divider technical text-xs mt-4">
                 <span>{{ block.settings.label }}</span>
               </h2>
             {%- else -%}
@@ -58,10 +58,19 @@
               {%- render 'gift-card-recipient-form' -%}
             {%- endif -%}
 
-           
+          {%- when 'inventory' -%}
+            <p
+              class="{{ block.settings.tailwind | default: 'text-sm text-center md:text-left' }}"
+              {% if block.settings.threshold_enabled %}
+                data-inventory-threshold="{{ block.settings.threshold }}"
+                {% if product.selected_or_first_available_variant.inventory_quantity > block.settings.threshold %}hidden{% endif %}
+              {% endif %}
+            >
+              {% render 'inventory', text: block.settings.text %}
+            </p>
 
           {%- when 'price' -%}
-            {%- render 'price', class: 'text-md', show_taxes_included: true -%}
+            {%- render 'price', class: 'text-xl', show_taxes_included: true -%}
 
             {{ form | payment_terms }}
 
@@ -72,7 +81,7 @@
             </label>
 
           {%- when 'richtext' -%}
-            <div class="rte empty:hidden  {{ block.settings.tailwind }}">{{ block.settings.richtext }}</div>
+            <div class="rte empty:hidden {{ block.settings.tailwind }}">{{ block.settings.richtext }}</div>
 
           {%- when 'sku' -%}
             {%- assign sku = product.selected_or_first_available_variant.sku -%}
@@ -96,7 +105,7 @@
             {% render 'variant-selector', show_dividers: block.settings.show_dividers %}
 
           {%- when 'vendor' -%}
-            <p class="{{ block.settings.tailwind | default: 'technical text-[10px] font-[400]  px-3 py-2 rounded-full border border-black/50 text-black w-fit' }}">{{ product.vendor }}</p>
+            <p class="{{ block.settings.tailwind | default: 'technical text-xs' }}">{{ product.vendor }}</p>
 
         {%- endcase -%}
       {%- endfor -%}
@@ -115,9 +124,7 @@
     min-width: 0;
     @apply self-start sm:sticky-below-header;
   }
-.section-product-form .rte{
-  font-size:14px!important;
-}
+
   .product-thumbs .swiper-slide {
     @apply relative transition-transform;
   }
@@ -131,9 +138,6 @@
 
   .product-thumbs .swiper-slide:is(.swiper-slide-thumb-active, :hover)::after {
     @apply opacity-20;
-  }
-  .grid.gap-4 .h1{
-  font-size:25px;font-weight:800;
   }
 
   .product-thumbs .swiper-slide:not(:is(.swiper-slide-thumb-active)) {
