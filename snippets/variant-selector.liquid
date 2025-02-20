@@ -9,7 +9,6 @@
         {% if variant.option1 %}data-option1="{{ variant.option1 }}"{% endif %}
         {% if variant.option2 %}data-option2="{{ variant.option2 }}"{% endif %}
         {% if variant.option3 %}data-option3="{{ variant.option3 }}"{% endif %}
-        {% if variant.inventory_quantity %}data-inventory="{{ variant.inventory_quantity }}"{% endif %}
       >
         {{ variant | json }}
       </option>
@@ -28,7 +27,7 @@
                 name="option{{ product_option.position }}"
                 value="{{ value }}"
                 type="radio"
-                {%- if product.selected_or_first_available_variant.options[forloop.index0] == value or forloop.first -%}checked{%- endif -%}
+                {% if product_option.selected or forloop.index0 == 0 %}checked{% endif %}
               />
               <span class="block px-4 py-2 rounded-[400px] text-sm transition-all hover:bg-white/20 peer-checked:hover:bg-white">
                 {{ value }}
@@ -47,48 +46,26 @@
     padding: 5px;
     border-radius: 400px;
   }
-  fieldset {
-    outline: none;
-    margin: 0;
-    padding: 0;
-  }
-  label span {
-    transition: all 0.2s ease;
-  }
-  label:hover span {
-    border-color: black;
-  }
+  fieldset { outline: none; margin: 0; padding: 0; }
+  label span { transition: all 0.2s ease; }
+  label:hover span { border-color: black; }
 </style>
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    // Updates the hidden select element to match the currently checked radio options.
+    // Function to update the hidden select based on checked radio inputs
     function updateVariant() {
-      const radio1 = document.querySelector('input[name="option1"]:checked');
-      const radio2 = document.querySelector('input[name="option2"]:checked');
-      const radio3 = document.querySelector('input[name="option3"]:checked');
-      const option1 = radio1 ? radio1.value : "";
-      const option2 = radio2 ? radio2.value : "";
-      const option3 = radio3 ? radio3.value : "";
-      
-      // Normalize values for comparison
-      const norm1 = option1.toLowerCase().trim();
-      const norm2 = option2.toLowerCase().trim();
-      const norm3 = option3.toLowerCase().trim();
-      
+      const option1 = document.querySelector('input[name="option1"]:checked')?.value || "";
+      const option2 = document.querySelector('input[name="option2"]:checked')?.value || "";
+      const option3 = document.querySelector('input[name="option3"]:checked')?.value || "";
+
       const select = document.querySelector('select[name="id"]');
       if (select) {
         Array.from(select.options).forEach(option => {
           let match = true;
-          if (option.dataset.option1 && option.dataset.option1.toLowerCase().trim() !== norm1) {
-            match = false;
-          }
-          if (option.dataset.option2 && option.dataset.option2.toLowerCase().trim() !== norm2) {
-            match = false;
-          }
-          if (option.dataset.option3 && option.dataset.option3.toLowerCase().trim() !== norm3) {
-            match = false;
-          }
+          if (option.dataset.option1 && option.dataset.option1 !== option1) match = false;
+          if (option.dataset.option2 && option.dataset.option2 !== option2) match = false;
+          if (option.dataset.option3 && option.dataset.option3 !== option3) match = false;
           if (match) {
             option.selected = true;
           }
@@ -96,63 +73,53 @@
       }
     }
     
-    // Visual updates for the radio buttons remain the same.
+    // Update visual styles and variant sync
+    function updateContainer(container) {
+      const checkedInput = container.querySelector('input[type="radio"]:checked');
+      if (checkedInput) {
+        let value = checkedInput.value.toLowerCase().trim().replace(/\s+/g, '-');
+        const newBgClass = `bg-${value}-500`;
+        container.classList.forEach(cls => {
+          if (/^bg-\S+/.test(cls)) container.classList.remove(cls);
+        });
+        container.classList.add(newBgClass);
+        if (value === 'white') container.classList.add('outline', 'outline-black');
+        else container.classList.remove('outline', 'outline-black');
+        
+        container.querySelectorAll('label').forEach(label => {
+          const radio = label.querySelector('input[type="radio"]');
+          const span = label.querySelector('span');
+          if (radio.checked) {
+            span.classList.add('text-black');
+            span.classList.remove('text-black/80');
+            if (value === 'white') {
+              span.classList.add('outline', 'outline-black');
+              span.classList.remove('bg-white');
+            } else {
+              span.classList.remove('outline', 'outline-black');
+              span.classList.add('bg-white');
+            }
+          } else {
+            span.classList.add('text-black/80');
+            span.classList.remove('text-black', 'bg-white', 'outline', 'outline-black');
+          }
+        });
+      }
+      updateVariant();
+    }
+    
+    // Bind change event for all radio buttons within each container
     const festContainers = document.querySelectorAll('.fest');
     festContainers.forEach(container => {
-      function updateContainer() {
-        const checkedInput = container.querySelector('input[type="radio"]:checked');
-        if (checkedInput) {
-          let value = checkedInput.value;
-          // Convert the value to a Tailwind-friendly format.
-          let normalizedValue = value.toLowerCase().trim().replace(/\s+/g, '-');
-          const newBgClass = `bg-${normalizedValue}-500`;
-          
-          // Remove existing background classes.
-          container.classList.forEach(cls => {
-            if (/^bg-\S+/.test(cls)) {
-              container.classList.remove(cls);
-            }
-          });
-          container.classList.add(newBgClass);
-          
-          if (normalizedValue === 'white') {
-            container.classList.add('outline', 'outline-black');
-          } else {
-            container.classList.remove('outline', 'outline-black');
-          }
-          
-          container.querySelectorAll('label').forEach(label => {
-            const radio = label.querySelector('input[type="radio"]');
-            const span = label.querySelector('span');
-            if (radio.checked) {
-              span.classList.add('text-black');
-              span.classList.remove('text-black/80');
-              if (normalizedValue === 'white') {
-                span.classList.add('outline', 'outline-black');
-                span.classList.remove('bg-white');
-              } else {
-                span.classList.remove('outline', 'outline-black');
-                span.classList.add('bg-white');
-              }
-            } else {
-              span.classList.add('text-black/80');
-              span.classList.remove('text-black', 'bg-white', 'outline', 'outline-black');
-            }
-          });
-        }
-        // Update the hidden select each time a radio change occurs.
-        updateVariant();
-      }
-      
       const radios = container.querySelectorAll('input[type="radio"]');
-      radios.forEach(radio => {
-        radio.addEventListener('change', updateContainer);
-      });
-      // Ensure that the container (and hidden select) is correctly updated on page load.
-      updateContainer();
+      radios.forEach(radio => radio.addEventListener('change', function() {
+        updateContainer(container);
+      }));
+      // Initialize on page load
+      updateContainer(container);
     });
     
-    // Extra call to updateVariant on load in case no radio change event occurs.
+    // Ensure hidden select is updated on load
     updateVariant();
   });
 </script>
