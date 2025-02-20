@@ -65,77 +65,51 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    // When a radio option is changed, update the hidden select
-    const optionInputs = document.querySelectorAll('.option-input');
-    optionInputs.forEach(input => {
-      input.addEventListener('change', updateVariantSelection);
-    });
-
-    function updateVariantSelection() {
-      // Gather the selected values for each option group.
-      const selectedOptions = [];
-      const optionGroups = document.querySelectorAll('[data-option-index]');
-      optionGroups.forEach(group => {
-        const checked = group.querySelector('input[type="radio"]:checked');
-        selectedOptions.push(checked ? checked.value : null);
-      });
-      
-      // Find the variant that exactly matches the selected options.
-      const selectElement = document.querySelector('select[name="id"]');
-      let matchingVariantId = null;
-      Array.from(selectElement.options).forEach(option => {
-        const variantOptions = option.getAttribute('data-options').split('|');
-        const isMatch = variantOptions.every((val, index) => {
-          return selectedOptions[index] === val;
-        });
-        if(isMatch) {
-          matchingVariantId = option.value;
-        }
-      });
-      
-      // Update the hidden select value
-      if(matchingVariantId) {
-        selectElement.value = matchingVariantId;
-      }
-    }
-
-    // (Optional) Update container background styles as before.
     const festContainers = document.querySelectorAll('.fest');
     festContainers.forEach(container => {
       function updateContainer() {
         const checkedInput = container.querySelector('input[type="radio"]:checked');
         if (checkedInput) {
           let value = checkedInput.value;
+          // Convert value to Tailwind-friendly format (e.g., "Red" becomes "red")
           value = value.toLowerCase().trim().replace(/\s+/g, '-');
           const newBgClass = `bg-${value}-500`;
           
+          // Remove any existing bg- classes from the container
           container.classList.forEach(cls => {
             if (/^bg-\S+/.test(cls)) {
               container.classList.remove(cls);
             }
           });
+          // Add the new background class to the container
           container.classList.add(newBgClass);
           
+          // If the selected value is "white", add a outline to the container; otherwise, remove it.
           if (value === 'white') {
             container.classList.add('outline', 'outline-black');
           } else {
             container.classList.remove('outline', 'outline-black');
           }
           
+          // Update each label's span styling:
           container.querySelectorAll('label').forEach(label => {
             const radio = label.querySelector('input[type="radio"]');
             const span = label.querySelector('span');
             if (radio.checked) {
+              // For the selected label:
               span.classList.add('text-black');
               span.classList.remove('text-black/80');
               if (value === 'white') {
+                // If white is selected, add a outline on the selected child and leave its background unchanged
                 span.classList.add('outline', 'outline-black');
                 span.classList.remove('bg-white');
               } else {
+                // For any other selection, remove any outline and force its background to white
                 span.classList.remove('outline', 'outline-black');
                 span.classList.add('bg-white');
               }
             } else {
+              // For unselected labels, set text color to 80% black and remove any background or outline classes.
               span.classList.add('text-black/80');
               span.classList.remove('text-black', 'bg-white', 'outline', 'outline-black');
             }
@@ -147,8 +121,8 @@
       radios.forEach(radio => {
         radio.addEventListener('change', updateContainer);
       });
+      // Initialize on page load
       updateContainer();
     });
   });
 </script>
-
