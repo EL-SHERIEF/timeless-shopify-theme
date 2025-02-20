@@ -24,6 +24,30 @@
     </a>
   </div>
 </div>
+{% schema %}
+{
+  "name": "WhatsApp Button",
+  "settings": [
+    {
+      "type": "text",
+      "id": "wa_link",
+      "label": "WhatsApp Link (wa.me URL)",
+      "default": "https://wa.me/1234567890"
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_placeholder",
+      "label": "Message Placeholder",
+      "default": "Send a message"
+    }
+  ],
+  "presets": [
+    {
+      "name": "WhatsApp Button"
+    }
+  ]
+}
+{% endschema %}
 
 <script>
   (function(){
