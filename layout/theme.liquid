@@ -10,7 +10,10 @@
 
   <link rel="canonical" href="{{ canonical_url }}">
   {%- unless settings.font_heading.system? and settings.font_body.system? -%}
-    <link rel="preconnect" href="//fonts.shopifycdn.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+
   {%- endunless -%}
 
   <title>
@@ -34,6 +37,7 @@
 <body>
   <style>
  body{width:99vw; overflow-x:hidden;
+       font-family: "Almarai", sans-serif;
      background-color:#f9fafb!important}
   </style>
   {% sections 'header-groups' %}
