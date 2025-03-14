@@ -72,7 +72,7 @@
       <!-- Grid for Circles -->
       <div class="!flex-col sm:!flex-row flex justify-center align-center items-center py-10 ">
         <!-- First Circle -->
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center item">
           <div class="relative">
             <!-- SVG Circle -->
             <svg class="w-20 h-20 text-sigmacolor" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
@@ -90,7 +90,7 @@
         </div>
 
         <!-- Second Circle -->
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center item">
           <div class="relative">
             <svg class="w-20 h-20 text-sigmacolor" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
               <!-- Background Circle -->
@@ -106,7 +106,7 @@
         </div>
 
         <!-- Third Circle -->
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center item">
           <div class="relative">
             <svg class="w-20 h-20 text-sigmacolor" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
               <!-- Background Circle -->
@@ -157,7 +157,21 @@
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+.item{
+    .text-image-item {
+    display: flex;
+    align-items: center;
+    flex-direction:row;
+    gap: 12px;
+    padding: 20px 16px;
+    border-radius: 24px;
+    border: 1px solid #eaecf0;
+        text-align:start;
+    transition: 0.3s;
+    background: white;
+  }
 
+}
   .lg:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
