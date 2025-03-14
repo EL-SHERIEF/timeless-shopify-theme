@@ -48,7 +48,11 @@
   </div>
 
   <nav class="swiper product-thumbs user-select-none mt-2" hidden>
-
+    <style>
+      .product-thumbs .swiper-slide::after{
+        border-radius:20px;
+      }
+    </style>
     <div class="swiper-wrapper">
       {%- for media in product.media -%}
         <div
