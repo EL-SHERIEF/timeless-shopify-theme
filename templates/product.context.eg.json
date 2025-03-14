@@ -28,12 +28,38 @@
       },
       "blocks": {},
       "block_order": []
+    },
+    "story_teller_QjL7q": {
+      "type": "story-teller",
+      "disabled": false,
+      "settings": {
+        "header-430009b7149996ad22ae8382ba99de2a": null,
+        "background_color": "#fff9f3",
+        "text_color": "#1a1a1a"
+      },
+      "blocks": {
+        "media_text_block_i3nUn": {
+          "type": "media_text_block",
+          "disabled": false,
+          "settings": {
+            "title": "Say goodbye to the pains of traditional hair removal",
+            "description": "Imagine never again feeling the pain of \nwaxing or the irritation of shaving. With our\nIPL technology, hair removal becomes\ngentle and pleasant. Say goodbye to\nredness\nand\ningrown\nhairs for soothed skin.",
+            "media_type": "image",
+            "image": "shopify://shop_images/GIF.webp",
+            "video_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_text_block_i3nUn"
+      ]
     }
   },
   "order": [
     "whatsapp_TNKXMV",
     "besthero_3TKt8U",
     "results_section_fDfYx",
+    "story_teller_QjL7q",
     "product-form",
     "features_section_xcgJND",
     "product-recommendations",
