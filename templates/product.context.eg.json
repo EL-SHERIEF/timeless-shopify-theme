@@ -13,27 +13,11 @@
     "market": "eg"
   },
   "sections": {
-    "results_section_fDfYx": {
-      "type": "results-section",
-      "disabled": false,
-      "settings": {
-        "heading": "Our Users Achieved Exceptional Results In Just 4 Weeks",
-        "highlight_text": "In Just 4 Weeks",
-        "result_1_text": "Observed a significant reduction in hair density after just 4 weeks of use.",
-        "result_1_percentage": "95",
-        "result_2_text": "Noticed a visible reduction in hair regrowth, leaving their skin smoother and softer.",
-        "result_2_percentage": "98",
-        "result_3_text": "Reported a notable reduction in irritation and redness, enjoying calmer and healthier skin.",
-        "result_3_percentage": "92"
-      },
-      "blocks": {},
-      "block_order": []
-    },
     "story_teller_QjL7q": {
       "type": "story-teller",
       "disabled": false,
       "settings": {
-        "header-22b702a28803564b63ae2ab38a411d10": null,
+        "header-c2e90a0b094688c58028b972b7aa3281": null,
         "background_color": "#ffffff",
         "text_color": "#1a1a1a"
       },
@@ -77,6 +61,39 @@
         "media_text_block_8DmdX",
         "media_text_block_7T9MU"
       ]
+    },
+    "results_section_fDfYx": {
+      "type": "results-section",
+      "disabled": false,
+      "settings": {
+        "heading": "Our Users Achieved Exceptional Results In Just 4 Weeks",
+        "highlight_text": "In Just 4 Weeks",
+        "result_1_text": "Observed a significant reduction in hair density after just 4 weeks of use.",
+        "result_1_percentage": "95",
+        "result_2_text": "Noticed a visible reduction in hair regrowth, leaving their skin smoother and softer.",
+        "result_2_percentage": "98",
+        "result_3_text": "Reported a notable reduction in irritation and redness, enjoying calmer and healthier skin.",
+        "result_3_percentage": "92"
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "3twins_KMmjwr": {
+      "settings": {},
+      "blocks": {
+        "image_JNp7K6": {
+          "settings": {
+            "image": "shopify://shop_images/1_3000x3000_b893121b-8c7b-451a-a458-f4cbcd1b40cf.webp",
+            "image_text": "BEFORE  -  AFTER"
+          }
+        },
+        "image_hpEaYh": {
+          "settings": {
+            "image": "shopify://shop_images/2_3000x3000_c614e928-c814-4c5d-bc77-3a6faf162934.webp",
+            "image_text": "BEFORE - AFTER"
+          }
+        }
+      }
     }
   },
   "order": [
