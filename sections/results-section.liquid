@@ -1,147 +1,98 @@
 {% schema %}
 {
-  "name": "Benefits Section",
+  "name": "Results Section",
   "settings": [
     {
-      "type": "header",
-      "content": "Benefit 1"
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our Users Achieved Exceptional Results In Just 4 Weeks"
     },
     {
       "type": "text",
-      "id": "benefit_1_title",
-      "label": "Benefit 1 Title",
-      "default": "90-Day Guarantee"
+      "id": "highlight_text",
+      "label": "Highlight Text",
+      "default": "In Just 4 Weeks"
+    },
+    {
+      "type": "textarea",
+      "id": "result_1_text",
+      "label": "Result 1 Text",
+      "default": "Observed a significant reduction in hair density after just 4 weeks of use."
     },
     {
       "type": "text",
-      "id": "benefit_1_description",
-      "label": "Benefit 1 Description",
-      "default": "Peace of Mind for 3 Months!"
+      "id": "result_1_percentage",
+      "label": "Result 1 Percentage",
+      "default": "95"
     },
     {
-      "type": "image_picker",
-      "id": "benefit_1_icon",
-      "label": "Benefit 1 Icon"
-    },
-    {
-      "type": "header",
-      "content": "Benefit 2"
+      "type": "textarea",
+      "id": "result_2_text",
+      "label": "Result 2 Text",
+      "default": "Noticed a visible reduction in hair regrowth, leaving their skin smoother and softer."
     },
     {
       "type": "text",
-      "id": "benefit_2_title",
-      "label": "Benefit 2 Title",
-      "default": "Free Shipping"
+      "id": "result_2_percentage",
+      "label": "Result 2 Percentage",
+      "default": "94"
+    },
+    {
+      "type": "textarea",
+      "id": "result_3_text",
+      "label": "Result 3 Text",
+      "default": "Reported a notable reduction in irritation and redness, enjoying calmer and healthier skin."
     },
     {
       "type": "text",
-      "id": "benefit_2_description",
-      "label": "Benefit 2 Description",
-      "default": "Fast, Free, and Hassle-Free!"
-    },
-    {
-      "type": "image_picker",
-      "id": "benefit_2_icon",
-      "label": "Benefit 2 Icon"
-    },
-    {
-      "type": "header",
-      "content": "Benefit 3"
-    },
-    {
-      "type": "text",
-      "id": "benefit_3_title",
-      "label": "Benefit 3 Title",
-      "default": "Elite"
-    },
-    {
-      "type": "text",
-      "id": "benefit_3_description",
-      "label": "Benefit 3 Description",
-      "default": "Crafted for Those Who Demand the Best"
-    },
-    {
-      "type": "image_picker",
-      "id": "benefit_3_icon",
-      "label": "Benefit 3 Icon"
-    },
-    {
-      "type": "header",
-      "content": "Benefit 4"
-    },
-    {
-      "type": "text",
-      "id": "benefit_4_title",
-      "label": "Benefit 4 Title",
-      "default": "Best Market Price"
-    },
-    {
-      "type": "text",
-      "id": "benefit_4_description",
-      "label": "Benefit 4 Description",
-      "default": "Prices You Won’t Find Anywhere Else"
-    },
-    {
-      "type": "image_picker",
-      "id": "benefit_4_icon",
-      "label": "Benefit 4 Icon"
+      "id": "result_3_percentage",
+      "label": "Result 3 Percentage",
+      "default": "92"
     }
   ],
   "presets": [
     {
-      "name": "Benefits Section",
+      "name": "Results Section",
       "category": "Custom"
     }
   ]
 }
 {% endschema %}
 
-<div class="benefits-section section section-blends section-full">
-  <div class="bg-white py-6">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <!-- Benefit 1 -->
-        <div class="flex flex-col items-center text-center bg-gray-50 p-4 rounded-lg">
-          {% if section.settings.benefit_1_icon %}
-            <img src="{{ section.settings.benefit_1_icon | img_url: 'small' }}" alt="{{ section.settings.benefit_1_title }}" class="w-12 h-12 mb-2">
-          {% else %}
-            <div class="w-12 h-12 mb-2 bg-gray-200 rounded-full"></div>
-          {% endif %}
-          <h3 class="text-sm font-bold text-gray-900">{{ section.settings.benefit_1_title }}</h3>
-          <p class="text-xs text-gray-600 mt-1">{{ section.settings.benefit_1_description }}</p>
+<div class="results-section section section-blends section-full">
+  <div class="bg-white py-8">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <!-- Section Title -->
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-gray-900">
+        {% assign heading_parts = section.settings.heading | split: section.settings.highlight_text %}
+        {{ heading_parts[0] }}<span class="text-yellow-500">{{ section.settings.highlight_text }}</span>{{ heading_parts[1] | strip }}
+      </h2>
+
+      <!-- Grid for Circles -->
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- First Circle -->
+        <div class="flex flex-col items-center">
+          <div class="relative w-20 h-20 flex items-center justify-center bg-yellow-500 rounded-full">
+            <span class="text-2xl font-bold text-gray-900">{{ section.settings.result_1_percentage }}%</span>
+          </div>
+          <p class="mt-2 text-base text-gray-700 text-center">{{ section.settings.result_1_text }}</p>
         </div>
 
-        <!-- Benefit 2 -->
-        <div class="flex flex-col items-center text-center bg-gray-50 p-4 rounded-lg">
-          {% if section.settings.benefit_2_icon %}
-            <img src="{{ section.settings.benefit_2_icon | img_url: 'small' }}" alt="{{ section.settings.benefit_2_title }}" class="w-12 h-12 mb-2">
-          {% else %}
-            <div class="w-12 h-12 mb-2 bg-gray-200 rounded-full"></div>
-          {% endif %}
-          <h3 class="text-sm font-bold text-gray-900">{{ section.settings.benefit_2_title }}</h3>
-          <p class="text-xs text-gray-600 mt-1">{{ section.settings.benefit_2_description }}</p>
+        <!-- Second Circle -->
+        <div class="flex flex-col items-center">
+          <div class="relative w-20 h-20 flex items-center justify-center bg-yellow-500 rounded-full">
+            <span class="text-2xl font-bold text-gray-900">{{ section.settings.result_2_percentage }}%</span>
+          </div>
+          <p class="mt-2 text-base text-gray-700 text-center">{{ section.settings.result_2_text }}</p>
         </div>
 
-        <!-- Benefit 3 -->
-        <div class="flex flex-col items-center text-center bg-gray-50 p-4 rounded-lg">
-          {% if section.settings.benefit_3_icon %}
-            <img src="{{ section.settings.benefit_3_icon | img_url: 'small' }}" alt="{{ section.settings.benefit_3_title }}" class="w-12 h-12 mb-2">
-          {% else %}
-            <div class="w-12 h-12 mb-2 bg-gray-200 rounded-full"></div>
-          {% endif %}
-          <h3 class="text-sm font-bold text-gray-900">{{ section.settings.benefit_3_title }}</h3>
-          <p class="text-xs text-gray-600 mt-1">{{ section.settings.benefit_3_description }}</p>
-        </div>
-
-        <!-- Benefit 4 -->
-        <div class="flex flex-col items-center text-center bg-gray-50 p-4 rounded-lg">
-          {% if section.settings.benefit_4_icon %}
-            <img src="{{ section.settings.benefit_4_icon | img_url: 'small' }}" alt="{{ section.settings.benefit_4_title }}" class="w-12 h-12 mb-2">
-          {% else %}
-            <div class="w-12 h-12 mb-2 bg-gray-200 rounded-full"></div>
-          {% endif %}
-          <h3 class="text-sm font-bold text-gray-900">{{ section.settings.benefit_4_title }}</h3>
-          <p class="text-xs text-gray-600 mt-1">{{ section.settings.benefit_4_description }}</p>
+        <!-- Third Circle -->
+        <div class="flex flex-col items-center">
+          <div class="relative w-20 h-20 flex items-center justify-center bg-yellow-500 rounded-full">
+            <span class="text-2xl font-bold text-gray-900">{{ section.settings.result_3_percentage }}%</span>
+          </div>
+          <p class="mt-2 text-base text-gray-700 text-center">{{ section.settings.result_3_text }}</p>
         </div>
       </div>
     </div>
@@ -149,7 +100,7 @@
 </div>
 
 <style>
-  .benefits-section {
+  .results-section {
     padding: 20px 10px;
   }
 
@@ -157,9 +108,9 @@
     background-color: #ffffff;
   }
 
-  .py-6 {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+  .py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .max-w-5xl {
@@ -186,20 +137,54 @@
     padding-right: 2rem;
   }
 
+  .text-center {
+    text-align: center;
+  }
+
+  .text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .md:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .font-bold {
+    font-weight: 700;
+  }
+
+  .tracking-tight {
+    letter-spacing: -0.025em;
+  }
+
+  .text-gray-900 {
+    color: #111827;
+  }
+
+  .text-yellow-500 {
+    color: #f59e0b;
+  }
+
+  .mt-6 {
+    margin-top: 1.5rem;
+  }
+
   .grid {
     display: grid;
   }
 
-  .grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 
-  .md:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .md:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .gap-4 {
-    gap: 1rem;
+  .gap-6 {
+    gap: 1.5rem;
   }
 
   .flex {
@@ -214,80 +199,59 @@
     align-items: center;
   }
 
-  .text-center {
-    text-align: center;
+  .w-20 {
+    width: 5rem;
   }
 
-  .bg-gray-50 {
-    background-color: #f9fafb;
+  .h-20 {
+    height: 5rem;
   }
 
-  .p-4 {
-    padding: 1rem;
+  .bg-yellow-500 {
+    background-color: #f59e0b;
   }
 
-  .rounded-lg {
-    border-radius: 0.5rem;
+  .rounded-full {
+    border-radius: 9999px;
   }
 
-  .w-12 {
-    width: 3rem;
+  .mt-2 {
+    margin-top: 0.5rem;
   }
 
-  .h-12 {
-    height: 3rem;
+  .text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
-  .mb-2 {
-    margin-bottom: 0.5rem;
-  }
-
-  .text-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-
-  .font-bold {
-    font-weight: 700;
-  }
-
-  .text-gray-900 {
-    color: #111827;
-  }
-
-  .text-xs {
-    font-size: 0.75rem;
-    line-height: 1rem;
-  }
-
-  .text-gray-600 {
-    color: #4b5563;
-  }
-
-  .mt-1 {
-    margin-top: 0.25rem;
+  .text-gray-700 {
+    color: #374151;
   }
 
   /* Responsive Adjustments */
   @media (max-width: 768px) {
-    .text-sm {
-      font-size: 0.75rem;
+    .text-2xl {
+      font-size: 1.25rem;
     }
 
-    .text-xs {
-      font-size: 0.65rem;
+    .md:text-3xl {
+      font-size: 1.5rem;
     }
 
-    .w-12 {
-      width: 2.5rem;
+    .text-base {
+      font-size: 0.875rem;
     }
 
-    .h-12 {
-      height: 2.5rem;
+    .w-20 {
+      width: 4rem;
     }
 
-    .p-4 {
-      padding: 0.75rem;
+    .h-20 {
+      height: 4rem;
+    }
+
+    .text-2xl {
+      font-size: 1.25rem;
     }
   }
 </style>
