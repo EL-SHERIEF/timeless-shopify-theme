@@ -25,20 +25,23 @@
         "marquee_slot_6": "GET LASERLY™ NOW",
         "marquee_slot_7": "ONLY 2 LEFT",
         "marquee_slot_8": "FREE SHIPPING"
-      }
+      },
+      "blocks": {}
     },
     "collection-list": {
       "settings": {
-        "content": "<p>اشتري لازيرلي اليوم واحصلي على 45% خصم</p>",
+        "content": "<p>Buy Lazerly Now and GET 78% OFF</p>",
         "subcontent": "<p>سمووث برو</p>"
-      }
+      },
+      "blocks": {}
     },
     "swiper_jLLmtx": {
       "settings": {
         "header": "Send us a testimonial, extra 20% off",
         "subheader": "send us a testimonial video and get extra 20% cashback right after purchace",
         "cta_link": "shopify://products/smoothpro"
-      }
+      },
+      "blocks": {}
     }
   }
 }
