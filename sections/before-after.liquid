@@ -34,7 +34,7 @@
 }
 {% endschema %}
 
-<div class="before-after-section section section-blends section-full">
+<div class="segmastyle before-after-section section section-blends section-full">
   <div class="flex flex-col md:flex-row items-center gap-8 max-w-5xl mx-auto px-4 pt-5">
     <!-- Image Comparison Slider -->
     <section class="image-comparison w-full md:w-1/2" data-component="image-comparison-slider">
@@ -95,19 +95,15 @@
       --base-dark: #000;
     }
 
-    body {
-      font-family: 'Helvetica', sans-serif;
-    }
 
 
-
-    .image-comparison {
+    .segmastyle .image-comparison {
       border-radius:15px;overflow:hidden;
       max-width: 768px;
       margin: 0 auto;
     }
 
-    .image-comparison__slider-wrapper {
+    .segmastyle .image-comparison__slider-wrapper {
       position: relative;
       width: 100%;
       height: 0;
@@ -115,7 +111,7 @@
       overflow: hidden;
     }
 
-    .image-comparison__image-wrapper {
+    .segmastyle .image-comparison__image-wrapper {
       position: absolute;
       top: 0;
       left: 0;
@@ -123,21 +119,21 @@
       height: 100%;
     }
 
-    .image-comparison__figure {
+    .segmastyle .image-comparison__figure {
       position: relative;
       margin: 0;
       width: 100%;
       height: 100%;
     }
 
-    .image-comparison__image {
+    .segmastyle .image-comparison__image {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
 
-    .image-comparison__image--before {
+    .segmastyle .image-comparison__image--before {
       position: absolute;
       top: 0;
       left: 0;
@@ -148,7 +144,7 @@
       transition: clip-path 0.05s ease-in-out;
     }
 
-    .image-comparison__caption {
+    .segmastyle .image-comparison__caption {
       position: absolute;
       bottom: 12px;
       color: var(--base-light);
@@ -158,24 +154,24 @@
       opacity: 1;
     }
 
-    .image-comparison__caption--before {
+    .segmastyle .image-comparison__caption--before {
       left: 12px;
       z-index: 3;
     }
 
-    .image-comparison__caption--after {
+    .segmastyle .image-comparison__caption--after {
       right: 12px;
       text-align: right;
     }
 
-    .image-comparison__caption-body {
+    .segmastyle .image-comparison__caption-body {
       border-radius:15px;
       background-color: rgba(0, 0, 0, 0.55);
       padding: 6px 12px;
       font-size: 1.2em;
     }
 
-    .image-comparison__slider {
+    .segmastyle .image-comparison__slider {
       position: absolute;
       top: 0;
       left: 50%;
@@ -186,7 +182,7 @@
       transition: left 0.05s ease-in-out;
     }
 
-    .image-comparison__thumb {
+    .segmastyle .image-comparison__thumb {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -198,7 +194,7 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
-    .image-comparison__range {
+    .segmastyle .image-comparison__range {
       position: absolute;
       top: 0;
       left: 0;
@@ -213,23 +209,23 @@
 
     /* Responsive Design */
     @media (max-width: 768px) {
-      .flex {
+      .segmastyle .flex {
         flex-direction: column;
       }
 
-      .image-comparison {
+      .segmastyle .image-comparison {
         width: 100%;
       }
 
-      .image-comparison__caption-body {
+      .segmastyle .image-comparison__caption-body {
         font-size: 0.9em;
       }
 
-      .text-2xl {
+      .segmastyle .text-2xl {
         font-size: 1.5rem;
       }
 
-      .text-3xl {
+      .segmastyle .text-3xl {
         font-size: 2rem;
       }
     }
@@ -237,11 +233,11 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const rangeInput = document.querySelector('.image-comparison__range');
-      const beforeImage = document.querySelector('.image-comparison__image--before');
-      const slider = document.querySelector('.image-comparison__slider');
-      const beforeLabel = document.querySelector('.image-comparison__caption--before');
-      const afterLabel = document.querySelector('.image-comparison__caption--after');
+      const rangeInput = document.querySelector('.segmastyle .image-comparison__range');
+      const beforeImage = document.querySelector('.segmastyle .image-comparison__image--before');
+      const slider = document.querySelector('.segmastyle .image-comparison__slider');
+      const beforeLabel = document.querySelector('.segmastyle .image-comparison__caption--before');
+      const afterLabel = document.querySelector('.segmastyle .image-comparison__caption--after');
 
       function updateSlider(value) {
         const percentage = parseInt(value);
