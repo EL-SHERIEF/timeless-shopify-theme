@@ -187,12 +187,6 @@
             "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1741939444/SaveClip.App_AQM0wK8P-tw9JHk_ysw4_QNk_b81fHuGUKxBYpoE5cC3KuEmM9Fdveq9-HiGLqQx-G3IHYg8187C-CA_ONLem_LvQrgOUXD26FCmGmY_rowkz8.mp4"
           }
         },
-        "video_mXiiUA": {
-          "type": "video",
-          "settings": {
-            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739927627/ssstik.io__loffta__1739927614026_p7bmjl.mp4"
-          }
-        },
         "video_JBMpGT": {
           "type": "video",
           "settings": {
@@ -203,7 +197,6 @@
       "block_order": [
         "video_JAzBzc",
         "video_QLAmmN",
-        "video_mXiiUA",
         "video_JBMpGT"
       ],
       "settings": {
