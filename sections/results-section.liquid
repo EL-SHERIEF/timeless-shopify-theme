@@ -13,43 +13,48 @@
       "id": "highlight_text",
       "label": "Highlight Text",
       "default": "In Just 4 Weeks"
-    }
-  ],
-  "blocks": [
+    },
     {
-      "type": "result",
-      "name": "Result",
-      "settings": [
-        {
-          "type": "textarea",
-          "id": "result_text",
-          "label": "Result Text",
-          "default": "Observed a significant reduction in hair density after just 4 weeks of use."
-        },
-        {
-          "type": "text",
-          "id": "result_percentage",
-          "label": "Result Percentage",
-          "default": "95"
-        }
-      ]
+      "type": "textarea",
+      "id": "result_1_text",
+      "label": "Result 1 Text",
+      "default": "Observed a significant reduction in hair density after just 4 weeks of use."
+    },
+    {
+      "type": "text",
+      "id": "result_1_percentage",
+      "label": "Result 1 Percentage",
+      "default": "95"
+    },
+    {
+      "type": "textarea",
+      "id": "result_2_text",
+      "label": "Result 2 Text",
+      "default": "Noticed a visible reduction in hair regrowth, leaving their skin smoother and softer."
+    },
+    {
+      "type": "text",
+      "id": "result_2_percentage",
+      "label": "Result 2 Percentage",
+      "default": "94"
+    },
+    {
+      "type": "textarea",
+      "id": "result_3_text",
+      "label": "Result 3 Text",
+      "default": "Reported a notable reduction in irritation and redness, enjoying calmer and healthier skin."
+    },
+    {
+      "type": "text",
+      "id": "result_3_percentage",
+      "label": "Result 3 Percentage",
+      "default": "92"
     }
   ],
   "presets": [
     {
       "name": "Results Section",
-      "category": "Custom",
-      "blocks": [
-        {
-          "type": "result"
-        },
-        {
-          "type": "result"
-        },
-        {
-          "type": "result"
-        }
-      ]
+      "category": "Custom"
     }
   ]
 }
@@ -65,25 +70,56 @@
       </h2>
 
       <!-- Grid for Circles -->
-      <div class="sm:flex-row flex-col flex justify-center align-center items-center py-10">
-        {% for block in section.blocks %}
-          <div class="flex flex-col items-center">
-            <div class="relative">
-              <!-- SVG Circle -->
-              <svg class="w-20 h-20 text-sigmacolor" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-                <!-- Background Circle -->
-                <circle class="text-gray-200" stroke="currentColor" stroke-width="3" fill="none" cx="18" cy="18" r="15.915"></circle>
-                <!-- Progress Circle -->
-                <circle class="text-sigmacolor" stroke="currentColor" stroke-width="3" stroke-dasharray="{{ block.settings.result_percentage | times: 1.0 }}, {{ 100 | minus: block.settings.result_percentage | times: 1.0 }}" stroke-linecap="round" fill="none" cx="18" cy="18" r="15.915" style="transform: rotate(-90deg); transform-origin: center;"></circle>
-              </svg>
-              <!-- Center Text -->
-              <div class="absolute inset-0 flex items-center justify-center">
-                <span class="text-2xl font-bold text-gray-900">{{ block.settings.result_percentage }}%</span>
-              </div>
+      <div class="sm:flex-row flex-col flex justify-center align-center items-center py-10 ">
+        <!-- First Circle -->
+        <div class="flex flex-col items-center ">
+          <div class="relative">
+            <!-- SVG Circle -->
+            <svg class="w-20 h-20 text-sigmacolor" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+              <!-- Background Circle -->
+              <circle class="text-gray-200" stroke="currentColor" stroke-width="3" fill="none" cx="18" cy="18" r="15.915"></circle>
+              <!-- Progress Circle -->
+              <circle class="text-sigmacolor" stroke="currentColor" stroke-width="3" stroke-dasharray="{{ section.settings.result_1_percentage | times: 1.0 }}, {{ 100 | minus: section.settings.result_1_percentage | times: 1.0 }}" stroke-linecap="round" fill="none" cx="18" cy="18" r="15.915" style="transform: rotate(-90deg); transform-origin: center;"></circle>
+            </svg>
+            <!-- Center Text -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-2xl font-bold text-gray-900">{{ section.settings.result_1_percentage }}%</span>
             </div>
-            <p class="mt-2 text-base text-gray-700">{{ block.settings.result_text }}</p>
           </div>
-        {% endfor %}
+          <p class="mt-2 text-base text-gray-700">{{ section.settings.result_1_text }}</p>
+        </div>
+
+        <!-- Second Circle -->
+        <div class="flex flex-col items-center">
+          <div class="relative">
+            <svg class="w-20 h-20 text-sigmacolor" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+              <!-- Background Circle -->
+              <circle class="text-gray-200" stroke="currentColor" stroke-width="3" fill="none" cx="18" cy="18" r="15.915"></circle>
+              <!-- Progress Circle -->
+              <circle class="text-sigmacolor" stroke="currentColor" stroke-width="3" stroke-dasharray="{{ section.settings.result_2_percentage | times: 1.0 }}, {{ 100 | minus: section.settings.result_2_percentage | times: 1.0 }}" stroke-linecap="round" fill="none" cx="18" cy="18" r="15.915" style="transform: rotate(-90deg); transform-origin: center;"></circle>
+            </svg>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-2xl font-bold text-gray-900">{{ section.settings.result_2_percentage }}%</span>
+            </div>
+          </div>
+          <p class="mt-2 text-base text-gray-700">{{ section.settings.result_2_text }}</p>
+        </div>
+
+        <!-- Third Circle -->
+        <div class="flex flex-col items-center">
+          <div class="relative">
+            <svg class="w-20 h-20 text-sigmacolor" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+              <!-- Background Circle -->
+              <circle class="text-gray-200" stroke="currentColor" stroke-width="3" fill="none" cx="18" cy="18" r="15.915"></circle>
+              <!-- Progress Circle -->
+              <circle class="text-sigmacolor" stroke="currentColor" stroke-width="3" stroke-dasharray="{{ section.settings.result_3_percentage | times: 1.0 }}, {{ 100 | minus: section.settings.result_3_percentage | times: 1.0 }}" stroke-linecap="round" fill="none" cx="18" cy="18" r="15.915" style="transform: rotate(-90deg); transform-origin: center;"></circle>
+            </svg>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-2xl font-bold text-gray-900">{{ section.settings.result_3_percentage }}%</span>
+            </div>
+          </div>
+          <p class="mt-2 text-base text-gray-700">{{ section.settings.result_3_text }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -154,7 +190,7 @@
   }
 
   .text-sigmacolor {
-    color: #4996fd;
+   color:#4996fd;
   }
 
   .mt-6 {
