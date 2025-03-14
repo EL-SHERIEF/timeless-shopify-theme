@@ -22,6 +22,7 @@
         "background_video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1741940224/ssstik.io__beauty_life_w_1741940079793_nwmd9j.mov",
         "hero_heading": "Smooth Skin, Endless Confidence",
         "hero_text": "Silky skin made easy! Get Laserly™ now with 78% OFF. Trusted, pain-free, salon-quality at home.",
+        "show_overlay": true,
         "marquee_slot_1": "LIMITED AMOUNT",
         "marquee_slot_2": "FREE SHIPPING!!",
         "marquee_slot_3": "ORDER NOW!!",
