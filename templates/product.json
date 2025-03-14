@@ -21,7 +21,7 @@
       "settings": {
         "background_video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739735588/WhatsApp_Video_2025-02-16_at_9.12.13_PM_ry56el.mp4",
         "hero_heading": "Smooth Skin, Endless Confidence",
-        "hero_text": "Silky skin made easy! Get Laserly™ now with 45% OFF. Trusted, pain-free, salon-quality at home.",
+        "hero_text": "Silky skin made easy! Get Laserly™ now with 78% OFF. Trusted, pain-free, salon-quality at home.",
         "marquee_slot_1": "LIMITED AMOUNT",
         "marquee_slot_2": "FREE SHIPPING!!",
         "marquee_slot_3": "ORDER NOW!!",
@@ -164,9 +164,11 @@
     "before_after_y8TLFx": {
       "type": "before-after",
       "settings": {
+        "background_color": "#ffffff",
+        "text_color": "#1a1a1a",
         "before_image": "shopify://shop_images/33.webp",
         "after_image": "shopify://shop_images/34.webp",
-        "heading": "Achieve long-lasting results effortlessly",
+        "title": "Achieve long-lasting results effortlessly",
         "description": "Get smooth skin without the hassle of daily shaving or salon appointments. In just a few weeks, you’ll enjoy long-lasting results. A simple solution for beauty that lasts."
       }
     },
