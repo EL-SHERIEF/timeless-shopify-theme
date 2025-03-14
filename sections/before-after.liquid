@@ -1,6 +1,273 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Before After Slider",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "before_image",
+      "label": "Before Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "after_image",
+      "label": "After Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Achieve long-lasting results effortlessly"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Get smooth skin without the hassle of daily shaving or salon appointments. In just a few weeks, you’ll enjoy long-lasting results. A simple solution for beauty that lasts."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Before After Slider",
+      "category": "Custom"
+    }
+  ]
+}
 {% endschema %}
+
+<div class="before-after-section">
+  <div class="before-after-container">
+    <div class="slider-wrapper">
+      <div class="before-after-slider">
+        {% if section.settings.after_image %}
+          <img src="{{ section.settings.after_image | img_url: 'master' }}" alt="After Image" class="after-image">
+        {% else %}
+          <p>Upload an After Image</p>
+        {% endif %}
+        {% if section.settings.before_image %}
+          <div class="before-image-wrapper">
+            <img src="{{ section.settings.before_image | img_url: 'master' }}" alt="Before Image" class="before-image">
+          </div>
+        {% else %}
+          <p>Upload a Before Image</p>
+        {% endif %}
+        <div class="slider-handle">
+          <div class="slider-circle"></div>
+        </div>
+        <span class="label before-label">BEFORE</span>
+        <span class="label after-label">AFTER</span>
+      </div>
+    </div>
+    <div class="text-content">
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.description }}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.before-after-section {
+  padding: 40px 20px;
+  background-color: #f5f2ee;
+  text-align: center;
+}
+
+.before-after-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.slider-wrapper {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+}
+
+.before-after-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.before-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* Initial width, will be controlled by JavaScript */
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.before-image,
+.after-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.slider-handle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background-color: #00aaff;
+  cursor: ew-resize;
+  z-index: 2;
+}
+
+.slider-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: #00aaff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.label {
+  position: absolute;
+  bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.before-label {
+  left: 10px;
+}
+
+.after-label {
+  right: 10px;
+}
+
+.text-content {
+  max-width: 500px;
+  text-align: left;
+}
+
+.text-content h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.text-content p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .before-after-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .slider-wrapper {
+    max-width: 100%;
+  }
+
+  .text-content {
+    text-align: center;
+  }
+
+  .text-content h2 {
+    font-size: 24px;
+  }
+
+  .text-content p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .before-after-section {
+    padding: 20px 10px;
+  }
+
+  .text-content h2 {
+    font-size: 20px;
+  }
+
+  .text-content p {
+    font-size: 12px;
+  }
+
+  .label {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const sliders = document.querySelectorAll('.before-after-slider');
+  
+  sliders.forEach(slider => {
+    const beforeWrapper = slider.querySelector('.before-image-wrapper');
+    const handle = slider.querySelector('.slider-handle');
+    let isDragging = false;
+
+    // Function to update the slider position
+    function updateSliderPosition(x) {
+      const sliderRect = slider.getBoundingClientRect();
+      const newWidth = Math.max(0, Math.min(x - sliderRect.left, sliderRect.width));
+      const percentage = (newWidth / sliderRect.width) * 100;
+      beforeWrapper.style.width = `${percentage}%`;
+      handle.style.left = `${percentage}%`;
+    }
+
+    // Mouse events
+    handle.addEventListener('mousedown', () => {
+      isDragging = true;
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging) {
+        updateSliderPosition(e.clientX);
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    // Touch events for mobile
+    handle.addEventListener('touchstart', () => {
+      isDragging = true;
+    });
+
+    document.addEventListener('touchmove', (e) => {
+      if (isDragging) {
+        const touch = e.touches[0];
+        updateSliderPosition(touch.clientX);
+      }
+    });
+
+    document.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+
+    // Adjust slider on window resize
+    window.addEventListener('resize', () => {
+      const currentPercentage = parseFloat(handle.style.left) || 50;
+      const sliderRect = slider.getBoundingClientRect();
+      const newWidth = (currentPercentage / 100) * sliderRect.width;
+      beforeWrapper.style.width = `${currentPercentage}%`;
+      handle.style.left = `${currentPercentage}%`;
+    });
+  });
+});
+</script>
