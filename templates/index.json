@@ -14,9 +14,10 @@
       "settings": {
         "background_video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739735588/WhatsApp_Video_2025-02-16_at_9.12.13_PM_ry56el.mp4",
         "image": "shopify://shop_images/GIF2.webp",
+        "use_image_instead_of_video": true,
         "hero_heading": "Smooth Skin, Endless Confidence",
         "hero_text": "Silky skin made easy! Get Laserly™ now with 45% OFF. Trusted, pain-free, salon-quality at home.",
-        "show_overlay": false,
+        "show_overlay": true,
         "marquee_slot_1": "LIMITED AMOUNT",
         "marquee_slot_2": "FREE SHIPPING!!",
         "marquee_slot_3": "ORDER NOW!!",
