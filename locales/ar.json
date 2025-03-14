@@ -1173,7 +1173,12 @@
         "resend_gift_cards_by_email": "إعادة إرسال البريد الإلكتروني",
         "vat_invoices": {
           "title": "فواتير ضريبة القيمة المضافة"
-        }
+        },
+        "in_store_purchase": "الشراء في المتجر",
+        "ready_for_delivery": "جاهز للتسليم",
+        "manage_order_label": "إدارة طلبك",
+        "resend_gift_cards_by_text": "إعادة إرسال الرسالة النصية",
+        "verify_shop_account_cta": "التحقق من حسابك"
       },
       "wallets": {
         "errors": {
@@ -1275,9 +1280,12 @@
         "pay_now": "ادفع الآن",
         "changes_summary": {
           "added": {
-            "one": "تمت الإضافة"
+            "one": "تمت الإضافة",
+            "other": "تمت إضافة %{count}"
           },
-          "removed": "تمت الإزالة"
+          "removed": "تمت الإزالة",
+          "subtracted": "تمت إزالة %{count}",
+          "returned": "تم إرجاع %{count}"
         }
       },
       "change_currency": {
@@ -1590,7 +1598,10 @@
         "order_covered_by_store_credit_notice": "سيتم تغطية طلبك من خلال رصيد المتجر الخاص بك.",
         "order_covered_by_redeemables_notice": "تم تغطية طلبك.",
         "store_credit": {
-          "label": "رصيد المتجر"
+          "label": "رصيد المتجر",
+          "apply_label": "تطبيق رصيد المتجر",
+          "add_label": "إضافة رصيد المتجر",
+          "manage_label": "إدارة رصيد المتجر"
         },
         "network_card_payment_options": "اختر شبكة البطاقة",
         "amazon_payments_label": "أمازون باي",
@@ -1652,7 +1663,8 @@
         },
         "saved_credit_cards_modal": {
           "done": "منتهي",
-          "cancel": "يلغي"
+          "cancel": "يلغي",
+          "view_all_label": "عرض جميع البطاقات المحفوظة"
         },
         "add_credit_card_modal": {
           "title": "إضافة بطاقة",
@@ -1672,11 +1684,14 @@
             "card_number": "رقم البطاقة",
             "security_code": "رمز الأمان",
             "name": "الاسم على البطاقة",
-            "billing": "مشروع قانون ل"
+            "billing": "مشروع قانون ل",
+            "default": "تعيين كإعداد افتراضي",
+            "expiry": "تاريخ انتهاء الصلاحية"
           }
         },
         "order_edit_banner_items_added": {
-          "one": "تمت الإضافة"
+          "one": "تمت الإضافة",
+          "other": "تمت إضافة %{count}"
         },
         "order_edit_banner_items_removed": {
           "in_full": "تمت الإزالة"
@@ -1687,11 +1702,30 @@
         "order_edit_banner_updated_order_label": "تم تحديث الطلب",
         "gift_card_wrapper": {
           "heading": "بطاقة هدية",
-          "payment_tag": "بطاقة هدية"
+          "payment_tag": "بطاقة هدية",
+          "apply_gift_card_label": "تطبيق بطاقة هدية",
+          "add_label": "إضافة بطاقة هدية",
+          "manage_label": "إدارة بطاقات الهدايا"
         },
         "purchase_order_number": {
-          "title": "رقم الطلب"
-        }
+          "title": "رقم الطلب",
+          "label": "رقم الطلب (اختياري)"
+        },
+        "fact_billing_address_label": "عنوان الفاتورة",
+        "simulated_checkout": "المعاينة قادمة قريبا",
+        "purchase_options_cancellation_policy_label": "سياسة الإلغاء",
+        "use_different_credit_card_label": "استخدم بطاقة مختلفة",
+        "saved_credit_card_info": "آخر أربعة أرقام",
+        "order_edit_banner_items_return_line_item_removed": {
+          "in_full": "تمت إزالته من العودة"
+        },
+        "order_edit_banner_multiple_items_added": "تمت إضافة {{amount}}",
+        "order_edit_banner_multiple_items_removed": "تمت إزالة {{amount}}",
+        "order_edit_banner_multiple_items_returned": "تم إرجاع {{amount}}",
+        "order_edit_banner_single_item_return_line_item_removed": "تمت إزالته من العودة",
+        "gift_card_checkbox_label": "تطبيق بطاقة الهدايا",
+        "markets_pro_disclaimer_terms_and_conditions": "الشروط والأحكام",
+        "markets_pro_disclaimer_privacy_policy": "سياسة الخصوصية"
       },
       "billing": {
         "billing_address_title": "مشروع قانون ل",
@@ -2187,21 +2221,52 @@
           "shipping_address_title": "سافر على متن سفينة لِـ",
           "change_link_label": "يتغير",
           "purchase_order_number_title": "رقم الطلب",
-          "no_address": "(لا يوجد عنوان)"
+          "no_address": "(لا يوجد عنوان)",
+          "shipping_method_title": "طريقة الشحن",
+          "payment_method_title": "طريقة الدفع",
+          "change_purchase_order_number_label": "تغيير رقم الطلب",
+          "no_purchase_order_number": "(لا يوجد رقم طلب شراء)"
         },
         "item_header": {
           "change_value": "تغيير القيمة",
           "section": "قسم",
           "value": "قيمة"
-        }
+        },
+        "review_title": "المراجعة والدفع",
+        "review_and_confirm_title": "المراجعة والتأكيد",
+        "checkout_as_guest": "الخروج كضيف"
       },
       "shop_policies": {
         "refund_policy": "سياسة الاسترداد",
         "legal_notice": "إشعار قانوني",
-        "terms_of_sale": "شروط البيع"
+        "terms_of_sale": "شروط البيع",
+        "privacy_policy": "سياسة الخصوصية",
+        "terms_of_service": "شروط الخدمة",
+        "shipping_policy": "سياسة الشحن",
+        "subscription_policy": "سياسة الإلغاء",
+        "contact_information": "معلومات الاتصال",
+        "purchase_options_cancellation_policy": "سياسة الإلغاء",
+        "cookie_preferences": "تفضيلات ملفات تعريف الارتباط"
       },
       "notifications": {
         "title": "إشعارات"
+      },
+      "marketing": {
+        "disclaimer": {
+          "privacy_policy": "سياسة الخصوصية",
+          "terms_of_service": "شروط الخدمة"
+        },
+        "sms": {
+          "disclaimer": {
+            "privacy_policy": "سياسة الخصوصية",
+            "terms_of_service": "شروط الخدمة"
+          },
+          "mobile_phone_number": "رقم الهاتف المحمول",
+          "get_offers_by_text": "احصل على العروض عبر الرسائل النصية"
+        },
+        "unsubscribe": {
+          "title": "لقد قمت بإلغاء الاشتراك"
+        }
       }
     },
     "pagination": {
@@ -2563,7 +2628,8 @@
     "orders": {
       "order_status": {
         "tracking_number": {
-          "other": "أرقام التتبع"
+          "other": "أرقام التتبع",
+          "one": "عدد تتبع"
         },
         "on_its_way_label": "في طريقها",
         "on_its_way_title": "شحنتك في الطريق",
@@ -2653,13 +2719,29 @@
           "other": "بطاقات الهدايا"
         },
         "gift_card_resend": {
-          "one": "إعادة إرسال البريد الإلكتروني"
+          "one": "إعادة إرسال البريد الإلكتروني",
+          "other": "إعادة إرسال رسائل البريد الإلكتروني"
         },
         "gift_card_resend_text": {
           "one": "إعادة إرسال النص",
           "other": "إعادة إرسال الرسائل النصية"
         },
-        "in_review_label": "في المراجعة"
+        "in_review_label": "في المراجعة",
+        "attempted_delivery_label": "محاولة التسليم",
+        "attempted_to_deliver_label": "حاولت التسليم",
+        "ready_for_pickup_label": "جاهز للاستلام",
+        "gift_card_resend_button": {
+          "one": "إعادة إرسال بطاقة الهدية",
+          "other": "إعادة إرسال بطاقات الهدايا"
+        },
+        "gift_resend_success": {
+          "one": "تم إرسال بطاقة الهدية",
+          "other": "بطاقات الهدايا المرسلة"
+        },
+        "status_timestamp": "تم التحديث في {{date}}",
+        "estimated_delivery": "المتوقع {{date}}",
+        "delivered": "وصل في {{date}}",
+        "multiple_shipments_label": "شحنات متعددة"
       },
       "status_mark_as_delivered": "وضع علامة على أنه تم التسليم",
       "fulfillment_status_title": "حالة الإنجاز: {{status}}",
@@ -2765,7 +2847,9 @@
             "due_today": "المستحق اليوم",
             "paid": "مدفوع",
             "due_without_date": "حق",
-            "payment_not_due": "لم يحن موعده بعد"
+            "payment_not_due": "لم يحن موعده بعد",
+            "due_on_fulfillment": "مستحق عند الوفاء",
+            "pay_to_confirm": "ادفع للتأكيد"
           }
         },
         "sort_title": "نوع",
@@ -2781,9 +2865,23 @@
             "last_7_days": "آخر 7 أيام",
             "last_30_days": "آخر 30 يومًا",
             "last_90_days": "آخر 90 يومًا",
-            "custom": "مخصص"
+            "custom": "مخصص",
+            "last_365_days": "آخر 12 شهرًا"
+          },
+          "clear_section": "مسح القسم"
+        },
+        "sort_by": "فرز حسب: {{option}}",
+        "sort": {
+          "date": {
+            "newest": "من الأحدث إلى الأقدم",
+            "oldest": "من الأقدم إلى الأحدث"
+          },
+          "location": {
+            "ascending": "الموقع (AZ)",
+            "descending": "الموقع (جنوب أفريقيا)"
           }
-        }
+        },
+        "table_view": "إظهار عرض الجدول"
       }
     },
     "order_details": {
@@ -3336,7 +3434,11 @@
         "discard": "ينبذ",
         "empty_state": "لا يوجد رقم طلب شراء",
         "modal_po_number_input_label": "رقم الطلب",
-        "save": "يحفظ"
+        "save": "يحفظ",
+        "discard_changes_modal_title": "تجاهل التغييرات؟",
+        "edit_accessibility_label": "تعديل رقم الطلب",
+        "edit_modal_title": "تعديل رقم الطلب",
+        "title": "رقم الطلب {{poNumber}}"
       }
     },
     "date": {
@@ -3395,7 +3497,10 @@
         "checkout_card_banner": "طريقة الدفع هذه مخصصة للمدفوعات المُصرّح بها مسبقًا فقط. لن تظهر عند إتمام عملية الشراء إذا كنت قد سجّلت دخولك إلى هذا المتجر.",
         "default_checkbox": "تعيين كإعداد افتراضي",
         "default_checkbox_accessibility_label": "تعيين طريقة الدفع هذه كطريقة افتراضية",
-        "close_payment_modal": "يغلق"
+        "close_payment_modal": "يغلق",
+        "billing_title": "عنوان الفاتورة",
+        "card_info_title": "معلومات البطاقة",
+        "total_amount_of_subscription_line_items_left": "و {{total}} أكثر"
       },
       "edit_payment_method": {
         "title": "تعديل طريقة الدفع",
@@ -3482,13 +3587,34 @@
           "event_label": "حدث",
           "events": {
             "adjustment": "تعديل",
-            "order_refund": "استرداد الطلب"
+            "order_refund": "استرداد الطلب",
+            "order_payment": "طلب الدفع",
+            "payment_failure": "فشل الدفع",
+            "payment_returned": "تم إرجاع الدفع",
+            "order_cancellation": "إلغاء الطلب",
+            "tax_finalization": "إتمام الضرائب"
           },
           "expirable_amounts_button": "منظر",
           "pagination": {
             "load_more_label": "تحميل المزيد"
-          }
-        }
+          },
+          "expiration_date_label": "تاريخ انتهاء الصلاحية"
+        },
+        "expirable_amounts_label": "المبالغ القابلة للانتهاء"
+      },
+      "title": "طرق الدفع",
+      "add_payment_method_button": "إضافة طريقة الدفع",
+      "expired": "هذه البطاقة منتهية الصلاحية",
+      "digital_wallet_title": "المحفظة الرقمية",
+      "google_pay": {
+        "loading_accessibility_message": "تحميل Google Pay",
+        "loading": "تحميل Google Pay"
+      },
+      "pay_pal": {
+        "loading_accessibility_message": "جاري تحميل باي بال"
+      },
+      "apple_pay": {
+        "loading": "تحميل Apple Pay"
       }
     },
     "payment_method_brands": {
@@ -3558,6 +3684,14 @@
       "load_extension_error": {
         "title": "خطأ",
         "refresh_button": "تحديث الصفحة"
+      },
+      "order_not_found": {
+        "title": "لم يتم العثور على الطلب"
+      }
+    },
+    "throttle": {
+      "too_many_attempts": {
+        "message": "محاولات كثيرة جدًا"
       }
     }
   }
