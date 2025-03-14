@@ -12,5 +12,12 @@
   "context": {
     "market": "eg"
   },
-  "sections": {}
+  "sections": {
+    "besthero_exj7tB": {
+      "settings": {
+        "hero_heading": "بشرة ناعمة, ثقة فائقة"
+      },
+      "blocks": {}
+    }
+  }
 }
