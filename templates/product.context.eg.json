@@ -79,7 +79,10 @@
       "block_order": []
     },
     "3twins_KMmjwr": {
-      "settings": {},
+      "settings": {
+        "header": "Results",
+        "tag": ""
+      },
       "blocks": {
         "image_JNp7K6": {
           "settings": {
