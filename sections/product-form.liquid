@@ -20,7 +20,7 @@
 
           {%- when 'buy-button' -%}
               <button
-                class="action w-1/2 sm:w-full bg-black text-white font-bold {% unless block.settings.full_width %}{% endunless %}"
+                class="action w-[90%] sm:w-full bg-black text-white font-bold {% unless block.settings.full_width %}{% endunless %}"
                 type="submit"
                 {% unless product.available or product.selected_or_first_available_variant.availabile %}{% endunless %}
               >
