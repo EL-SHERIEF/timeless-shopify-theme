@@ -1,4 +1,7 @@
 <div class="grid sm:flex flex-wrap items-start gap-y-8 gap-x-12 sm:ml-auto">
+  <script>
+  fbq('track', 'Purchase');
+</script>
   {% comment %} Note {% endcomment %}
   <div class="with-label">
     <label for="cart-note">Cart note</label>
@@ -92,9 +95,7 @@
         <input class="action-secondary animate-pulse" type="submit" value="Update cart" hidden />
         <button class="action" name="checkout" type="submit">
           {{ section.settings.checkout_label | default: 'Checkout' }}
-          <script>
-  fbq('track', 'ViewContent');
-</script>
+          
         </button>
 
         {%- if additional_checkout_buttons -%}
