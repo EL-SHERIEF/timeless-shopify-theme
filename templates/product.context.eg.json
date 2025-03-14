@@ -12,10 +12,28 @@
   "context": {
     "market": "eg"
   },
-  "sections": {},
+  "sections": {
+    "results_section_fDfYx": {
+      "type": "results-section",
+      "disabled": false,
+      "settings": {
+        "heading": "Our Users Achieved Exceptional Results In Just 4 Weeks",
+        "highlight_text": "In Just 4 Weeks",
+        "result_1_text": "Observed a significant reduction in hair density after just 4 weeks of use.",
+        "result_1_percentage": "95",
+        "result_2_text": "Noticed a visible reduction in hair regrowth, leaving their skin smoother and softer.",
+        "result_2_percentage": "98",
+        "result_3_text": "Reported a notable reduction in irritation and redness, enjoying calmer and healthier skin.",
+        "result_3_percentage": "92"
+      },
+      "blocks": {},
+      "block_order": []
+    }
+  },
   "order": [
     "whatsapp_TNKXMV",
     "besthero_3TKt8U",
+    "results_section_fDfYx",
     "product-form",
     "features_section_xcgJND",
     "product-recommendations",
