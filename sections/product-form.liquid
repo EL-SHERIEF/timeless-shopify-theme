@@ -8,7 +8,7 @@
 
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 
-<div class="section-product-form section grid sm:grid-cols-2 items-start gap-y-8 gap-x-12 <md:overflow-hidden">
+<div class="section-product-form sectionsigmafemale grid sm:grid-cols-2 items-start gap-y-8 gap-x-12 <md:overflow-hidden">
   {% render 'product-image-carousel' %}
 
   <div class="grid gap-6">
@@ -157,6 +157,17 @@
 </div>
 
 <style type="text/tailwindcss">
+  @media (max-width: 767px) {
+  .sectionsigmafemale {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px;
+  min-width:calc(100% - 2rem);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}}
   .section-product-form > * {
     min-width: 0;
     @apply self-start sm:sticky-below-header;
