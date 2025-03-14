@@ -15,7 +15,7 @@
   "sections": {
     "header": {
       "settings": {
-        "menu": "link-list",
+        "menu": "main-menu",
         "show_cart_item_count": true
       },
       "blocks": {}
