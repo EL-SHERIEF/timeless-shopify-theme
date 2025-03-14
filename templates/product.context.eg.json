@@ -33,7 +33,7 @@
       "type": "story-teller",
       "disabled": false,
       "settings": {
-        "header-430009b7149996ad22ae8382ba99de2a": null,
+        "header-641863a4945eef1bfa0e8fb7be842f68": null,
         "background_color": "#fff9f3",
         "text_color": "#1a1a1a"
       },
@@ -48,10 +48,22 @@
             "image": "shopify://shop_images/GIF.webp",
             "video_url": ""
           }
+        },
+        "media_text_block_8DmdX": {
+          "type": "media_text_block",
+          "disabled": false,
+          "settings": {
+            "title": "Secure technology suitable for most skin and hair types",
+            "description": "Our technology adapts to your skin type for optimal results safely. Thanks to PrecisionPulse™ IPL technology, which flashes at 10 ms, up to 4 times longer than competing IPL, the light is primarily absorbed by the melanin in your hair and not by that in your skin.",
+            "media_type": "image",
+            "image": "shopify://shop_images/7_7cbc968c-6797-46ff-9499-39b37a633759.png",
+            "video_url": ""
+          }
         }
       },
       "block_order": [
-        "media_text_block_i3nUn"
+        "media_text_block_i3nUn",
+        "media_text_block_8DmdX"
       ]
     }
   },
