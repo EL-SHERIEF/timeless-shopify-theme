@@ -12,5 +12,18 @@
   "context": {
     "market": "eg"
   },
-  "sections": {}
+  "sections": {},
+  "order": [
+    "whatsapp_TNKXMV",
+    "besthero_3TKt8U",
+    "product-form",
+    "features_section_xcgJND",
+    "product-recommendations",
+    "before_after_y8TLFx",
+    "3twins_KMmjwr",
+    "swiper_WaAkR6",
+    "supercharged_c4EgEg",
+    "testimonials_UAVNTx",
+    "faq_list_zJVwkM"
+  ]
 }
