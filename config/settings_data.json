@@ -25,6 +25,11 @@
         "type": "shopify://apps/beast-currency-converter/blocks/doubly/267afa86-a419-4d5b-a61b-556038e7294d",
         "disabled": true,
         "settings": {}
+      },
+      "3847134708050210359": {
+        "type": "shopify://apps/transcy/blocks/switcher_embed_block/bce4f1c0-c18c-43b0-b0b2-a1aefaa44573",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
