@@ -32,15 +32,6 @@
         "marquee_slot_8": "FREE SHIPPING!!"
       }
     },
-    "before_after_y8TLFx": {
-      "type": "before-after",
-      "settings": {
-        "before_image": "shopify://shop_images/33.webp",
-        "after_image": "shopify://shop_images/34.webp",
-        "heading": "Achieve long-lasting results effortlessly",
-        "description": "Get smooth skin without the hassle of daily shaving or salon appointments. In just a few weeks, you’ll enjoy long-lasting results. A simple solution for beauty that lasts."
-      }
-    },
     "product-form": {
       "type": "product-form",
       "blocks": {
@@ -168,6 +159,15 @@
         "color_scheme": "",
         "content": "<h2>Product Recommendations</h2>",
         "intent": "related"
+      }
+    },
+    "before_after_y8TLFx": {
+      "type": "before-after",
+      "settings": {
+        "before_image": "shopify://shop_images/33.webp",
+        "after_image": "shopify://shop_images/34.webp",
+        "heading": "Achieve long-lasting results effortlessly",
+        "description": "Get smooth skin without the hassle of daily shaving or salon appointments. In just a few weeks, you’ll enjoy long-lasting results. A simple solution for beauty that lasts."
       }
     },
     "swiper_WaAkR6": {
@@ -393,10 +393,10 @@
   "order": [
     "whatsapp_TNKXMV",
     "besthero_3TKt8U",
-    "before_after_y8TLFx",
     "product-form",
     "features_section_xcgJND",
     "product-recommendations",
+    "before_after_y8TLFx",
     "swiper_WaAkR6",
     "3twins_KMmjwr",
     "supercharged_c4EgEg",
