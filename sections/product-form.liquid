@@ -93,16 +93,13 @@
           {%- when 'custom-liquid' -%}
             <div>{{ block.settings.liquid }}</div>
 
-       
+          {%- when 'description' -%}
+            <div class="rte empty:hidden {{ block.settings.tailwind | default: '<md:text-sm' }}">
+              {{- product.description | replace: '<meta charset="utf-8">', '' -}}
+            </div>
 
           {%- when 'divider' -%}
-            {%- if block.settings.label != blank -%}
-              <h2 class="divider technical text-xs my-4">
-                <span>{{ block.settings.label }}</span>
-              </h2>
-            {%- else -%}
-              <hr class="my-4" />
-            {%- endif -%}
+      
 
           {%- when 'gift-card-recipient-form' -%}
             {%- if product.gift_card? -%}
