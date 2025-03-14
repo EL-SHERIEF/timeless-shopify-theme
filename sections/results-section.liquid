@@ -66,33 +66,59 @@
       <!-- Section Title -->
       <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-gray-900">
         {% assign heading_parts = section.settings.heading | split: section.settings.highlight_text %}
-        {{ heading_parts[0] }}<span class="text-yellow-500">{{ section.settings.highlight_text }}</span>{{ heading_parts[1] | strip }}
+        {{ heading_parts[0] }}<span class="text-yellow-500">{{ section.settings.highlight_text }}</span>{{ heading_parts[1] }}
       </h2>
 
       <!-- Grid for Circles -->
       <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- First Circle -->
         <div class="flex flex-col items-center">
-          <div class="relative w-20 h-20 flex items-center justify-center bg-yellow-500 rounded-full">
-            <span class="text-2xl font-bold text-gray-900">{{ section.settings.result_1_percentage }}%</span>
+          <div class="relative">
+            <!-- SVG Circle -->
+            <svg class="w-20 h-20 text-yellow-500" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+              <!-- Background Circle -->
+              <circle class="text-gray-200" stroke="currentColor" stroke-width="3" fill="none" cx="18" cy="18" r="15.915"></circle>
+              <!-- Progress Circle -->
+              <circle class="text-yellow-500" stroke="currentColor" stroke-width="3" stroke-dasharray="{{ section.settings.result_1_percentage | times: 1.0 }}, {{ 100 | minus: section.settings.result_1_percentage | times: 1.0 }}" stroke-linecap="round" fill="none" cx="18" cy="18" r="15.915" style="transform: rotate(-90deg); transform-origin: center;"></circle>
+            </svg>
+            <!-- Center Text -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-2xl font-bold text-gray-900">{{ section.settings.result_1_percentage }}%</span>
+            </div>
           </div>
-          <p class="mt-2 text-base text-gray-700 text-center">{{ section.settings.result_1_text }}</p>
+          <p class="mt-2 text-base text-gray-700">{{ section.settings.result_1_text }}</p>
         </div>
 
         <!-- Second Circle -->
         <div class="flex flex-col items-center">
-          <div class="relative w-20 h-20 flex items-center justify-center bg-yellow-500 rounded-full">
-            <span class="text-2xl font-bold text-gray-900">{{ section.settings.result_2_percentage }}%</span>
+          <div class="relative">
+            <svg class="w-20 h-20 text-yellow-500" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+              <!-- Background Circle -->
+              <circle class="text-gray-200" stroke="currentColor" stroke-width="3" fill="none" cx="18" cy="18" r="15.915"></circle>
+              <!-- Progress Circle -->
+              <circle class="text-yellow-500" stroke="currentColor" stroke-width="3" stroke-dasharray="{{ section.settings.result_2_percentage | times: 1.0 }}, {{ 100 | minus: section.settings.result_2_percentage | times: 1.0 }}" stroke-linecap="round" fill="none" cx="18" cy="18" r="15.915" style="transform: rotate(-90deg); transform-origin: center;"></circle>
+            </svg>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-2xl font-bold text-gray-900">{{ section.settings.result_2_percentage }}%</span>
+            </div>
           </div>
-          <p class="mt-2 text-base text-gray-700 text-center">{{ section.settings.result_2_text }}</p>
+          <p class="mt-2 text-base text-gray-700">{{ section.settings.result_2_text }}</p>
         </div>
 
         <!-- Third Circle -->
         <div class="flex flex-col items-center">
-          <div class="relative w-20 h-20 flex items-center justify-center bg-yellow-500 rounded-full">
-            <span class="text-2xl font-bold text-gray-900">{{ section.settings.result_3_percentage }}%</span>
+          <div class="relative">
+            <svg class="w-20 h-20 text-yellow-500" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+              <!-- Background Circle -->
+              <circle class="text-gray-200" stroke="currentColor" stroke-width="3" fill="none" cx="18" cy="18" r="15.915"></circle>
+              <!-- Progress Circle -->
+              <circle class="text-yellow-500" stroke="currentColor" stroke-width="3" stroke-dasharray="{{ section.settings.result_3_percentage | times: 1.0 }}, {{ 100 | minus: section.settings.result_3_percentage | times: 1.0 }}" stroke-linecap="round" fill="none" cx="18" cy="18" r="15.915" style="transform: rotate(-90deg); transform-origin: center;"></circle>
+            </svg>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-2xl font-bold text-gray-900">{{ section.settings.result_3_percentage }}%</span>
+            </div>
           </div>
-          <p class="mt-2 text-base text-gray-700 text-center">{{ section.settings.result_3_text }}</p>
+          <p class="mt-2 text-base text-gray-700">{{ section.settings.result_3_text }}</p>
         </div>
       </div>
     </div>
@@ -199,22 +225,6 @@
     align-items: center;
   }
 
-  .w-20 {
-    width: 5rem;
-  }
-
-  .h-20 {
-    height: 5rem;
-  }
-
-  .bg-yellow-500 {
-    background-color: #f59e0b;
-  }
-
-  .rounded-full {
-    border-radius: 9999px;
-  }
-
   .mt-2 {
     margin-top: 0.5rem;
   }
@@ -243,11 +253,11 @@
     }
 
     .w-20 {
-      width: 4rem;
+      width: 4.5rem;
     }
 
     .h-20 {
-      height: 4rem;
+      height: 4.5rem;
     }
 
     .text-2xl {
