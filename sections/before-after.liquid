@@ -34,240 +34,241 @@
 }
 {% endschema %}
 
-<div class="before-after-section">
-  <div class="before-after-container">
-    <div class="slider-wrapper">
-      <div class="before-after-slider">
-        {% if section.settings.after_image %}
-          <img src="{{ section.settings.after_image | img_url: 'master' }}" alt="After Image" class="after-image">
-        {% else %}
-          <p>Upload an After Image</p>
-        {% endif %}
-        {% if section.settings.before_image %}
-          <div class="before-image-wrapper">
-            <img src="{{ section.settings.before_image | img_url: 'master' }}" alt="Before Image" class="before-image">
-          </div>
-        {% else %}
-          <p>Upload a Before Image</p>
-        {% endif %}
-        <div class="slider-handle">
-          <div class="slider-circle"></div>
+<div class="before-after-section section section-blends section-full">
+  <div class="flex flex-col md:flex-row items-center gap-8 max-w-5xl mx-auto px-4 pt-5">
+    <!-- Image Comparison Slider -->
+    <section class="image-comparison w-full md:w-1/2" data-component="image-comparison-slider">
+      <div class="image-comparison__slider-wrapper">
+        <!-- Slider Input -->
+        <input type="range" min="0" max="100" value="50" class="image-comparison__range" id="image-comparison-range" aria-label="Image comparison slider">
+
+        <!-- After Image -->
+        <div class="image-comparison__image-wrapper">
+          <figure class="image-comparison__figure">
+            <picture class="image-comparison__picture">
+              {% if section.settings.after_image %}
+                <img src="{{ section.settings.after_image | img_url: 'master' }}" alt="After Image" class="image-comparison__image">
+              {% else %}
+                <p>Upload an After Image</p>
+              {% endif %}
+            </picture>
+            <figcaption class="image-comparison__caption image-comparison__caption--after" style="opacity: 1;">
+              <span class="image-comparison__caption-body">After</span>
+            </figcaption>
+          </figure>
         </div>
-        <span class="label before-label">BEFORE</span>
-        <span class="label after-label">AFTER</span>
+
+        <!-- Before Image (Overlay) -->
+        <div class="image-comparison__image-wrapper image-comparison__image-wrapper--overlay">
+          <figure class="image-comparison__figure">
+            <picture class="image-comparison__picture">
+              {% if section.settings.before_image %}
+                <img src="{{ section.settings.before_image | img_url: 'master' }}" alt="Before Image" class="image-comparison__image image-comparison__image--before" style="clip-path: inset(0 50% 0 0);">
+              {% else %}
+                <p>Upload a Before Image</p>
+              {% endif %}
+            </picture>
+            <figcaption class="image-comparison__caption image-comparison__caption--before" style="opacity: 1;">
+              <span class="image-comparison__caption-body">Before</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Slider Thumb -->
+        <div class="image-comparison__slider" style="left: 50%;">
+          <span class="image-comparison__thumb"></span>
+        </div>
       </div>
-    </div>
-    <div class="text-content">
-      <h2>{{ section.settings.heading }}</h2>
-      <p>{{ section.settings.description }}</p>
+    </section>
+
+    <!-- Text Section -->
+    <div class="w-full md:w-1/2 text-center md:text-left">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{{ section.settings.heading }}</h2>
+      <p class="font-medium text-gray-800 mb-4">{{ section.settings.description }}</p>
     </div>
   </div>
-</div>
 
-<style>
-.before-after-section {
-  padding: 40px 20px;
-  background-color: #f5f2ee;
-  text-align: center;
-}
-
-.before-after-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 40px;
-}
-
-.slider-wrapper {
-  width: 100%;
-  max-width: 500px;
-  position: relative;
-}
-
-.before-after-slider {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.before-image-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%; /* Initial width, will be controlled by JavaScript */
-  height: 100%;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.before-image,
-.after-image {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.slider-handle {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 2px;
-  height: 100%;
-  background-color: #00aaff;
-  cursor: ew-resize;
-  z-index: 2;
-}
-
-.slider-circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 20px;
-  height: 20px;
-  background-color: #00aaff;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.label {
-  position: absolute;
-  bottom: 10px;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 5px 10px;
-  font-size: 12px;
-  text-transform: uppercase;
-}
-
-.before-label {
-  left: 10px;
-}
-
-.after-label {
-  right: 10px;
-}
-
-.text-content {
-  max-width: 500px;
-  text-align: left;
-}
-
-.text-content h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.text-content p {
-  font-size: 16px;
-  line-height: 1.5;
-  color: #666;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .before-after-container {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .slider-wrapper {
-    max-width: 100%;
-  }
-
-  .text-content {
-    text-align: center;
-  }
-
-  .text-content h2 {
-    font-size: 24px;
-  }
-
-  .text-content p {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .before-after-section {
-    padding: 20px 10px;
-  }
-
-  .text-content h2 {
-    font-size: 20px;
-  }
-
-  .text-content p {
-    font-size: 12px;
-  }
-
-  .label {
-    font-size: 10px;
-    padding: 3px 6px;
-  }
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const sliders = document.querySelectorAll('.before-after-slider');
-  
-  sliders.forEach(slider => {
-    const beforeWrapper = slider.querySelector('.before-image-wrapper');
-    const handle = slider.querySelector('.slider-handle');
-    let isDragging = false;
-
-    // Function to update the slider position
-    function updateSliderPosition(x) {
-      const sliderRect = slider.getBoundingClientRect();
-      const newWidth = Math.max(0, Math.min(x - sliderRect.left, sliderRect.width));
-      const percentage = (newWidth / sliderRect.width) * 100;
-      beforeWrapper.style.width = `${percentage}%`;
-      handle.style.left = `${percentage}%`;
+  <style>
+    :root {
+      --brand-blue-core: #0091DF;
+      --base-light: #fff;
+      --base-dark: #000;
     }
 
-    // Mouse events
-    handle.addEventListener('mousedown', () => {
-      isDragging = true;
-    });
+    body {
+      font-family: 'Helvetica', sans-serif;
+    }
 
-    document.addEventListener('mousemove', (e) => {
-      if (isDragging) {
-        updateSliderPosition(e.clientX);
+    .before-after-section {
+      padding: 40px 20px;
+      background-color: #f5f2ee;
+    }
+
+    .image-comparison {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+
+    .image-comparison__slider-wrapper {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 100%; /* Maintains square aspect ratio */
+      overflow: hidden;
+    }
+
+    .image-comparison__image-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .image-comparison__figure {
+      position: relative;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .image-comparison__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-comparison__image--before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      clip-path: inset(0 50% 0 0);
+      transition: clip-path 0.05s ease-in-out;
+    }
+
+    .image-comparison__caption {
+      position: absolute;
+      bottom: 12px;
+      color: var(--base-light);
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: opacity 0.2s ease-in-out;
+      opacity: 1;
+    }
+
+    .image-comparison__caption--before {
+      left: 12px;
+      z-index: 3;
+    }
+
+    .image-comparison__caption--after {
+      right: 12px;
+      text-align: right;
+    }
+
+    .image-comparison__caption-body {
+      background-color: rgba(0, 0, 0, 0.55);
+      padding: 6px 12px;
+      font-size: 1.2em;
+    }
+
+    .image-comparison__slider {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      background-color: var(--base-light);
+      z-index: 4;
+      transition: left 0.05s ease-in-out;
+    }
+
+    .image-comparison__thumb {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 40px;
+      height: 40px;
+      background-color: var(--brand-blue-core);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .image-comparison__range {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      cursor: ew-resize;
+      z-index: 5;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .flex {
+        flex-direction: column;
       }
-    });
 
-    document.addEventListener('mouseup', () => {
-      isDragging = false;
-    });
-
-    // Touch events for mobile
-    handle.addEventListener('touchstart', () => {
-      isDragging = true;
-    });
-
-    document.addEventListener('touchmove', (e) => {
-      if (isDragging) {
-        const touch = e.touches[0];
-        updateSliderPosition(touch.clientX);
+      .image-comparison {
+        width: 100%;
       }
-    });
 
-    document.addEventListener('touchend', () => {
-      isDragging = false;
-    });
+      .image-comparison__caption-body {
+        font-size: 0.9em;
+      }
 
-    // Adjust slider on window resize
-    window.addEventListener('resize', () => {
-      const currentPercentage = parseFloat(handle.style.left) || 50;
-      const sliderRect = slider.getBoundingClientRect();
-      const newWidth = (currentPercentage / 100) * sliderRect.width;
-      beforeWrapper.style.width = `${currentPercentage}%`;
-      handle.style.left = `${currentPercentage}%`;
+      .text-2xl {
+        font-size: 1.5rem;
+      }
+
+      .text-3xl {
+        font-size: 2rem;
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const rangeInput = document.querySelector('.image-comparison__range');
+      const beforeImage = document.querySelector('.image-comparison__image--before');
+      const slider = document.querySelector('.image-comparison__slider');
+      const beforeLabel = document.querySelector('.image-comparison__caption--before');
+      const afterLabel = document.querySelector('.image-comparison__caption--after');
+
+      function updateSlider(value) {
+        const percentage = parseInt(value);
+        beforeImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+        slider.style.left = `${value}%`;
+
+        // Dynamic label visibility based on slider position
+        if (percentage > 50) {
+          beforeLabel.style.opacity = '1';
+          afterLabel.style.opacity = '0';
+        } else if (percentage === 50) {
+          beforeLabel.style.opacity = '1';
+          afterLabel.style.opacity = '1';
+        } else {
+          beforeLabel.style.opacity = '0';
+          afterLabel.style.opacity = '1';
+        }
+      }
+
+      // Initialize slider position
+      updateSlider(rangeInput.value);
+
+      // Update slider on input
+      rangeInput.addEventListener('input', function () {
+        updateSlider(this.value);
+      });
     });
-  });
-});
-</script>
+  </script>
+</div>
