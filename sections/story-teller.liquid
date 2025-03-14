@@ -1,6 +1,6 @@
 {% schema %}
 {
-  "name": "story teller",
+  "name": "Media with Text Section",
   "settings": [
     {
       "type": "header",
@@ -17,79 +17,104 @@
       "id": "text_color",
       "label": "Text Color",
       "default": "#1a1a1a"
-    },
+    }
+  ],
+  "blocks": [
     {
-      "type": "text",
-      "id": "title",
-      "label": "Title",
-      "default": "Say goodbye to the pains of traditional hair removal"
-    },
-    {
-      "type": "textarea",
-      "id": "description",
-      "label": "Description",
-      "default": "Imagine never again feeling the pain of waxing or the irritation of shaving. With our IPL technology, hair removal becomes gentle and pleasant. Say goodbye to redness and ingrown hairs for soothed skin."
-    },
-    {
-      "type": "select",
-      "id": "media_type",
-      "label": "Media Type",
-      "options": [
-        { "value": "image", "label": "Image" },
-        { "value": "video", "label": "Video" }
-      ],
-      "default": "image"
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Image",
-      "info": "Upload an image if media type is set to 'Image'"
-    },
-    {
-      "type": "url",
-      "id": "video_url",
-      "label": "Video URL",
-      "info": "Enter a direct video URL (e.g., .mp4 hosted on your store) if media type is set to 'Video'"
+      "type": "media_text_block",
+      "name": "Media with Text Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Secure technology suitable for most skin and hair types"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Our technology adapts to your skin type for optimal results safely. Thanks to PrecisionPulse™ IPL technology, which flashes at 10 ms, up to 4 times longer than competing IPL, the light is primarily absorbed by the melanin in your hair and not by that in your skin."
+        },
+        {
+          "type": "select",
+          "id": "media_type",
+          "label": "Media Type",
+          "options": [
+            { "value": "image", "label": "Image" },
+            { "value": "video", "label": "Video" }
+          ],
+          "default": "image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Upload an image if media type is set to 'Image'"
+        },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Video URL",
+          "info": "Enter a direct video URL (e.g., .mp4 hosted on your store) if media type is set to 'Video'"
+        }
+      ]
     }
   ],
   "presets": [
     {
-      "name": "Hair Removal Section",
+      "name": "Media with Text Section",
       "category": "Custom"
     }
   ]
 }
 {% endschema %}
 
-<div class="hair-removal-section section section-blends section-full">
+<div class="media-text-section section section-blends section-full">
   <div class="bg-custom py-8" style="--background: {{ section.settings.background_color | split: '#' | last | replace: ' ', '' }}; --text-color: {{ section.settings.text_color | split: '#' | last | replace: ' ', '' }};">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="hair-removal flex flex-col md:flex-row items-center gap-6">
-        <div class="hair-removal__content w-full md:w-1/2 bg-custom text-custom p-4 rounded" style="--background: {{ section.settings.background_color | split: '#' | last | replace: ' ', '' }}; --text-color: {{ section.settings.text_color | split: '#' | last | replace: ' ', '' }};">
-          <div class="prose break-all text-center md:text-left" reveal-on-scroll="true" style="opacity: 1;">
-            <h2 class="text-xl md:text-2xl font-bold">{{ section.settings.title }}</h2>
-            <p class="text-base mt-2">{{ section.settings.description }}</p>
+      {% for block in section.blocks %}
+        <div class="media-with-text flex flex-col items-center gap-6 {% if forloop.last == false %}mb-6{% endif %}" {{ block.shopify_attributes }}>
+          <div class="media-with-text__media rounded w-full md:w-1/2" reveal-on-scroll="true" style="opacity: 1;">
+            {% if block.settings.media_type == "image" and block.settings.image %}
+              <img src="{{ block.settings.image | img_url: '600x' }}" alt="" loading="lazy" sizes="(max-width: 999px) 100vw, min(650px, 50vw)" style="width: 100%; height: auto; transform: scale(1);">
+            {% elsif block.settings.media_type == "video" and block.settings.video_url %}
+              <video src="{{ block.settings.video_url }}" autoplay loop muted style="width: 100%; height: auto; min-height: 300px;" playsinline>
+                Your browser does not support the video tag.
+              </video>
+            {% else %}
+              <div class="w-full h-64 bg-gray-200 rounded"></div>
+            {% endif %}
+          </div>
+          <div class="media-with-text__content rounded w-full md:w-1/2 bg-custom text-custom p-4" style="--background: {{ section.settings.background_color | split: '#' | last | replace: ' ', '' }}; --text-color: {{ section.settings.text_color | split: '#' | last | replace: ' ', '' }};">
+            <div class="prose break-all text-center md:text-left" reveal-on-scroll="true" style="opacity: 1;">
+              <p class="text-xl md:text-2xl font-bold">{{ block.settings.title }}</p>
+              <p class="text-base mt-2">{{ block.settings.description }}</p>
+            </div>
           </div>
         </div>
-        <div class="hair-removal__media rounded w-full md:w-1/2 overflow-hidden" reveal-on-scroll="true" style="opacity: 1;">
-          {% if section.settings.media_type == "image" and section.settings.image %}
-            <img src="{{ section.settings.image | img_url: '600x' }}" alt="" loading="lazy" sizes="(max-width: 999px) 100vw, min(650px, 50vw)" style="width: 100%; height: auto; transform: scale(1); object-fit: cover;">
-          {% elsif section.settings.media_type == "video" and section.settings.video_url %}
-            <video src="{{ section.settings.video_url }}" autoplay loop muted style="width: 100%; height: auto; min-height: 300px; object-fit: cover;" playsinline>
-              Your browser does not support the video tag.
-            </video>
-          {% else %}
-            <div class="w-full h-64 bg-gray-200 rounded"></div>
-          {% endif %}
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </div>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mediaTextItems = document.querySelectorAll('.media-text-section .media-with-text');
+    mediaTextItems.forEach((item, index) => {
+      if (index % 2 === 0) {
+        // Even index (0, 2, 4, ...): media on the right
+        item.classList.add('md:flex-row-reverse');
+      } else {
+        // Odd index (1, 3, 5, ...): media on the left
+        item.classList.add('md:flex-row');
+      }
+    });
+  });
+</script>
+
 <style>
-  .hair-removal-section {
+  .media-text-section {
     padding: 20px 10px;
   }
 
@@ -143,6 +168,10 @@
     flex-direction: row;
   }
 
+  .md:flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+
   .items-center {
     align-items: center;
   }
@@ -151,20 +180,20 @@
     gap: 1.5rem;
   }
 
-  .hair-removal__content {
+  .mb-6 {
+    margin-bottom: 1.5rem;
+  }
+
+  .media-with-text__media {
     width: 100%;
   }
 
-  .hair-removal__media {
+  .media-with-text__content {
     width: 100%;
   }
 
   .rounded {
     border-radius: 0.5rem;
-  }
-
-  .overflow-hidden {
-    overflow: hidden;
   }
 
   .p-4 {
@@ -198,10 +227,6 @@
     margin: 0;
   }
 
-  .prose h2 {
-    margin-bottom: 0.5rem;
-  }
-
   /* Responsive Adjustments */
   @media (max-width: 768px) {
     .text-xl {
@@ -222,11 +247,6 @@
 
     .gap-6 {
       gap: 1rem;
-    }
-
-    .hair-removal__media img,
-    .hair-removal__media video {
-      min-height: 200px;
     }
   }
 </style>
