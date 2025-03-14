@@ -3,6 +3,22 @@
   "name": "Before After Slider",
   "settings": [
     {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#fff9f3"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#1a1a1a"
+    },
+    {
       "type": "image_picker",
       "id": "before_image",
       "label": "Before Image"
@@ -14,8 +30,8 @@
     },
     {
       "type": "text",
-      "id": "heading",
-      "label": "Heading",
+      "id": "title",
+      "label": "Title",
       "default": "Achieve long-lasting results effortlessly"
     },
     {
@@ -34,236 +50,263 @@
 }
 {% endschema %}
 
-<div class="segmastyle before-after-section section section-blends section-full">
-  <div class="flex flex-col md:flex-row items-center gap-8 max-w-5xl mx-auto px-4 pt-5">
-    <!-- Image Comparison Slider -->
-    <section class="image-comparison w-full md:w-1/2" data-component="image-comparison-slider">
-      <div class="image-comparison__slider-wrapper">
-        <!-- Slider Input -->
-        <input type="range" min="0" max="100" value="50" class="image-comparison__range" id="image-comparison-range" aria-label="Image comparison slider">
-
-        <!-- After Image -->
-        <div class="image-comparison__image-wrapper">
-          <figure class="image-comparison__figure">
-            <picture class="image-comparison__picture">
-              {% if section.settings.after_image %}
-                <img src="{{ section.settings.after_image | img_url: 'master' }}" alt="After Image" class="image-comparison__image">
-              {% else %}
-                <p>Upload an After Image</p>
-              {% endif %}
-            </picture>
-            <figcaption class="image-comparison__caption image-comparison__caption--after" style="opacity: 1;">
-              <span class="image-comparison__caption-body">After</span>
-            </figcaption>
-          </figure>
+<div class="media-text-section">
+  <div class="section-container" style="--background: {{ section.settings.background_color | split: '#' | last | prepend: '#' }}; --text-color: {{ section.settings.text_color | split: '#' | last | prepend: '#' }};">
+    <div class="content-wrapper">
+      <div class="media-text-block">
+        <div class="media-container">
+          <div class="before-after-slider">
+            <!-- After Image -->
+            {% if section.settings.after_image %}
+              <img src="{{ section.settings.after_image | img_url: '800x' }}" alt="After Image" class="media-image after-image">
+            {% else %}
+              <div class="media-placeholder"></div>
+            {% endif %}
+            <!-- Before Image (Overlay) -->
+            {% if section.settings.before_image %}
+              <img src="{{ section.settings.before_image | img_url: '800x' }}" alt="Before Image" class="media-image before-image" style="clip-path: inset(0 50% 0 0);">
+            {% endif %}
+            <!-- Slider -->
+            <input type="range" min="0" max="100" value="50" class="slider-range" aria-label="Before/After slider">
+            <div class="slider-line" style="left: 50%;">
+              <span class="slider-thumb"></span>
+            </div>
+            <!-- Captions -->
+            <div class="caption before-caption">Before</div>
+            <div class="caption after-caption">After</div>
+          </div>
         </div>
-
-        <!-- Before Image (Overlay) -->
-        <div class="image-comparison__image-wrapper image-comparison__image-wrapper--overlay">
-          <figure class="image-comparison__figure">
-            <picture class="image-comparison__picture">
-              {% if section.settings.before_image %}
-                <img src="{{ section.settings.before_image | img_url: 'master' }}" alt="Before Image" class="image-comparison__image image-comparison__image--before" style="clip-path: inset(0 50% 0 0);">
-              {% else %}
-                <p>Upload a Before Image</p>
-              {% endif %}
-            </picture>
-            <figcaption class="image-comparison__caption image-comparison__caption--before" style="opacity: 1;">
-              <span class="image-comparison__caption-body">Before</span>
-            </figcaption>
-          </figure>
-        </div>
-
-        <!-- Slider Thumb -->
-        <div class="image-comparison__slider" style="left: 50%;">
-          <span class="image-comparison__thumb"></span>
+        <div class="text-container">
+          <h3 class="title">{{ section.settings.title }}</h3>
+          <p class="description">{{ section.settings.description }}</p>
         </div>
       </div>
-    </section>
-
-    <!-- Text Section -->
-    <div class="w-full md:w-1/2 text-center md:text-left">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{{ section.settings.heading }}</h2>
-      <p class="font-medium text-gray-800 mb-4">{{ section.settings.description }}</p>
     </div>
   </div>
-
-  <style>
-    :root {
-      --brand-blue-core: #0091DF;
-      --base-light: #fff;
-      --base-dark: #000;
-    }
-
-
-
-    .segmastyle .image-comparison {
-      border-radius:15px;overflow:hidden;
-      max-width: 768px;
-      margin: 0 auto;
-    }
-
-    .segmastyle .image-comparison__slider-wrapper {
-      position: relative;
-      width: 100%;
-      height: 0;
-      padding-bottom: 100%; /* Maintains square aspect ratio */
-      overflow: hidden;
-    }
-
-    .segmastyle .image-comparison__image-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .segmastyle .image-comparison__figure {
-      position: relative;
-      margin: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .segmastyle .image-comparison__image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .segmastyle .image-comparison__image--before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      clip-path: inset(0 50% 0 0);
-      transition: clip-path 0.05s ease-in-out;
-    }
-
-    .segmastyle .image-comparison__caption {
-      position: absolute;
-      bottom: 12px;
-      color: var(--base-light);
-      font-weight: bold;
-      text-transform: uppercase;
-      transition: opacity 0.2s ease-in-out;
-      opacity: 1;
-    }
-
-    .segmastyle .image-comparison__caption--before {
-      left: 12px;
-      z-index: 3;
-    }
-
-    .segmastyle .image-comparison__caption--after {
-      right: 12px;
-      text-align: right;
-    }
-
-    .segmastyle .image-comparison__caption-body {
-      border-radius:15px;
-      background-color: rgba(0, 0, 0, 0.55);
-      padding: 6px 12px;
-      font-size: 1.2em;
-    }
-
-    .segmastyle .image-comparison__slider {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 2px;
-      height: 100%;
-      background-color: var(--base-light);
-      z-index: 4;
-      transition: left 0.05s ease-in-out;
-    }
-
-    .segmastyle .image-comparison__thumb {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 40px;
-      height: 40px;
-      background-color: var(--brand-blue-core);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .segmastyle .image-comparison__range {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      opacity: 0;
-      cursor: ew-resize;
-      z-index: 5;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .segmastyle .flex {
-        flex-direction: column;
-      }
-
-      .segmastyle .image-comparison {
-        width: 100%;
-      }
-
-      .segmastyle .image-comparison__caption-body {
-        font-size: 0.9em;
-      }
-
-      .segmastyle .text-2xl {
-        font-size: 1.5rem;
-      }
-
-      .segmastyle .text-3xl {
-        font-size: 2rem;
-      }
-    }
-  </style>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const rangeInput = document.querySelector('.segmastyle .image-comparison__range');
-      const beforeImage = document.querySelector('.segmastyle .image-comparison__image--before');
-      const slider = document.querySelector('.segmastyle .image-comparison__slider');
-      const beforeLabel = document.querySelector('.segmastyle .image-comparison__caption--before');
-      const afterLabel = document.querySelector('.segmastyle .image-comparison__caption--after');
-
-      function updateSlider(value) {
-        const percentage = parseInt(value);
-        beforeImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
-        slider.style.left = `${value}%`;
-
-        // Dynamic label visibility based on slider position
-        if (percentage > 50) {
-          beforeLabel.style.opacity = '1';
-          afterLabel.style.opacity = '0';
-        } else if (percentage === 50) {
-          beforeLabel.style.opacity = '1';
-          afterLabel.style.opacity = '1';
-        } else {
-          beforeLabel.style.opacity = '0';
-          afterLabel.style.opacity = '1';
-        }
-      }
-
-      // Initialize slider position
-      updateSlider(rangeInput.value);
-
-      // Update slider on input
-      rangeInput.addEventListener('input', function () {
-        updateSlider(this.value);
-      });
-    });
-  </script>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.slider-range');
+    const beforeImage = document.querySelector('.before-image');
+    const sliderLine = document.querySelector('.slider-line');
+    const beforeCaption = document.querySelector('.before-caption');
+    const afterCaption = document.querySelector('.after-caption');
+
+    function updateSlider(value) {
+      const percentage = parseInt(value);
+      beforeImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+      sliderLine.style.left = `${percentage}%`;
+
+      // Dynamic caption visibility
+      if (percentage > 50) {
+        beforeCaption.style.opacity = '1';
+        afterCaption.style.opacity = '0';
+      } else if (percentage === 50) {
+        beforeCaption.style.opacity = '1';
+        afterCaption.style.opacity = '1';
+      } else {
+        beforeCaption.style.opacity = '0';
+        afterCaption.style.opacity = '1';
+      }
+    }
+
+    // Initialize slider
+    updateSlider(slider.value);
+
+    // Update on input
+    slider.addEventListener('input', (e) => updateSlider(e.target.value));
+  });
+</script>
+
+<style>
+  :root {
+    --spacing-unit: 1rem;
+    --max-width: 72rem;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease;
+  }
+
+  .media-text-section {
+    padding: var(--spacing-unit);
+  }
+
+  .section-container {
+    background: var(--background, #fff9f3);
+    color: var(--text-color, #1a1a1a);
+    padding: calc(var(--spacing-unit) * 2) 0;
+  }
+
+  .content-wrapper {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-unit);
+  }
+
+  .media-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-unit);
+    align-items: center;
+    transition: var(--transition);
+  }
+
+  .media-container,
+  .text-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .before-after-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .media-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: var(--shadow);
+    transition: transform .3s ease-in-out;
+  }
+
+  .before-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .after-image {
+    position: relative;
+    z-index: 0;
+  }
+
+  .slider-range {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: ew-resize;
+    z-index: 3;
+  }
+
+  .slider-line {
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #fff;
+    z-index: 2;
+    transition: left 0.05s ease-in-out;
+  }
+
+  .slider-thumb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #0091DF;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .caption {
+    position: absolute;
+    bottom: 12px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: 6px 12px;
+    border-radius: 15px;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 2;
+  }
+
+  .before-caption {
+    left: 12px;
+  }
+
+  .after-caption {
+    right: 12px;
+  }
+
+  .media-placeholder {
+    width: 100%;
+    height: 250px;
+    background-color: #e5e7eb;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+  }
+
+  .text-container {
+    padding: var(--spacing-unit);
+  }
+
+  .title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: calc(var(--spacing-unit) / 2);
+    color: var(--text-color, #1a1a1a);
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color, #1a1a1a);
+    opacity: 0.9;
+  }
+
+  /* Large Screens (Row Layout) */
+  @media (min-width: 768px) {
+    .media-text-block {
+      flex-direction: row;
+      align-items: center;
+      gap: calc(var(--spacing-unit) * 2);
+    }
+
+    .media-container,
+    .text-container {
+      width: 50%;
+    }
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .description {
+      font-size: 1.125rem;
+    }
+
+    .media-image:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  /* Small Screens (Column Layout) */
+  @media (max-width: 767px) {
+    .text-container {
+      padding-bottom: 45px;
+    }
+
+    .title {
+      font-size: 1.5rem;
+    }
+
+    .description {
+      font-size: 0.875rem;
+    }
+
+    .media-placeholder {
+      height: 200px;
+    }
+  }
+</style>
