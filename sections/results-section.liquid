@@ -112,7 +112,7 @@
               <!-- Background Circle -->
               <circle class="text-gray-200" stroke="currentColor" stroke-width="3" fill="none" cx="18" cy="18" r="15.915"></circle>
               <!-- Progress Circle -->
-              <circle class="text-sigmacolor2" stroke="currentColor" stroke-width="3" stroke-dasharray="{{ section.settings.result_3_percentage | times: 1.0 }}, {{ 100 | minus: section.settings.result_3_percentage | times: 1.0 }}" stroke-linecap="round" fill="none" cx="18" cy="18" r="15.915" style="transform: rotate(-90deg); transform-origin: center;"></circle>
+              <circle class="text-sigmacolor" stroke="currentColor" stroke-width="3" stroke-dasharray="{{ section.settings.result_3_percentage | times: 1.0 }}, {{ 100 | minus: section.settings.result_3_percentage | times: 1.0 }}" stroke-linecap="round" fill="none" cx="18" cy="18" r="15.915" style="transform: rotate(-90deg); transform-origin: center;"></circle>
             </svg>
             <div class="absolute inset-0 flex items-center justify-center">
               <span class="text-2xl font-bold text-gray-900">{{ section.settings.result_3_percentage }}%</span>
@@ -190,12 +190,7 @@
   }
 
   .text-sigmacolor {
-    background: linear-gradient(149.482deg, rgb(52, 133, 253) 0%, rgb(187, 246, 255) 100%);
-    -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  }
-  .text-sigmacolor2 {
-    background: linear-gradient(149.482deg, rgb(52, 133, 253) 0%, rgb(187, 246, 255) 100%);
+   color:#4996fd;
   }
 
   .mt-6 {
