@@ -56,7 +56,7 @@
         >
           {{ media.preview_image
             | image_url: width: 120, height: 120
-            | image_tag: class: 'object-cover', loading: 'lazy'
+            | image_tag: class: 'object-cover rounded-xl', loading: 'lazy'
           }}
         </div>
       {%- endfor -%}
