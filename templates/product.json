@@ -175,6 +175,12 @@
     "swiper_WaAkR6": {
       "type": "swiper",
       "blocks": {
+        "video_JAzBzc": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1741939445/SaveClip.App_AQNkYeBBlLn5fSwDn1Mg_iXqeqnr6sxHywfE_exf-URsXyMtblj5jh3VLkatsD0Lr7PfkXOFtD297q-AnDwlwS8ozqYRal4-YtsJSEU_zhobyj.mp4"
+          }
+        },
         "video_QLAmmN": {
           "type": "video",
           "settings": {
@@ -195,6 +201,7 @@
         }
       },
       "block_order": [
+        "video_JAzBzc",
         "video_QLAmmN",
         "video_mXiiUA",
         "video_JBMpGT"
