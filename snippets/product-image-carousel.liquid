@@ -48,6 +48,7 @@
   </div>
 
   <nav class="swiper product-thumbs user-select-none mt-2" hidden>
+
     <div class="swiper-wrapper">
       {%- for media in product.media -%}
         <div
@@ -56,7 +57,7 @@
         >
           {{ media.preview_image
             | image_url: width: 120, height: 120
-            | image_tag: class: 'object-cover rounded-xl', loading: 'lazy'
+            | image_tag: class: 'object-cover rounded-xl overflow-hidden', loading: 'lazy'
           }}
         </div>
       {%- endfor -%}
