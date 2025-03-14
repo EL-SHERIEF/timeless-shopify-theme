@@ -1,6 +1,6 @@
 {% schema %}
 {
-  "name": "story teller",
+  "name": "Media with Text Section",
   "settings": [
     {
       "type": "header",
@@ -17,82 +17,48 @@
       "id": "text_color",
       "label": "Text Color",
       "default": "#1a1a1a"
-    },
+    }
+  ],
+  "blocks": [
     {
-      "type": "header",
-      "content": "Media Text Blocks"
-    },
-    {
-      "type": "text",
-      "id": "block_1_title",
-      "label": "Block 1 Title",
-      "default": "Secure technology suitable for most skin and hair types"
-    },
-    {
-      "type": "textarea",
-      "id": "block_1_description",
-      "label": "Block 1 Description",
-      "default": "Our technology adapts to your skin type for optimal results safely. Thanks to PrecisionPulse™ IPL technology, which flashes at 10 ms, up to 4 times longer than competing IPL, the light is primarily absorbed by the melanin in your hair and not by that in your skin."
-    },
-    {
-      "type": "select",
-      "id": "block_1_media_type",
-      "label": "Block 1 Media Type",
-      "options": [
-        { "value": "image", "label": "Image" },
-        { "value": "video", "label": "Video" }
-      ],
-      "default": "image"
-    },
-    {
-      "type": "image_picker",
-      "id": "block_1_image",
-      "label": "Block 1 Image",
-      "info": "Upload an image if media type is set to 'Image'"
-    },
-    {
-      "type": "url",
-      "id": "block_1_video_url",
-      "label": "Block 1 Video URL",
-      "info": "Enter a video URL (e.g., YouTube or Vimeo) if media type is set to 'Video'"
-    },
-    {
-      "type": "header",
-      "content": "Block 2"
-    },
-    {
-      "type": "text",
-      "id": "block_2_title",
-      "label": "Block 2 Title",
-      "default": "Easy to use"
-    },
-    {
-      "type": "textarea",
-      "id": "block_2_description",
-      "label": "Block 2 Description",
-      "default": "Enjoy an intuitive device that easily integrates into your beauty routine. In just a few minutes, treat any area with ease thanks to the automatic flash mode, ideal for large surface areas."
-    },
-    {
-      "type": "select",
-      "id": "block_2_media_type",
-      "label": "Block 2 Media Type",
-      "options": [
-        { "value": "image", "label": "Image" },
-        { "value": "video", "label": "Video" }
-      ],
-      "default": "image"
-    },
-    {
-      "type": "image_picker",
-      "id": "block_2_image",
-      "label": "Block 2 Image",
-      "info": "Upload an image if media type is set to 'Image'"
-    },
-    {
-      "type": "url",
-      "id": "block_2_video_url",
-      "label": "Block 2 Video URL",
-      "info": "Enter a video URL (e.g., YouTube or Vimeo) if media type is set to 'Video'"
+      "type": "media_text_block",
+      "name": "Media with Text Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Secure technology suitable for most skin and hair types"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Our technology adapts to your skin type for optimal results safely. Thanks to PrecisionPulse™ IPL technology, which flashes at 10 ms, up to 4 times longer than competing IPL, the light is primarily absorbed by the melanin in your hair and not by that in your skin."
+        },
+        {
+          "type": "select",
+          "id": "media_type",
+          "label": "Media Type",
+          "options": [
+            { "value": "image", "label": "Image" },
+            { "value": "video", "label": "Video" }
+          ],
+          "default": "image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Upload an image if media type is set to 'Image'"
+        },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Video URL",
+          "info": "Enter a direct video URL (e.g., .mp4 hosted on your store) if media type is set to 'Video'"
+        }
+      ]
     }
   ],
   "presets": [
@@ -107,46 +73,45 @@
 <div class="media-text-section section section-blends section-full">
   <div class="bg-custom py-8" style="--background: {{ section.settings.background_color | split: '#' | last | replace: ' ', '' }}; --text-color: {{ section.settings.text_color | split: '#' | last | replace: ' ', '' }};">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Block 1 -->
-      <div class="media-with-text flex flex-col md:flex-row items-center gap-6 mb-6">
-        <div class="media-with-text__media rounded w-full md:w-1/2" reveal-on-scroll="true" style="opacity: 1;">
-          {% if section.settings.block_1_media_type == "image" and section.settings.block_1_image %}
-            <img src="{{ section.settings.block_1_image | img_url: '600x' }}" alt="" loading="lazy" sizes="(max-width: 999px) 100vw, min(650px, 50vw)" style="width: 100%; height: auto; transform: scale(1);">
-          {% elsif section.settings.block_1_media_type == "video" and section.settings.block_1_video_url %}
-            <iframe src="{{ section.settings.block_1_video_url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; height: 100%; min-height: 300px;"></iframe>
-          {% else %}
-            <div class="w-full h-64 bg-gray-200 rounded"></div>
-          {% endif %}
-        </div>
-        <div class="media-with-text__content rounded w-full md:w-1/2 bg-custom text-custom p-4" style="--background: {{ section.settings.background_color | split: '#' | last | replace: ' ', '' }}; --text-color: {{ section.settings.text_color | split: '#' | last | replace: ' ', '' }};">
-          <div class="prose break-all text-center md:text-left" reveal-on-scroll="true" style="opacity: 1;">
-            <p class="text-xl md:text-2xl font-bold">{{ section.settings.block_1_title }}</p>
-            <p class="text-base mt-2">{{ section.settings.block_1_description }}</p>
+      {% for block in section.blocks %}
+        <div class="media-with-text flex flex-col items-center gap-6 {% if forloop.last == false %}mb-6{% endif %}" {{ block.shopify_attributes }}>
+          <div class="media-with-text__media rounded w-full md:w-1/2" reveal-on-scroll="true" style="opacity: 1;">
+            {% if block.settings.media_type == "image" and block.settings.image %}
+              <img src="{{ block.settings.image | img_url: '600x' }}" alt="" loading="lazy" sizes="(max-width: 999px) 100vw, min(650px, 50vw)" style="width: 100%; height: auto; transform: scale(1);">
+            {% elsif block.settings.media_type == "video" and block.settings.video_url %}
+              <video src="{{ block.settings.video_url }}" autoplay loop muted style="width: 100%; height: auto; min-height: 300px;" playsinline>
+                Your browser does not support the video tag.
+              </video>
+            {% else %}
+              <div class="w-full h-64 bg-gray-200 rounded"></div>
+            {% endif %}
+          </div>
+          <div class="media-with-text__content rounded w-full md:w-1/2 bg-custom text-custom p-4" style="--background: {{ section.settings.background_color | split: '#' | last | replace: ' ', '' }}; --text-color: {{ section.settings.text_color | split: '#' | last | replace: ' ', '' }};">
+            <div class="prose break-all text-center md:text-left" reveal-on-scroll="true" style="opacity: 1;">
+              <p class="text-xl md:text-2xl font-bold">{{ block.settings.title }}</p>
+              <p class="text-base mt-2">{{ block.settings.description }}</p>
+            </div>
           </div>
         </div>
-      </div>
-
-      <!-- Block 2 -->
-      <div class="media-with-text flex flex-col md:flex-row-reverse items-center gap-6">
-        <div class="media-with-text__media rounded w-full md:w-1/2" reveal-on-scroll="true" style="opacity: 1;">
-          {% if section.settings.block_2_media_type == "image" and section.settings.block_2_image %}
-            <img src="{{ section.settings.block_2_image | img_url: '600x' }}" alt="" loading="lazy" sizes="(max-width: 999px) 100vw, min(650px, 50vw)" style="width: 100%; height: auto; transform: scale(1);">
-          {% elsif section.settings.block_2_media_type == "video" and section.settings.block_2_video_url %}
-            <iframe src="{{ section.settings.block_2_video_url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; height: 100%; min-height: 300px;"></iframe>
-          {% else %}
-            <div class="w-full h-64 bg-gray-200 rounded"></div>
-          {% endif %}
-        </div>
-        <div class="media-with-text__content rounded w-full md:w-1/2 bg-custom text-custom p-4" style="--background: {{ section.settings.background_color | split: '#' | last | replace: ' ', '' }}; --text-color: {{ section.settings.text_color | split: '#' | last | replace: ' ', '' }};">
-          <div class="prose break-all text-center md:text-left" reveal-on-scroll="true" style="opacity: 1;">
-            <p class="text-xl md:text-2xl font-bold">{{ section.settings.block_2_title }}</p>
-            <p class="text-base mt-2">{{ section.settings.block_2_description }}</p>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mediaTextItems = document.querySelectorAll('.media-text-section .media-with-text');
+    mediaTextItems.forEach((item, index) => {
+      if (index % 2 === 0) {
+        // Even index (0, 2, 4, ...): media on the right
+        item.classList.add('md:flex-row-reverse');
+      } else {
+        // Odd index (1, 3, 5, ...): media on the left
+        item.classList.add('md:flex-row');
+      }
+    });
+  });
+</script>
 
 <style>
   .media-text-section {
