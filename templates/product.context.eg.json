@@ -17,7 +17,7 @@
       "type": "story-teller",
       "disabled": false,
       "settings": {
-        "header-64132a6e655da5fd242771dd789ee271": null,
+        "header-64fa458cf5254f64b27a6eb26c6992c3": null,
         "background_color": "#ffffff",
         "text_color": "#1a1a1a"
       },
@@ -109,31 +109,38 @@
       "blocks": {
         "faq_B49Bg4": {
           "settings": {
-            "question": "هل النتائج دائمة؟",
-            "answer": "<p>نعم, كثرة الاستخدام مع الوقت يؤدي الى زيادة وقت نمو الشعر والحصول على بشرة ناعمة لفترة اطول </p>"
+            "question": "How Does an In-Home Hair Removal Laser Device Work?",
+            "answer": "<p>Our <strong>in-home hair removal laser device</strong>, the Laserly Smooth Pro, uses PrecisionPulse™ IPL to target hair follicles, reducing growth over time. It’s a <strong>DIY laser hair removal</strong> solution that’s safe and effective for legs, arms, face, and bikini line.</p>"
           }
         },
         "faq_kUNGMk": {
           "settings": {
-            "answer": "<p>إجابة مختصرة؟ نعم! يُعدّ الليزر خيارًا شائعًا ومُثبتًا علميًا لإزالة الشعر بأمان وفعالية على المدى الطويل. كما أن سيكريتريزا مُعتمد من قِبل إدارة الغذاء والدواء الأمريكية للاستخدام المنزلي الآمن.</p>"
+            "answer": "<p>Yes! The Laserly Smooth Pro is a top choice for <strong>DIY laser hair removal</strong>. It’s <strong>pain-free</strong>, delivers 95% hair reduction in 4 weeks, and is more affordable than salon visits, making it a leading <strong>laser hair removal home product</strong>.</p>",
+            "question": "Is the Laserly Smooth Pro a Good DIY Laser Hair Removal Option?"
           }
         },
         "faq_PaC6YV": {
           "settings": {
-            "question": "هل لازيرلي مؤلم؟",
-            "answer": "<p>لا! على عكس أنواع أخرى من إزالة الشعر، فإن Laserly™ غير مؤلم إلى حد كبير - لا حاجة لشد أسنانك، أو جرح ركبتك، أو تمزيق أي شيء.</p>"
+            "question": "Can I Use a Home Laser Machine on All Skin Types?",
+            "answer": "<p>Absolutely. Unlike some devices like <strong>Secretreza Redline</strong> or <strong>Philips</strong>, the Laserly Smooth Pro is designed for all skin types, making it a versatile <strong>home laser machine</strong> for <strong>hair removal</strong> across diverse users in <strong>Lebanon</strong>, <strong>Dubai</strong>, and beyond.</p>"
           }
         },
         "faq_VffqCp": {
           "settings": {
-            "question": "نتائج مضمونة",
-            "answer": "<p>نقدم خدمة إرجاع خلال 90 يومًا وضمانًا لمدة 5 سنوات لجميع مشتريات لازيرلي. جرّبها الآن، وشاهد كيف تناسبك، وإذا لم تكن راضيًا لأي سبب، فسنرد لك المبلغ كاملًا.</p>"
+            "question": "How Often Should I Use My In-Home Hair Removal Laser?",
+            "answer": "<p>For best results with the Laserly Smooth Pro <strong>in-home hair removal laser</strong>, use it weekly for 12 weeks, then monthly for maintenance. This <strong>جهاز ليزر منزلي</strong> (home laser device) ensures permanent hair reduction with consistent use.</p>"
           }
         },
         "faq_Dp8FGU": {
           "settings": {
             "question": "ماذا لو لم ينجح الأمر معي؟",
             "answer": "<p>سنعيد إليك أموالك! (نعم، حتى لو كنت تستخدمه منذ أسابيع). جميع أجهزة LASERLY™ تأتي مع ضمان استرداد الأموال بنسبة 100% لمدة 90 يومًا - إذا لم يناسبك، فأعده وسنرد لك أموالك بالكامل.</p>"
+          }
+        },
+        "faq_rCgPw8": {
+          "settings": {
+            "question": "What is the Laserly Smooth Pro Home Laser Machine for Hair Removal?",
+            "answer": "<p>The Laserly Smooth Pro is a <strong>home laser machine for hair removal</strong> that uses IPL technology to deliver permanent hair reduction. It’s a <strong>pain-free in-home hair removal laser device</strong> suitable for all skin types, offering 500,000 flashes for long-lasting use.</p>"
           }
         }
       }
