@@ -17,7 +17,7 @@
       "type": "story-teller",
       "disabled": false,
       "settings": {
-        "header-64fa458cf5254f64b27a6eb26c6992c3": null,
+        "header-eb18b5ea29f8a45f0058a59dc06b5d53": null,
         "background_color": "#ffffff",
         "text_color": "#1a1a1a"
       },
@@ -77,6 +77,13 @@
       },
       "blocks": {},
       "block_order": []
+    },
+    "besthero_3TKt8U": {
+      "settings": {
+        "hero_heading": "Pain-Free At-Home Laser Hair Removal for All Skin Types",
+        "hero_text": "78% Off – Universal permanent Hair removal Device with Free Shipping!"
+      },
+      "blocks": {}
     },
     "3twins_KMmjwr": {
       "settings": {
@@ -144,19 +151,12 @@
           }
         }
       }
-    },
-    "besthero_3TKt8U": {
-      "settings": {
-        "hero_heading": "Pain-Free At-Home Laser Hair Removal for All Skin Types",
-        "hero_text": "78% Off – Universal permanent Hair removal Device with Free Shipping!"
-      },
-      "blocks": {}
     }
   },
   "order": [
     "besthero_3TKt8U",
-    "story_teller_QjL7q",
     "before_after_y8TLFx",
+    "story_teller_QjL7q",
     "product-form",
     "features_section_xcgJND",
     "results_section_fDfYx",
