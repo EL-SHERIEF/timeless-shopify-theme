@@ -51,7 +51,7 @@
         "target": "{{ shop.url }}/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       },
-      "description": "{{ shop.name }} - Your source for home laser machines and hair removal laser devices including Secretreza Redline."
+      "description": "{{ shop.name }} - Your source for home laser machines and hair removal laser devices including"
     },
     {
       "@context": "https://schema.org",
@@ -138,14 +138,6 @@
   {% sections 'header-groups' %}
   <main>
     {{ content_for_layout }}
-    <div class="seo-internal-links" style="text-align: center; padding: 20px;">
-      <h2>Explore Our Best Laser Products</h2>
-      <ul style="list-style: none; padding: 0;">
-        <li><a href="{{ shop.url }}/collections/all/products/laser-product-1">Best Laser Engraver</a></li>
-        <li><a href="{{ shop.url }}/collections/all/products/laser-product-2">Top Laser Cutter</a></li>
-        <li><a href="{{ shop.url }}/collections/all/products/laser-product-3">Affordable Laser Tools</a></li>
-      </ul>
-    </div>
   </main>
   {% liquid
     sections 'footer-groups'
@@ -153,14 +145,7 @@
       echo content_for_additional_checkout_buttons
     endif
   %}
-  <div class="seo-content" style="font-size: 0.8rem; color: #666; padding: 10px; text-align: center;">
-    <p>{{ shop.name }} specializes in laser engraving tools, laser cutting machines, and more. Shop now for the best deals on laser products!</p>
-  </div>
-  <div class="social-share" style="padding: 20px; text-align: center;">
-    <p>Share {{ shop.name }} with friends!</p>
-    <a href="https://twitter.com/intent/tweet?url={{ canonical_url | escape }}&text=Check out the best laser tools at {{ shop.name }}!" target="_blank">Twitter</a> |
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{ canonical_url | escape }}" target="_blank">Facebook</a>
-  </div>
+ 
   <script>
     const lenis = new Lenis({ autoRaf: true });
     lenis.on('scroll', (e) => { console.log(e); });
