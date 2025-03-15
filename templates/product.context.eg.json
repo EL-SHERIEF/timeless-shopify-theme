@@ -107,6 +107,12 @@
     "faq_list_zJVwkM": {
       "settings": {},
       "blocks": {
+        "faq_rCgPw8": {
+          "settings": {
+            "question": "What is the Laserly Smooth Pro Home Laser Machine for Hair Removal?",
+            "answer": "<p>The Laserly Smooth Pro is a <strong>home laser machine for hair removal</strong> that uses IPL technology to deliver permanent hair reduction. It’s a <strong>pain-free in-home hair removal laser device</strong> suitable for all skin types, offering 500,000 flashes for long-lasting use.</p>"
+          }
+        },
         "faq_B49Bg4": {
           "settings": {
             "question": "How Does an In-Home Hair Removal Laser Device Work?",
@@ -115,8 +121,8 @@
         },
         "faq_kUNGMk": {
           "settings": {
-            "answer": "<p>Yes! The Laserly Smooth Pro is a top choice for <strong>DIY laser hair removal</strong>. It’s <strong>pain-free</strong>, delivers 95% hair reduction in 4 weeks, and is more affordable than salon visits, making it a leading <strong>laser hair removal home product</strong>.</p>",
-            "question": "Is the Laserly Smooth Pro a Good DIY Laser Hair Removal Option?"
+            "question": "Is the Laserly Smooth Pro a Good DIY Laser Hair Removal Option?",
+            "answer": "<p>Yes! The Laserly Smooth Pro is a top choice for <strong>DIY laser hair removal</strong>. It’s <strong>pain-free</strong>, delivers 95% hair reduction in 4 weeks, and is more affordable than salon visits, making it a leading <strong>laser hair removal home product</strong>.</p>"
           }
         },
         "faq_PaC6YV": {
@@ -128,19 +134,13 @@
         "faq_VffqCp": {
           "settings": {
             "question": "How Often Should I Use My In-Home Hair Removal Laser?",
-            "answer": "<p>For best results with the Laserly Smooth Pro <strong>in-home hair removal laser</strong>, use it weekly for 12 weeks, then monthly for maintenance. This <strong>جهاز ليزر منزلي</strong> (home laser device) ensures permanent hair reduction with consistent use.</p>"
+            "answer": "<p>For best results with the Laserly Smooth Pro <strong>in-home hair removal laser</strong>, use it weekly for 12 weeks, then monthly for maintenance. This (home laser device) ensures permanent hair reduction with consistent use.</p>"
           }
         },
         "faq_Dp8FGU": {
           "settings": {
-            "question": "ماذا لو لم ينجح الأمر معي؟",
-            "answer": "<p>سنعيد إليك أموالك! (نعم، حتى لو كنت تستخدمه منذ أسابيع). جميع أجهزة LASERLY™ تأتي مع ضمان استرداد الأموال بنسبة 100% لمدة 90 يومًا - إذا لم يناسبك، فأعده وسنرد لك أموالك بالكامل.</p>"
-          }
-        },
-        "faq_rCgPw8": {
-          "settings": {
-            "question": "What is the Laserly Smooth Pro Home Laser Machine for Hair Removal?",
-            "answer": "<p>The Laserly Smooth Pro is a <strong>home laser machine for hair removal</strong> that uses IPL technology to deliver permanent hair reduction. It’s a <strong>pain-free in-home hair removal laser device</strong> suitable for all skin types, offering 500,000 flashes for long-lasting use.</p>"
+            "question": "How Long Until I See Results with a Laser Hair Removal Home Product?",
+            "answer": "<p>With the Laserly Smooth Pro, a leading <strong>laser hair removal home product</strong>, 95% of users see significant hair reduction in 4 weeks. This <strong>pain-free in-home hair removal laser</strong> ensures fast, lasting results with regular use.</p>"
           }
         }
       }
