@@ -19,6 +19,16 @@
         "show_cart_item_count": true
       },
       "blocks": {}
+    },
+    "announcement": {
+      "settings": {},
+      "blocks": {
+        "850afe85-78d1-4942-a892-37c1cd5df2db": {
+          "settings": {
+            "content": "<p>BUY TODAY AND SAVE UP TO 78% OFF</p>"
+          }
+        }
+      }
     }
   }
 }
