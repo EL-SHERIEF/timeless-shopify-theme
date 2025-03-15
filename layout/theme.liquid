@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="{{ request.locale.iso_code }}">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" as="script">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" as="style">
   {%- unless settings.font_heading.system? and settings.font_body.system? -%}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
   {%- endunless -%}
-
-  <title>
+ <title>
     {%- liquid
       echo page_title
       unless page_title == shop.name
@@ -27,67 +26,145 @@
   {%- if page_description -%}
     <meta name="description" content="{{ page_description | escape }}">
   {%- endif %}
+  <meta name="keywords" content="home laser machine for hair removal, home hair removal laser device, in home hair removal laser, home laser machine, laser red line, lazer razor, diy laser hair, laser hair removal home products, laser razer, secretreza, secretreza amazon, secretreza redline, secretreza lebanon, secretreza vs philips, secretreza dubai, جهاز ليزر منزلي, secretreza جهاز الليزر سعر في مصر, secretreza جهاز الليزر review">
   {%- render 'meta-tags' -%}
-
   {%- liquid
     echo content_for_header
     render 'tailwind'
   -%}
   <!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '659071533298102');
-  fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=659071533298102&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '659071533298102');fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=659071533298102&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel Code -->
+  <!-- Schema Markup with Keywords -->
+  <script type="application/ld+json">
+    {% if template == 'index' %}
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "{{ shop.name | escape }}",
+      "url": "{{ canonical_url | escape }}",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ shop.url }}/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "description": "{{ shop.name }} - Your source for home laser machines and hair removal laser devices including Secretreza Redline."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "{{ shop.name | escape }}",
+      "url": "{{ shop.url | escape }}",
+      "logo": "{{ settings.favicon | image_url | escape }}",
+      "sameAs": ["https://twitter.com/yourhandle", "https://facebook.com/yourpage", "https://instagram.com/yourprofile"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-123-456-7890",
+        "contactType": "Customer Service",
+        "email": "{{ shop.email | escape }}"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "{{ shop.url | escape }}"
+      }]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is the best home laser machine for hair removal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "{{ shop.name }} offers top home hair removal laser devices like Secretreza Redline for DIY laser hair removal at home."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How does Secretreza compare to Philips laser devices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Secretreza Redline at {{ shop.name }} provides advanced in-home hair removal laser technology, often outperforming Philips in ease of use."
+        }
+      }]
+    },
+    {% assign featured_product = collections.frontpage.products.first %}
+    {% if featured_product %}
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "{{ featured_product.title | escape | default: 'Home Laser Machine for Hair Removal' }}",
+      "image": "{{ featured_product.featured_image | image_url | escape }}",
+      "description": "{{ featured_product.description | strip_html | truncate: 200 | escape | default: 'Discover the best home hair removal laser device at ' | append: shop.name }}",
+      "sku": "{{ featured_product.variants.first.sku | escape | default: 'LASERLY-HOME-001' }}",
+      "mpn": "{{ featured_product.variants.first.id | escape }}",
+      "brand": {
+        "@type": "Brand",
+        "name": "{{ shop.name | escape }}"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "{{ featured_product.url | absolute_url | escape }}",
+        "priceCurrency": "{{ shop.currency | escape }}",
+        "price": "{{ featured_product.price | money_without_currency | escape | default: '99.99' }}",
+        "priceValidUntil": "{{ 'now' | date: '%Y-%m-%d' | date: '%Y-12-31' }}",
+        "availability": "{% if featured_product.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {
+          "@type": "Organization",
+          "name": "{{ shop.name | escape }}"
+        }
+      }
+    }
+    {% endif %}
+    {% endif %}
+  </script>
 </head>
 <body>
   <style>
- body{width:100%;overflow-x:hidden;
-       font-family: "Almarai", sans-serif;
-     background-color:#f9fafb!important}
-    html[lang="ar"] body {
-    direction: rtl;
-}
-    .h1{font-family:inherit!important}
-    .shopify-section.shopify-section-group-header-groups.section-announcement.text-center.text-sm p{
-      text-align:center!important;
-    }
+    body { width: 100%; overflow-x: hidden; font-family: "Almarai", sans-serif; background-color: #f9fafb !important; }
+    html[lang="ar"] body { direction: rtl; }
+    .h1 { font-family: inherit !important; }
+    .shopify-section.shopify-section-group-header-groups.section-announcement.text-center.text-sm p { text-align: center !important; }
   </style>
   {% sections 'header-groups' %}
-
   <main>
     {{ content_for_layout }}
+    <div class="seo-internal-links" style="text-align: center; padding: 20px;">
+      <h2>Explore Our Best Laser Products</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="{{ shop.url }}/collections/all/products/laser-product-1">Best Laser Engraver</a></li>
+        <li><a href="{{ shop.url }}/collections/all/products/laser-product-2">Top Laser Cutter</a></li>
+        <li><a href="{{ shop.url }}/collections/all/products/laser-product-3">Affordable Laser Tools</a></li>
+      </ul>
+    </div>
   </main>
-
   {% liquid
     sections 'footer-groups'
-
     if additional_checkout_buttons
       echo content_for_additional_checkout_buttons
     endif
   %}
-  
+  <div class="seo-content" style="font-size: 0.8rem; color: #666; padding: 10px; text-align: center;">
+    <p>{{ shop.name }} specializes in laser engraving tools, laser cutting machines, and more. Shop now for the best deals on laser products!</p>
+  </div>
+  <div class="social-share" style="padding: 20px; text-align: center;">
+    <p>Share {{ shop.name }} with friends!</p>
+    <a href="https://twitter.com/intent/tweet?url={{ canonical_url | escape }}&text=Check out the best laser tools at {{ shop.name }}!" target="_blank">Twitter</a> |
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ canonical_url | escape }}" target="_blank">Facebook</a>
+  </div>
   <script>
-  const lenis = new Lenis({
-  autoRaf: true,
-});
-
-// Listen for the scroll event and log the event data
-lenis.on('scroll', (e) => {
-  console.log(e);
-});
-  </script
+    const lenis = new Lenis({ autoRaf: true });
+    lenis.on('scroll', (e) => { console.log(e); });
+  </script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="77c09630-247d-4d99-9a58-0e93d1aa20ef";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 </body>
