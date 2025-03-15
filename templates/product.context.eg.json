@@ -17,7 +17,7 @@
       "type": "story-teller",
       "disabled": false,
       "settings": {
-        "header-c2e90a0b094688c58028b972b7aa3281": null,
+        "header-64132a6e655da5fd242771dd789ee271": null,
         "background_color": "#ffffff",
         "text_color": "#1a1a1a"
       },
@@ -105,6 +105,7 @@
       }
     },
     "faq_list_zJVwkM": {
+      "settings": {},
       "blocks": {
         "faq_B49Bg4": {
           "settings": {
@@ -140,8 +141,8 @@
   },
   "order": [
     "besthero_3TKt8U",
-    "before_after_y8TLFx",
     "story_teller_QjL7q",
+    "before_after_y8TLFx",
     "product-form",
     "features_section_xcgJND",
     "results_section_fDfYx",
