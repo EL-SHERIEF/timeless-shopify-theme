@@ -15,16 +15,16 @@
         "background_video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739735588/WhatsApp_Video_2025-02-16_at_9.12.13_PM_ry56el.mp4",
         "image": "shopify://shop_images/GIF2.webp",
         "use_image_instead_of_video": true,
-        "hero_heading": "Home Laser Hair Removal for All Skin Types",
-        "hero_text": "Pain-Free and Effective - Save 78% Today with Free Shipping",
+        "hero_heading": "Home Laser Machine for Hair Removal for All Skin Types",
+        "hero_text": "78% Off – Pain-Free In Home Hair Removal Laser with Free Shipping",
         "show_overlay": true,
-        "marquee_slot_1": "At-Home Laser Hair Removal",
-        "marquee_slot_2": "Pain-Free Hair Removal",
-        "marquee_slot_3": "Permanent Hair Reduction",
-        "marquee_slot_4": "For All Skin Types",
+        "marquee_slot_1": "Laser Machine for Hair Removal",
+        "marquee_slot_2": "In Home Hair Removal Laser Device",
+        "marquee_slot_3": "DIY Laser Hair Removal",
+        "marquee_slot_4": "Laser Hair Removal Home Products",
         "marquee_slot_5": "78% Off Smooth Pro",
         "marquee_slot_6": "ORDER NOW!!",
-        "marquee_slot_7": "LIMITED AMOUNT",
+        "marquee_slot_7": "Home Laser Device",
         "marquee_slot_8": "FREE SHIPPING!!"
       }
     },
@@ -44,8 +44,8 @@
       "custom_css": [],
       "settings": {
         "color_scheme": "default",
-        "content": "<p>The Laserly™ </p>",
-        "subcontent": "<p>SmoothPro</p>",
+        "content": "<p>Laserly™ Smooth Pro Hair Removal Device</p>",
+        "subcontent": "<p>Pain-Free Laserly Smooth Pro – At-Home IPL Hair Removal</p>",
         "columns": 3,
         "sale_badge_enabled": true
       }
