@@ -95,9 +95,6 @@
         <input class="action-secondary animate-pulse" type="submit" value="Update cart" hidden />
         <button class="action" name="checkout" type="submit">
           {{ section.settings.checkout_label | default: 'Checkout' }}
-          <script>
-  fbq('track', 'InitiateCheckout');
-</script>
         </button>
 
         {%- if additional_checkout_buttons -%}
