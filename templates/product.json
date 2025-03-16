@@ -415,6 +415,16 @@
             "testimonial_text": "بصراحة الجهاز ده حلو جداً! جربت أجهزة كتير قبل كده، بس ده فعلاً فرق معايا. النعومة ملحوظة من أول استخدام، وما حسيتش بأي وجع. أنصح أي حد بيدور على حل سهل وسريع يجربه.",
             "star_rating": 5
           }
+        },
+        "testimonial_qDJhAg": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/female-avatar-girl-face-woman-user-4_1.svg",
+            "customer_name": "John Doe",
+            "customer_position": "Verified Customer",
+            "testimonial_text": "Fair play to Laserly, this thing actually works! I wasn’t expectin’ much, but the results are fantastic. Easy as pie to use, and I’m chuffed with how smooth my skin feels!",
+            "star_rating": 5
+          }
         }
       },
       "block_order": [
@@ -423,7 +433,8 @@
         "testimonial_NDeC8r",
         "testimonial_pGeTGL",
         "testimonial_Ap9Ukb",
-        "testimonial_Xe4g4a"
+        "testimonial_Xe4g4a",
+        "testimonial_qDJhAg"
       ],
       "settings": {}
     },
