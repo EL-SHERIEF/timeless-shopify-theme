@@ -395,13 +395,23 @@
             "testimonial_text": "جهاز SmoothPro تحفة بصراحة! أول مرة أجرب حاجة زي كذا لإزالة الشعر في البيت، ونتايجه مبهرة. بشرتي صارت ناعمة جدًا والجهاز لطيف على الجلد. أنصح فيه بقوة لكل البنات.",
             "star_rating": 5
           }
+        },
+        "testimonial_Xe4g4a": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Marram Emad",
+            "customer_position": "Verified Customer",
+            "testimonial_text": "بصراحة الجهاز ده حلو جداً! جربت أجهزة كتير قبل كده، بس ده فعلاً فرق معايا. النعومة ملحوظة من أول استخدام، وما حسيتش بأي وجع. أنصح أي حد بيدور على حل سهل وسريع يجربه.",
+            "star_rating": 5
+          }
         }
       },
       "block_order": [
         "testimonial_hjTkPJ",
         "testimonial_NDeC8r",
         "testimonial_pGeTGL",
-        "testimonial_Ap9Ukb"
+        "testimonial_Ap9Ukb",
+        "testimonial_Xe4g4a"
       ],
       "settings": {}
     },
