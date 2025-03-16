@@ -356,6 +356,16 @@
     "testimonials_UAVNTx": {
       "type": "testimonials",
       "blocks": {
+        "testimonial_y8M9tW": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/female-avatar-girl-face-woman-user-4_1.svg",
+            "customer_name": "Kathern d.",
+            "customer_position": "Verified Customer",
+            "testimonial_text": "Y’all, this product is a lifesaver!",
+            "star_rating": 5
+          }
+        },
         "testimonial_hjTkPJ": {
           "type": "testimonial",
           "settings": {
@@ -408,6 +418,7 @@
         }
       },
       "block_order": [
+        "testimonial_y8M9tW",
         "testimonial_hjTkPJ",
         "testimonial_NDeC8r",
         "testimonial_pGeTGL",
