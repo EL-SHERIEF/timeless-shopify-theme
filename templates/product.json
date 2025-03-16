@@ -13,6 +13,7 @@
       "type": "besthero",
       "settings": {
         "background_video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1741940224/ssstik.io__beauty_life_w_1741940079793_nwmd9j.mov",
+        "image": "shopify://shop_images/Screenshot_2025-03-16_182726.jpg",
         "use_image_instead_of_video": false,
         "hero_heading": "Pain-Free At-Home Laser Hair Removal for All Skin Types",
         "hero_text": "78% Off – Universal permanent Hair removal Device with Free Shipping!",
@@ -25,6 +26,17 @@
         "marquee_slot_6": "Permanent Hair Remove – 78% Off",
         "marquee_slot_7": "LIMITED AMOUNT",
         "marquee_slot_8": "FREE SHIPPING"
+      }
+    },
+    "before_after_UE7kMm": {
+      "type": "before-after",
+      "settings": {
+        "background_color": "#ffffff",
+        "text_color": "#1a1a1a",
+        "before_image": "shopify://shop_images/33.webp",
+        "after_image": "shopify://shop_images/34.webp",
+        "title": "Achieve long-lasting results effortlessly",
+        "description": "Get smooth skin without the hassle of daily shaving or salon appointments. In just a few weeks, you’ll enjoy long-lasting results. A simple solution for beauty that lasts."
       }
     },
     "story_teller_eBXMer": {
@@ -146,17 +158,6 @@
         "carousel_fade_enabled": true,
         "carousel_autoHeight": true,
         "carousel_slidesPerView": 9
-      }
-    },
-    "before_after_UE7kMm": {
-      "type": "before-after",
-      "settings": {
-        "background_color": "#ffffff",
-        "text_color": "#1a1a1a",
-        "before_image": "shopify://shop_images/33.webp",
-        "after_image": "shopify://shop_images/34.webp",
-        "title": "Achieve long-lasting results effortlessly",
-        "description": "Get smooth skin without the hassle of daily shaving or salon appointments. In just a few weeks, you’ll enjoy long-lasting results. A simple solution for beauty that lasts."
       }
     },
     "features_section_xcgJND": {
