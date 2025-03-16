@@ -297,45 +297,6 @@
         "cta_text": "Take Your 20% Cashback"
       }
     },
-    "3twins_KMmjwr": {
-      "type": "3twins",
-      "blocks": {
-        "image_JNp7K6": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Group_349.png",
-            "image_text": "2-4 Weeks"
-          }
-        },
-        "image_hpEaYh": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Group_350.png",
-            "image_text": "5-8 Weeks"
-          }
-        },
-        "image_yD777r": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Group_351.png",
-            "image_text": "8-12+ Weeks"
-          }
-        }
-      },
-      "block_order": [
-        "image_JNp7K6",
-        "image_hpEaYh",
-        "image_yD777r"
-      ],
-      "settings": {
-        "header": "How long till my hair’s gone?",
-        "tag": "Hair Today, Gone Tomorrow",
-        "subheader": "Your Journey to Smooth Skin Starts Here—Check Out the Amazing Results!",
-        "show_cta": false,
-        "cta_link": "/",
-        "cta_text": "Start for Free"
-      }
-    },
     "supercharged_c4EgEg": {
       "type": "supercharged",
       "blocks": {
@@ -493,7 +454,6 @@
     "3twins_faD4Cb",
     "product-recommendations",
     "swiper_WaAkR6",
-    "3twins_KMmjwr",
     "supercharged_c4EgEg",
     "testimonials_UAVNTx",
     "faq_list_zJVwkM"
