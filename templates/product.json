@@ -20,17 +20,18 @@
       "type": "besthero",
       "settings": {
         "background_video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1741940224/ssstik.io__beauty_life_w_1741940079793_nwmd9j.mov",
-        "hero_heading": "Smooth Skin, Endless Confidence",
-        "hero_text": "Silky skin made easy! Get Laserly™ now with 78% OFF. Trusted, pain-free, salon-quality at home.",
+        "use_image_instead_of_video": false,
+        "hero_heading": "Pain-Free At-Home Laser Hair Removal for All Skin Types",
+        "hero_text": "78% Off – Universal permanent Hair removal Device with Free Shipping!",
         "show_overlay": true,
-        "marquee_slot_1": "LIMITED AMOUNT",
-        "marquee_slot_2": "FREE SHIPPING!!",
-        "marquee_slot_3": "ORDER NOW!!",
-        "marquee_slot_4": "LIMITED AMOUNT",
-        "marquee_slot_5": "FREE SHIPPING!!",
-        "marquee_slot_6": "ORDER NOW!!",
+        "marquee_slot_1": "Home Laser Machine for Hair Removal",
+        "marquee_slot_2": "In Home Hair Removal Laser Device",
+        "marquee_slot_3": "DIY Laser Hair Removal",
+        "marquee_slot_4": "Pain-Free Lazer Razor Alternative",
+        "marquee_slot_5": "Free Shipping on Smooth Pro",
+        "marquee_slot_6": "Permanent Hair Remove – 78% Off",
         "marquee_slot_7": "LIMITED AMOUNT",
-        "marquee_slot_8": "FREE SHIPPING!!"
+        "marquee_slot_8": "FREE SHIPPING"
       }
     },
     "product-form": {
