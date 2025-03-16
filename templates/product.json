@@ -255,14 +255,6 @@
         "cta_text": "Start for Free"
       }
     },
-    "product-recommendations": {
-      "type": "product-recommendations",
-      "settings": {
-        "color_scheme": "",
-        "content": "<h2>Product Recommendations</h2>",
-        "intent": "related"
-      }
-    },
     "swiper_WaAkR6": {
       "type": "swiper",
       "blocks": {
@@ -506,11 +498,10 @@
     "product-form",
     "features_section_xcgJND",
     "results_section_7LLFp8",
+    "testimonials_UAVNTx",
     "3twins_faD4Cb",
-    "product-recommendations",
     "swiper_WaAkR6",
     "supercharged_c4EgEg",
-    "testimonials_UAVNTx",
     "faq_list_zJVwkM"
   ]
 }
