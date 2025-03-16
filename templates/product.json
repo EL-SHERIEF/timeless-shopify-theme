@@ -356,13 +356,33 @@
     "testimonials_UAVNTx": {
       "type": "testimonials",
       "blocks": {
+        "testimonial_hjTkPJ": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/female-avatar-girl-face-woman-user-4_1.svg",
+            "customer_name": "سنا .ا",
+            "customer_position": "Verified Customer",
+            "testimonial_text": "يا جماعة، الجهاز رهيب! والله من أول مرة حسيت بالفرق. استخدامه سهل وما يسبب أي ألم، والنتيجة فعلاً ممتازة. بنصحكم تجربونه.",
+            "star_rating": 5
+          }
+        },
         "testimonial_NDeC8r": {
           "type": "testimonial",
           "settings": {
             "customer_image": "shopify://shop_images/female-avatar-girl-face-woman-user-4_1.svg",
             "customer_name": "Sa Li",
             "customer_position": "Verified Customer",
-            "testimonial_text": "أنا مبسوطة جدًا من جهاز SmoothPro من Laserly! بجد غيّر حياتي، بقيت أعمل جلسات إزالة الشعر في البيت بسهولة، وبشرتي ناعمة أوي من غير أي تهيج. أحسن حاجة إن الجهاز آمن وسهل الاستخدام. شكرًا يا Laserly على المنتج الرهيب ده!",
+            "testimonial_text": "ما كنت مصدقة إنو النتيجة رح تكون هيك! عن جد شي بيعقد، وأنا كتير مبسوطة من النعومة. سهولة الاستخدام بتخليه مناسب لأي وقت، وعن جد بنصح فيه كل البنات.",
+            "star_rating": 5
+          }
+        },
+        "testimonial_pGeTGL": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/female-avatar-girl-face-woman-user-4_1.svg",
+            "customer_name": "ام قاسم و محمد",
+            "customer_position": "Verified Customer",
+            "testimonial_text": "والله العظيم جهاز رهيب! بعد ما استخدمته، الشعر قل بشكل واضح وصار أنعم بكثير. كنت مترددة بالبداية، بس عن جد يستاهل التجربة.",
             "star_rating": 5
           }
         },
@@ -378,7 +398,9 @@
         }
       },
       "block_order": [
+        "testimonial_hjTkPJ",
         "testimonial_NDeC8r",
+        "testimonial_pGeTGL",
         "testimonial_Ap9Ukb"
       ],
       "settings": {}
