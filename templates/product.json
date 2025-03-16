@@ -216,135 +216,6 @@
         "result_3_percentage": "92"
       }
     },
-    "3twins_faD4Cb": {
-      "type": "3twins",
-      "blocks": {
-        "image_mMbgQq": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/3_3000x3000_de9bed7d-6321-4bff-a8cb-782af367027f.webp",
-            "image_text": "Before - After"
-          }
-        },
-        "image_xLqXFD": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/2_3000x3000_c614e928-c814-4c5d-bc77-3a6faf162934.webp",
-            "image_text": "Before - After"
-          }
-        },
-        "image_GCkBGX": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/1_3000x3000_b893121b-8c7b-451a-a458-f4cbcd1b40cf.webp",
-            "image_text": "Before - After"
-          }
-        }
-      },
-      "block_order": [
-        "image_mMbgQq",
-        "image_xLqXFD",
-        "image_GCkBGX"
-      ],
-      "settings": {
-        "header": "Results",
-        "tag": "",
-        "subheader": "Your Journey to Smooth Skin Starts Here—Check Out the Amazing Results!",
-        "show_cta": true,
-        "cta_link": "/",
-        "cta_text": "Start for Free"
-      }
-    },
-    "swiper_WaAkR6": {
-      "type": "swiper",
-      "blocks": {
-        "video_JAzBzc": {
-          "type": "video",
-          "settings": {
-            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1741939445/SaveClip.App_AQNkYeBBlLn5fSwDn1Mg_iXqeqnr6sxHywfE_exf-URsXyMtblj5jh3VLkatsD0Lr7PfkXOFtD297q-AnDwlwS8ozqYRal4-YtsJSEU_zhobyj.mp4"
-          }
-        },
-        "video_QLAmmN": {
-          "type": "video",
-          "settings": {
-            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1741939444/SaveClip.App_AQM0wK8P-tw9JHk_ysw4_QNk_b81fHuGUKxBYpoE5cC3KuEmM9Fdveq9-HiGLqQx-G3IHYg8187C-CA_ONLem_LvQrgOUXD26FCmGmY_rowkz8.mp4"
-          }
-        },
-        "video_JBMpGT": {
-          "type": "video",
-          "settings": {
-            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1741939448/SaveClip.App_AQNhD_2bnQTiGxuNd2Dh7tyzhWEBaN-__iaK_H2Ucg5PmQcUKO_kUB0rbEPg_bCGT9UEoOv4pjLevMmZLTvqU1iMBwTsfEBUgA4IzTU_mq9ra6.mp4"
-          }
-        }
-      },
-      "block_order": [
-        "video_JAzBzc",
-        "video_QLAmmN",
-        "video_JBMpGT"
-      ],
-      "settings": {
-        "header": "Send us a testimonial and get 20% cashback",
-        "subheader": "Easy and brief you can make it trust me, get your 20% extra discount immediately after purchase",
-        "cta_link": "shopify://pages/contact",
-        "cta_text": "Take Your 20% Cashback"
-      }
-    },
-    "supercharged_c4EgEg": {
-      "type": "supercharged",
-      "blocks": {
-        "floating_box_pLxVxK": {
-          "type": "floating_box",
-          "settings": {
-            "floating_title": "Jomana M.",
-            "floating_content": "Clinical Lasers are the worst, its painful, i gotta bring my hairy self all the way to a clinic every time and the sessions are crazy pricy!!!",
-            "floating_image": "shopify://shop_images/WhatsApp_Image_2025-02-18_at_5.17.02_PM.jpg"
-          }
-        },
-        "feature_Qhchme": {
-          "type": "feature",
-          "settings": {
-            "feature_title": "Privacy was always an option, stay private",
-            "feature_subtitle": "Take care of your hair at home!",
-            "feature_icon": "shopify://shop_images/incognito-svgrepo-com.svg"
-          }
-        },
-        "feature_V9DXWr": {
-          "type": "feature",
-          "settings": {
-            "feature_title": "Calculate it yourself, Its much cheaper",
-            "feature_subtitle": "Affordable one-time cost",
-            "feature_icon": "shopify://shop_images/cost-round-svgrepo-com.svg"
-          }
-        },
-        "feature_MVnNxX": {
-          "type": "feature",
-          "settings": {
-            "feature_title": "No OUCH OUCH, Its completely painless",
-            "feature_subtitle": "Completely pain-free",
-            "feature_icon": "shopify://shop_images/happy-svgrepo-com.svg"
-          }
-        },
-        "feature_g6BWmf": {
-          "type": "feature",
-          "settings": {
-            "feature_title": "You can use it in 12 different  ways, Do a backflip!",
-            "feature_subtitle": "Effortlessly Tackle Hair on Legs, Arms, Face, and Even Bikini Line!",
-            "feature_icon": "shopify://shop_images/arrow-two-way-left-right-svgrepo-com.svg"
-          }
-        }
-      },
-      "block_order": [
-        "floating_box_pLxVxK",
-        "feature_Qhchme",
-        "feature_V9DXWr",
-        "feature_MVnNxX",
-        "feature_g6BWmf"
-      ],
-      "settings": {
-        "heading": "Laserly vs Clinical Laser",
-        "large_image": "shopify://shop_images/AdobeStock_244455994-1024x683.jpg"
-      }
-    },
     "testimonials_UAVNTx": {
       "type": "testimonials",
       "blocks": {
@@ -429,6 +300,121 @@
         "testimonial_qDJhAg"
       ],
       "settings": {}
+    },
+    "3twins_faD4Cb": {
+      "type": "3twins",
+      "blocks": {
+        "image_mMbgQq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/3_3000x3000_de9bed7d-6321-4bff-a8cb-782af367027f.webp",
+            "image_text": "Before - After"
+          }
+        },
+        "image_xLqXFD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/2_3000x3000_c614e928-c814-4c5d-bc77-3a6faf162934.webp",
+            "image_text": "Before - After"
+          }
+        },
+        "image_GCkBGX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1_3000x3000_b893121b-8c7b-451a-a458-f4cbcd1b40cf.webp",
+            "image_text": "Before - After"
+          }
+        }
+      },
+      "block_order": [
+        "image_mMbgQq",
+        "image_xLqXFD",
+        "image_GCkBGX"
+      ],
+      "settings": {
+        "header": "Results",
+        "tag": "",
+        "subheader": "Your Journey to Smooth Skin Starts Here—Check Out the Amazing Results!",
+        "show_cta": true,
+        "cta_link": "/",
+        "cta_text": "Start for Free"
+      }
+    },
+    "swiper_WaAkR6": {
+      "type": "swiper",
+      "blocks": {
+        "video_JBMpGT": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739892285/ssstik.io___silkskinco__1739892178161_y4sku0.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "video_JBMpGT"
+      ],
+      "settings": {
+        "header": "Send us a testimonial and get 20% cashback",
+        "subheader": "Easy and brief you can make it trust me, get your 20% extra discount immediately after purchase",
+        "cta_link": "shopify://pages/contact",
+        "cta_text": "Take Your 20% Cashback"
+      }
+    },
+    "supercharged_c4EgEg": {
+      "type": "supercharged",
+      "blocks": {
+        "floating_box_pLxVxK": {
+          "type": "floating_box",
+          "settings": {
+            "floating_title": "Jomana M.",
+            "floating_content": "Clinical Lasers are the worst, its painful, i gotta bring my hairy self all the way to a clinic every time and the sessions are crazy pricy!!!",
+            "floating_image": "shopify://shop_images/WhatsApp_Image_2025-02-18_at_5.17.02_PM.jpg"
+          }
+        },
+        "feature_Qhchme": {
+          "type": "feature",
+          "settings": {
+            "feature_title": "Privacy was always an option, stay private",
+            "feature_subtitle": "Take care of your hair at home!",
+            "feature_icon": "shopify://shop_images/incognito-svgrepo-com.svg"
+          }
+        },
+        "feature_V9DXWr": {
+          "type": "feature",
+          "settings": {
+            "feature_title": "Calculate it yourself, Its much cheaper",
+            "feature_subtitle": "Affordable one-time cost",
+            "feature_icon": "shopify://shop_images/cost-round-svgrepo-com.svg"
+          }
+        },
+        "feature_MVnNxX": {
+          "type": "feature",
+          "settings": {
+            "feature_title": "No OUCH OUCH, Its completely painless",
+            "feature_subtitle": "Completely pain-free",
+            "feature_icon": "shopify://shop_images/happy-svgrepo-com.svg"
+          }
+        },
+        "feature_g6BWmf": {
+          "type": "feature",
+          "settings": {
+            "feature_title": "You can use it in 12 different  ways, Do a backflip!",
+            "feature_subtitle": "Effortlessly Tackle Hair on Legs, Arms, Face, and Even Bikini Line!",
+            "feature_icon": "shopify://shop_images/arrow-two-way-left-right-svgrepo-com.svg"
+          }
+        }
+      },
+      "block_order": [
+        "floating_box_pLxVxK",
+        "feature_Qhchme",
+        "feature_V9DXWr",
+        "feature_MVnNxX",
+        "feature_g6BWmf"
+      ],
+      "settings": {
+        "heading": "Laserly vs Clinical Laser",
+        "large_image": "shopify://shop_images/AdobeStock_244455994-1024x683.jpg"
+      }
     },
     "faq_list_zJVwkM": {
       "type": "faq-list",
