@@ -85,32 +85,6 @@
       },
       "blocks": {}
     },
-    "3twins_KMmjwr": {
-      "settings": {
-        "header": "Results",
-        "tag": ""
-      },
-      "blocks": {
-        "image_JNp7K6": {
-          "settings": {
-            "image": "shopify://shop_images/4_3000x3000_ce0229f8-cae2-46f2-bc98-23ec2badc82a.webp",
-            "image_text": "BEFORE  -  AFTER"
-          }
-        },
-        "image_hpEaYh": {
-          "settings": {
-            "image": "shopify://shop_images/2_3000x3000_c614e928-c814-4c5d-bc77-3a6faf162934.webp",
-            "image_text": "BEFORE - AFTER"
-          }
-        },
-        "image_yD777r": {
-          "settings": {
-            "image": "shopify://shop_images/3_3000x3000_de9bed7d-6321-4bff-a8cb-782af367027f.webp",
-            "image_text": "BEFORE - AFTER"
-          }
-        }
-      }
-    },
     "faq_list_zJVwkM": {
       "settings": {},
       "blocks": {
@@ -160,7 +134,6 @@
     "features_section_xcgJND",
     "results_section_fDfYx",
     "product-recommendations",
-    "3twins_KMmjwr",
     "swiper_WaAkR6",
     "supercharged_c4EgEg",
     "testimonials_UAVNTx",
