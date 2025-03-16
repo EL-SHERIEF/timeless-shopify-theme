@@ -10,8 +10,11 @@
     {{- rule -}}
   {% endfor %}
 
-  {# Custom SEO-optimized rules for User-agent: * #}
+  {# Custom SEO-optimized rules for all user agents #}
   {% if group.user_agent.value == '*' %}
+    {# Add a small crawl-delay for all bots to prevent server overload (optional) #}
+    Crawl-delay: 1  {# Adjust or remove if server performance is not an issue #}
+
     {# Block low-value search pages (multilingual support) #}
     Disallow: /ar/search
     Disallow: /ar/search?q=
@@ -19,7 +22,6 @@
     Disallow: /en/search
     Disallow: /en/search?q=
     Disallow: /en/search?*type=
-    {# Add more languages if applicable, e.g., Disallow: /fr/search #}
 
     {# Block faceted navigation and filter parameters to avoid duplicate content #}
     Disallow: /collections/*?*sort_by*
@@ -36,14 +38,11 @@
     Disallow: /collections/types?*
     Disallow: /blogs/*/tagged/*
 
-    {# Block pagination beyond the first page to avoid duplicate content #}
-    Disallow: /collections/*?page=2*
-    Disallow: /collections/*?page=3*
-    Disallow: /collections/*?page=4*
-    Disallow: /collections/*?page=5*
-    {# Note: Adjust the number of pages based on your store's size; block higher pages for larger stores #}
+    {# Block pagination beyond the first page (more comprehensive) #}
+    Disallow: /collections/*?page=*  {# Blocks all pagination pages #}
+    Allow: /collections/*?page=1  {# Ensures the first page is crawlable #}
 
-    {# Block custom search implementations (if applicable) #}
+    {# Block custom search implementations #}
     Disallow: /pages/search-results
     Disallow: /pages/search-results?*
 
@@ -52,10 +51,12 @@
     Allow: /ar/products/
     Allow: /ar/collections/
     Allow: /ar/pages/
+    Allow: /ar/blogs/
     Allow: /en/
     Allow: /en/products/
     Allow: /en/collections/
     Allow: /en/pages/
+    Allow: /en/blogs/
     Allow: /policies/
     Allow: /policies/privacy-policy
     Allow: /policies/refund-policy
@@ -66,53 +67,61 @@
     Allow: /sitemap.xml
     Allow: *.js
     Allow: *.css
-
-    {# Explicitly allow structured data and dynamic content (if used) #}
     Allow: /a/
     Allow: /cdn/
-
-    {# Optional: Reduce crawl rate for aggressive bots to avoid server strain #}
-    # Crawl-delay: 1  {# Uncomment if you notice server overload; adjust value as needed #}
   {% endif %}
 
-  {# Apply SEO rules to specific bots like AhrefsBot and Googlebot for consistency #}
-  {% if group.user_agent.value == 'AhrefsBot' or group.user_agent.value == 'AhrefsSiteAudit' or group.user_agent.value == 'Googlebot' %}
+  {# Apply the same rules to specific bots for consistency #}
+  {% if group.user_agent.value == 'adsbot-google' or group.user_agent.value == 'AhrefsBot' or group.user_agent.value == 'AhrefsSiteAudit' or group.user_agent.value == 'MJ12bot' or group.user_agent.value == 'Pinterest' %}
+    {# Block low-value search pages (multilingual support) #}
     Disallow: /ar/search
     Disallow: /ar/search?q=
     Disallow: /ar/search?*type=
     Disallow: /en/search
     Disallow: /en/search?q=
     Disallow: /en/search?*type=
+
+    {# Block faceted navigation and filter parameters #}
     Disallow: /collections/*?*sort_by*
     Disallow: /collections/*?*filter*
     Disallow: /collections/*?*color*
     Disallow: /collections/*?*size*
     Disallow: /collections/*?*price*
     Disallow: /collections/*?*constraint*
+
+    {# Block auto-generated and thin content pages #}
     Disallow: /collections/vendors
     Disallow: /collections/vendors?*
     Disallow: /collections/types
     Disallow: /collections/types?*
     Disallow: /blogs/*/tagged/*
-    Disallow: /collections/*?page=2*
-    Disallow: /collections/*?page=3*
-    Disallow: /collections/*?page=4*
-    Disallow: /collections/*?page=5*
+
+    {# Block pagination beyond the first page #}
+    Disallow: /collections/*?page=*
+    Allow: /collections/*?page=1
+
+    {# Block custom search implementations #}
     Disallow: /pages/search-results
     Disallow: /pages/search-results?*
+
+    {# Allow high-value pages #}
     Allow: /ar/
     Allow: /ar/products/
     Allow: /ar/collections/
     Allow: /ar/pages/
+    Allow: /ar/blogs/
     Allow: /en/
     Allow: /en/products/
     Allow: /en/collections/
     Allow: /en/pages/
+    Allow: /en/blogs/
     Allow: /policies/
     Allow: /policies/privacy-policy
     Allow: /policies/refund-policy
     Allow: /policies/shipping-policy
     Allow: /policies/terms-of-service
+
+    {# Optimize crawl budget #}
     Allow: /sitemap.xml
     Allow: *.js
     Allow: *.css
@@ -124,8 +133,6 @@
     {{ group.sitemap }}
   {%- endif -%}
 
-  {# Explicitly add sitemap for all user agents to speed up indexing #}
+  {# Add sitemap only once per user agent to avoid redundancy #}
   Sitemap: https://www.laserly.store/sitemap.xml
-  Sitemap: https://www.laserly.store/sitemap-pages.xml  {# If you have a pages sitemap #}
-  Sitemap: https://www.laserly.store/sitemap-products.xml  {# If you have a products sitemap #}
 {% endfor %}
