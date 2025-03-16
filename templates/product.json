@@ -9,13 +9,6 @@
  */
 {
   "sections": {
-    "whatsapp_TNKXMV": {
-      "type": "Whatsapp",
-      "settings": {
-        "waphonenumber": "201064256907",
-        "input_placeholder": "ارسل رسالة"
-      }
-    },
     "besthero_3TKt8U": {
       "type": "besthero",
       "settings": {
@@ -32,6 +25,61 @@
         "marquee_slot_6": "Permanent Hair Remove – 78% Off",
         "marquee_slot_7": "LIMITED AMOUNT",
         "marquee_slot_8": "FREE SHIPPING"
+      }
+    },
+    "before_after_UE7kMm": {
+      "type": "before-after",
+      "settings": {
+        "background_color": "#ffffff",
+        "text_color": "#1a1a1a",
+        "before_image": "shopify://shop_images/33.webp",
+        "after_image": "shopify://shop_images/34.webp",
+        "title": "Achieve long-lasting results effortlessly",
+        "description": "Get smooth skin without the hassle of daily shaving or salon appointments. In just a few weeks, you’ll enjoy long-lasting results. A simple solution for beauty that lasts."
+      }
+    },
+    "story_teller_eBXMer": {
+      "type": "story-teller",
+      "blocks": {
+        "media_text_block_FfYjXg": {
+          "type": "media_text_block",
+          "settings": {
+            "title": "Say goodbye to the pains of traditional hair removal",
+            "description": "Imagine never again feeling the pain of \nwaxing or the irritation of shaving. With our\nIPL technology, hair removal becomes\ngentle and pleasant. Say goodbye to\nredness\nand\ningrown\nhairs for soothed skin.",
+            "media_type": "image",
+            "image": "shopify://shop_images/GIF.webp",
+            "video_url": ""
+          }
+        },
+        "media_text_block_nbJJNb": {
+          "type": "media_text_block",
+          "settings": {
+            "title": "Easy to use",
+            "description": "Enjoy an intuitive device that easily integrates into your beauty routine. In just a few minutes, treat any area with ease thanks to the automatic flash mode, ideal for large surfaces. No need to be an expert to achieve professional results.",
+            "media_type": "image",
+            "image": "shopify://shop_images/GIF2.webp",
+            "video_url": ""
+          }
+        },
+        "media_text_block_7gqYwb": {
+          "type": "media_text_block",
+          "settings": {
+            "title": "Secure technology suitable for most skin and hair types",
+            "description": "Our technology adapts to your skin type for optimal results safely. Thanks to PrecisionPulse™ IPL technology, which flashes at 10 ms, up to 4 times longer than competing IPL, the light is primarily absorbed by the melanin in your hair and not by that in your skin.",
+            "media_type": "image",
+            "image": "shopify://shop_images/7_7cbc968c-6797-46ff-9499-39b37a633759.png",
+            "video_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_text_block_FfYjXg",
+        "media_text_block_nbJJNb",
+        "media_text_block_7gqYwb"
+      ],
+      "settings": {
+        "background_color": "#fff9f3",
+        "text_color": "#1a1a1a"
       }
     },
     "product-form": {
@@ -109,6 +157,19 @@
         "carousel_fade_enabled": true,
         "carousel_autoHeight": true,
         "carousel_slidesPerView": 9
+      }
+    },
+    "results_section_7LLFp8": {
+      "type": "results-section",
+      "settings": {
+        "heading": "Our Users Achieved Exceptional Results In Just 4 Weeks",
+        "highlight_text": "In Just 4 Weeks",
+        "result_1_text": "Observed a significant reduction in hair density after just 4 weeks of use.",
+        "result_1_percentage": "95",
+        "result_2_text": "Noticed a visible reduction in hair regrowth, leaving their skin smoother and softer.",
+        "result_2_percentage": "98",
+        "result_3_text": "Reported a notable reduction in irritation and redness, enjoying calmer and healthier skin.",
+        "result_3_percentage": "92"
       }
     },
     "features_section_xcgJND": {
@@ -395,9 +456,11 @@
     }
   },
   "order": [
-    "whatsapp_TNKXMV",
     "besthero_3TKt8U",
+    "before_after_UE7kMm",
+    "story_teller_eBXMer",
     "product-form",
+    "results_section_7LLFp8",
     "features_section_xcgJND",
     "product-recommendations",
     "before_after_y8TLFx",
