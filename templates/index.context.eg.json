@@ -12,36 +12,5 @@
   "context": {
     "market": "eg"
   },
-  "sections": {
-    "besthero_exj7tB": {
-      "settings": {
-        "hero_heading": "Home Laser Machine for Hair Removal for All Skin Types",
-        "hero_text": "78% Off – Pain-Free In Home Hair Removal Laser with Free Shipping",
-        "marquee_slot_1": "Home Laser Machine for Hair Removal",
-        "marquee_slot_2": "In Home Hair Removal Laser Device",
-        "marquee_slot_3": "DIY Laser Hair Removal",
-        "marquee_slot_4": "Pain-Free Lazer Razor Alternative",
-        "marquee_slot_5": "Free Shipping on Smooth Pro",
-        "marquee_slot_6": "Permanent Hair Remove – 78% Off",
-        "marquee_slot_7": "Order Now",
-        "marquee_slot_8": "FREE SHIPPING"
-      },
-      "blocks": {}
-    },
-    "collection-list": {
-      "settings": {
-        "content": "<p>Pain-Free Laserly Smooth Pro – In Home Hair Removal Laser</p>",
-        "subcontent": "<p>Get infinite flashes, 78% off, and free shipping today!</p>"
-      },
-      "blocks": {}
-    },
-    "swiper_jLLmtx": {
-      "settings": {
-        "header": "Send us a testimonial, extra 20% off",
-        "subheader": "send us a testimonial video and get extra 20% cashback right after purchace",
-        "cta_link": "shopify://products/smoothpro"
-      },
-      "blocks": {}
-    }
-  }
+  "sections": {}
 }
