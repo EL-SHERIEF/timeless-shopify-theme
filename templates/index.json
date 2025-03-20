@@ -30,6 +30,12 @@
     "collection-list": {
       "type": "resource-list",
       "blocks": {
+        "product_TLQmLz": {
+          "type": "product",
+          "settings": {
+            "product": "duka-little-q-electronic-ruler-atuman-tape-hd-lcd-screen-long-standby-rechargeable-ruler"
+          }
+        },
         "product_LLJfNU": {
           "type": "product",
           "settings": {
@@ -38,6 +44,7 @@
         }
       },
       "block_order": [
+        "product_TLQmLz",
         "product_LLJfNU"
       ],
       "custom_css": [],
@@ -51,6 +58,7 @@
     },
     "features_section_ygAAJd": {
       "type": "featuresSection",
+      "disabled": true,
       "settings": {}
     },
     "promotional_banners_Jdapkk": {
