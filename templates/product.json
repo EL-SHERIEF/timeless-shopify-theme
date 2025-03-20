@@ -40,7 +40,7 @@
         "54221e7b-8868-4c06-bc77-ea9ea93bea2b": {
           "type": "buy-button",
           "settings": {
-            "text": "Get Yours Now 🥰",
+            "text": "Add to Cart",
             "inventory_text": "",
             "full_width": true,
             "show_payment_buttons": true
