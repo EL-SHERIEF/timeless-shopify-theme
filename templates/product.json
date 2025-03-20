@@ -14,6 +14,7 @@
       "blocks": {
         "8827b8ca-82ef-4494-b7ae-5b4db5859373": {
           "type": "vendor",
+          "disabled": true,
           "settings": {
             "tailwind": ""
           }
@@ -30,12 +31,12 @@
           "type": "quantity-selector",
           "settings": {}
         },
-        "54221e7b-8868-4c06-bc77-ea9ea93bea2b": {
+        "buy_button_UNyjz3": {
           "type": "buy-button",
           "settings": {
-            "text": "Add to Cart",
+            "text": "",
             "inventory_text": "",
-            "full_width": true,
+            "full_width": false,
             "show_payment_buttons": true
           }
         },
@@ -50,15 +51,10 @@
         },
         "richtext_qMtRBN": {
           "type": "richtext",
+          "disabled": true,
           "settings": {
             "richtext": "<p>Product Description</p>",
             "tailwind": "mt-10 text-black/30 bg-black/5 rounded-lg px-5 py-2 text-xs"
-          }
-        },
-        "ea60413e-869a-4388-8cf9-de82ddcf8503": {
-          "type": "divider",
-          "settings": {
-            "label": "Product description"
           }
         },
         "486d662c-5fd8-4399-b13b-bd4cf3d00b09": {
@@ -73,10 +69,9 @@
         "dbad3ae8-84d5-48a6-9ab8-8885e1ee2c41",
         "07d05eb6-e4ce-4fa1-81d6-3b59e0854401",
         "53d588d3-8f9e-4dc5-8de0-e3eca78cd48f",
-        "54221e7b-8868-4c06-bc77-ea9ea93bea2b",
+        "buy_button_UNyjz3",
         "0442fcb3-bb2b-4c7c-854f-063c431018ce",
         "richtext_qMtRBN",
-        "ea60413e-869a-4388-8cf9-de82ddcf8503",
         "486d662c-5fd8-4399-b13b-bd4cf3d00b09"
       ],
       "settings": {
