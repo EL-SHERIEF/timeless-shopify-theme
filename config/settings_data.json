@@ -20,6 +20,13 @@
     "checkout_accent_color": "#dd1d1d",
     "checkout_button_color": "#dd1d1d",
     "content_for_index": [],
+    "blocks": {
+      "6544682535036668446": {
+        "type": "shopify://apps/pumper-bundles-quantity-breaks/blocks/app-embed/0856870d-2aca-4b1e-a662-cf1797f61270",
+        "disabled": false,
+        "settings": {}
+      }
+    },
     "color_schemes": {
       "default": {
         "settings": {
