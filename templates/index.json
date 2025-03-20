@@ -30,6 +30,12 @@
     "collection-list": {
       "type": "resource-list",
       "blocks": {
+        "product_VYxHTr": {
+          "type": "product",
+          "settings": {
+            "product": "us-plug-power-strip-multitap-6-ac-outlets-2-usb-2-type-c-port-charge-electrical-socket-network-filter-fast-charging-home-office"
+          }
+        },
         "product_TLQmLz": {
           "type": "product",
           "settings": {
@@ -44,6 +50,7 @@
         }
       },
       "block_order": [
+        "product_VYxHTr",
         "product_TLQmLz",
         "product_LLJfNU"
       ],
