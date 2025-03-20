@@ -9,80 +9,6 @@
  */
 {
   "sections": {
-    "besthero_3TKt8U": {
-      "type": "besthero",
-      "settings": {
-        "background_video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1741940224/ssstik.io__beauty_life_w_1741940079793_nwmd9j.mov",
-        "image": "shopify://shop_images/Screenshot_2025-03-16_182726.jpg",
-        "use_image_instead_of_video": false,
-        "hero_heading": "Pain-Free At-Home Laser Hair Removal for All Skin Types",
-        "hero_text": "78% Off – Universal permanent Hair removal Device with Free Shipping!",
-        "show_overlay": true,
-        "marquee_slot_1": "Home Laser Machine for Hair Removal",
-        "marquee_slot_2": "In Home Hair Removal Laser Device",
-        "marquee_slot_3": "DIY Laser Hair Removal",
-        "marquee_slot_4": "Pain-Free Lazer Razor Alternative",
-        "marquee_slot_5": "Free Shipping on Smooth Pro",
-        "marquee_slot_6": "Permanent Hair Remove – 78% Off",
-        "marquee_slot_7": "LIMITED AMOUNT",
-        "marquee_slot_8": "FREE SHIPPING"
-      }
-    },
-    "before_after_UE7kMm": {
-      "type": "before-after",
-      "settings": {
-        "background_color": "#ffffff",
-        "text_color": "#1a1a1a",
-        "before_image": "shopify://shop_images/33.webp",
-        "after_image": "shopify://shop_images/34.webp",
-        "title": "Achieve long-lasting results effortlessly",
-        "description": "Get smooth skin without the hassle of daily shaving or salon appointments. In just a few weeks, you’ll enjoy long-lasting results. A simple solution for beauty that lasts."
-      }
-    },
-    "story_teller_eBXMer": {
-      "type": "story-teller",
-      "blocks": {
-        "media_text_block_FfYjXg": {
-          "type": "media_text_block",
-          "settings": {
-            "title": "Say goodbye to the pains of traditional hair removal",
-            "description": "Imagine never again feeling the pain of \nwaxing or the irritation of shaving. With our\nIPL technology, hair removal becomes\ngentle and pleasant. Say goodbye to\nredness\nand\ningrown\nhairs for soothed skin.",
-            "media_type": "image",
-            "image": "shopify://shop_images/GIF.webp",
-            "video_url": ""
-          }
-        },
-        "media_text_block_nbJJNb": {
-          "type": "media_text_block",
-          "settings": {
-            "title": "Easy to use",
-            "description": "Enjoy an intuitive device that easily integrates into your beauty routine. In just a few minutes, treat any area with ease thanks to the automatic flash mode, ideal for large surfaces. No need to be an expert to achieve professional results.",
-            "media_type": "image",
-            "image": "shopify://shop_images/GIF2.webp",
-            "video_url": ""
-          }
-        },
-        "media_text_block_7gqYwb": {
-          "type": "media_text_block",
-          "settings": {
-            "title": "Secure technology suitable for most skin and hair types",
-            "description": "Our technology adapts to your skin type for optimal results safely. Thanks to PrecisionPulse™ IPL technology, which flashes at 10 ms, up to 4 times longer than competing IPL, the light is primarily absorbed by the melanin in your hair and not by that in your skin.",
-            "media_type": "image",
-            "image": "shopify://shop_images/7_7cbc968c-6797-46ff-9499-39b37a633759.png",
-            "video_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "media_text_block_FfYjXg",
-        "media_text_block_nbJJNb",
-        "media_text_block_7gqYwb"
-      ],
-      "settings": {
-        "background_color": "#fff9f3",
-        "text_color": "#1a1a1a"
-      }
-    },
     "product-form": {
       "type": "product-form",
       "blocks": {
@@ -102,6 +28,7 @@
         },
         "743a2bf4-9909-45f2-9b51-411702650ac1": {
           "type": "variant-selector",
+          "disabled": true,
           "settings": {
             "show_dividers": false
           }
@@ -160,13 +87,42 @@
         "carousel_slidesPerView": 9
       }
     },
+    "besthero_3TKt8U": {
+      "type": "besthero",
+      "disabled": true,
+      "settings": {
+        "background_video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1741940224/ssstik.io__beauty_life_w_1741940079793_nwmd9j.mov",
+        "use_image_instead_of_video": false,
+        "hero_heading": "Pain-Free At-Home Laser Hair Removal for All Skin Types",
+        "hero_text": "78% Off – Universal permanent Hair removal Device with Free Shipping!",
+        "show_overlay": true,
+        "marquee_slot_1": "Home Laser Machine for Hair Removal",
+        "marquee_slot_2": "In Home Hair Removal Laser Device",
+        "marquee_slot_3": "DIY Laser Hair Removal",
+        "marquee_slot_4": "Pain-Free Lazer Razor Alternative",
+        "marquee_slot_5": "Free Shipping on Smooth Pro",
+        "marquee_slot_6": "Permanent Hair Remove – 78% Off",
+        "marquee_slot_7": "LIMITED AMOUNT",
+        "marquee_slot_8": "FREE SHIPPING"
+      }
+    },
+    "before_after_UE7kMm": {
+      "type": "before-after",
+      "disabled": true,
+      "settings": {
+        "background_color": "#ffffff",
+        "text_color": "#1a1a1a",
+        "title": "Achieve long-lasting results effortlessly",
+        "description": "Get smooth skin without the hassle of daily shaving or salon appointments. In just a few weeks, you’ll enjoy long-lasting results. A simple solution for beauty that lasts."
+      }
+    },
     "features_section_xcgJND": {
       "type": "featuresSection",
       "blocks": {
         "item_PQMkXy": {
           "type": "item",
           "settings": {
-            "item_image": "shopify://shop_images/friendship-day.gif",
+            "item_image": "shopify://shop_images/friendship-day_medium_ef02b5c3-8fa0-4982-8b98-dfdb6a33a9f2.webp",
             "item_title": "90-Day Guarantee",
             "item_subtitle": "Peace of Mind for 3 Months!"
           }
@@ -174,7 +130,7 @@
         "item_3MP7f8": {
           "type": "item",
           "settings": {
-            "item_image": "shopify://shop_images/Animation_-_1739918393852.gif",
+            "item_image": "shopify://shop_images/Animation_-_1739918393852_medium_6b64514b-2d36-4c75-8ecc-3b603bc9d6e5.webp",
             "item_title": "Free Shipping",
             "item_subtitle": "Fast, Free, and Hassle-Free!"
           }
@@ -182,15 +138,15 @@
         "item_4YTnKU": {
           "type": "item",
           "settings": {
-            "item_image": "shopify://shop_images/Animation_-_1739918721366.gif",
-            "item_title": "Elite",
-            "item_subtitle": "Crafted for Those Who Demand the Best"
+            "item_image": "shopify://shop_images/Animation_-_1739918721366_medium_2067ba30-d035-4d53-9e1f-294acc579657.webp",
+            "item_title": "Class A Build Quality",
+            "item_subtitle": "Best manufacturing quality in market"
           }
         },
         "item_RRyMrX": {
           "type": "item",
           "settings": {
-            "item_image": "shopify://shop_images/Animation_-_1739918140596_1.gif",
+            "item_image": "shopify://shop_images/Animation_-_1739918140596_1_medium_75ef8f25-dd48-4b71-88aa-e6f80eec9c49.webp",
             "item_title": "Best Market Price",
             "item_subtitle": "Prices You Won’t Find Anywhere Else"
           }
@@ -203,6 +159,47 @@
         "item_RRyMrX"
       ],
       "settings": {}
+    },
+    "story_teller_eBXMer": {
+      "type": "story-teller",
+      "blocks": {
+        "media_text_block_FfYjXg": {
+          "type": "media_text_block",
+          "settings": {
+            "title": "Why Choose This Extension Strip?",
+            "description": "Enjoy tangle-free power with this electric socket extension strip. It offers safe, reliable charging, a compact design, and versatile use for home or office setups.",
+            "media_type": "image",
+            "video_url": ""
+          }
+        },
+        "media_text_block_nbJJNb": {
+          "type": "media_text_block",
+          "settings": {
+            "title": "Perfect for Every Space",
+            "description": "This electrical socket extension cord shines in homes, offices, or workshops. Use it with the electric socket extender tower for multi-level power needs.",
+            "media_type": "image",
+            "video_url": ""
+          }
+        },
+        "media_text_block_7gqYwb": {
+          "type": "media_text_block",
+          "settings": {
+            "title": "Smart Power Protection",
+            "description": "Built with a 600-joule surge protector, this smart electric socket extension keeps devices safe. Overload protection ensures worry-free use every time.",
+            "media_type": "image",
+            "video_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_text_block_FfYjXg",
+        "media_text_block_nbJJNb",
+        "media_text_block_7gqYwb"
+      ],
+      "settings": {
+        "background_color": "#fff9f3",
+        "text_color": "#1a1a1a"
+      }
     },
     "results_section_7LLFp8": {
       "type": "results-section",
@@ -223,7 +220,6 @@
         "testimonial_y8M9tW": {
           "type": "testimonial",
           "settings": {
-            "customer_image": "shopify://shop_images/female-avatar-girl-face-woman-user-4_1.svg",
             "customer_name": "Kathern d.",
             "customer_position": "Verified Customer",
             "testimonial_text": "Y’all, this product is a lifesaver!",
@@ -233,7 +229,6 @@
         "testimonial_hjTkPJ": {
           "type": "testimonial",
           "settings": {
-            "customer_image": "shopify://shop_images/female-avatar-girl-face-woman-user-4_1.svg",
             "customer_name": "سنا .ا",
             "customer_position": "Verified Customer",
             "testimonial_text": "يا جماعة، الجهاز رهيب! والله من أول مرة حسيت بالفرق. استخدامه سهل وما يسبب أي ألم، والنتيجة فعلاً ممتازة. بنصحكم تجربونه.👌",
@@ -243,7 +238,6 @@
         "testimonial_NDeC8r": {
           "type": "testimonial",
           "settings": {
-            "customer_image": "shopify://shop_images/female-avatar-girl-face-woman-user-4_1.svg",
             "customer_name": "Sa Li",
             "customer_position": "Verified Customer",
             "testimonial_text": "ما كنت مصدقة إنو النتيجة رح تكون هيك! عن جد شي بيعقد، وأنا كتير مبسوطة من النعومة. سهولة الاستخدام بتخليه مناسب لأي وقت، وعن جد بنصح فيه كل البنات.",
@@ -253,7 +247,6 @@
         "testimonial_pGeTGL": {
           "type": "testimonial",
           "settings": {
-            "customer_image": "shopify://shop_images/female-avatar-girl-face-woman-user-4_1.svg",
             "customer_name": "ام قاسم و محمد",
             "customer_position": "Verified Customer",
             "testimonial_text": "والله العظيم جهاز رهيب! بعد ما استخدمته، الشعر قل بشكل واضح وصار أنعم بكثير. كنت مترددة بالبداية، بس عن جد يستاهل التجربة.",
@@ -263,7 +256,6 @@
         "testimonial_Ap9Ukb": {
           "type": "testimonial",
           "settings": {
-            "customer_image": "shopify://shop_images/female-avatar-girl-face-woman-user-4_1.svg",
             "customer_name": "لمياء .ا",
             "customer_position": "Verified Customer",
             "testimonial_text": "جهاز SmoothPro تحفة بصراحة! أول مرة أجرب حاجة زي كذا لإزالة الشعر في البيت، ونتايجه مبهرة. بشرتي صارت ناعمة جدًا والجهاز لطيف على الجلد. أنصح فيه بقوة لكل البنات.",
@@ -273,7 +265,6 @@
         "testimonial_Xe4g4a": {
           "type": "testimonial",
           "settings": {
-            "customer_image": "shopify://shop_images/female-avatar-girl-face-woman-user-4_1.svg",
             "customer_name": "Marram Emad",
             "customer_position": "Verified Customer",
             "testimonial_text": "بصراحة الجهاز ده حلو جداً! جربت أجهزة كتير قبل كده، بس ده فعلاً فرق معايا. النعومة ملحوظة من أول استخدام، وما حسيتش بأي وجع. أنصح أي حد بيدور على حل سهل وسريع يجربه.",
@@ -283,7 +274,6 @@
         "testimonial_qDJhAg": {
           "type": "testimonial",
           "settings": {
-            "customer_image": "shopify://shop_images/female-avatar-girl-face-woman-user-4_1.svg",
             "customer_name": "Lulla",
             "customer_position": "Verified Customer",
             "testimonial_text": "Fair play to Laserly, this thing actually works! I wasn’t expectin’ much, but the results are fantastic. Easy as pie to use, and I’m chuffed with how smooth my skin feels!",
@@ -308,21 +298,18 @@
         "image_mMbgQq": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/3_3000x3000_de9bed7d-6321-4bff-a8cb-782af367027f.webp",
             "image_text": "Before - After"
           }
         },
         "image_xLqXFD": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/2_3000x3000_c614e928-c814-4c5d-bc77-3a6faf162934.webp",
             "image_text": "Before - After"
           }
         },
         "image_GCkBGX": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/1_3000x3000_b893121b-8c7b-451a-a458-f4cbcd1b40cf.webp",
             "image_text": "Before - After"
           }
         }
@@ -368,40 +355,35 @@
           "type": "floating_box",
           "settings": {
             "floating_title": "Jomana M.",
-            "floating_content": "Clinical Lasers are the worst, its painful, i gotta bring my hairy self all the way to a clinic every time and the sessions are crazy pricy!!!",
-            "floating_image": "shopify://shop_images/WhatsApp_Image_2025-02-18_at_5.17.02_PM.jpg"
+            "floating_content": "Clinical Lasers are the worst, its painful, i gotta bring my hairy self all the way to a clinic every time and the sessions are crazy pricy!!!"
           }
         },
         "feature_Qhchme": {
           "type": "feature",
           "settings": {
             "feature_title": "Privacy was always an option, stay private",
-            "feature_subtitle": "Take care of your hair at home!",
-            "feature_icon": "shopify://shop_images/incognito-svgrepo-com.svg"
+            "feature_subtitle": "Take care of your hair at home!"
           }
         },
         "feature_V9DXWr": {
           "type": "feature",
           "settings": {
             "feature_title": "Calculate it yourself, Its much cheaper",
-            "feature_subtitle": "Affordable one-time cost",
-            "feature_icon": "shopify://shop_images/cost-round-svgrepo-com.svg"
+            "feature_subtitle": "Affordable one-time cost"
           }
         },
         "feature_MVnNxX": {
           "type": "feature",
           "settings": {
             "feature_title": "No OUCH OUCH, Its completely painless",
-            "feature_subtitle": "Completely pain-free",
-            "feature_icon": "shopify://shop_images/happy-svgrepo-com.svg"
+            "feature_subtitle": "Completely pain-free"
           }
         },
         "feature_g6BWmf": {
           "type": "feature",
           "settings": {
             "feature_title": "You can use it in 12 different  ways, Do a backflip!",
-            "feature_subtitle": "Effortlessly Tackle Hair on Legs, Arms, Face, and Even Bikini Line!",
-            "feature_icon": "shopify://shop_images/arrow-two-way-left-right-svgrepo-com.svg"
+            "feature_subtitle": "Effortlessly Tackle Hair on Legs, Arms, Face, and Even Bikini Line!"
           }
         }
       },
@@ -413,8 +395,7 @@
         "feature_g6BWmf"
       ],
       "settings": {
-        "heading": "Laserly vs Clinical Laser",
-        "large_image": "shopify://shop_images/AdobeStock_244455994-1024x683.jpg"
+        "heading": "Laserly vs Clinical Laser"
       }
     },
     "faq_list_zJVwkM": {
@@ -479,11 +460,11 @@
     }
   },
   "order": [
+    "product-form",
     "besthero_3TKt8U",
     "before_after_UE7kMm",
-    "story_teller_eBXMer",
-    "product-form",
     "features_section_xcgJND",
+    "story_teller_eBXMer",
     "results_section_7LLFp8",
     "testimonials_UAVNTx",
     "3twins_faD4Cb",
