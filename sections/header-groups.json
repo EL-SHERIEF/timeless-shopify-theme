@@ -42,7 +42,7 @@
       ],
       "settings": {
         "color_scheme": "default",
-        "logo": "shopify://shop_images/SOCKET_Easy.png",
+        "logo": "shopify://shop_images/SOCKET_Easy.svg",
         "menu": "main-menu",
         "show_cart_item_count": false,
         "show_cart_subtotal": true
