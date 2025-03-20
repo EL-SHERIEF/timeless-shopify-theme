@@ -1,0 +1,135 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "product-form": {
+      "type": "product-form",
+      "blocks": {
+        "8827b8ca-82ef-4494-b7ae-5b4db5859373": {
+          "type": "vendor",
+          "settings": {
+            "tailwind": ""
+          }
+        },
+        "dbad3ae8-84d5-48a6-9ab8-8885e1ee2c41": {
+          "type": "title",
+          "settings": {}
+        },
+        "07d05eb6-e4ce-4fa1-81d6-3b59e0854401": {
+          "type": "price",
+          "settings": {}
+        },
+        "743a2bf4-9909-45f2-9b51-411702650ac1": {
+          "type": "variant-selector",
+          "settings": {
+            "show_dividers": false
+          }
+        },
+        "53d588d3-8f9e-4dc5-8de0-e3eca78cd48f": {
+          "type": "quantity-selector",
+          "settings": {}
+        },
+        "54221e7b-8868-4c06-bc77-ea9ea93bea2b": {
+          "type": "buy-button",
+          "settings": {
+            "text": "",
+            "inventory_text": "",
+            "full_width": false,
+            "show_payment_buttons": false
+          }
+        },
+        "0442fcb3-bb2b-4c7c-854f-063c431018ce": {
+          "type": "inventory",
+          "settings": {
+            "text": "Only # left in stock!",
+            "threshold_enabled": true,
+            "threshold": 10,
+            "tailwind": ""
+          }
+        },
+        "74abe424-5bff-44b1-9009-3fa5933c001e": {
+          "type": "tags",
+          "settings": {
+            "tailwind": ""
+          }
+        },
+        "ab048911-1693-4355-8269-ab1415cb7ec2": {
+          "type": "sku",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "8827b8ca-82ef-4494-b7ae-5b4db5859373",
+        "dbad3ae8-84d5-48a6-9ab8-8885e1ee2c41",
+        "07d05eb6-e4ce-4fa1-81d6-3b59e0854401",
+        "743a2bf4-9909-45f2-9b51-411702650ac1",
+        "53d588d3-8f9e-4dc5-8de0-e3eca78cd48f",
+        "54221e7b-8868-4c06-bc77-ea9ea93bea2b",
+        "0442fcb3-bb2b-4c7c-854f-063c431018ce",
+        "74abe424-5bff-44b1-9009-3fa5933c001e",
+        "ab048911-1693-4355-8269-ab1415cb7ec2"
+      ],
+      "settings": {
+        "show_pickup_availability": false,
+        "carousel_zoom_enabled": true,
+        "carousel_fade_enabled": true,
+        "carousel_autoHeight": true,
+        "carousel_slidesPerView": 8
+      }
+    },
+    "resource-tabs": {
+      "type": "resource-tabs",
+      "blocks": {
+        "e77e1b95-b9db-4eaf-8848-f66146ad2f18": {
+          "type": "product",
+          "settings": {
+            "title": "Product description",
+            "product": ""
+          }
+        },
+        "95542676-7659-4c18-8463-ff095c129a20": {
+          "type": "page",
+          "settings": {
+            "title": "Page content",
+            "page": "blank-page"
+          }
+        },
+        "dfd20e79-1d3a-4740-9078-fc0dd23e7e5e": {
+          "type": "richtext",
+          "settings": {
+            "title": "Important information",
+            "content": "<h2>Please don't take this store seriously.</h2><p>This site is made to demonstrate the capabilities and possible styles of the Timeless Shopify Theme.</p><p>But please do have some fun!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "e77e1b95-b9db-4eaf-8848-f66146ad2f18",
+        "95542676-7659-4c18-8463-ff095c129a20",
+        "dfd20e79-1d3a-4740-9078-fc0dd23e7e5e"
+      ],
+      "settings": {
+        "title": "Details"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "color_scheme": "",
+        "content": "<h2>Product Recommendations</h2>",
+        "intent": "related"
+      }
+    }
+  },
+  "order": [
+    "product-form",
+    "resource-tabs",
+    "product-recommendations"
+  ]
+}
