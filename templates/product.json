@@ -55,6 +55,13 @@
             "tailwind": ""
           }
         },
+        "richtext_qMtRBN": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>Product Description</p>",
+            "tailwind": "mt-10 text-black/30 bg-black/5 rounded-lg px-5 py-2 text-xs"
+          }
+        },
         "ea60413e-869a-4388-8cf9-de82ddcf8503": {
           "type": "divider",
           "settings": {
@@ -76,6 +83,7 @@
         "53d588d3-8f9e-4dc5-8de0-e3eca78cd48f",
         "54221e7b-8868-4c06-bc77-ea9ea93bea2b",
         "0442fcb3-bb2b-4c7c-854f-063c431018ce",
+        "richtext_qMtRBN",
         "ea60413e-869a-4388-8cf9-de82ddcf8503",
         "486d662c-5fd8-4399-b13b-bd4cf3d00b09"
       ],
@@ -203,6 +211,7 @@
     },
     "results_section_7LLFp8": {
       "type": "results-section",
+      "disabled": true,
       "settings": {
         "heading": "Our Users Achieved Exceptional Results In Just 4 Weeks",
         "highlight_text": "In Just 4 Weeks",
@@ -394,6 +403,7 @@
         "feature_MVnNxX",
         "feature_g6BWmf"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Laserly vs Clinical Laser"
       }
