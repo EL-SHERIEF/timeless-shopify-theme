@@ -176,8 +176,8 @@
           "settings": {
             "title": "Why Choose This Extension Strip?",
             "description": "Enjoy tangle-free power with this electric socket extension strip. It offers safe, reliable charging, a compact design, and versatile use for home or office setups.",
-            "media_type": "image",
-            "video_url": ""
+            "media_type": "video",
+            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1742451296/f5e8996fd96140e987d6154ad8ef36d9.HD-720p-4.5Mbps-44078583_exchzb.mp4"
           }
         },
         "media_text_block_nbJJNb": {
@@ -185,8 +185,8 @@
           "settings": {
             "title": "Perfect for Every Space",
             "description": "This electrical socket extension cord shines in homes, offices, or workshops. Use it with the electric socket extender tower for multi-level power needs.",
-            "media_type": "image",
-            "video_url": ""
+            "media_type": "video",
+            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1742450803/99f3ecbfba353cfee841a0e269fc20a9347a2107e69657df7c3f816d7210706c_1_njpbym.mp4"
           }
         },
         "media_text_block_7gqYwb": {
@@ -233,16 +233,6 @@
             "customer_name": "Kathern d.",
             "customer_position": "Verified Customer",
             "testimonial_text": "Behind my TV, outlets were a pain to reach. This electrical socket extension pulls out smoothly with USB ports for my Roku. No more unplugging—total lifesaver!",
-            "star_rating": 5
-          }
-        },
-        "testimonial_hjTkPJ": {
-          "type": "testimonial",
-          "settings": {
-            "customer_image": "shopify://shop_images/istockphoto-1337144146-612x612.jpg",
-            "customer_name": "Jana M.",
-            "customer_position": "Verified Customer",
-            "testimonial_text": "يا جماعة، الجهاز رهيب! والله من أول مرة حسيت بالفرق. استخدامه سهل وما يسبب أي ألم، والنتيجة فعلاً ممتازة. بنصحكم تجربونه.👌",
             "star_rating": 5
           }
         },
@@ -299,7 +289,6 @@
       },
       "block_order": [
         "testimonial_y8M9tW",
-        "testimonial_hjTkPJ",
         "testimonial_NDeC8r",
         "testimonial_pGeTGL",
         "testimonial_Ap9Ukb",
