@@ -14,24 +14,12 @@
     "anim_emoji": "🕕",
     "border_radius": 8,
     "fully_rounded_buttons": true,
-    "favicon": "shopify://shop_images/Frame_469.svg",
+    "favicon": "shopify://shop_images/Frame_349.svg",
     "checkout_input_background_color_mode": "transparent",
     "checkout_sidebar_background_color": "#fff",
     "checkout_accent_color": "#dd1d1d",
     "checkout_button_color": "#dd1d1d",
     "content_for_index": [],
-    "blocks": {
-      "18423266570658624584": {
-        "type": "shopify://apps/beast-currency-converter/blocks/doubly/267afa86-a419-4d5b-a61b-556038e7294d",
-        "disabled": true,
-        "settings": {}
-      },
-      "13768625480086291342": {
-        "type": "shopify://apps/forms/blocks/forms/8744a304-fcb1-4347-b211-bb6b4759a76a",
-        "disabled": false,
-        "settings": {}
-      }
-    },
     "color_schemes": {
       "default": {
         "settings": {
