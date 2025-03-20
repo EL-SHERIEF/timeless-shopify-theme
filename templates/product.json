@@ -324,6 +324,7 @@
         "image_xLqXFD",
         "image_GCkBGX"
       ],
+      "disabled": true,
       "settings": {
         "header": "Results",
         "tag": "",
@@ -346,6 +347,7 @@
       "block_order": [
         "video_JBMpGT"
       ],
+      "disabled": true,
       "settings": {
         "header": "Send us a testimonial and get 20% cashback",
         "subheader": "Easy and brief you can make it trust me, get your 20% extra discount immediately after purchase",
