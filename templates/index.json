@@ -12,8 +12,7 @@
     "besthero_exj7tB": {
       "type": "besthero",
       "settings": {
-        "background_video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1739735588/WhatsApp_Video_2025-02-16_at_9.12.13_PM_ry56el.mp4",
-        "image": "shopify://shop_images/GIF2.webp",
+        "background_video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1742450797/ssstik.io__mik.zenon_1742264082140_vqrpai.mp4",
         "use_image_instead_of_video": true,
         "hero_heading": "Home Laser Machine for Hair Removal for All Skin Types",
         "hero_text": "78% Off – Pain-Free In Home Hair Removal Laser with Free Shipping",
@@ -70,7 +69,6 @@
         "testimonial_Dd4McF": {
           "type": "testimonial",
           "settings": {
-            "customer_image": "shopify://shop_images/images.jpg",
             "customer_name": "John Doe",
             "customer_position": "CEO, Company",
             "testimonial_text": "This is an amazing product! I absolutely love it.",
@@ -80,7 +78,6 @@
         "testimonial_wVPHWJ": {
           "type": "testimonial",
           "settings": {
-            "customer_image": "shopify://shop_images/WhatsApp_Image_2025-02-18_at_5.17.02_PM.png",
             "customer_name": "John Doe",
             "customer_position": "CEO, Company",
             "testimonial_text": "This is an amazing product! I absolutely love it.",
@@ -90,7 +87,6 @@
         "testimonial_e6FmDk": {
           "type": "testimonial",
           "settings": {
-            "customer_image": "shopify://shop_images/4_cba4dba2-5001-4ad6-8dae-5dc997bd9f0d.jpg",
             "customer_name": "John Doe",
             "customer_position": "CEO, Company",
             "testimonial_text": "This is an amazing product! I absolutely love it.",
@@ -100,7 +96,6 @@
         "testimonial_eVNwh7": {
           "type": "testimonial",
           "settings": {
-            "customer_image": "shopify://shop_images/469097324_1615291046091457_110682489689646525_n.jpg",
             "customer_name": "John Doe",
             "customer_position": "CEO, Company",
             "testimonial_text": "This is an amazing product! I absolutely love it.",
@@ -133,7 +128,6 @@
         "item_NWGcDr": {
           "type": "item",
           "settings": {
-            "item_image": "shopify://shop_images/friendship-day.gif",
             "item_title": "Feature Title",
             "item_subtitle": "Feature description"
           }
@@ -141,7 +135,6 @@
         "item_Y49nVd": {
           "type": "item",
           "settings": {
-            "item_image": "shopify://shop_images/Animation_-_1739918393852.gif",
             "item_title": "Feature Title",
             "item_subtitle": "Feature description"
           }
@@ -149,7 +142,6 @@
         "item_LBYaGK": {
           "type": "item",
           "settings": {
-            "item_image": "shopify://shop_images/Animation_-_1739918721366.gif",
             "item_title": "Feature Title",
             "item_subtitle": "Feature description"
           }
@@ -157,7 +149,6 @@
         "item_8xTjWa": {
           "type": "item",
           "settings": {
-            "item_image": "shopify://shop_images/Animation_-_1739918140596_1.gif",
             "item_title": "Feature Title",
             "item_subtitle": "Feature description"
           }
