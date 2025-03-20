@@ -33,13 +33,6 @@
             "show_dividers": false
           }
         },
-        "pumper_bundles_quantity_breaks_app_block_bundle_hrY4kB": {
-          "type": "shopify://apps/pumper-bundles-quantity-breaks/blocks/app-block-bundle/0856870d-2aca-4b1e-a662-cf1797f61270",
-          "settings": {
-            "selected_product": "power-socket-expander-us-plug-easy-to-use-outlet-hack-for-desks-nightstands",
-            "using_page_builder": false
-          }
-        },
         "53d588d3-8f9e-4dc5-8de0-e3eca78cd48f": {
           "type": "quantity-selector",
           "settings": {}
@@ -87,7 +80,6 @@
         "dbad3ae8-84d5-48a6-9ab8-8885e1ee2c41",
         "07d05eb6-e4ce-4fa1-81d6-3b59e0854401",
         "743a2bf4-9909-45f2-9b51-411702650ac1",
-        "pumper_bundles_quantity_breaks_app_block_bundle_hrY4kB",
         "53d588d3-8f9e-4dc5-8de0-e3eca78cd48f",
         "54221e7b-8868-4c06-bc77-ea9ea93bea2b",
         "0442fcb3-bb2b-4c7c-854f-063c431018ce",
