@@ -12,11 +12,11 @@
     "besthero_exj7tB": {
       "type": "besthero",
       "settings": {
-        "background_video_url": "https://res.cloudhttps://res.cloudinary.com/dpaibs24t/video/upload/v1742450801/f8e66a7a8e54177c5525514e2a04d2a8e7fc9d70415e25a1c8ac472aa4bd82f2_1_cgeauc.mp4inary.com/dpaibs24t/video/upload/v1742450797/360K_rabuod.mp4",
+        "background_video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1742451296/f5e8996fd96140e987d6154ad8ef36d9.HD-720p-4.5Mbps-44078583_exchzb.mp4",
         "use_image_instead_of_video": false,
         "hero_heading": "Home Laser Machine for Hair Removal for All Skin Types",
         "hero_text": "78% Off – Pain-Free In Home Hair Removal Laser with Free Shipping",
-        "show_overlay": true,
+        "show_overlay": false,
         "marquee_slot_1": "Laser Machine for Hair Removal",
         "marquee_slot_2": "In Home Hair Removal Laser Device",
         "marquee_slot_3": "DIY Laser Hair Removal",
