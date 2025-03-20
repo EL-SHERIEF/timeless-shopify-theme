@@ -176,8 +176,8 @@
           "settings": {
             "title": "Why Choose This Extension Strip?",
             "description": "Enjoy tangle-free power with this electric socket extension strip. It offers safe, reliable charging, a compact design, and versatile use for home or office setups.",
-            "media_type": "video",
-            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1742450797/ssstik.io__mik.zenon_1742264082140_vqrpai.mp4"
+            "media_type": "image",
+            "video_url": ""
           }
         },
         "media_text_block_nbJJNb": {
@@ -185,8 +185,8 @@
           "settings": {
             "title": "Perfect for Every Space",
             "description": "This electrical socket extension cord shines in homes, offices, or workshops. Use it with the electric socket extender tower for multi-level power needs.",
-            "media_type": "video",
-            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1742450798/GIFS_d72k53.mp4"
+            "media_type": "image",
+            "video_url": ""
           }
         },
         "media_text_block_7gqYwb": {
@@ -194,8 +194,8 @@
           "settings": {
             "title": "Smart Power Protection",
             "description": "Built with a 600-joule surge protector, this smart electric socket extension keeps devices safe. Overload protection ensures worry-free use every time.",
-            "media_type": "video",
-            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1742450795/7a4f1c62325457eb58c01b5d89f6134e8eeb83043b4ef4ad8696c87a6dfc4073_zsb7a4.mp4"
+            "media_type": "image",
+            "video_url": ""
           }
         }
       },
@@ -231,7 +231,7 @@
           "settings": {
             "customer_name": "Kathern d.",
             "customer_position": "Verified Customer",
-            "testimonial_text": "Y’all, this product is a lifesaver!",
+            "testimonial_text": "Behind my TV, outlets were a pain to reach. This electrical socket extension pulls out smoothly with USB ports for my Roku. No more unplugging—total lifesaver!",
             "star_rating": 5
           }
         },
@@ -249,7 +249,7 @@
           "settings": {
             "customer_name": "Sa Li",
             "customer_position": "Verified Customer",
-            "testimonial_text": "ما كنت مصدقة إنو النتيجة رح تكون هيك! عن جد شي بيعقد، وأنا كتير مبسوطة من النعومة. سهولة الاستخدام بتخليه مناسب لأي وقت، وعن جد بنصح فيه كل البنات.",
+            "testimonial_text": "My kitchen lacked free outlets for my air fryer. The electrical socket extension adjusts perfectly, powering everything with a sturdy strip design. Saved my countertop chaos!",
             "star_rating": 5
           }
         },
@@ -258,7 +258,7 @@
           "settings": {
             "customer_name": "ام قاسم و محمد",
             "customer_position": "Verified Customer",
-            "testimonial_text": "والله العظيم جهاز رهيب! بعد ما استخدمته، الشعر قل بشكل واضح وصار أنعم بكثير. كنت مترددة بالبداية، بس عن جد يستاهل التجربة.",
+            "testimonial_text": "Desk against the wall? No problem now. This electrical socket extension extends my laptop charger easily, and the surge protection is clutch. Office upgrade done right!",
             "star_rating": 5
           }
         },
@@ -267,7 +267,7 @@
           "settings": {
             "customer_name": "لمياء .ا",
             "customer_position": "Verified Customer",
-            "testimonial_text": "جهاز SmoothPro تحفة بصراحة! أول مرة أجرب حاجة زي كذا لإزالة الشعر في البيت، ونتايجه مبهرة. بشرتي صارت ناعمة جدًا والجهاز لطيف على الجلد. أنصح فيه بقوة لكل البنات.",
+            "testimonial_text": "Moving my bed to plug in was ridiculous. With this electrical socket extension, I charge my lamp and phone hassle-free. The extender’s durability is unreal!",
             "star_rating": 5
           }
         },
@@ -276,16 +276,17 @@
           "settings": {
             "customer_name": "Marram Emad",
             "customer_position": "Verified Customer",
-            "testimonial_text": "بصراحة الجهاز ده حلو جداً! جربت أجهزة كتير قبل كده، بس ده فعلاً فرق معايا. النعومة ملحوظة من أول استخدام، وما حسيتش بأي وجع. أنصح أي حد بيدور على حل سهل وسريع يجربه.",
+            "testimonial_text": "My garage tools needed power across the room. This electrical socket extension stretches 10ft with a tough cord—perfect for drills and lights. Highly reliable!",
             "star_rating": 5
           }
         },
         "testimonial_qDJhAg": {
           "type": "testimonial",
           "settings": {
+            "customer_image": "shopify://shop_images/istockphoto-1337144146-612x612.jpg",
             "customer_name": "Lulla",
             "customer_position": "Verified Customer",
-            "testimonial_text": "Fair play to Laserly, this thing actually works! I wasn’t expectin’ much, but the results are fantastic. Easy as pie to use, and I’m chuffed with how smooth my skin feels!",
+            "testimonial_text": "Sofa blocked my living room outlets completely. This electrical socket extension slides out with a flat plug—charges my laptop effortlessly. Couldn’t be happier!",
             "star_rating": 5
           }
         }
