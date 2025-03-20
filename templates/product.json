@@ -26,13 +26,6 @@
           "type": "price",
           "settings": {}
         },
-        "743a2bf4-9909-45f2-9b51-411702650ac1": {
-          "type": "variant-selector",
-          "disabled": true,
-          "settings": {
-            "show_dividers": false
-          }
-        },
         "53d588d3-8f9e-4dc5-8de0-e3eca78cd48f": {
           "type": "quantity-selector",
           "settings": {}
@@ -79,7 +72,6 @@
         "8827b8ca-82ef-4494-b7ae-5b4db5859373",
         "dbad3ae8-84d5-48a6-9ab8-8885e1ee2c41",
         "07d05eb6-e4ce-4fa1-81d6-3b59e0854401",
-        "743a2bf4-9909-45f2-9b51-411702650ac1",
         "53d588d3-8f9e-4dc5-8de0-e3eca78cd48f",
         "54221e7b-8868-4c06-bc77-ea9ea93bea2b",
         "0442fcb3-bb2b-4c7c-854f-063c431018ce",
