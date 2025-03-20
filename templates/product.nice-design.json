@@ -45,24 +45,24 @@
             "show_payment_buttons": false
           }
         },
-        "0442fcb3-bb2b-4c7c-854f-063c431018ce": {
-          "type": "inventory",
-          "settings": {
-            "text": "Only # left in stock!",
-            "threshold_enabled": true,
-            "threshold": 10,
-            "tailwind": ""
-          }
-        },
         "74abe424-5bff-44b1-9009-3fa5933c001e": {
           "type": "tags",
           "settings": {
             "tailwind": ""
           }
         },
-        "ab048911-1693-4355-8269-ab1415cb7ec2": {
-          "type": "sku",
-          "settings": {}
+        "richtext_mDfbdQ": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>Product Description</p>",
+            "tailwind": "mt-10 text-black/30 bg-black/5 rounded-lg px-5 py-2 text-xs"
+          }
+        },
+        "description_YYNkwg": {
+          "type": "description",
+          "settings": {
+            "tailwind": ""
+          }
         }
       },
       "block_order": [
@@ -72,9 +72,9 @@
         "743a2bf4-9909-45f2-9b51-411702650ac1",
         "53d588d3-8f9e-4dc5-8de0-e3eca78cd48f",
         "54221e7b-8868-4c06-bc77-ea9ea93bea2b",
-        "0442fcb3-bb2b-4c7c-854f-063c431018ce",
         "74abe424-5bff-44b1-9009-3fa5933c001e",
-        "ab048911-1693-4355-8269-ab1415cb7ec2"
+        "richtext_mDfbdQ",
+        "description_YYNkwg"
       ],
       "settings": {
         "show_pickup_availability": false,
@@ -84,52 +84,44 @@
         "carousel_slidesPerView": 8
       }
     },
-    "resource-tabs": {
-      "type": "resource-tabs",
+    "resource_list_xwnh9b": {
+      "type": "resource-list",
       "blocks": {
-        "e77e1b95-b9db-4eaf-8848-f66146ad2f18": {
+        "product_QjJBUW": {
           "type": "product",
           "settings": {
-            "title": "Product description",
-            "product": ""
+            "product": "duka-little-q-electronic-ruler-atuman-tape-hd-lcd-screen-long-standby-rechargeable-ruler"
           }
         },
-        "95542676-7659-4c18-8463-ff095c129a20": {
-          "type": "page",
+        "product_nVT9Hp": {
+          "type": "product",
           "settings": {
-            "title": "Page content",
-            "page": "blank-page"
+            "product": "power-socket-expander-us-plug-easy-to-use-outlet-hack-for-desks-nightstands"
           }
         },
-        "dfd20e79-1d3a-4740-9078-fc0dd23e7e5e": {
-          "type": "richtext",
+        "product_hrF9X3": {
+          "type": "product",
           "settings": {
-            "title": "Important information",
-            "content": "<h2>Please don't take this store seriously.</h2><p>This site is made to demonstrate the capabilities and possible styles of the Timeless Shopify Theme.</p><p>But please do have some fun!</p>"
+            "product": "us-plug-power-strip-multitap-6-ac-outlets-2-usb-2-type-c-port-charge-electrical-socket-network-filter-fast-charging-home-office"
           }
         }
       },
       "block_order": [
-        "e77e1b95-b9db-4eaf-8848-f66146ad2f18",
-        "95542676-7659-4c18-8463-ff095c129a20",
-        "dfd20e79-1d3a-4740-9078-fc0dd23e7e5e"
+        "product_QjJBUW",
+        "product_nVT9Hp",
+        "product_hrF9X3"
       ],
       "settings": {
-        "title": "Details"
-      }
-    },
-    "product-recommendations": {
-      "type": "product-recommendations",
-      "settings": {
         "color_scheme": "",
-        "content": "<h2>Product Recommendations</h2>",
-        "intent": "related"
+        "content": "<h2>Featured products</h2>",
+        "subcontent": "<p>Featured collections</p>",
+        "columns": 4,
+        "sale_badge_enabled": true
       }
     }
   },
   "order": [
     "product-form",
-    "resource-tabs",
-    "product-recommendations"
+    "resource_list_xwnh9b"
   ]
 }
