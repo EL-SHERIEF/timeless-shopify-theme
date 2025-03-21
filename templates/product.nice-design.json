@@ -231,12 +231,65 @@
         "background_color": "#fff9f3",
         "text_color": "#1a1a1a"
       }
+    },
+    "faq_list_MqWX9J": {
+      "type": "faq-list",
+      "blocks": {
+        "faq_eNePbG": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the electrical socket extension safe for kids?",
+            "answer": "<p>This electrical socket extension has overload protection and a secure design. Still, keep it out of reach to ensure child safety.</p>"
+          }
+        },
+        "faq_8at3p6": {
+          "type": "faq",
+          "settings": {
+            "question": "How many devices can this electrical socket extension handle?",
+            "answer": "<p>The electrical socket extension supports up to 4 AC outlets and 2 USB ports. It powers multiple devices—think phone, tablet, and lamp—without overload.</p>"
+          }
+        },
+        "faq_KPjRJw": {
+          "type": "faq",
+          "settings": {
+            "question": "Does this electrical socket extension have surge protection?",
+            "answer": "<p>Yes, it features a 600-joule surge protector to safeguard your electronics. This electrical socket extension keeps laptops and TVs safe from power spikes.</p>"
+          }
+        },
+        "faq_BVcY4w": {
+          "type": "faq",
+          "settings": {
+            "question": "What is an electrical socket extension cord used for?",
+            "answer": "<p>This electrical socket extension stretches power to hard-to-reach spots. With a 10ft cord, it’s perfect for charging devices like phones or lamps anywhere in your home.</p>"
+          }
+        },
+        "faq_fj8YEF": {
+          "type": "faq",
+          "settings": {
+            "question": "Why choose this electrical socket extension over others?",
+            "answer": "<p>This electrical socket extension offers surge protection, USB ports, and a 10ft strip—all in a compact, reliable package. It’s a top pick for convenience!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_eNePbG",
+        "faq_8at3p6",
+        "faq_KPjRJw",
+        "faq_BVcY4w",
+        "faq_fj8YEF"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "content": "<h2>FAQ</h2>",
+        "subcontent": ""
+      }
     }
   },
   "order": [
     "product-form",
     "features_section_ajDw3h",
     "testimonials_9xHTD9",
-    "story_teller_i6LtGW"
+    "story_teller_i6LtGW",
+    "faq_list_MqWX9J"
   ]
 }
