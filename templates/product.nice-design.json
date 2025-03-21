@@ -127,10 +127,74 @@
         "item_mLrQfW"
       ],
       "settings": {}
+    },
+    "testimonials_9xHTD9": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_hUe4tf": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/istockphoto-1337144146-612x612_bb436f5a-5386-4bea-a4d6-e9d76b59ac2d.jpg",
+            "customer_name": "Kathern d.",
+            "customer_position": "Verified Customer",
+            "testimonial_text": "Behind my TV, outlets were a pain to reach. This electrical socket extension pulls out smoothly with USB ports for my Roku. No more unplugging—total lifesaver!",
+            "star_rating": 5
+          }
+        },
+        "testimonial_CPrAdz": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/istockphoto-1337144146-612x612.jpg",
+            "customer_name": "Sa Li",
+            "customer_position": "Verified Customer",
+            "testimonial_text": "My kitchen lacked free outlets for my air fryer. The electrical socket extension adjusts perfectly, powering everything with a sturdy strip design. Saved my countertop chaos!",
+            "star_rating": 5
+          }
+        },
+        "testimonial_pJVqLp": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/istockphoto-1337144146-612x612.jpg",
+            "customer_name": "M. M.",
+            "customer_position": "Verified Customer",
+            "testimonial_text": "Desk against the wall? No problem now. This electrical socket extension extends my laptop charger easily, and the surge protection is clutch. Office upgrade done right!",
+            "star_rating": 5
+          }
+        },
+        "testimonial_Ki7ymp": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/istockphoto-1337144146-612x612.jpg",
+            "customer_name": "لمياء .ا",
+            "customer_position": "Verified Customer",
+            "testimonial_text": "Moving my bed to plug in was ridiculous. With this electrical socket extension, I charge my lamp and phone hassle-free. The extender’s durability is unreal!",
+            "star_rating": 5
+          }
+        },
+        "testimonial_Hh37B9": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/istockphoto-1337144146-612x612.jpg",
+            "customer_name": "Emad S.",
+            "customer_position": "Verified Customer",
+            "testimonial_text": "My garage tools needed power across the room. This electrical socket extension stretches 10ft with a tough cord—perfect for drills and lights. Highly reliable!",
+            "star_rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_hUe4tf",
+        "testimonial_CPrAdz",
+        "testimonial_pJVqLp",
+        "testimonial_Ki7ymp",
+        "testimonial_Hh37B9"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "product-form",
-    "features_section_ajDw3h"
+    "features_section_ajDw3h",
+    "testimonials_9xHTD9"
   ]
 }
