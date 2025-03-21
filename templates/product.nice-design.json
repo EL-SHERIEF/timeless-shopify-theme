@@ -190,11 +190,53 @@
         "testimonial_Hh37B9"
       ],
       "settings": {}
+    },
+    "story_teller_i6LtGW": {
+      "type": "story-teller",
+      "blocks": {
+        "media_text_block_TJme4j": {
+          "type": "media_text_block",
+          "settings": {
+            "title": "Smart Power Protection",
+            "description": "Built with a 600-joule surge protector, this smart electric socket extension keeps devices safe. Overload protection ensures worry-free use every time.",
+            "media_type": "video",
+            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1742450801/f8e66a7a8e54177c5525514e2a04d2a8e7fc9d70415e25a1c8ac472aa4bd82f2_1_cgeauc.mp4"
+          }
+        },
+        "media_text_block_AnyKKX": {
+          "type": "media_text_block",
+          "settings": {
+            "title": "Perfect for Every Space",
+            "description": "This electrical socket extension cord shines in homes, offices, or workshops. Use it with the electric socket extender tower for multi-level power needs.",
+            "media_type": "video",
+            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1742450797/ssstik.io__mik.zenon_1742264082140_vqrpai.mp4"
+          }
+        },
+        "media_text_block_6Vrtmp": {
+          "type": "media_text_block",
+          "settings": {
+            "title": "Why Choose This Extension Strip?",
+            "description": "Enjoy tangle-free power with this electric socket extension strip. It offers safe, reliable charging, a compact design, and versatile use for home or office setups.",
+            "media_type": "video",
+            "video_url": "https://res.cloudinary.com/dpaibs24t/video/upload/v1742451296/f5e8996fd96140e987d6154ad8ef36d9.HD-720p-4.5Mbps-44078583_exchzb.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "media_text_block_TJme4j",
+        "media_text_block_AnyKKX",
+        "media_text_block_6Vrtmp"
+      ],
+      "settings": {
+        "background_color": "#fff9f3",
+        "text_color": "#1a1a1a"
+      }
     }
   },
   "order": [
     "product-form",
     "features_section_ajDw3h",
-    "testimonials_9xHTD9"
+    "testimonials_9xHTD9",
+    "story_teller_i6LtGW"
   ]
 }
