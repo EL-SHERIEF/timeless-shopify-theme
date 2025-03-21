@@ -8,7 +8,7 @@
       {%- if section.settings.logo -%}
         {{ section.settings.logo
           | image_url: width: 300
-          | image_tag: class: 'max-w-[130px] w-fit max-h-[80px] object-contain my-3 -top-1 sm:top-1 fixed left-1/2 transform -translate-x-1/2', loading: 'lazy'
+          | image_tag: class: 'max-w-[130px] w-fit max-h-[80px] object-contain my-3 top-1 sm:top-1 fixed left-1/2 transform -translate-x-1/2', loading: 'lazy'
           | link_to: routes.root_url
         }}
       {%- else -%}
