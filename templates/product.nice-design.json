@@ -84,44 +84,53 @@
         "carousel_slidesPerView": 8
       }
     },
-    "resource_list_xwnh9b": {
-      "type": "resource-list",
+    "features_section_ajDw3h": {
+      "type": "featuresSection",
       "blocks": {
-        "product_QjJBUW": {
-          "type": "product",
+        "item_wtHVaq": {
+          "type": "item",
           "settings": {
-            "product": "duka-little-q-electronic-ruler-atuman-tape-hd-lcd-screen-long-standby-rechargeable-ruler"
+            "item_image": "shopify://shop_images/friendship-day_medium_ef02b5c3-8fa0-4982-8b98-dfdb6a33a9f2.webp",
+            "item_title": "90-Day Guarantee",
+            "item_subtitle": "Peace of Mind for 3 Months!"
           }
         },
-        "product_nVT9Hp": {
-          "type": "product",
+        "item_WaMQnT": {
+          "type": "item",
           "settings": {
-            "product": "power-socket-expander"
+            "item_image": "shopify://shop_images/Animation_-_1739918393852_medium_6b64514b-2d36-4c75-8ecc-3b603bc9d6e5.webp",
+            "item_title": "Free Shipping",
+            "item_subtitle": "Fast, Free, and Hassle-Free!"
           }
         },
-        "product_hrF9X3": {
-          "type": "product",
+        "item_baaPaf": {
+          "type": "item",
           "settings": {
-            "product": "us-plug-power-strip-multitap-6-ac-outlets-2-usb-2-type-c-port-charge-electrical-socket-network-filter-fast-charging-home-office"
+            "item_image": "shopify://shop_images/Animation_-_1739918721366_medium_2067ba30-d035-4d53-9e1f-294acc579657.webp",
+            "item_title": "Class A Build Quality",
+            "item_subtitle": "Best manufacturing quality in market"
+          }
+        },
+        "item_mLrQfW": {
+          "type": "item",
+          "settings": {
+            "item_image": "shopify://shop_images/Animation_-_1739918140596_1_medium_75ef8f25-dd48-4b71-88aa-e6f80eec9c49.webp",
+            "item_title": "Best Market Price",
+            "item_subtitle": "Prices You Won’t Find Anywhere Else"
           }
         }
       },
       "block_order": [
-        "product_QjJBUW",
-        "product_nVT9Hp",
-        "product_hrF9X3"
+        "item_wtHVaq",
+        "item_WaMQnT",
+        "item_baaPaf",
+        "item_mLrQfW"
       ],
-      "settings": {
-        "color_scheme": "",
-        "content": "<h2>Featured products</h2>",
-        "subcontent": "<p>Featured collections</p>",
-        "columns": 4,
-        "sale_badge_enabled": true
-      }
+      "settings": {}
     }
   },
   "order": [
     "product-form",
-    "resource_list_xwnh9b"
+    "features_section_ajDw3h"
   ]
 }
