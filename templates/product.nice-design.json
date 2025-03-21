@@ -42,7 +42,7 @@
             "text": "",
             "inventory_text": "",
             "full_width": false,
-            "show_payment_buttons": false
+            "show_payment_buttons": true
           }
         },
         "74abe424-5bff-44b1-9009-3fa5933c001e": {
